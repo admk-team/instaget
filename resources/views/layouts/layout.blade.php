@@ -39,7 +39,7 @@
         <div class="header-lower">
           <div class="main-box clearfix">
             <div class="logo-box">
-              <div class="logo"><a href="index.html"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
             </div>
             <div class="nav-outer clearfix">
               <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
@@ -62,7 +62,7 @@
                     <li class=""><a href="#">Googleplay App</a></li>
                     <li class=""><a href="#">IOS App</a></li>
                     <li class=""><a href="#">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </div>
               </nav>
@@ -74,7 +74,7 @@
         <div class="auto-container clearfix">
           <div class="main-box clearfix">
             <div class="logo-box">
-              <div class="logo"><a href="index.html"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
             </div>
             <div class="nav-outer clearfix">
               <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
@@ -88,7 +88,7 @@
         <div class="menu-backdrop"></div>
         <div class="close-btn"><span class="icon fas fa-times"></span></div>
         <nav class="menu-box">
-          <div class="nav-logo"><a href="index.html"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+          <div class="nav-logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
           <div class="menu-outer"></div>
           <div class="options-box clearfix">
             <div class="social-box">
@@ -106,7 +106,7 @@
     </header>
     <div class="form-back-drop"></div>
     @yield('container')
-    <footer class="main-footer" style="background-image: url(images/background/6.png);">
+    <footer class="main-footer" style="background-image: url(/front/images/background/6.png);">
       <div class="auto-container">
         <div class="widgets-section">
           <div class="row">
@@ -115,7 +115,7 @@
                 <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <div class="footer-widget about-widget">
                     <div class="footer-logo">
-                      <figure> <a href="index.html"><img src="{{asset('front/images/footer-logo.png')}}" alt=""></a> </figure>
+                      <figure> <a href="{{ route('front.index') }}"><img src="{{asset('front/images/footer-logo.png')}}" alt=""></a> </figure>
                     </div>
                     <div class="widget-content">
                       <p>Sola have much planned for the future, working with great clients and continued software
@@ -153,18 +153,18 @@
                     <h4 class="widget-title">Useful links</h4>
                     <div class="widget-content">
                       <ul class="list">
-                        <li><a href="#">Vision & Values</a></li>
-                        <li><a href="#">Leadership</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#">Instagram Followers</a></li>
+                        <li><a href="#">Instagram Likes</a></li>
+                        <li><a href="#">Instagram Comments</a></li>
+                        <li><a href="#">Instagram Views</a></li>
+                        <li><a href="#">Instagram Impression</a></li>
                       </ul>
                       <ul class="list">
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">SEO</a></li>
-                        <li><a href="#">Awards</a></li>
-                        <li><a href="blog-classic.html">Media</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Naver</a></li>
+                        <li><a href="#">Googleplay App</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
                       </ul>
                     </div>
                   </div>
@@ -174,9 +174,9 @@
                     <h4 class="widget-title">Contacts</h4>
                     <div class="widget-content">
                       <ul class="list-style-one">
-                        <li><span class="icon fas fa-phone-volume"></span>+1 (800) 581 3645 11</li>
-                        <li><span class="icon fas fa-map-marker-alt"></span>28 Green Tower, Street Name, New York</li>
-                        <li><span class="icon fas fa-envelope"></span>sola.seo@mail.com</li>
+                        <li><span class="icon fas fa-phone-volume"></span>1600-5635</li>
+                        <li><span class="icon fas fa-map-marker-alt"></span> #302, Building A, Seoul Forest SKV1TOWER</li>
+                        <li><span class="icon fas fa-envelope"></span> support@herren.co.kr</li>
                       </ul>
                     </div>
                   </div>

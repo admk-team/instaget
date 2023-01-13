@@ -33,8 +33,6 @@
     <div class="row">
       <div class="content-column col-lg-6 col-md-12 col-sm-12">
         <div class="content-inner">
-          <div class="video-link"> <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
-              data-caption=""><span class="icon fa fa-play" aria-hidden="true"></span><i class="ripple"></i></a></div>
           <h1>Increase followers & <br> likes with just a few clicks</h1>
           <p>Solve your worries about social media followers and likes
             <br> through Instagram. </p> <a
@@ -145,9 +143,10 @@
                       alt="Services Image"></a></figure>
               </div>
               <div class="lower-content">
-                <h3><a href="#">Online Accounting</a></h3>
-                <p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press
-                  release distribution.</p>
+                <h3><a href="#">Increase Youtube Views</a></h3>
+                <p>Increase your video views in a fraction of the time.
+                  If the number of views increases, it will be exposed to popular videos, and
+                  the product will be uploaded together with the viewing time.</p>
                 <div class="link-box"> <a href="#" class="theme-btn btn-style-two"><span
                       class="txt">Learn More</span></a></div>
               </div>
@@ -170,9 +169,8 @@
                       alt="Services Image"></a></figure>
               </div>
               <div class="lower-content">
-                <h3><a href="#">The board</a></h3>
-                <p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press
-                  release distribution.</p>
+                <h3><a href="#">increase youtube subscribers</a></h3>
+                <p>Subscriber count is an indicator of popularity and a measure of success. In particular, a large number of subscribers will help you get more subscribers.</p>
                 <div class="link-box"> <a href="#" class="theme-btn btn-style-one"><span
                       class="txt">Learn More</span></a></div>
               </div>
@@ -198,15 +196,14 @@
         <div class="inner-column wow fadeInLeft">
           <div class="content-box">
             <div class="sec-title text-left">
-              <h6 class="subtitle">Grow Traffice & Increase Revenue</h6>
-              <h2>Appear on the <br /> front page of google!</h2>
+              <h6 class="subtitle">Why InstaGet should I use ?</h6>
+              <h2>Our Instagram <br /> services have</h2>
             </div>
-            <p>We are full-service Internet marketing and SEO company offering innovative web marketing solutions to mid
-              to large size companies across the globe. As a leader in SEO, web design, ecommerce, website conversion,
-              and Internet
-              marketing services, our firm prides ourselves.</p>
-            <p>We have an ever-expanding trophy cabinet for our web design, SEO, and digital marketing work.</p>
-            <div class="link-box"><a href="about.html" class="theme-btn btn-style-one"><span class="txt">About
+            <p>been conducting Instagram marketing and account management agency since the early days of Instagram, and
+              it is a proven solution that has been serving for many years based on know-how.</p>
+            <p>Instaget's services are based on marketing and account management agency know-how, and are
+              proven solutions that have been servicing for many years since the early days of Instagram, YouTube, and Facebook.</p>
+            <div class="link-box"><a href="#" class="theme-btn btn-style-one"><span class="txt">About
                   More</span></a></div>
           </div>
         </div>
@@ -214,12 +211,12 @@
     </div>
   </div>
 </section>
-<section class="services-section style-two" style="background-image: url(images/background/2.png);">
+<section class="services-section style-two" style="background-image: url(/front/images/background/2.png);">
   <div class="upper-box">
     <div class="auto-container">
       <div class="sec-title text-center light">
-        <h6 class="subtitle">Seach Engine & Social Media Optmization</h6>
-        <h2>Full service <br /> digital marketing agency</h2>
+        <h6 class="subtitle">Buy Instagram Services</h6>
+        <h2>Buy Instagram Followers with Instant Delivery</h2>
       </div>
     </div>
   </div>
@@ -244,7 +241,7 @@
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Adanced Media Analytics</a></h4>
+              <h4><a href="#">Buy Instagram Likes</a></h4>
             </div>
           </div>
         </div>
@@ -255,7 +252,7 @@
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Organic Long Term SEO</a></h4>
+              <h4><a href="#">Buy Instagram Followers</a></h4>
             </div>
           </div>
         </div>
@@ -266,412 +263,9 @@
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Date Saveing Security</a></h4>
+              <h4><a href="#">Buy Instagram Views</a></h4>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="team-section">
-  <div class="team-bg wow fadeInRight" style="background-image: url(images/background/3.png);"></div>
-  <div class="auto-container">
-    <div class="sec-title text-center">
-      <h6 class="subtitle">Our Specialists Worker</h6>
-      <h2>Meet our expert team works <br /> for your business</h2>
-    </div>
-    <div class="team-carousel owl-carousel owl-theme">
-      <div class="team-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/1.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Olivia Jayden</a></h4> <span class="designation">Project Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-1">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/2.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Noah Michael</a></h4> <span class="designation">Market Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-2">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/3.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Emma William</a></h4> <span class="designation">General Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-3">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/4.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Matthew David</a></h4> <span class="designation">CEO of Company</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/1.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Olivia Jayden</a></h4> <span class="designation">Project Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-1">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/2.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Noah Michael</a></h4> <span class="designation">Market Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-2">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/3.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Emma William</a></h4> <span class="designation">General Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-3">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/4.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Matthew David</a></h4> <span class="designation">CEO of Company</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/1.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Olivia Jayden</a></h4> <span class="designation">Project Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-1">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/2.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Noah Michael</a></h4> <span class="designation">Market Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-2">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/3.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Emma William</a></h4> <span class="designation">General Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-3">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/4.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Matthew David</a></h4> <span class="designation">CEO of Company</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/1.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Olivia Jayden</a></h4> <span class="designation">Project Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-1">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/2.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Noah Michael</a></h4> <span class="designation">Market Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-2">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/3.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Emma William</a></h4> <span class="designation">General Manager</span>
-          </div>
-        </div>
-      </div>
-      <div class="team-block team-block-3">
-        <div class="inner-box">
-          <div class="image-box">
-            <div class="image"><a href="team.html"><img src="{{asset('front/images/team/4.jpg')}}" alt=""></a></div>
-          </div>
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-          <div class="text-box">
-            <h4 class="name"><a href="team.html">Matthew David</a></h4> <span class="designation">CEO of Company</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="progress-sec">
-  <div class="progress-bg"></div>
-  <div class="container">
-    <div class="row">
-      <div class="content-column col-lg-6 col-md-12 col-sm-12">
-        <div class="content-box">
-          <div class="sec-title text-left">
-            <h6 class="subtitle">Our Benefits</h6>
-            <h2>Get more visiter on <br /> your website</h2>
-            <p>As a leader in SEO, web design, ecommerce, website conversion,& Internet marketing services, our firm
-              prides.</p>
-          </div>
-          <div class="progress-levels">
-            <div class="progress-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="0ms">
-              <div class="progress-header clearfix">
-                <div class="box-title">DIGITAL STRATEGY</div>
-                <div class="progress-percentage">
-                  <div class="count-box"><span class="count-text" data-speed="2000" data-stop="70">0</span>%</div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <div class="bar-inner">
-                  <div class="bar progress-line" data-width="70"></div>
-                </div>
-              </div>
-            </div>
-            <div class="progress-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="0ms">
-              <div class="progress-header clearfix">
-                <div class="box-title">FINANCIAL SERVICES</div>
-                <div class="progress-percentage">
-                  <div class="count-box"><span class="count-text" data-speed="2000" data-stop="55">0</span>%</div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <div class="bar-inner">
-                  <div class="bar progress-line" data-width="55"></div>
-                </div>
-              </div>
-            </div>
-            <div class="progress-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="0ms">
-              <div class="progress-header clearfix">
-                <div class="box-title">CONSULTING</div>
-                <div class="progress-percentage">
-                  <div class="count-box"><span class="count-text" data-speed="2000" data-stop="65">0</span>%</div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <div class="bar-inner">
-                  <div class="bar progress-line" data-width="65"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="image-cloumn col-lg-6 col-md-12 col-sm-12">
-        <div class="image-box">
-          <figure><img src="{{asset('front/images/resource/progress-1.png')}}" alt="progress image"></figure>
-          <div class="animated-img-1"></div>
-          <div class="animated-img-2"></div>
-          <div class="animated-img-3"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="clients-section">
-  <div class="auto-container">
-    <div class="sponsors-outer">
-      <ul class="sponsors-carousel owl-carousel owl-theme">
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/1.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/2.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/3.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/4.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/5.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/1.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/2.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/3.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/4.png')}}" alt=""></a></figure>
-        </li>
-        <li class="slide-item">
-          <figure class="image-box"><a href="#"><img src="{{asset('front/images/clients/5.png')}}" alt=""></a></figure>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-<section class="projects-section">
-  <div class="auto-container">
-    <div class="sec-title text-left">
-      <h6 class="subtitle">Explore Case Studies</h6>
-      <h2>Solid results of our <br> different case studies</h2>
-    </div>
-  </div>
-  <div class="inner-container">
-    <div class="projects-carousel owl-carousel owl-theme">
-      <div class="project-block">
-        <div class="image-box">
-          <figure class="image"><img src="{{asset('front/images/gallery/1.jpg')}}" alt=""></figure>
-          <div class="overlay-box"><a href="project-detail.html"><i class="fa fa-link"></i></a></div>
-        </div>
-        <div class="text-box"> <span class="tag">Digital</span>
-          <h3><a href="project-detail.html">Mobile App Vister</a></h3>
-        </div>
-      </div>
-      <div class="project-block">
-        <div class="image-box">
-          <figure class="image"><img src="{{asset('front/images/gallery/2.jpg')}}" alt=""></figure>
-          <div class="overlay-box"><a href="project-detail.html"><i class="fa fa-link"></i></a></div>
-        </div>
-        <div class="text-box"> <span class="tag">Business</span>
-          <h3><a href="project-detail.html">Digital Work</a></h3>
-        </div>
-      </div>
-      <div class="project-block">
-        <div class="image-box">
-          <figure class="image"><img src="{{asset('front/images/gallery/3.jpg')}}" alt=""></figure>
-          <div class="overlay-box"><a href="project-detail.html"><i class="fa fa-link"></i></a></div>
-        </div>
-        <div class="text-box"> <span class="tag">Digital PR</span>
-          <h3><a href="project-detail.html">Innovative Interface</a></h3>
-        </div>
-      </div>
-      <div class="project-block">
-        <div class="image-box">
-          <figure class="image"><img src="{{asset('front/images/gallery/4.jpg')}}" alt=""></figure>
-          <div class="overlay-box"><a href="project-detail.html"><i class="fa fa-link"></i></a></div>
-        </div>
-        <div class="text-box"> <span class="tag">SEO Marketing</span>
-          <h3><a href="project-detail.html">Opertray Division</a></h3>
         </div>
       </div>
     </div>
@@ -693,9 +287,7 @@
         <div class="testimonial-carousel owl-carousel owl-theme">
           <div class="testimonial-block">
             <div class="inner-box">
-              <div class="text">“Working with Reuss is always an absolute joy, both personally and professionally. Tommy
-                is an amazing speaker; her experience, expertise and genuine passion for what she does is obvious in
-                every word he says.”</div>
+              <div class="text">“It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural! I've bought Koreans from other companies before, but the photos were too tidy and unfollowed”</div>
               <div class="icon-quote"><i class="flaticon flaticon-quote"></i></div>
               <div class="info-box">
                 <div class="thumb"><img src="{{asset('front/images/resource/thumb.png')}}" alt=""></div>
@@ -707,9 +299,7 @@
           </div>
           <div class="testimonial-block">
             <div class="inner-box">
-              <div class="text">“Working with Reuss is always an absolute joy, both personally and professionally. Tommy
-                is an amazing speaker; her experience, expertise and genuine passion for what she does is obvious in
-                every word he says.”</div>
+              <div class="text">“It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural!”</div>
               <div class="icon-quote"><i class="flaticon flaticon-quote"></i></div>
               <div class="info-box">
                 <div class="thumb"><img src="{{asset('front/images/resource/thumb.png')}}" alt=""></div>
@@ -721,9 +311,7 @@
           </div>
           <div class="testimonial-block">
             <div class="inner-box">
-              <div class="text">“Working with Reuss is always an absolute joy, both personally and professionally. Tommy
-                is an amazing speaker; her experience, expertise and genuine passion for what she does is obvious in
-                every word he says.”</div>
+              <div class="text">“It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural!”</div>
               <div class="icon-quote"><i class="flaticon flaticon-quote"></i></div>
               <div class="info-box">
                 <div class="thumb"><img src="{{asset('front/images/resource/thumb.png')}}" alt=""></div>
@@ -735,9 +323,7 @@
           </div>
           <div class="testimonial-block">
             <div class="inner-box">
-              <div class="text">“Working with Reuss is always an absolute joy, both personally and professionally. Tommy
-                is an amazing speaker; her experience, expertise and genuine passion for what she does is obvious in
-                every word he says.”</div>
+              <div class="text">“It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural!”</div>
               <div class="icon-quote"><i class="flaticon flaticon-quote"></i></div>
               <div class="info-box">
                 <div class="thumb"><img src="{{asset('front/images/resource/thumb.png')}}" alt=""></div>
@@ -749,334 +335,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="news-section" style="background-image: url(images/background/4.png);">
-  <div class="auto-container">
-    <div class="sec-title text-center">
-      <h6 class="subtitle">Our Latest News</h6>
-      <h2>Announcements & news<br />for our reviwer</h2>
-    </div>
-    <div class="news-carousel owl-carousel owl-theme">
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-1.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">10 ways technology today at improved business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-2.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">How wireless technology more changing business</a></h4> <a
-              href="blog-detail.html" class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="news-block">
-        <div class="inner-box">
-          <div class="image-box">
-            <figure class="image"><img src="{{asset('front/images/resource/news-3.jpg')}}" alt=""></figure>
-            <div class="overlay-box"><a href="blog-detail.html"><i class="fa fa-link"></i></a></div>
-          </div>
-          <div class="caption-box">
-            <ul class="info">
-              <li><i class="fas fa-calendar-alt"></i>Feb 18, 2022</li>
-              <li>|</li>
-              <li><i class="fas fa-user-alt"></i>By Admin</li>
-            </ul>
-            <h4><a href="blog-detail.html">Thirty surrogate mothers the trafficking.</a></h4> <a href="blog-detail.html"
-              class="theme-btn btn-style-one"><span class="txt">Read More</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="contact-info-section">
-  <div class="auto-container">
-    <div class="inner-container" style="background-image: url(images/background/5.png);">
-      <div class="text-box">
-        <h2>Get Your Site Optimised & Converting Now</h2>
-        <p>Through careful selection, we’ve curated a group of digital marketing experts.</p>
-      </div>
-      <div class="contect-box"> <a href="#" class="theme-btn btn-style-two"><span class="txt">Submit
-            Now</span></a></div>
     </div>
   </div>
 </section>
