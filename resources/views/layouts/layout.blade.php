@@ -50,11 +50,11 @@
                     </li>
                     <li class="dropdown"><a href="#">Instagram</a>
                       <ul>
-                        <li><a href="">Instagram Followers</a></li>
-                        <li><a href="">Instagram Likes</a></li>
-                        <li><a href="">Instagram Comments</a></li>
-                        <li><a href="">Instagram Views</a></li>
-                        <li><a href="">Instagram Impression</a></li>
+                        <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Followers']) }}">Instagram Followers</a></li>
+                        <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Likes']) }}">Instagram Likes</a></li>
+                        <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Comments']) }}">Instagram Comments</a></li>
+                        <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Views']) }}">Instagram Views</a></li>
+                        <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Impression']) }}">Instagram Impression</a></li>
                       </ul>
                     </li>
                     <li class=""><a href="#">Youtube</a></li>

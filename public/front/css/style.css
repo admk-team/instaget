@@ -13728,3 +13728,7 @@ canvas {
 .clients-section.style-three {
     padding: 194px 0 70px;
 }
+
+.service-block-five:hover .lower-content * {
+    color: var(--white);
+}
