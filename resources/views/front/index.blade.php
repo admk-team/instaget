@@ -27,7 +27,7 @@
     </div>
   </div>
 </section>
-<section class="banner-section" style="background-image: url('/front/images/main-banner/banner-bg.png');">
+<section class="banner-section" style="background-image: url('/front/images/main-banner/insta.png');">
   <div id="particles-js"></div>
   <div class="container-fluid">
     <div class="row">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="image-column col-lg-6 col-md-12 col-sm-12">
-        <div class="image-box"> <img src="{{asset('front/images/main-banner/1.png')}}" alt="banner image"></div>
+        <div class="image-box"> <img src="{{asset('front/images/main-banner/11.png')}}" alt="banner image"></div>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
           <div class="inner-box">
             <div class="service-box-front">
               <div class="image-box">
-                <figure class="image"><a href="#"><img src="{{asset('front/images/services/1.png')}}"
+                <figure class="image"><a href="#"><img src="{{asset('front/images/insta.png')}}"
                       alt="Services Image"></a></figure>
               </div>
               <div class="lower-content">
@@ -215,29 +215,29 @@
   <div class="upper-box">
     <div class="auto-container">
       <div class="sec-title text-center light">
-        <h6 class="subtitle">Buy Instagram Services</h6>
-        <h2>Buy Instagram Followers with Instant Delivery</h2>
+        <h6 class="subtitle">Buy Social Services</h6>
+        <h2>Buy Instagram, Facebook, Youtube Services</h2>
       </div>
     </div>
   </div>
   <div class="services-box">
     <div class="auto-container">
       <div class="services-carousel owl-carousel owl-theme">
-        <div class="service-block-five">
+        <div class="service-block-five fb_services">
           <div class="inner-box">
             <div class="image-box">
-              <figure class="image"><a href="#"><img src="{{asset('front/images/services/4.png')}}"
+              <figure class="image"><a href="#"><img src="{{asset('front/images/social/2.png')}}"
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Social Media Marketing</a></h4>
+              <h4><a href="#">Facebook Services</a></h4>
             </div>
           </div>
         </div>
-        <div class="service-block-five">
+        <div class="service-block-five insta-services">
           <div class="inner-box">
             <div class="image-box">
-              <figure class="image"><a href="#"><img src="{{asset('front/images/services/5.png')}}"
+              <figure class="image"><a href="#"><img src="{{asset('front/images/social/1.png')}}"
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
@@ -245,25 +245,25 @@
             </div>
           </div>
         </div>
-        <div class="service-block-five">
+        <div class="service-block-five navar-services">
           <div class="inner-box">
             <div class="image-box">
-              <figure class="image"><a href="#"><img src="{{asset('front/images/services/6.png')}}"
+              <figure class="image"><a href="#"><img src="{{asset('front/images/social/3.png')}}"
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Buy Instagram Followers</a></h4>
+              <h4><a href="#">Buy Naver Services</a></h4>
             </div>
           </div>
         </div>
-        <div class="service-block-five">
+        <div class="service-block-five youtube-services">
           <div class="inner-box">
             <div class="image-box">
-              <figure class="image"><a href="#"><img src="{{asset('front/images/services/7.png')}}"
+              <figure class="image"><a href="#"><img src="{{asset('front/images/social/4.png')}}"
                     alt="Services Image"></a></figure>
             </div>
             <div class="lower-content">
-              <h4><a href="#">Buy Instagram Views</a></h4>
+              <h4><a href="#">YouTube Services</a></h4>
             </div>
           </div>
         </div>

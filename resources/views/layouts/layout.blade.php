@@ -39,7 +39,7 @@
         <div class="header-lower">
           <div class="main-box clearfix">
             <div class="logo-box">
-              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
             </div>
             <div class="nav-outer clearfix">
               <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
@@ -74,7 +74,7 @@
         <div class="auto-container clearfix">
           <div class="main-box clearfix">
             <div class="logo-box">
-              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+              <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
             </div>
             <div class="nav-outer clearfix">
               <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
@@ -88,7 +88,7 @@
         <div class="menu-backdrop"></div>
         <div class="close-btn"><span class="icon fas fa-times"></span></div>
         <nav class="menu-box">
-          <div class="nav-logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo.png')}}" alt="" title=""></a></div>
+          <div class="nav-logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
           <div class="menu-outer"></div>
           <div class="options-box clearfix">
             <div class="social-box">
@@ -115,7 +115,7 @@
                 <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
                   <div class="footer-widget about-widget">
                     <div class="footer-logo">
-                      <figure> <a href="{{ route('front.index') }}"><img src="{{asset('front/images/footer-logo.png')}}" alt=""></a> </figure>
+                      <figure> <a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo11.png')}}" alt=""></a> </figure>
                     </div>
                     <div class="widget-content">
                       <p>Sola have much planned for the future, working with great clients and continued software
