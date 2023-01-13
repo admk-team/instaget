@@ -8,10 +8,10 @@
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <div class="title-box">
-                    <h1>Instagram</h1>
+                    <h1>{{ ucfirst($service) }}</h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html">Home</a></li>
-                        <li>Instagram</li>
+                        <li>{{ ucfirst($service) }}</li>
                     </ul>
                 </div>
             </div>
@@ -21,7 +21,7 @@
         <div class="upper-box">
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2 class="subtitle">FOLLOWER UP</h2>
+                    <h2 class="subtitle">{{ ucfirst($category) }}</h2>
                     <h6 class="mb-3">You can increase the number of your followers<br>
                         in a short time.
                         You can get followers at a relatively low price.<br>
@@ -33,19 +33,21 @@
         <div class="services-box mb-5 pb-5">
             <div class="auto-container">
                 <div class="services-carousel owl-carousel owl-theme">
-                    <div class="service-block-five">
-                    <div class="inner-box text-center">
-                        <div class="image-box">
-                            <figure class="image"><a href="#"><img src="{{asset('front/images/services/4.png')}}"
-                                    alt="Services Image"></a></figure>
-                            </div>
-                            <div class="lower-content">
-                            <h4 class="text-center"><a href="#">Follower Up</a></h4>
-                            <p>Follower Up</p>
+                    <div class="service-block-five shadow-none">
+                        <div class="inner-box text-center insta-services">
+                                <div class="image-box">
+                                    <figure class="image"><a href="#"><img src="{{asset('front/images/services/4.png')}}"
+                                        alt="Services Image"></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                <h4 class="text-center"><a href="#">Follower Up</a></h4>
+                                <p>Follower Up</p>
+                                <h4 class="display-4">100</h4>
+                                <p>Increase 100 followers</p>
                         </div>
                     </div>
-                    </div>
-                    <div class="service-block-five">
+                </div>
+                    <!-- <div class="service-block-five shadow-none">
                     <div class="inner-box">
                         <div class="image-box">
                         <figure class="image"><a href="#"><img src="{{asset('front/images/services/5.png')}}"
@@ -56,7 +58,7 @@
                         </div>
                     </div>
                     </div>
-                    <div class="service-block-five">
+                    <div class="service-block-five shadow-none">
                     <div class="inner-box">
                         <div class="image-box">
                         <figure class="image"><a href="#"><img src="{{asset('front/images/services/6.png')}}"
@@ -67,17 +69,17 @@
                         </div>
                     </div>
                     </div>
-                    <div class="service-block-five">
+                    <div class="service-block-five shadow-none">
                     <div class="inner-box">
                         <div class="image-box">
-                        <figure class="image"><a href="#"><img src="{{asset('front/images/services/7.png')}}"
-                                alt="Services Image"></a></figure>
-                        </div>
+                            <figure class="image"><a href="#"><img src="{{asset('front/images/services/7.png')}}"
+                                    alt="Services Image"></a></figure>
+                            </div>
                         <div class="lower-content">
-                        <h4><a href="#">Buy Instagram Views</a></h4>
+                            <h4><a href="#">Buy Instagram Views</a></h4>
                         </div>
                     </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
