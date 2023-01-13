@@ -24,7 +24,7 @@
             <ul class="contact-area">
               <li>Call: 1600-5635</li>
               <li><span class="far fa-paper-plane"></span> #302, Building A, Seoul Forest SKV1TOWER</li>
-              <li><span class="far fa-envelope"></span> <a href="mailto:sola.seo@mail.com">support@herren.co.kr</a></li>
+              <li><span class="far fa-envelope"></span> <a href="#">support@herren.co.kr</a></li>
             </ul>
           </div>
           <div class="right-header-area">
@@ -118,8 +118,7 @@
                       <figure> <a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo11.png')}}" alt=""></a> </figure>
                     </div>
                     <div class="widget-content">
-                      <p>Sola have much planned for the future, working with great clients and continued software
-                        development. If you’d like to join our team.</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>

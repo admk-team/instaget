@@ -15,7 +15,7 @@
     </div>
     <div class="contact-info-box">
       <ul class="info-list">
-        <li>sola@example.com</li>
+        <li>info@example.com</li>
         <li>+(123) 456 7890</li>
       </ul>
       <ul class="social-links">
