@@ -4353,7 +4353,8 @@ canvas {
 }
 
 .service-block .service-box-back {
-    background-color: var(--secondary);
+    background-color: #FCB315;
+    /* background-color: var(--secondary); */
     color: var(--white);
     transform: rotateY(180deg);
 }
@@ -4912,12 +4913,26 @@ canvas {
     top: 100%;
     width: 100%;
     height: 100%;
-    background-image: url('/front/images/services/hover-bg2.png');
+    background-image: url('/front/images/services/hover.png');
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
-
+.insta-services:before {
+    background-image: url('/front/images/services/hover.png');
+}
+.navar-services:before {
+    background-image: url('/front/images/services/navar.png');
+}
+.youtube-services:before {
+    background-image: url('/front/images/services/youtube.png');
+}
+.fb_services:before {
+    background-image: url('/front/images/services/fb.png');
+}
+.lower-content{
+    text-align: center;
+}
 .service-block-five:hover:before {
     top: 0;
     left: 0;
