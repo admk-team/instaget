@@ -118,8 +118,7 @@
                       <figure> <a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo11.png')}}" alt=""></a> </figure>
                     </div>
                     <div class="widget-content">
-                      <p>Sola have much planned for the future, working with great clients and continued software
-                        development. If you’d like to join our team.</p>
+                      
                     </div>
                   </div>
                 </div>
@@ -174,9 +173,9 @@
                     <h4 class="widget-title">Contacts</h4>
                     <div class="widget-content">
                       <ul class="list-style-one">
-                        <li><span class="icon fas fa-phone-volume"></span>1600-5635</li>
-                        <li><span class="icon fas fa-map-marker-alt"></span> #302, Building A, Seoul Forest SKV1TOWER</li>
-                        <li><span class="icon fas fa-envelope"></span> support@herren.co.kr</li>
+                        <li><span class="icon fas fa-phone-volume"></span>334234-34234</li>
+                        <li><span class="icon fas fa-map-marker-alt"></span> I-8 Markaz Islamabad</li>
+                        <li><span class="icon fas fa-envelope"></span> admk@admksolutions.com</li>
                       </ul>
                     </div>
                   </div>
