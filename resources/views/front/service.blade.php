@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('container')
 <div class="bg-light">
-    <section class="page-title" style="background-image:url({{ asset('front/images/background/22.png') }});">
+    <section class="page-title" style="background-image:url({{ asset('front/images/background/service_bg.png') }});">
         <div id='stars'></div>
         <div id='stars2'></div>
         <div id='stars3'></div>
