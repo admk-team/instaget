@@ -57,7 +57,7 @@
                       alt="Services Image"></a></figure>
               </div>
               <div class="lower-content">
-                <h3><a href="#">increase instagram followers</a></h3>
+                <h3><a href="#">Increase Instagram Followers</a></h3>
                 <p>
                   Your followers will grow in no time. A high follower count increases your brand's credibility and helps you attract more followers.
                 </p>
