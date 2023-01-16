@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\AdminController;
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Admin Routes //
+Route::get('admin' , [AdminController::class , 'index'])->name('index');
+
+
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
     Route::get('/service/{service?}/{category?}', [FrontController::class, 'service'])->name('service');
 });
+
+
