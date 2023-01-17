@@ -223,16 +223,24 @@
   width: 200px;
   overflow: visible;
   cursor: pointer;
-  border-radius: 13px;
   overflow: hidden;
   width: 201px;
   position: relative;
   display: flex;
   flex-direction: column;
   text-align: left;
+  
+  color: black!important;
+  border: 1px solid black!important;
+
+  border-radius: 0;
+  border-bottom: 0;
+}
+.product_type_heading.active{
+  border-bottom: 0!important;
 }
 .premium-tab{
-  width: 301px!important;
+  width: 307px!important;
   width: 200px;
   font-weight: bold;
   font-size: 15px;
@@ -240,7 +248,7 @@
   width: 200px;
   overflow: visible;
   cursor: pointer;
-  border-radius: 13px;
+  border-radius: 0;
   overflow: hidden;
   width: 201px;
   position: relative;
@@ -250,8 +258,26 @@
 }
 .like-content{
   border: 1px solid black;
-  border-radius: 10px;
+  border-top: 0;
+  border-radius: 0;
 }
+.premium-content.active{
+
+}
+.remove-blue-border{
+  border-bottom: 0;
+}
+.add-border-blue{
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #4781F7!important;
+}
+.add-border-black{
+  border-bottom: 1px solid black!important;
+}
+/* .product_type_heading:not(.active){
+  border-bottom: 1px solid #4781F7;
+} */
 /* .premium-content{
   border: 1px solid rgb(10, 138, 230);
   border-radius: 10px;
@@ -337,4 +363,16 @@
 .pakage-dec-card{
   border-radius: 27px;
   border: 1px solid #ff603c;
+}
+.recomended-tag{
+  background: #ff603c;
+  color: white;
+  padding: 6px;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: -77px;
+  margin-left: 192px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8em;
 }

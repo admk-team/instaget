@@ -75,7 +75,7 @@
                 <div class="col-12 col-md-6">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active product_type_heading" id="like-tab" data-bs-toggle="tab"
+                            <button class="product_type_heading nav-link active" id="like-tab" data-bs-toggle="tab"
                                 data-bs-target="#like" type="button" role="tab" aria-controls="like"
                                 aria-selected="  ">High Quality <br> Likes</button>
                         </li>
@@ -83,6 +83,9 @@
                             <button class="nav-link premium-tab" id="premium-tab" data-bs-toggle="tab"
                                 data-bs-target="#premium" type="button" role="tab" aria-controls="premium"
                                 aria-selected="false">Premium <br> Likes</button>
+                                <span class="recomended-tag">
+                                    Recomended
+                                </span>
                         </li>
                     </ul>
                     <div class="tab-content like-content" id="myTabContent">
@@ -221,7 +224,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">60</p>
                                                     <h3 class="product_discount">Likes</h3>
                                                 </div>
                                             </div>
@@ -229,7 +232,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">70</p>
                                                     <h3 class="product_discount">Save 19%</h3>
                                                 </div>
                                             </div>
@@ -237,7 +240,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">80</p>
                                                     <h3 class="product_discount">Save 28%</h3>
                                                 </div>
                                             </div>
@@ -245,7 +248,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">90</p>
                                                     <h3 class="product_discount">Save 28%</h3>
                                                 </div>
                                             </div>
@@ -255,7 +258,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">20</p>
                                                     <h3 class="product_discount">Likes</h3>
                                                 </div>
                                             </div>
@@ -263,7 +266,7 @@
                                         <div class="col-12 col-md-6 col-lg-3 pakage-card-parent">
                                             <div class="card pkg-card">
                                                 <div class="card-body text-center card-hover">
-                                                    <p class="product_amount">50</p>
+                                                    <p class="product_amount">100</p>
                                                     <h3 class="product_discount">Save 19%</h3>
                                                 </div>
                                             </div>
@@ -458,7 +461,18 @@
           }
       })
     </script>
-
+    <script>
+        $('.premium-tab').click(function(){
+            $(this).addClass('remove-blue-border')
+            $('.product_type_heading').addClass('add-border-blue');
+            $('.like-content').css('border-color','#4781F7');
+            $('.product_type_heading').css('border-color','0')
+        })
+        $('.product_type_heading').click(function(){
+            $('.like-content').css('border-color','black');
+            $('.premium-tab').addClass('add-border-black');
+        })
+    </script>
 </body>
 
 </html>
