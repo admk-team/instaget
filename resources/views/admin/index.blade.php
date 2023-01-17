@@ -1,5 +1,5 @@
 @extends('admin.layouts.layout')
 @section('container')
-<h1>hello</h1>
+<h1 class="text-center">hasdfsadfdsaf</h1>
 
 @endsection

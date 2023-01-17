@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\FrontController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 
 use Illuminate\Support\Facades\Route;
 /*
@@ -17,8 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 
 // Admin Routes //
-Route::get('admin' , [AdminController::class , 'index'])->name('index');
 
+//Admin  Routes//
+Route::name('admin.')->group(function () {
+    Route::get('index' , [AdminController::class , 'index'])->name('index');
+
+    // Categories 
+    Route::resource('category' , CategoryController::class);
+    Route::get('category/{id}/{status}', [CategoryController::class, 'status'])->name('category.status');
+
+});
 
 //Front Routes//
 Route::name('front.')->group(function () {
