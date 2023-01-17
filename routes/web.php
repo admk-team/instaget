@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::get('/service/{service?}/{category?}', [FrontController::class, 'service'])->name('service');
+    Route::get('/service', [FrontController::class, 'service'])->name('service');
 });

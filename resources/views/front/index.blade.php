@@ -70,7 +70,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="overlay">
-              <video class="fullscreen" src="{{ asset('front_asset/images/Purple.mp4')}}" playsinline autoplay muted loop>
+              <video class="fullscreen" src="{{ asset('front_asset/images/bg.mp4')}}" playsinline autoplay muted loop>
               </video>
             </div>
 
@@ -264,8 +264,9 @@
       </div>
     </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhUp+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- custom JS code after importing jquery and owl -->
@@ -290,7 +291,6 @@
           }
       })
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </body>
 
 </html>

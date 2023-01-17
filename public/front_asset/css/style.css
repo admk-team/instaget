@@ -1,3 +1,6 @@
+.container-fluid{
+  overflow: hidden;
+}
 .navbar-dark .navbar-nav .nav-link{
   color: white;
 }
@@ -10,10 +13,10 @@
   bottom:0;
   z-index:1;
   /* background:linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
-  background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3));
+  /* background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
 }
 .carousel-caption{
-  top: 204px;
+  top: 440px;
   z-index: 1;
 }
 .carousel-caption h3{
@@ -21,42 +24,39 @@
   font-weight: 700;
   line-height: 2;
 }
-.carousel-caption{
-  top: 204px;
-}
 .slider-caption{
   font-size: 25px;
 }
 .insta-btn{
-  background-color: #d39725;
-  border: 2px solid #d39725;
+  background-color: #d98100;
+  border: 2px solid #d98100;
   color: #FFF;
   display: inline-block;
   font-size: 18px;
   width: 193.5px;
   padding: 27px 0;
   margin-right: 10px;
-  box-shadow: 0px 3px 5px 1px #765921;
+  /* box-shadow: 0px 3px 5px 1px #ffb727; */
 }
 .insta-btn:hover{
-  border: 2px solid #d39725;
+  border: 2px solid #d98100;
   background-color: #FFF;
-  color: #d39725;
+  color: #d98100;
 }
 .service-btn{
   background-color: #FFF;
-  border: 2px solid #d39725;
-  color: #d39725;
+  border: 2px solid #d98100;
+  color: #d98100;
   display: inline-block;
   font-size: 20px;
   width: 193.5px;
   font-weight: 500;
   padding: 27px 0;
-  box-shadow: 0px 3px 5px 1px #765921;
+  /* box-shadow: 0px 3px 5px 1px #ffb727; */
 }
 .service-btn:hover{
-  background-color: #d39725;
-  border: 2px solid #d39725;
+  background-color: #d98100;
+  border: 2px solid #d98100;
   color: #FFF;
 }
 @media (min-width:961px)  {
@@ -164,4 +164,177 @@
 }
 .footer-account-title,.copy-right{
   color: #ABABAD;
+}
+@media (max-width:480px){
+  .carousel-inner .carousel-item{
+    height: 400px;
+  }
+  .carousel-caption {
+    top: 76px;  
+  }
+  .carousel-caption .d-flex{
+    display: grid;
+  }
+  .service-btn{
+    margin: 10px;
+  }
+  .insta-btn{
+    margin: 10px;
+  }
+  .services-card .col-12{
+    margin-bottom: 2rem;
+  }
+  .about-us-col{
+    padding-left: 40px;
+    padding-top: 33px;
+  }
+  .about-us div h4{
+    padding-top: 0;
+  }
+  .about-us div p {
+    padding-top: 50px;
+    text-align: left;
+    width: auto;
+  }
+  .pkg-card{
+    margin: 3px;
+  }
+  .pakage-card-paent{
+    padding: 0;
+    margin: 0;
+  }
+  .product_type_heading{
+    width: 241px!important;
+  }
+  .premium-tab{
+    width: 241px!important;
+  }
+}
+.pakage-card-parent{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.product_type_heading{
+  width: 301px!important;
+  width: 200px;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: capitalize;
+  width: 200px;
+  overflow: visible;
+  cursor: pointer;
+  border-radius: 13px;
+  overflow: hidden;
+  width: 201px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.premium-tab{
+  width: 301px!important;
+  width: 200px;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: capitalize;
+  width: 200px;
+  overflow: visible;
+  cursor: pointer;
+  border-radius: 13px;
+  overflow: hidden;
+  width: 201px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.like-content{
+  border: 1px solid black;
+  border-radius: 10px;
+}
+/* .premium-content{
+  border: 1px solid rgb(10, 138, 230);
+  border-radius: 10px;
+} */
+.offer-div .row{
+  margin-bottom: 0.5rem;
+}
+.product_discount{
+  color: #ff603c;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 16px;
+}
+.product_amount{
+  margin: 0;
+  font-size: 23px;
+  font-weight: bold;
+}
+.card-hover:hover{
+  background-color: #ff603c;
+  color: white;
+}
+.card-hover:hover .product_discount {
+  color: white;
+}
+.tab-content{
+  padding-top: 30px;
+}
+.premium-tab{
+  width: 200px;
+  background: #4781F7!important;
+  color: #FFF!important;
+}
+.buy-now{
+  cursor: pointer;
+  background: #ff603c;
+  color: #FFF;
+  padding: 0.75rem;
+  margin: 1rem auto;
+  font-size: 19px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border-color: #ff603c;
+  width: 60%;
+}
+.dollor-sign{
+  font-size: 1.75em;
+  vertical-align: text-top;
+  position: relative;
+  font-weight: normal;
+  color: #999;
+  margin-right: 0.1em;
+}
+.sale-price{
+  font-size: 31px;
+  font-weight: bold;
+  font-weight: 600;
+}
+.orignal-price{
+  color: #999;
+  font-size: 18px;
+  vertical-align: middle;
+  text-decoration: line-through;
+  font-weight: normal;
+  padding-top: 11px;
+  padding-left: 7px;
+}
+.text-oraing{
+  color: #ff603c;
+  font-weight: bold;
+  font-size: 18px;
+}
+.pakage-card-title{
+  background: #ff603c!important;
+  color: white!important;
+  font-size: 18px!important;
+  border-radius: 26px!important;
+}
+.card-title{
+  color: white!important;
+  font-size: 18px!important;
+}
+.pakage-dec-card{
+  border-radius: 27px;
+  border: 1px solid #ff603c;
 }

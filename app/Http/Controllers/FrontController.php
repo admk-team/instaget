@@ -10,8 +10,8 @@ class FrontController extends Controller
         return view('front.index');
     }
 
-    public function service($service, $category)
+    public function service()
     {
-        return view('front.service', compact('service', 'category'));
+        return view('front.service');
     }
 }
