@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="style.css">
   <title>Instaget</title>
   <style>
-    .navbar-brand{
+.navbar-brand{
   background-color: rgb(245, 211, 0);
 }
 .navbar-brand span{
@@ -153,6 +153,7 @@
   margin-right: 5px;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 7px;
 }
 .bg_orange.active h4{
   color: white;
@@ -205,6 +206,9 @@
 .tab-pane-header{
   border-bottom: 1px solid black;
   padding: 5px;
+}
+.list-group-item{
+  border-radius: 12px!important;
 }
   </style>
 </head>
@@ -269,7 +273,7 @@
           <i class="bi bi-phone"></i> 앱마케팅
         </li>
         <li class="list-group-item talk-icon">
-          <img src="images/icons/talk.png" class="talk-img" alt=""> K사마케팅
+          <img src="{{asset('front_asset/images/icons/talk.png')}}" class="talk-img" alt=""> K사마케팅
         </li>
       </ul>
     </div>
@@ -297,7 +301,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="d-flex pt-4 justify-content-center">
                 <div class="tab-pane-header">
-                  <img src="images/icons/check.png" alt="" class="check-box">
+                  <img src="{{asset('front_asset/images/icons/check.png')}}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
@@ -354,7 +358,7 @@
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="d-flex pt-4 justify-content-center">
                 <div class="tab-pane-header">
-                  <img src="images/icons/check.png" alt="" class="check-box">
+                  <img src="{{asset('front_asset/images/icons/check.png')}}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
@@ -411,7 +415,7 @@
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
               <div class="d-flex pt-4 justify-content-center">
                 <div class="tab-pane-header">
-                  <img src="images/icons/check.png" alt="" class="check-box">
+                  <img src="{{asset('front_asset/images/icons/check.png')}}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
