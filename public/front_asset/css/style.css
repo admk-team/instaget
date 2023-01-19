@@ -4,6 +4,84 @@
 .navbar-dark .navbar-nav .nav-link{
   color: white;
 }
+.font-family {
+  font-family: 'Nunito', sans-serif;
+}
+.card-section-lower-text-1 {
+  font-size: 34px;
+  font-weight: bold;
+}
+.card-section-lower-text-2 {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+.image-text-section-heading, .image-text-section-heading-2 {
+  font-size: 27.7px;
+  font-weight: bold;
+}
+.image-text-section-image {
+  width: auto;
+  height: 42vh;
+}
+.image-text-section-text-1 {
+  font-size: 13px;
+}
+.image-text-section-tick-text {
+  font-size: 13px;
+}
+.tick-icon {
+  color: #FFA301;
+}
+.image-text-section-btn {
+  background-color: #FF5A09;
+  color: #e4e4e4;
+  padding: 14px 85px;
+  border-radius: 36px;
+  font-size: 16px;
+  position: relative;
+  right: 11px;
+}
+.image-text-section-btn:hover {
+  background-color: #d14500;
+}
+.dark-section {
+  background-color: #1B2430;
+}
+.dark-section-title {
+  font-size: 27px;
+}
+.dark-section-text-1 {
+  width: 50%;
+  font-size: 13px;
+}
+.dark-section-card-title {
+  font-size: 17.5px;
+  font-weight: bold;
+}
+.dark-section-card-text-1 {
+  font-size: 12px;
+  line-height: 20px;
+}
+.dark-section-card {
+  border-radius: 15px;
+  padding-top: 24px;
+  padding-bottom: 13px;
+  padding-left: 17px;
+  width: 270px;
+}
+.dark-section-cards {
+  width: 93%;
+}
+.dark-section-title {
+  font-weight: bold;
+}
+.image-section-title {
+  font-size: 34.3px;
+  font-weight: bold;
+}
+.image-section-text-1 {
+  font-size: 14.8px;
+}
 .overlay:before {
   content:"";
   position: absolute;
