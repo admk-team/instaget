@@ -3,7 +3,6 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
-
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
