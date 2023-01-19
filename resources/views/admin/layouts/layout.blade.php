@@ -106,7 +106,8 @@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active"><a href="{{ route('admin.index') }}"><span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span><span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span><span class="pcoded-mcaret"></span></a></li>
                                 <li><a href="{{ route('admin.category.index') }}"><span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext" data-i18n="nav.form-components.main">Categories</span><span class="pcoded-mcaret"></span></a></li>
-                                <li><a href="form-elements-component.html"><span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext" data-i18n="nav.form-components.main">Services</span><span class="pcoded-mcaret"></span></a></li>
+                                <li><a href="{{ route('admin.subcategory.index') }}"><span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext" data-i18n="nav.form-components.main"> Sub Categories</span><span class="pcoded-mcaret"></span></a></li>
+                                <li><a href="{{ route('admin.services.index') }}"><span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext" data-i18n="nav.form-components.main">Services</span><span class="pcoded-mcaret"></span></a></li>
                                 <li><a href="form-elements-component.html"><span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext" data-i18n="nav.form-components.main">Packages</span><span class="pcoded-mcaret"></span></a></li>
 
                             </ul>

@@ -22,6 +22,22 @@
                         <h4 class="sub-title">Add Category</h4>
                         <form  method="POST" action="{{ route('admin.category.store') }}" enctype="multipart/form-data">
                             @csrf
+
+                            <div class="form-group row">
+                                <div class="col-lg-12 m-2">
+                                <label for="menu" class="">Service</label>
+                                <select name="service_id" id="parent_id" class="form-control" value="{{ old('service_id') }}">
+                                  <option value="">Select Service</option>
+                                  @foreach ($services as $list)
+                                  <option value="{{ $list->id }}" >{{ $list->title ?? '' }}</option>
+                                  @endforeach
+                                </select>
+                                  @error('parent_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                  @enderror
+                              </div>
+                            </div>
+
                             <div class="form-group row">
                                 <div class="col-12 m-2">
                                     <label for="title">Title</label>

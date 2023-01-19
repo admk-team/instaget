@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         
-        $data = Category::orderBy('id' , 'desc')->get();
+         $data = Category::orderBy('id' , 'desc')->with('service')->get();
         return view('admin.categories.index' , compact('data'));
     }
 
@@ -28,8 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.categories.create');
+        $services =Service::all();
+        return view('admin.categories.create' , compact('services'));
     }
 
     /**
@@ -42,11 +43,13 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'service_id' => 'required'
         ]);
 
         $model = new Category();
         $model->title = $request->title;
+        $model->service_id = $request->service_id;
 
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/category' , 'public');
@@ -79,8 +82,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $data = Category::findorFail($id);
-        return view('admin.categories.edit' , compact('data'));
+        $category = Category::findorFail($id);
+        $services = Service::all();
+        return view('admin.categories.edit' , compact('category' , 'services'));
     }
 
     /**
@@ -95,11 +99,13 @@ class CategoryController extends Controller
         
         $request->validate([
             'title' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'service_id' => 'required'
         ]);
 
         $model = Category::findorFail($id);
         $model->title = $request->title;
+        $model->service_id = $request->service_id;
 
         if($request->has('image')){
             if(isset($model->image)){
@@ -122,7 +128,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Category  $category`
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

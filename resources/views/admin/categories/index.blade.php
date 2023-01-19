@@ -28,6 +28,7 @@
                                 <tr>
                                   <th>#</th>
                                   <th>Title</th>
+                                  <th>Services</th>
                                   <th>Images</th>
                                   <th>Action</th>
                                 </tr>
@@ -37,6 +38,7 @@
                                 <tr>
                                   <td>{{ $loop->iteration }}</td>
                                   <td>{{ $list->title ?? '' }}</td>
+                                  <td>{{ $list->service->title ?? '' }}</td>
                                   <td><img src="{{ asset('storage/'.$list->image) }}" alt="" style="width: 100px; height:100px">  </td>
                                   <td>
                                     <div class="dropdown d-inline-block show">

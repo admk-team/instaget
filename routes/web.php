@@ -3,6 +3,8 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Admin Routes //
-
 //Admin  Routes//
 Route::name('admin.')->group(function () {
     Route::get('index' , [AdminController::class , 'index'])->name('index');
@@ -26,12 +26,21 @@ Route::name('admin.')->group(function () {
     Route::resource('category' , CategoryController::class);
     Route::get('category/{id}/{status}', [CategoryController::class, 'status'])->name('category.status');
 
+    // Sub Category
+    Route::resource('subcategory' , SubCategoryController::class);
+    Route::get('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
+
+    // Services 
+    Route::resource('services' , ServiceController::class);
+    Route::get('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
+
 });
 
+Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::get('/service/{service?}/{category?}', [FrontController::class, 'service'])->name('service');
+    Route::get('/service', [FrontController::class, 'service'])->name('service');
 });
 
 
