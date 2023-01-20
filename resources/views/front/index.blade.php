@@ -18,6 +18,11 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <title>Instaget</title>
 </head>
 
@@ -90,7 +95,7 @@
         </div>
       </div>
     </section>
-    <section class="services-section mt-5">
+    {{-- <section class="services-section mt-5">
       <div class="container">
         <div class="row">
           <h3 class="text-center m-2 p-5">Services</h3>
@@ -192,8 +197,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="about-us" style="background-image: url('{{ asset('front_asset/images/bg.png') }}');">
+    </section> --}}
+    {{-- <section class="about-us" style="background-image: url('{{ asset('front_asset/images/bg.png') }}');">
       <div class="row">
         <div class="col-lg-6"></div>
         <div class="col-lg-6">
@@ -203,8 +208,8 @@
             <a class="see-more">See more >></a>
         </div>
       </div>
-    </section>
-    <section class="customer-feedback">
+    </section> --}}
+    {{-- <section class="customer-feedback">
       <h3 class="text-center text-white">Customer Reviews</h3>
       <div id="owl-row-1" class="owl-carousel owl-theme">
         <div class="item">
@@ -220,7 +225,167 @@
             <p>It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural! (I've bought Koreans from other companies before, but the photos were too tidy and unfollowed) I </p>
         </div>
     </div>
+    </section> --}}
+
+    <section class="card-section py-5 my-5 font-family">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
+            <img src="{{ asset('front_asset/images/home-1.png') }}" alt="">
+            <h5 class="card-section-lower-text-1 mt-3">1,159,250</h5>
+            <h6 class="card-section-lower-text-2">총 누적 주문</h6>
+          </div>
+          <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
+            <img src="{{ asset('front_asset/images/home-2.png') }}" alt="">
+            <h5 class="card-section-lower-text-1 mt-3">3,689</h5>
+            <h6 class="card-section-lower-text-2">오늘 완료된 주문</h6>
+          </div>
+          <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
+            <img src="{{ asset('front_asset/images/home-3.png') }}" alt="">
+            <h5 class="card-section-lower-text-1 mt-3">146,800</h5>
+            <h6 class="card-section-lower-text-2">누적 회원 수</h6>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <section class="image-text-section font-family pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="image-text-section-image" src="{{ asset('front_asset/images/home-4.jpg') }}" alt="">
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <h5 class="image-text-section-heading">SNS계정 셀프관리 시작해보세요.</h5>
+            <p class="image-text-section-text-1 my-4">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 
+              인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
+              <h5 class="image-text-section-heading-2">XXX만의 차별화</h5>
+              <div class="image-text-section-tick-text mt-3">
+                <div class="row">
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">365일 24시간 자동화 주문</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">빠른 작업 속도</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">실제 활성 계정으로 구성</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">100% 안전성 보장</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">SNS랭킹 최적화 된 서비스</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">단기간 순위변화</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <span class="image-text-section-tick-text">마케팅 전문가 무료상담</span>
+                    </div>
+                  </div>
+                  <div class="col-6 row mb-2">
+                    <div class="col-1">
+                      <i class="bi bi-check-circle-fill tick-icon"></i>
+                    </div>
+                    <div class="col-11">
+                      <h6 class="image-text-section-tick-text">자체개발 SNS솔루션</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn image-text-section-btn text-light mt-3">주문하기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section text-light mt-5 font-family">
+      <div class="container py-4">
+        <h2 class="dark-section-title text-center">XXX  서비스 소개</h2>
+        <div class="d-flex justify-content-center">
+          <p class="dark-section-text-1 text-center">XXX는 개인계정, 기업계정 관리 및 마케팅 전문 실행사입니다. 
+            광고대행사에 맡기지 마시고 저렴한 비용으로 최대의 홍보효과를 체험하세요.</p>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <div class="dark-section-cards row d-flex justify-content-center align-items-center mt-3">
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/insta-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">인스타그램 마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/youtube-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">유튜브 마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/N-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">N쇼핑,N플레이스 마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/talk-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">K사 마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/android-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">구글플레이 앱마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+            <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
+              <img class="mb-3" src="{{ asset('front_asset/images/A-icon.png') }}" alt="">
+              <h5 class="dark-section-card-title">앱스토어 앱마케팅</h5>
+              <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-section my-5 py-1">
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <h2 class="image-section-title text-center">100%효과보는 인스타그램 홍보방법</h2>
+        <p class="image-section-text-1 text-center">인기탭에 진출을 위한 브랜드 계정은 데일리팔로워+자동좋아요+자동댓글+자동인게트래픽 패키지로 추천드립니다.</p>
+        <img src="{{ asset('front_asset/images/insta-ad-image.png') }}" alt="">
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="container">
         <div class="row">
