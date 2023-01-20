@@ -9,7 +9,6 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" />
@@ -23,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <title>Instaget</title>
 </head>
 
@@ -249,7 +250,76 @@
       </div>
     </section>
 
-    <section class="image-text-section font-family pt-3">
+    <!-- About Section -->
+    <div class="container">
+      <section class="section section-about">
+        <div class="row">
+          <!-- Image Area -->
+          <div class="col-12 col-lg-6 image-area">
+            <div class="image-backgroud">
+              <img src="{{ asset('front_asset/images/제목을-입력해주세요_-007.png') }}" class="main-img" alt="">
+              <img src="{{ asset('front_asset/images/chart.png') }}" class="img1" alt="" data-aos="fade-left" data-aos-once="true" data-aos-duration="1500">
+              <div class="box1 d-flex align-items-center" data-aos="fade-right" data-aos-once="true" data-aos-duration="1500">
+                <div class="icon">
+                  <img src="{{ asset('front_asset/images/dribbble.PNG') }}" alt="">
+                </div>
+                <div class="text">
+                  <h3>185+</h3>
+                  <p>Brands Joined</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Text Area -->
+          <div class="col-12 col-lg-6 text-area">
+            <h1 class="title">SNS계정 셀프관리 시작해보세요.</h1>
+            <p class="description">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
+            <h3 class="list-title">XXX만의 차별화</h3>
+            <div class="d-flex gap-4 flex-wrap">
+              <ul class="p-0">
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>365일 24시간 자동화 주문</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>실제 활성 계정으로 구성</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>SNS랭킹 최적화 된 서비스</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>마케팅 전문가 무료상담 </span>
+                </li>
+              </ul>
+              <ul class="p-0">
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>빠른 작업 속도</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>100% 안전성 보장</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>단기간 순위변화</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>자체개발 SNS솔루션</span>
+                </li>
+              </ul>
+            </div>
+            <button class="btn image-text-section-btn text-light mt-3" data-aos="fade-left" data-aos-once="true" data-aos-duration="1200">주문하기</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- <section class="image-text-section font-family pt-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-12">
@@ -332,7 +402,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="dark-section text-light mt-5 font-family">
       <div class="container py-4">
@@ -434,6 +504,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <!-- custom JS code after importing jquery and owl -->
   <script type="text/javascript">
       $(document).ready(function() {
