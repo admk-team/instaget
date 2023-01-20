@@ -1252,4 +1252,78 @@ li {
 
 .footer .copywrite {
     font-family: var(--font);
+    color: 2.5rem;
+    font-weight: 600;
+}
+
+
+/*============================ Blog Section ==========================*/
+.section-blog {
+
+}
+
+.section-blog .label-new {
+    margin-bottom: 1.6rem;
+    display: inline-block;
+}
+
+.section-blog .section-title {
+    font-family: var(--font);
+    margin-bottom: 1.25rem;
+}
+
+.section-blog .section-description {
+    color: rgb(87, 90, 95);
+    font-family: var(--font);
+}
+
+.section-blog .blog-post {
+
+}
+
+.section-blog .blog-post .thumbnail {
+    /* width: 366.656px; */
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 15px 15px;
+    margin-bottom: 1.5rem;
+}
+
+.section-blog .blog-post .thumbnail img {
+    width: auto;
+    height: 100%;
+    border-radius: 15px 15px 15px 15px;
+    position: absolute;
+}
+
+.section-blog .blog-post .post-title {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: var(--font);
+}
+
+.section-blog .blog-post .post-description {
+    color: #575a5f;
+}
+
+.section-blog .blog-post .read-more {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font);
+}
+
+.section-blog .blog-post .read-more span {
+    font-size: 16px;
+}
+
+.section-blog .blog-post .read-more:hover {
+    color: #000000;
+    transition: .2s ease;
 }
