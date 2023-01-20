@@ -39,8 +39,8 @@ body {
     font-weight: bold;
 }
 .image-text-section-image {
-    width: auto;
-    height: 42vh;
+  width: auto;
+  height: 60vh;
 }
 .image-text-section-text-1 {
     font-size: 13px;
@@ -1326,4 +1326,17 @@ li {
 .section-blog .blog-post .read-more:hover {
     color: #000000;
     transition: .2s ease;
+}
+
+@media(max-width:1200px) {
+  .image-text-section-text-column {
+    margin-left: 65px;
+  }
+}
+
+@media(max-width:991px) {
+  .image-text-section-image {
+    height: 72vh;
+    margin-bottom: 35px;
+  }
 }
