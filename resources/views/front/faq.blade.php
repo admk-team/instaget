@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
   </head>
   <body>
@@ -176,6 +177,50 @@
 
         </div>
     </section>
+
+    <!-- START: Blog Section -->
+    <div class="section section-blog py-4 mb-5 mt-5">
+     <div class="container">
+      <div class="text-center mb-5">
+          <span class="label-new">BLOG & NEWS</span>
+          <h1 class="section-title">Latest Blog & News</h1>
+          <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut id eu elit augue<br> felis. Penatibus in erat sed id massa, feugiat. Quam nulla facilisi</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="blog-post">
+              <div class="thumbnail">
+                <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/above-top-desk-of-sme-owner-people-home-office-call-talk-in-seo-chart-sale-report.jpg" alt="">
+              </div>
+              <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+              <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+              <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+              <div class="blog-post">
+                <div class="thumbnail">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/stylish-trendy-woman-recording-dance-video-for-social-media-account-on-phone-.jpg" alt="">
+                </div>
+                <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+                <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+                <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="blog-post">
+              <div class="thumbnail">
+                <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/surfing-social-media-for-marketing-analysis.jpg" alt="">
+              </div>
+              <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+              <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+              <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+    <!-- End: Blog Section -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
