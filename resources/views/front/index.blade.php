@@ -252,10 +252,10 @@
     <section class="image-text-section font-family pt-3">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <img class="image-text-section-image" src="{{ asset('front_asset/images/home-4.jpg') }}" alt="">
+          <div class="col-lg-5 col-md-12">
+            <img class="image-text-section-image" src="{{ asset('front_asset/images/guy.png') }}" alt="">
           </div>
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-end image-text-section-text-column">
             <h5 class="image-text-section-heading">SNS계정 셀프관리 시작해보세요.</h5>
             <p class="image-text-section-text-1 my-4">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 
               인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
@@ -328,7 +328,9 @@
                   </div>
                 </div>
               </div>
-              <button class="btn image-text-section-btn text-light mt-3">주문하기</button>
+              <div>
+                <button class="btn image-text-section-btn text-light mt-3">주문하기</button>
+              </div>
           </div>
         </div>
       </div>
