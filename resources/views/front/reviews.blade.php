@@ -319,7 +319,7 @@
           </div>
         </div>
         <div class="row pt-5">
-          <p class="text-center text-white">Copyright © INSTAGET. All rights reserved.</p>
+          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
     </footer>
