@@ -1,0 +1,108 @@
+.wallpaper-container {
+    height: 56vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/front_asset/images/faq-cover.jpg");
+    background-position: 0% 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--e-global-color-secondary );
+    opacity: 0.9;
+}
+
+.background-overly {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #081220;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-page-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.fa-chevron-right, .fa-chevron-left {
+    color: #ff603c;
+    padding-top: 6px;
+}
+
+.breadcrumb {
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 24px;
+    color: #d7caca;
+}
+
+.faq-badge h6 {
+    color: #ff603c;
+    background: #ff603c24;
+    padding: 4px 24px;
+    margin: 0px 0px 25px 0px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.faq-title-2 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.faq-description {
+    width: 50%;
+}
+
+.faq-column {
+    padding: 15px 23px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff603c24;
+    cursor: pointer;
+}
+
+.faq-question {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.faq-answer {
+    padding: 37px 30px;
+    font-family: "Heebo", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #575A5F;
+    display: none;
+}
+
+.faq-column-active {
+    background-color: #ff603c;
+}
+
+.faq-column-active .faq-question, .faq-column-active .fa {
+    color: white;
+}
+
+.faq-description-full {
+    width: 100% !important;
+}
+
+#others-right-column {
+    padding-left: 42px;
+}
+
+#payment-left-column-description {
+    padding-right: 157px;
+}
