@@ -63,7 +63,7 @@
                 <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Frequently Asked Questions</a>
+                <a class="nav-link" href="{{ url('/faq') }}">Frequently Asked Questions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">Login</a>
