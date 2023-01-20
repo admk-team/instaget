@@ -226,37 +226,7 @@ body {
     width: 50%;
     margin: auto;
 }
-.footer {
-    background-color: #2b2c34;
-    padding-top: 40px;
-    padding-bottom: 100px;
-}
-.footer .list-group li {
-    background: transparent;
-}
-.footer .list-group li a {
-    text-decoration: none;
-    color: #78797c;
-}
-.footer-numbering {
-    font-size: 30px;
-    font-weight: 600;
-    color: white;
-}
-.footer-lunch-time {
-    width: 30%;
-}
-.footer-time-col {
-    padding-bottom: 10px;
-    border-bottom: 5px solid gray;
-}
-.footer-account_no {
-    font-size: 18px;
-}
-.footer-account-title,
-.copy-right {
-    color: #ababad;
-}
+
 @media (max-width: 480px) {
     .carousel-inner .carousel-item {
         height: 400px;
@@ -990,4 +960,28 @@ li {
 .review-text{
   font-weight: 500;
   font-size: 20px;
+}
+
+/* <!!--============ Footer ============--!!> */
+.footer {
+    background-color: #1b2430;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+.footer .footer-img{
+    margin-bottom: 23px;
+}
+.footer .list-group .list-group-item{
+    color: white;
+    background: transparent;
+}
+.footer .list-group .list-group-item span{
+    font-size: 16px;
+    font-weight: 600;
+}
+.footer .footer-heading{
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 23px;
+    color: #fff;
 }
