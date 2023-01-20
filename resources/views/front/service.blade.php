@@ -19,411 +19,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <title>Instaget</title>
-  <style>
-    @font-face {
-      font-family: 'Roboto';
-      src: url("font/NotoSansKR-Regular.otf") format("opentype");
-      font-style: normal;
-    }
 
-    body {
-      font-family: 'Roboto';
-    }
-
-    .navbar-brand {
-      background-color: rgb(245, 211, 0);
-    }
-
-    .navbar-brand span {
-      color: black;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    .social_icon .list-group-item {
-      color: white;
-      margin-right: 10px;
-      border-radius: 9px;
-      border: 0;
-    }
-
-    .list-group-horizontal>.list-group-item:first-child {
-      border-bottom-left-radius: 0px;
-      border-top-right-radius: 0px;
-    }
-
-    .social_icon .list-group-item a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .instagram-icon {
-      background-image: linear-gradient(to bottom right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-
-    .youtube-icon {
-      background: rgb(255 0 0);
-    }
-
-    .naver-icon {
-      background-color: #31b500;
-    }
-
-    .appMarketing-icon {
-      background-color: #4f96d5;
-    }
-
-    .talk-icon {
-      background-color: rgb(245, 211, 0);
-    }
-
-    .naver-span {
-      padding-left: 5px;
-      padding-right: 5px;
-      /* padding-bottom: 2px; */
-      font-weight: 800;
-      border: 2px solid white;
-      margin-bottom: -5px;
-    }
-
-    .talk-img {
-      height: 20px;
-      margin-top: 5px;
-      margin-bottom: -1px;
-    }
-
-    .heading {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .title {
-      font-size: 18px;
-    }
-
-    .pakg_heading {
-      border-bottom: 1px solid black;
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    @media (max-width:480px) {
-      .social_icon {
-        /* display: flex;
-    flex-direction: column; */
-      }
-
-      .list-group-item {
-        border-radius: 0 !important;
-      }
-
-      /* .social_icon .list-group-item {
-    margin: 5px;
-  } */
-      .bg_orange {
-        margin-bottom: 15px;
-      }
-
-      .purchase-btn,
-      .shop-btn {
-        margin-bottom: 10px;
-      }
-
-      .tab-content-parent {
-        padding: 0;
-      }
-
-      .nav-tabs {
-        justify-content: center;
-      }
-
-      .tabs-button {
-        width: 306px !important;
-        margin-top: 7px !important;
-        margin-right: 16px !important;
-      }
-
-      .tab-content {
-        margin-top: 10px !important;
-      }
-
-      .heading {
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      .title {
-        font-size: 15px;
-      }
-    }
-
-    .tab-content-parent {
-      padding: 1rem;
-    }
-
-    .nav-tabs {
-      border: 0;
-    }
-
-    .tabs-button {
-      background-color: #F3F0FF !important;
-      color: rgb(0, 0, 0) !important;
-      border: 0 !important;
-      padding: 10px !important;
-      border-radius: 15px !important;
-      height: 60px !important;
-      border-radius: 13px !important;
-      width: 189px;
-      margin-right: 16px;
-
-    }
-
-    .tabs-button.active {
-      background-color: rgb(252, 82, 48) !important;
-      color: white !important;
-    }
-
-    .tab-content {
-      border: 2px solid rgb(252, 82, 48);
-      position: relative;
-      margin-top: -10px;
-      z-index: 1;
-      border-radius: 10px;
-      width: 97%;
-      background: white;
-      box-shadow: 0 4px 7px -1px #a8a8a8;
-    }
-
-    .check-box {
-      height: 24px;
-    }
-
-    .tab-content-row {
-      padding-bottom: 0.5rem;
-      padding-top: 1.5rem;
-      padding-right: 1.5rem;
-      padding-left: 1.5rem;
-    }
-
-    .bg_orange {
-      margin-left: 10px;
-      margin-right: 5px;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-
-    .bg_orange.active h4 {
-      color: white;
-    }
-
-    .bg_orange.active span {
-      color: white;
-    }
-
-    .bg_orange.active {
-      background-color: rgb(252, 82, 48);
-    }
-
-    .bg_orange {
-      background-color: #F3F0FF;
-      border-radius: 10px;
-    }
-
-    .bg_orange h4 {
-      color: rgb(0, 0, 0);
-    }
-
-    .bg_orange span {
-      color: rgb(252, 82, 48);
-      font-size: 15px;
-    }
-
-    .sale-price {
-      font-weight: 700;
-    }
-
-    .orignal-price {
-      color: #d0d0d0;
-      font-weight: 700;
-    }
-
-    .purchase-btn {
-      background: rgb(252, 82, 48);
-      border: 0;
-      margin: 2px;
-      color: white;
-      height: 50px;
-      width: 120px;
-      font-size: 20px;
-      font-weight: 600;
-      box-shadow: 0px 1px 1px 0px black;
-    }
-
-    .shop-btn {
-      background: #F3F0FF;
-      border: 0;
-      margin: 2px;
-      color: black;
-      height: 50px;
-      width: 120px;
-      font-size: 20px;
-      font-weight: 600;
-      box-shadow: 0px 1px 1px 0px black;
-    }
-
-    .tab-pane-header {
-      border-bottom: 1px solid black;
-      padding: 5px;
-    }
-
-    .list-group-item {
-      border-radius: 12px;
-    }
-
-    .list-group-horizontal>.list-group-item:first-child {
-      border-bottom-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-
-    .list-group-horizontal>.list-group-item+.list-group-item {
-      border-bottom-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
-
-    .btn-purple {
-      color: #b34c82;
-    }
-
-    .btn-purple:hover {
-      color: white;
-      background-color: #b34c82;
-    }
-
-    .btn-apricot {
-      color: #b47306;
-    }
-
-    .btn-apricot:hover {
-      color: white;
-      background-color: #b47306;
-    }
-
-    .social-dropdown {
-      position: absolute;
-      width: 138px;
-      z-index: 1;
-      margin-left: -18px;
-      margin-top: 38px;
-      display: none;
-      box-shadow: 1px 1px 4px 1px #F3F0FF;
-    }
-
-    .social-dropdown-show {
-      display: block;
-    }
-
-    .social-dropdown ul {
-      margin: 0;
-      padding-left: 7px;
-    }
-
-    .social-dropdown ul li {
-      list-style: none;
-    }
-
-    .social-dropdown ul li a {
-      color: black !important;
-      font-size: 16px;
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-    }
-
-    /*====================== Mobile services menu ============================*/
-    .mobile-services-nav {}
-
-    .mobile-services-nav .active-service {
-      width: 100%;
-      margin-top: 3px;
-    }
-
-    .mobile-services-nav .service .btn {
-      /* width: 100%;
-  border: 1px solid rgba(0,0,0,.5); */
-      color: #F3F0FF;
-    }
-
-    .mobile-services-nav .service .content {
-      display: none;
-      width: 100%;
-    }
-
-    .mobile-services-nav .services {
-      display: flex;
-      gap: 3px;
-
-    }
-
-    .mobile-services-nav .services .service {
-      flex-grow: 1;
-    }
-
-    .mobile-services-nav .accordion-item {
-      margin-bottom: 8px;
-    }
-
-    .mobile-services-nav .accordion-button {
-      padding: 16px 8px;
-      font-size: 16px;
-      border: none;
-    }
-
-    .insta-danger {
-      background-color: #d04545;
-      color: white;
-    }
-
-    .mobile-services-nav .accordion-button::after {
-      color: white;
-    }
-
-    .instagram-accordion-body {
-      padding: 5px;
-    }
-
-    .instagram-likes-ul {
-      list-style: none;
-      padding-left: 0;
-      line-height: 2;
-    }
-
-    .instagram-likes-ul li {
-      background: #F3F0FF;
-      margin-bottom: 5px;
-      border-left: 3px solid #d04545;
-    }
-
-    .insta-success {
-      background-color: #22a568 !important;
-      color: white;
-    }
-
-    .follower-ul li {
-      background: #F3F0FF;
-      margin-bottom: 5px;
-      border-left: 3px solid #22a568;
-    }
-
-    .mobile-services-nav .service .btn {
-      color: #F3F0FF;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-    }
-  </style>
 </head>
 
 <body>
@@ -531,60 +129,27 @@
             <div class="content">
               <div class="accordion">
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Buy Instagram Followers
+                  <div class="accordion-header youtube-accordion" id="youtubeH1">
+                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
+                      data-bs-target="#youtubeH1" aria-expanded="false" aria-controls="youtubeH1">
+                      Buy Backlinks
                     </button>
-                  </div>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Buy Instagram Followers
+                  <div class="accordion-header youtube-accordion" id="youtubeH2">
+                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
+                      data-bs-target="#youtubeH2" aria-expanded="false" aria-controls="youtubeH2">
+                      SEO Services & Packages
                     </button>
-                  </div>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Buy Instagram Followers
+                  <div class="accordion-header youtube-accordion" id="youtubeH3">
+                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
+                      data-bs-target="#youtubeH3" aria-expanded="false" aria-controls="youtubeH3">
+                      Buy SEO Consulting
                     </button>
-                  </div>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -598,60 +163,27 @@
             <div class="content">
               <div class="accordion">
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <div class="accordion-header naver-accordion" id="naverH1">
+                    <button class="btn d-block shadow-none naver-bnt" type="button" data-bs-toggle=""
+                      data-bs-target="#naverH1" aria-expanded="false" aria-controls="naverH1">
                       Buy Instagram Followers
                     </button>
                   </div>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="accordion-header naver-accordion" id="naverH2">
+                    <button class="btn d-block shadow-none naver-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#naverH2" aria-expanded="false" aria-controls="naverH2">
                       Buy Instagram Followers
                     </button>
                   </div>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="accordion-header naver-accordion" id="naverH3">
+                    <button class="btn d-block shadow-none naver-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#naverH3" aria-expanded="false" aria-controls="naverH3">
                       Buy Instagram Like
                     </button>
-                  </div>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -664,60 +196,27 @@
             <div class="content">
               <div class="accordion">
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <div class="accordion-header mobile-accordion" id="mobileH1">
+                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#mobileH1" aria-expanded="false" aria-controls="mobileH1">
                       Buy Instagram Followers
                     </button>
                   </div>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
+                  <div class="accordion-header mobile-accordion" id="mobileH2">
+                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
                       data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Accordion Item #2
                     </button>
                   </div>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="accordion-header mobile-accordion" id="mobileH3">
+                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#mobileH3" aria-expanded="false" aria-controls="mobileH3">
                       Accordion Item #3
                     </button>
-                  </div>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -730,60 +229,27 @@
             <div class="content">
               <div class="accordion">
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <div class="accordion-header talk-accordion" id="talkH1">
+                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#talkH1" aria-expanded="false" aria-controls="talkH1">
                       Accordion Item #1
                     </button>
                   </div>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <div class="accordion-header talk-accordion" id="talkH2">
+                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#talkH2" aria-expanded="false" aria-controls="talkH2">
                       Accordion Item #2
                     </button>
                   </div>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
                 <div class="accordion-item">
-                  <div class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="accordion-header talk-accordion" id="talkH3">
+                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
+                      data-bs-target="#talkH3" aria-expanded="false" aria-controls="talkH3">
                       Accordion Item #3
                     </button>
-                  </div>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>

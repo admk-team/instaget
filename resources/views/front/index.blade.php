@@ -81,12 +81,13 @@
             </div>
 
             <div class="carousel-caption trickcenter">
-              <!-- <h3>Increase followers and likes with just a few clicks</h3>
+              <h3><span class="text-on-img">팔로워, 좋아요 늘리기 </span>  <br>
+                24시간 자동솔루션</h3>
               <div>
                 <p class="slider-caption">
-                  Solve your worries about social media followers and likes through Instagram
+                  SNS 실제한국인 팔로워, 좋아요, 순위 트래픽 <br> 간편주문으로 마케팅효과 톡톡히 보세요.
                 </p>
-              </div> -->
+              </div>
               <div class="d-flex justify-content-center mt-5">
                 <button class="insta-btn">What is instagram</button>
                 <button class="service-btn">Service</button>
@@ -250,16 +251,16 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- START: About Section -->
     <div class="container">
       <section class="section section-about">
         <div class="row">
           <!-- Image Area -->
-          <div class="col-12 col-lg-6 image-area">
+          <div class="col-12 col-lg-6 image-area mb-5 mb-lg-0">
             <div class="image-backgroud">
               <img src="{{ asset('front_asset/images/제목을-입력해주세요_-007.png') }}" class="main-img" alt="">
-              <img src="{{ asset('front_asset/images/chart.png') }}" class="img1" alt="" data-aos="fade-left" data-aos-once="true" data-aos-duration="1500">
-              <div class="box1 d-flex align-items-center" data-aos="fade-right" data-aos-once="true" data-aos-duration="1500">
+              <img src="{{ asset('front_asset/images/chart.png') }}" class="img1 d-none d-sm-block" alt="" data-aos="fade-left" data-aos-once="true" data-aos-duration="1500">
+              <div class="box1 d-flex align-items-center d-none d-sm-block" data-aos="fade-right" data-aos-once="true" data-aos-duration="1500">
                 <div class="icon">
                   <img src="{{ asset('front_asset/images/dribbble.PNG') }}" alt="">
                 </div>
@@ -313,96 +314,12 @@
                 </li>
               </ul>
             </div>
-            <button class="btn image-text-section-btn text-light mt-3" data-aos="fade-left" data-aos-once="true" data-aos-duration="1200">주문하기</button>
+            <button class="btn image-text-section-btn text-light mt-3 position-static shadow-none" data-aos="fade-left" data-aos-once="true" data-aos-duration="1200">주문하기</button>
           </div>
         </div>
       </section>
     </div>
-
-    <!-- <section class="image-text-section font-family pt-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <img class="image-text-section-image" src="{{ asset('front_asset/images/home-4.jpg') }}" alt="">
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <h5 class="image-text-section-heading">SNS계정 셀프관리 시작해보세요.</h5>
-            <p class="image-text-section-text-1 my-4">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 
-              인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
-              <h5 class="image-text-section-heading-2">XXX만의 차별화</h5>
-              <div class="image-text-section-tick-text mt-3">
-                <div class="row">
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">365일 24시간 자동화 주문</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">빠른 작업 속도</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">실제 활성 계정으로 구성</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">100% 안전성 보장</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">SNS랭킹 최적화 된 서비스</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">단기간 순위변화</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">마케팅 전문가 무료상담</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <h6 class="image-text-section-tick-text">자체개발 SNS솔루션</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="btn image-text-section-btn text-light mt-3">주문하기</button>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    <!-- END: About Section -->
 
     <section class="dark-section text-light mt-5 font-family">
       <div class="container py-4">
@@ -455,6 +372,43 @@
         <img src="{{ asset('front_asset/images/insta-ad-image.png') }}" alt="">
       </div>
     </section>
+
+    <!-- START: Testimonias Section -->
+    <div class="section section-testimonials">
+        <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <span class="label-new" data-aos="slide-up" data-aos-once="true" data-aos-duration="1200">TESTIMONIALS</span>
+            <h1 class="section-title">What Clients Say About Us</h1>
+          </div>
+          <div class="col-12 col-lg-6">
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut id eu elit augue felis. Penatibus in erat sed id massa, feugiat. Quam nulla</p>
+            <a href="javascript:void(0)" class="btn image-text-section-btn text-light mt-3 position-static aos-init aos-animate shadow-none" data-aos="fade-right" data-aos-once="true" data-aos-duration="1200">구매후기 작성하기</a>
+          </div>
+        </div>
+
+        <!-- Carousel -->
+        <div>
+          <div class="testimonials">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon h-100">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container">
