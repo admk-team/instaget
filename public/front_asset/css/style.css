@@ -94,7 +94,7 @@
   /* background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
 }
 .carousel-caption{
-  top: 440px;
+  top: 230px;
   z-index: 1;
 }
 .carousel-caption h3{
@@ -104,6 +104,9 @@
 }
 .slider-caption{
   font-size: 25px;
+}
+.text-on-img{
+  color: #d98100;
 }
 .insta-btn{
   background-color: #d98100;

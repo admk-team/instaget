@@ -80,12 +80,13 @@
             </div>
 
             <div class="carousel-caption trickcenter">
-              <!-- <h3>Increase followers and likes with just a few clicks</h3>
+              <h3><span class="text-on-img">팔로워, 좋아요 늘리기 </span>  <br>
+                24시간 자동솔루션</h3>
               <div>
                 <p class="slider-caption">
-                  Solve your worries about social media followers and likes through Instagram
+                  SNS 실제한국인 팔로워, 좋아요, 순위 트래픽 <br> 간편주문으로 마케팅효과 톡톡히 보세요.
                 </p>
-              </div> -->
+              </div>
               <div class="d-flex justify-content-center mt-5">
                 <button class="insta-btn">What is instagram</button>
                 <button class="service-btn">Service</button>
