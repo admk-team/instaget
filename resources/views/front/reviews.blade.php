@@ -54,7 +54,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Customer Review</a>
+                <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">Frequently Asked Questions</a>
@@ -114,11 +114,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star10" name="rating" value="5" checked/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star9" name="rating" value="4" checked/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star8" name="rating" value="3" checked/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star7" name="rating" value="2" checked/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star6" name="rating" value="1" checked/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -130,11 +130,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star15" name="rating" value="5" checked/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star14" name="rating" value="4" checked/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star13" name="rating" value="3" checked/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star12" name="rating" value="2" checked/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star11" name="rating" value="1" checked/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -146,11 +146,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star20" name="rating" value="5"/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star19" name="rating" value="4"/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star18" name="rating" value="3"/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star17" name="rating" value="2"/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star16" name="rating" value="1"/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -162,11 +162,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star25" name="rating" value="5"/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star24" name="rating" value="4"/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star23" name="rating" value="3"/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star22" name="rating" value="2"/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star21" name="rating" value="1"/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -178,11 +178,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star30" name="rating" value="5"/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star29" name="rating" value="4"/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star28" name="rating" value="3"/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star27" name="rating" value="2"/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star26" name="rating" value="1"/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -194,11 +194,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star35" name="rating" value="5"/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star34" name="rating" value="4"/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star33" name="rating" value="3"/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star32" name="rating" value="2"/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star31" name="rating" value="1"/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -210,11 +210,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star4" name="rating" value="5" /><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star39" name="rating" value="4" /><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star38" name="rating" value="3" /><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star37" name="rating" value="2" /><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star36" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -226,11 +226,11 @@
                 <td>Instagram follower increase review!</td>
                 <td>
                   <div class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5" title="Meh">5 stars</label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label for="star4" title="Kinda bad">4 stars</label>
-                    <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Kinda bad">3 stars</label>
-                    <input type="radio" id="star2" name="rating" value="2" checked /><label for="star2" title="Sucks big tim">2 stars</label>
-                    <input type="radio" id="star1" name="rating" value="1" checked /><label for="star1" title="Sucks big time">1 star</label>
+                    <input type="radio" id="star5" name="rating" value="5"/><label for="star5" title="Meh">5 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4"/><label for="star4" title="Kinda bad">4 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3"/><label for="star3" title="Kinda bad">3 stars</label>
+                    <input type="radio" id="star2" name="rating" value="2"/><label for="star2" title="Sucks big tim">2 stars</label>
+                    <input type="radio" id="star1" name="rating" value="1"/><label for="star1" title="Sucks big time">1 star</label>
                   </div>
                 </td>
                 <td>this**</td>
@@ -261,6 +261,68 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="footer-img">
+              <img src="{{ asset('front_asset/images/logo.png') }}" alt="">
+            </div>
+            <ul class="list-group border-0">
+              <li class="list-group-item border-0">
+                <i class="bi bi-envelope"></i> &nbsp;
+                <span>info@instaget.com</span>
+              </li>
+              <li class="list-group-item border-0">
+                <i class="bi bi-telephone"></i> &nbsp;
+                <span>++0012345678</span>
+              </li>
+              <li class="list-group-item border-0">
+                <i class="bi bi-geo-alt"></i> &nbsp;
+                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul (Seongsu-dong 2-ga)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="footer-heading">Services</h2>
+            <ul class="list-group border-0">
+              <li class="list-group-item border-0">
+                <span>Buy Insatgrams Followers</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>Buy Insatgrams Likes</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>Buy Insatgrams Views</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>Insatgrams Reels</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="footer-heading">Company</h2>
+            <ul class="list-group border-0">
+              <li class="list-group-item border-0">
+                <span>Contact Us</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>About Us</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>Privacy Policy</span>
+              </li>
+              <li class="list-group-item border-0">
+                <span>Term of Services</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row pt-5">
+          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
