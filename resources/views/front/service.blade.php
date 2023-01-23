@@ -68,7 +68,7 @@
         </div>
       </nav>
     </header>
-    <div class="container py-5  d-block d-sm-none">
+    <div class="container py-5">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">

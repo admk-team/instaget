@@ -476,8 +476,20 @@ body {
         #962fbf,
         #4f5bd5
     );
+    border: 0!important;
 }
-
+.list-group-item:first-child {
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+}
+.list-group-item{
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    border: 0!important;
+}
+.mobile-services-nav .service .btn{
+    border: 0!important;
+}
 .youtube-icon {
     background: rgb(255 0 0);
 }
