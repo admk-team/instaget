@@ -9,7 +9,6 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" />
@@ -23,7 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <title>Instaget</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -60,7 +63,7 @@
                 <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Frequently Asked Questions</a>
+                <a class="nav-link" href="{{ url('/faq') }}">Frequently Asked Questions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">Login</a>
@@ -250,90 +253,75 @@
       </div>
     </section>
 
-    <section class="image-text-section font-family pt-3">
-      <div class="container">
+    <!-- START: About Section -->
+    <div class="container">
+      <section class="section section-about">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <img class="image-text-section-image" src="{{ asset('front_asset/images/home-4.jpg') }}" alt="">
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <h5 class="image-text-section-heading">SNS계정 셀프관리 시작해보세요.</h5>
-            <p class="image-text-section-text-1 my-4">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 
-              인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
-              <h5 class="image-text-section-heading-2">XXX만의 차별화</h5>
-              <div class="image-text-section-tick-text mt-3">
-                <div class="row">
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">365일 24시간 자동화 주문</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">빠른 작업 속도</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">실제 활성 계정으로 구성</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">100% 안전성 보장</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">SNS랭킹 최적화 된 서비스</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">단기간 순위변화</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <span class="image-text-section-tick-text">마케팅 전문가 무료상담</span>
-                    </div>
-                  </div>
-                  <div class="col-6 row mb-2">
-                    <div class="col-1">
-                      <i class="bi bi-check-circle-fill tick-icon"></i>
-                    </div>
-                    <div class="col-11">
-                      <h6 class="image-text-section-tick-text">자체개발 SNS솔루션</h6>
-                    </div>
-                  </div>
+          <!-- Image Area -->
+          <div class="col-12 col-lg-6 image-area mb-5 mb-lg-0">
+            <div class="image-backgroud">
+              <img src="{{ asset('front_asset/images/제목을-입력해주세요_-007.png') }}" class="main-img" alt="">
+              <img src="{{ asset('front_asset/images/chart.png') }}" class="img1 d-none d-sm-block" alt="" data-aos="fade-left" data-aos-once="true" data-aos-duration="1500">
+              <div class="box1 d-flex align-items-center d-none d-sm-block" data-aos="fade-right" data-aos-once="true" data-aos-duration="1500">
+                <div class="icon">
+                  <img src="{{ asset('front_asset/images/dribbble.PNG') }}" alt="">
+                </div>
+                <div class="text">
+                  <h3>185+</h3>
+                  <p>Brands Joined</p>
                 </div>
               </div>
-              <button class="btn image-text-section-btn text-light mt-3">주문하기</button>
+            </div>
+          </div>
+          <!-- Text Area -->
+          <div class="col-12 col-lg-6 text-area">
+            <h1 class="title">SNS계정 셀프관리 시작해보세요.</h1>
+            <p class="description">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
+            <h3 class="list-title">XXX만의 차별화</h3>
+            <div class="d-flex gap-4 flex-wrap">
+              <ul class="p-0">
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>365일 24시간 자동화 주문</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>실제 활성 계정으로 구성</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>SNS랭킹 최적화 된 서비스</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>마케팅 전문가 무료상담 </span>
+                </li>
+              </ul>
+              <ul class="p-0">
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>빠른 작업 속도</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>100% 안전성 보장</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>단기간 순위변화</span>
+                </li>
+                <li class="d-flex align-items-center gap-2 mb-2">
+                  <span class="bi bi-check-circle-fill tick-icon"></span>
+                  <span>자체개발 SNS솔루션</span>
+                </li>
+              </ul>
+            </div>
+            <button class="btn image-text-section-btn text-light mt-3 position-static shadow-none" data-aos="fade-left" data-aos-once="true" data-aos-duration="1200">주문하기</button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+    <!-- END: About Section -->
 
     <section class="dark-section text-light mt-5 font-family">
       <div class="container py-4">
@@ -386,6 +374,400 @@
         <img src="{{ asset('front_asset/images/insta-ad-image.png') }}" alt="">
       </div>
     </section>
+
+    <!-- START: Testimonias Section -->
+    <div class="section section-testimonials mb-5">
+        <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <span class="label-new" data-aos="slide-up" data-aos-once="true" data-aos-duration="1200">TESTIMONIALS</span>
+            <h1 class="section-title">What Clients Say About Us</h1>
+          </div>
+          <div class="col-12 col-lg-6">
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut id eu elit augue felis. Penatibus in erat sed id massa, feugiat. Quam nulla</p>
+            <a href="javascript:void(0)" class="btn image-text-section-btn text-light mt-3 position-static aos-init aos-animate shadow-none" data-aos="fade-right" data-aos-once="true" data-aos-duration="1200">구매후기 작성하기</a>
+          </div>
+        </div>
+
+        <!-- Carousel Desktop -->
+        <div id="testimonials" class="testimonials owl-carousel owl-theme d-none d-xl-block">
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel sm -->
+        <div id="testimonials_md" class="testimonials owl-carousel owl-theme d-md-none">
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel md -->
+        <div id="testimonials_lg" class="testimonials owl-carousel owl-theme d-none d-md-block d-xl-none">
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <div class="info d-flex align-items-center justify-content-between">
+              <div class="author d-flex align-items-center gap-3">
+                <div class="img">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                </div>
+                <div>
+                  <div class="name">Nydia Larson</div>
+                  <div class="profession">Freelancer</div>
+                </div>
+              </div>
+              <div class="icon d-flex">
+                <span class="bi bi-quote"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Testimonias Section -->
+
+    <!-- START: Blog Section -->
+    <div class="section section-blog py-4 mb-5">
+     <div class="container">
+      <div class="text-center mb-5">
+          <span class="label-new">BLOG & NEWS</span>
+          <h1 class="section-title">Latest Blog & News</h1>
+          <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut id eu elit augue<br> felis. Penatibus in erat sed id massa, feugiat. Quam nulla facilisi</p>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="blog-post">
+              <div class="thumbnail">
+                <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/above-top-desk-of-sme-owner-people-home-office-call-talk-in-seo-chart-sale-report.jpg" alt="">
+              </div>
+              <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+              <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+              <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+              <div class="blog-post">
+                <div class="thumbnail">
+                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/stylish-trendy-woman-recording-dance-video-for-social-media-account-on-phone-.jpg" alt="">
+                </div>
+                <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+                <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+                <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="blog-post">
+              <div class="thumbnail">
+                <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/surfing-social-media-for-marketing-analysis.jpg" alt="">
+              </div>
+              <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+              <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+              <a href="javascript:void(0)" class="read-more">READ MORE <span class="bi bi-arrow-right-short"></span></a>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+    <!-- End: Blog Section -->
 
     <footer class="footer">
       <div class="container p-5">
@@ -445,7 +827,7 @@
           </div>
         </div>
         <div class="row pt-5">
-          <p class="text-center text-white">Copyright © INSTAGET. All rights reserved.</p>
+          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -454,7 +836,11 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="{{ asset('front_asset/js/owl.carousel.min.js') }}"></script>
+  <script>
+    AOS.init();
+  </script>
   <!-- custom JS code after importing jquery and owl -->
   <script type="text/javascript">
       $(document).ready(function() {
@@ -476,6 +862,25 @@
               }
           }
       })
+  </script>
+
+  <script>
+    $(document).ready(function(){
+      $('#testimonials').owlCarousel({
+        items: 3,
+        nav: false
+      });
+
+      $('#testimonials_md').owlCarousel({
+        items: 1,
+        nav: false
+      });
+
+      $('#testimonials_lg').owlCarousel({
+        items: 2,
+        nav: false
+      });
+    });
   </script>
 </body>
 

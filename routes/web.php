@@ -20,3 +20,6 @@ Route::name('front.')->group(function () {
     Route::get('/service', [FrontController::class, 'service'])->name('service');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
 });
+Route::get('/faq', function(){
+    return view('front.faq');
+});
