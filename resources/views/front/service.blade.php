@@ -808,12 +808,12 @@
       })
   </script>
   <script>
-    $('.insta-web-show').hover(function(event) {
-      console.log('first')
-      $('.instagram-pkg-dropdown').addClass('instagram-pkg-dropdown-show');
-  }, function() {
-      $('.instagram-pkg-dropdown').removeClass('instagram-pkg-dropdown-show');
-  });
+  //   $('.insta-web-show').hover(function(event) {
+  //     console.log('first')
+  //     $('.instagram-pkg-dropdown').addClass('instagram-pkg-dropdown-show');
+  // }, function() {
+  //     $('.instagram-pkg-dropdown').removeClass('instagram-pkg-dropdown-show');
+  // });
   </script>
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
