@@ -262,69 +262,353 @@
       </div>
 
     </div>
+    <div class="container">
+      <style>
+        .dropdown-menu li {
+          position: relative;
+        }
+
+        .dropdown-menu .dropdown-submenu {
+          display: none;
+          position: absolute;
+          left: 100%;
+          top: -7px;
+        }
+
+        .dropdown-menu .dropdown-submenu-left {
+          right: 100%;
+          left: auto;
+        }
+
+        .dropdown-menu>li:hover>.dropdown-submenu {
+          display: block;
+        }
+
+        .dropdown-hover:hover>.dropdown-menu {
+          display: inline-block;
+        }
+
+        .dropdown-hover>.dropdown-toggle:active {
+          /*Without this, clicking will make it sticky*/
+          pointer-events: none;
+        }
+        .insta-web{
+          --sub-menu: rgb(255, 255, 255);
+          --sub-level: undefined;
+          opacity: 1;
+          height: auto;
+          visibility: visible;
+          width: 20rem;
+          /* background-color: transparent; */
+          margin: 0!important;
+        }
+        .insta-web li{
+          position: relative;
+          background-color: #fff;
+          /* box-shadow: 0 0 3rem rgb(0 0 0 / 18%); */
+          margin-top: 0.5rem;
+          padding: 0.5rem;
+          display: flex!important;
+          flex-wrap: wrap;
+          flex-direction: column;
+          border-radius: 0.25rem;
+          margin-left: 0;
+        }
+        .insta-web li a{
+          width: 100%;
+          padding: 0.25rem 1rem;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          text-decoration: none;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+          margin: 0.2rem 0;
+          display: flex;
+          margin: 0;
+          width: 100%;
+        }
+        .instagram-li.active{
+          background-color: #d04545!important;
+          color: #fff!important;
+        }
+        .instagram-li{
+          background-color: #d04545!important;
+          color: #fff!important;
+          display: flex;
+        }
+        .instagram-li a:hover{
+          background-color: #d04545!important;
+          color: #fff!important;
+        }
+        .instagram-fo:hover,.instagram-fo a:hover{
+          background-color: #22a568!important;
+          color: #fff!important;
+        }
+        .instagram-ply:hover,.instagram-ply a:hover{
+          background-color: #b34c82!important;
+          color: #fff!important;
+        }
+        .instagram-cmnt:hover,.instagram-cmnt a:hover{
+          background-color: #b47306!important;
+          color: #fff!important;
+        }
+        .instagram-reel:hover,.instagram-reel a:hover{
+          background-color: #e93f33!important;
+          color: #fff!important;
+        }
+        .instagram-li a{
+          color: white!important;
+        }
+        .instagram-fo a{
+          color: #22a568!important;
+        }
+        .instagram-ply a{
+          color: #b34c82!important;
+        }
+        .instagram-cmnt a{
+          color: #b47306!important;
+        }
+        .instagram-reel a{
+          color: #e93f33!important;
+        }
+        .instagram-li a,.instagram-fo a,.instagram-ply a,.instagram-cmnt a ,.instagram-reel a{
+          font-weight: 700!important;
+          line-height: 1.5!important;
+          white-space: normal!important;
+          display: inline-block!important;
+          margin: auto!important;
+          font-size: 18px;
+        }
+        .insta-web .dropdown-submenu{
+          opacity: 1;
+          height: auto;
+          visibility: visible;
+          left: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 0 0.4rem;
+          background-color: #fff;
+          box-shadow: 0 0 3rem rgb(0 0 0 / 18%);
+          margin-top: 0.5rem;
+          padding: 0.5rem;
+          width: 20rem;
+          z-index: 9999;
+        }
+        .insta-web .dropdown-submenu li{
+          padding: 0px!important;
+        }
+        .insta-web .dropdown-submenu li a{
+          color: black!important;
+        }
+        .insta-web .dropdown-submenu li a:hover{
+          background-color: white!important;
+          border-left: 3px solid #d04545!important;
+        }
+        .insta-web .instagram-ply li a:hover{
+          background-color: white!important;
+          border-left: 3px solid #b34c82!important;
+        }
+        .insta-web .instagram-cmnt li a:hover{
+          background-color: white!important;
+          border-left: 3px solid #b47306!important;
+        }
+        .insta-web .instagram-reel li a:hover{
+          background-color: white!important;
+          border-left: 3px solid #e93f33!important;
+        }
+      </style>
+    </div>
     <div class="container pt-5 d-none d-md-flex justify-content-center">
-      <ul class="list-group list-group-horizontal social_icon">
+      <div class="dropdown">
+        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-instagram text-white"></i>&nbsp;
+          <span class="d-none d-md-block text-white">인스 타 그램</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-instagram text-white"></i>&nbsp;
+          <span class="d-none d-md-block text-white">인스 타 그램</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Likes</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Automatic Instagram Likes</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Monthly Likes</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Free Instagram Likes</a>
+              </li>
+              <li>
+            </ul>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Views</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Automatic Instagram Views</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Free Instagram Views</a>
+              </li>
+              <li>
+            </ul>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Comments</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Automatic Instagram Comments</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Comments Like</a>
+              </li>
+              <li>
+            </ul>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Reels Video Views</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Reels Like</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Buy Instagram Reels Comments</a>
+              </li>
+              <li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-youtube"></i>&nbsp;
+          <span class="d-none d-md-block">유튜브</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      {{-- <ul class="list-group list-group-horizontal social_icon">
         <li class="list-group-item instagram-icon d-flex instagram-btns">
           <i class="bi bi-instagram"></i>&nbsp;
           <span class="d-none d-md-block">인스 타 그램</span>
-          <div class="card social-dropdown1 d-block">
-            <ul>
-              <li><a href="">인스타그램 좋아요 구매</a></li>
-              <li><a href="">인스타그램 팔로워 구매</a></li>
-              <li><a href="">인스타그램 댓글 구매</a></li>
-              <li><a href="">인스타그램 릴</a></li>
-            </ul>
-          </div>
         </li>
         <li class="list-group-item youtube-icon d-flex instagram-btns">
           <i class="bi bi-youtube"></i>&nbsp;
           <span class="d-none d-md-block">유튜브</span>
-          <div class="card social-dropdown">
-            <ul>
-              <li><a href="">인스타그램 좋아요 구매</a></li>
-              <li><a href="">인스타그램 팔로워 구매</a></li>
-              <li><a href="">인스타그램 댓글 구매</a></li>
-              <li><a href="">인스타그램 릴</a></li>
-            </ul>
-          </div>
         </li>
         <li class="list-group-item naver-icon d-flex instagram-btns">
           <span class="naver-span">N</span> &nbsp;
           <span class="d-none d-md-block">N사마케팅</span>
-          <div class="card social-dropdown">
-            <ul>
-              <li><a href="">인스타그램 좋아요 구매</a></li>
-              <li><a href="">인스타그램 팔로워 구매</a></li>
-              <li><a href="">인스타그램 댓글 구매</a></li>
-              <li><a href="">인스타그램 릴</a></li>
-            </ul>
-          </div>
         </li>
         <li class="list-group-item appMarketing-icon d-flex instagram-btns">
           <i class="bi bi-phone"></i> &nbsp;
           <span class="d-none d-md-block">앱마케팅</span>
-          <div class="card social-dropdown">
-            <ul>
-              <li><a href="">인스타그램 좋아요 구매</a></li>
-              <li><a href="">인스타그램 팔로워 구매</a></li>
-              <li><a href="">인스타그램 댓글 구매</a></li>
-              <li><a href="">인스타그램 릴</a></li>
-            </ul>
-          </div>
         </li>
         <li class="list-group-item talk-icon d-flex instagram-btns">
           <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
           <span class="d-none d-md-block">K사마케팅</span>
-          <div class="card social-dropdown">
-            <ul>
-              <li><a href="">인스타그램 좋아요 구매</a></li>
-              <li><a href="">인스타그램 팔로워 구매</a></li>
-              <li><a href="">인스타그램 댓글 구매</a></li>
-              <li><a href="">인스타그램 릴</a></li>
-            </ul>
-          </div>
         </li>
-      </ul>
+      </ul> --}}
     </div>
     <div class="container pb-5">
       <div class="row justify-content-center">
@@ -550,7 +834,8 @@
               </li>
               <li class="list-group-item border-0">
                 <i class="bi bi-geo-alt"></i> &nbsp;
-                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul (Seongsu-dong 2-ga)</span>
+                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul
+                  (Seongsu-dong 2-ga)</span>
               </li>
             </ul>
           </div>
@@ -621,13 +906,13 @@
           }
       })
   </script>
-  {{-- <script>
-    $('.instagram-btns').hover(function(event) {
-      $(this).find('.social-dropdown').slideDown();
+  <script>
+    $('.insta-web-show').hover(function(event) {
+      $(this).find('.insta-web').show();
   }, function() {
       $(this).find('.social-dropdown').hide();
   });
-  </script> --}}
+  </script>
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
   const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
