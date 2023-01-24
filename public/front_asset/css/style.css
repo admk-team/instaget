@@ -869,23 +869,23 @@ margin: 5px;
     color: #fff!important;
     display: flex;
   }
-  .instagram-li a:hover{
+  .instagram-li:hover > a{
     background-color: #d04545!important;
     color: #fff!important;
   }
-  .instagram-fo:hover,.instagram-fo a:hover{
+  .instagram-fo:hover > a{
     background-color: #22a568!important;
     color: #fff!important;
   }
-  .instagram-ply:hover,.instagram-ply a:hover{
+  .instagram-ply:hover > a{
     background-color: #b34c82!important;
     color: #fff!important;
   }
-  .instagram-cmnt:hover,.instagram-cmnt a:hover{
+  .instagram-cmnt:hover > a{
     background-color: #b47306!important;
     color: #fff!important;
   }
-  .instagram-reel:hover,.instagram-reel a:hover{
+  .instagram-reel:hover > a{
     background-color: #e93f33!important;
     color: #fff!important;
   }
@@ -1038,6 +1038,10 @@ margin: 5px;
   .youtube-web .dropdown-submenu li a{
     color: black!important;
   }
+
+  .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
 
 /*====================== Mobile services menu ============================*/
 .mobile-services-nav {
