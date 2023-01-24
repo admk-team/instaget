@@ -9,6 +9,11 @@
     --orange-light: #ffa500;
     --orange-dim: rgba(255, 90, 9, 0.13);
     --dark: #1b2430;
+    --blue: #705cfb;
+    --blue-light: #877bff;
+    --blue-dim: #f5f3ff;
+    --orange2: #fe623e;
+    --orange3: #fe943e;
 
     --font: "Roboto", arial, sans-serif;
 }
@@ -1339,4 +1344,186 @@ li {
     height: 72vh;
     margin-bottom: 35px;
   }
+}
+
+/*============================ Reviews hero Section ==========================*/
+.reviews-section-hero {
+    background-color: var(--blue-dim);
+    padding: 4rem 3rem 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.reviews-section-hero .text {
+    margin-bottom: 2.5rem;
+}
+
+.reviews-section-hero .text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font);
+    margin-bottom: 1rem;
+}
+
+.reviews-section-hero .text h3 {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font);
+    margin-bottom: 1.25rem;
+}
+
+.reviews-section-hero .text p {
+    font-family: var(--font);
+    font-size: 1.25rem;
+}
+
+.reviews-section-hero .counts .count .img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 100%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.reviews-section-hero .counts .count .img img {
+    position: absolute;
+    width: 260%;
+    height: auto;
+    border-radius: 100%;
+}
+
+.reviews-section-hero .counts .count h3 {
+    color: var(--orange2);
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: var(--font);
+    margin-bottom: 1.25rem;
+}
+
+.reviews-section-hero .counts .count h1 {
+    text-align: center;
+    font-family: var(--font);
+    font-size: 3.75rem;
+    font-weight: 400;
+}
+
+/*============================ Reviews table Section ==========================*/
+.reviews-section-table .table-nav a {
+    color: #ABABAD;
+    font-size: 14.4px;
+    text-decoration: none;
+    font-family: var(--font);
+    font-weight: 500;
+}
+
+.reviews-section-table .table-nav a .bi {
+    font-size: 16px;
+}
+
+.reviews-section-table .table-nav a.active {
+    color: var(--blue-light);
+}
+
+.reviews-section-table .table {
+    border-top: 2px solid #2B2C34;
+    font-family: var(--font);
+}
+
+.reviews-section-table .table>:not(:first-child) {
+    border-top: 0;
+}
+
+.reviews-section-table th {
+    text-align: center;
+    padding: 18px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reviews-section-table td {
+    font-size: 16px;
+    text-align: center;
+    padding: 18px 0;
+    color: rgb(43, 44, 52);
+}
+
+.reviews-section-table .pagination {
+    margin-top: 3rem;
+}
+
+.reviews-section-table .pagination .page-link {
+    color: #000000;
+    font-family: var(--font);
+    padding: 13.5px 21.2px;
+    color: #2B2C34;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;
+}
+
+.reviews-section-table .pagination .page-item.active .page-link {
+    color: var(--blue-light);
+    background-color: initial;
+}
+.reviews-section-table .pagination .page-link:hover {
+    background-color: rgba(255,255,255,0);
+}
+
+
+.reviews-section-table .pagination .page-link[aria-label="Previous"],
+.reviews-section-table .pagination .page-link[aria-label="Next"] {
+    background-color: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-section-table .pagination .page-link[aria-label="Previous"] img,
+.reviews-section-table .pagination .page-link[aria-label="Next"] img {
+    width: 11px;
+    height: 17;
+}
+
+.reviews-section-table .banner {
+    background-color: #f6f6f6;
+    padding: 2rem 1.5rem;
+    border-radius: 3px;
+}
+
+.reviews-section-table .banner h1 {
+    font-family: var(--font);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2b2c4b;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-section-table .banner p {
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #2b2c4b;
+    margin-bottom: 0;
+}
+
+.reviews-section-table .banner .btn-cta {
+    background-color: var(--orange3);
+    font-family: var(--font);
+    color: white;
+    font-size: 22px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 400;
+    box-shadow: none;
+}
+
+.reviews-section-table .banner .btn-cta img {
+    width: auto;
+    height: 36px;
 }
