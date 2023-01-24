@@ -419,54 +419,19 @@
           background-color: white!important;
           border-left: 3px solid #e93f33!important;
         }
+        .instagram-pkg-dropdown-show{
+          display: block!important;
+        }
       </style>
     </div>
     <div class="container pt-5 d-none d-md-flex justify-content-center">
-      <div class="dropdown">
-        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+      <div class="dropdown me-2">
+        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown" data-mdb-toggle="dropdown"
           aria-expanded="false">
           <i class="bi bi-instagram text-white"></i>&nbsp;
           <span class="d-none d-md-block text-white">인스 타 그램</span>
         </button>
-        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
-          <li class="instagram-li">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
-              <i class="bi bi-caret-right"></i>
-            </a>
-          </li>
-          <li class="instagram-fo">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-person p-1"></i> Buy Instagram Likes
-            </a>
-          </li>
-          <li class="instagram-ply">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-play-fill"></i> Buy Instagram Views
-              <i class="bi bi-caret-right"></i>
-            </a>
-          </li>
-          <li class="instagram-cmnt">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
-              <i class="bi bi-caret-right"></i>
-            </a>
-          </li>
-          <li class="instagram-reel">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-file-play"></i> Instagram Reels
-              <i class="bi bi-caret-right"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-          aria-expanded="false">
-          <i class="bi bi-instagram text-white"></i>&nbsp;
-          <span class="d-none d-md-block text-white">인스 타 그램</span>
-        </button>
-        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
+        <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
           <li class="instagram-li">
             <a class="dropdown-item" href="#">
               <i class="bi bi-heart p-1"></i> Buy Instagram Likes
@@ -549,11 +514,125 @@
           </li>
         </ul>
       </div>
-      <div class="dropdown">
-        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+      <div class="dropdown me-2">
+        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="instaFollowDropDown" data-mdb-toggle="dropdown"
           aria-expanded="false">
-          <i class="bi bi-youtube"></i>&nbsp;
-          <span class="d-none d-md-block">유튜브</span>
+          <i class="bi bi-youtube  text-white"></i>&nbsp;
+          <span class="d-none d-md-block  text-white">유튜브</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="instaFollowDropDown">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown me-2">
+        <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <span class="naver-span  text-white">N</span> &nbsp;
+          <span class="d-none d-md-block  text-white">N사마케팅</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="instaDropDown">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown me-2">
+        <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-phone text-white"></i> &nbsp;
+          <span class="d-none d-md-block text-white">앱마케팅</span>
+        </button>
+        <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
+          <li class="instagram-li">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-fo">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person p-1"></i> Buy Instagram Likes
+            </a>
+          </li>
+          <li class="instagram-ply">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-play-fill"></i> Buy Instagram Views
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-cmnt">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+          <li class="instagram-reel">
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-file-play"></i> Instagram Reels
+              <i class="bi bi-caret-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown me-2">
+        <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
+          <span class="d-none d-md-block text-white">K사마케팅</span>
         </button>
         <ul class="dropdown-menu insta-web active" aria-labelledby="dropdownMenuButton">
           <li class="instagram-li">
@@ -908,9 +987,10 @@
   </script>
   <script>
     $('.insta-web-show').hover(function(event) {
-      $(this).find('.insta-web').show();
+      console.log('first')
+      $('.instagram-pkg-dropdown').addClass('instagram-pkg-dropdown-show');
   }, function() {
-      $(this).find('.social-dropdown').hide();
+      $('.instagram-pkg-dropdown').removeClass('instagram-pkg-dropdown-show');
   });
   </script>
   <script>
