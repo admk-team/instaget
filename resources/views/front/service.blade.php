@@ -68,7 +68,7 @@
         </div>
       </nav>
     </header>
-    <div class="container py-5">
+    <div class="container py-1  d-block d-sm-none">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">
@@ -267,7 +267,7 @@
         <li class="list-group-item instagram-icon d-flex instagram-btns">
           <i class="bi bi-instagram"></i>&nbsp;
           <span class="d-none d-md-block">인스 타 그램</span>
-          <div class="card social-dropdown">
+          <div class="card social-dropdown1 d-block">
             <ul>
               <li><a href="">인스타그램 좋아요 구매</a></li>
               <li><a href="">인스타그램 팔로워 구매</a></li>
@@ -328,7 +328,7 @@
     </div>
     <div class="container pb-5">
       <div class="row justify-content-center">
-        <div class="d-none d-md-block col-lg-6 pakg_heading p-5 ">
+        <div class="d-none d-md-block col-lg-6 pakg_heading p-2 mb-1 ">
           <h3 class="text-center heading">인스타팔로워늘리기</h3>
           <span class="text-center p-3 title">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다.</span> <br> <span
             class="text-center p-3 title">365일24시간연중무휴자동주문처리</span>
@@ -590,7 +590,7 @@
           </div>
         </div>
         <div class="row pt-5">
-          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
+          <p class="text-center text-white">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -621,13 +621,13 @@
           }
       })
   </script>
-  <script>
+  {{-- <script>
     $('.instagram-btns').hover(function(event) {
       $(this).find('.social-dropdown').slideDown();
   }, function() {
       $(this).find('.social-dropdown').hide();
   });
-  </script>
+  </script> --}}
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
   const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
