@@ -236,17 +236,17 @@
         <div class="row">
           <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
             <img src="{{ asset('front_asset/images/home-1.png') }}" alt="">
-            <h5 class="card-section-lower-text-1 mt-3">1,159,250</h5>
+            <h5 class="card-section-lower-text-1 mt-3" id="animateNumber1">0</h5>
             <h6 class="card-section-lower-text-2">총 누적 주문</h6>
           </div>
           <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
             <img src="{{ asset('front_asset/images/home-2.png') }}" alt="">
-            <h5 class="card-section-lower-text-1 mt-3">3,689</h5>
+            <h5 class="card-section-lower-text-1 mt-3" id="animateNumber2">0</h5>
             <h6 class="card-section-lower-text-2">오늘 완료된 주문</h6>
           </div>
           <div class="col-4 d-flex flex-column justify-content-center align-items-center text-center">
             <img src="{{ asset('front_asset/images/home-3.png') }}" alt="">
-            <h5 class="card-section-lower-text-1 mt-3">146,800</h5>
+            <h5 class="card-section-lower-text-1 mt-3" id="animateNumber3">0</h5>
             <h6 class="card-section-lower-text-2">누적 회원 수</h6>
           </div>
         </div>
@@ -882,6 +882,68 @@
       });
     });
   </script>
+
+<script>
+  (function($) {
+    $.fn.animateNumbers = function(stop, commas, duration, ease) {
+        return this.each(function() {
+            var $this = $(this);
+            var isInput = $this.is('input');
+            var start = parseInt(isInput ? $this.val().replace(/,/g, "") : $this.text().replace(/,/g, ""));
+            var regex = /(\d)(?=(\d\d\d)+(?!\d))/g;
+            commas = commas === undefined ? true : commas;
+            
+            // number inputs can't have commas or it blanks out
+            if (isInput && $this[0].type === 'number') {
+                commas = false;
+            }
+            
+            $({value: start}).animate({value: stop}, {
+                duration: duration === undefined ? 1000 : duration,
+                easing: ease === undefined ? "swing" : ease,
+                step: function() {
+                    isInput ? $this.val(Math.floor(this.value)) : $this.text(Math.floor(this.value));
+                    if (commas) {
+                        isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
+                    }
+                },
+                complete: function() {
+                    if (parseInt($this.text()) !== stop || parseInt($this.val()) !== stop) {
+                        isInput ? $this.val(stop) : $this.text(stop);
+                        if (commas) {
+                            isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
+                        }
+                    }
+                }
+            });
+        });
+    };
+  })(jQuery);
+</script>
+
+<script>
+  $(document).ready(function(){
+    window.addEventListener('scroll', (event) => {
+      if (isInViewport($("#animateNumber1").get(0)))
+        $("#animateNumber1").animateNumbers(1159250);
+      if (isInViewport($("#animateNumber2").get(0)))
+        $("#animateNumber2").animateNumbers(3689);
+      if (isInViewport($("#animateNumber3").get(0)))
+        $("#animateNumber3").animateNumbers(146800);
+    });
+  });
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
+</script>
 </body>
 
 </html>
