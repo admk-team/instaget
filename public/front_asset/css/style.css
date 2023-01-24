@@ -592,7 +592,7 @@ margin: 5px;
 }
 
 .tab-content-parent {
-    padding: 1rem;
+    padding: 1px;
 }
 
 .nav-tabs {
@@ -623,7 +623,7 @@ margin: 5px;
     margin-top: -10px;
     z-index: 1;
     border-radius: 10px;
-    width: 97%;
+    width: 100%;
     background: white;
     box-shadow: 0 4px 7px -1px #a8a8a8;
 }

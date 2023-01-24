@@ -594,7 +594,7 @@
               <div class="p-4 justify-content-center d-flex">
                 <h4 class="sale-price">57,000원 </h4> &nbsp;<del class="orignal-price"> 60,000</del>
               </div>
-              <div class="p-3 justify-content-center">
+              <div class="p-3 justify-content-center d-none d-md-block">
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
