@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\PackageController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::name('admin.')->group(function () {
     // Services 
     Route::resource('services' , ServiceController::class);
     Route::get('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
+
+    // Packages 
+    Route::resource('package' , PackageController::class );
+    Route::get('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
 
 });
 

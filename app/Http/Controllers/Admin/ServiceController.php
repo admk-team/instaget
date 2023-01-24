@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 
 class ServiceController extends Controller
@@ -40,12 +41,13 @@ class ServiceController extends Controller
     {
         
         $request->validate([
-            'title' => 'required',
-            'image' => 'required'
+            'title' => 'required|unique:services,title',
+            'image' => 'required',
         ]);
-
+        $title = strtolower($request->title);
         $model = new Service();
         $model->title = $request->title;
+        $model->slug = Str::slug($title , '-');
         if($request->hasFile('image')){
             $path  = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
@@ -76,11 +78,9 @@ class ServiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        
+    { 
         $service = Service::findorFail($id);
         return view('admin.services.edit' , compact('service'));   
-
     }
 
     /**
@@ -93,11 +93,15 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:categories,title',
             'image' => 'required'
         ]);
+        
+        $title = strtolower($request->title);
         $model = Service::findorFail($id);
         $model->title = $request->title;
+        $model->slug = Str::slug($title , '-');
+
         if($request->has('image')){
             if(isset($model->image)){
                 $image_path  = public_path('storage/'.$model->image);

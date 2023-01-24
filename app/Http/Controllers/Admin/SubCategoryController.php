@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\SubCategory;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+
 
 
 class SubCategoryController extends Controller
@@ -44,17 +46,17 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
         $request->validate([
             'sub_category' => 'required',
-            'title' => 'required',
+            'title' => 'required|unique:categories,title',
             'image' => 'required'
         ]);
-
+        $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->sub_category;
         $model->title = $request->title ;
-        
+        $model->slug = Str::slug($title , '-');
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/subcategory' , 'public');
             $model->image  = $image_path;
@@ -104,13 +106,14 @@ class SubCategoryController extends Controller
     {
        $request->validate([
         'sub_category' => 'required',
-        'title' => 'required',
+        'title' => 'required|unique:categories,title',
         'image' => 'required'
        ]);
-
+       $title = strtolower($request->title);
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
+       $model->slug = Str::slug($title , '-');
        
        if($request->has('image')){
         if(isset($model->image)){

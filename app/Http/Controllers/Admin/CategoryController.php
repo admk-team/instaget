@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+
 
 
 class CategoryController extends Controller
@@ -42,14 +44,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:categories,title',
             'image' => 'required',
             'service_id' => 'required'
         ]);
 
+        $title = strtolower($request->title);
         $model = new Category();
         $model->title = $request->title;
         $model->service_id = $request->service_id;
+        $model->slug = Str::slug($title , '-');
 
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/category' , 'public');
@@ -98,14 +102,15 @@ class CategoryController extends Controller
     {
         
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:categories,title',
             'image' => 'required',
             'service_id' => 'required'
         ]);
-
+        $title = strtolower($request->title);
         $model = Category::findorFail($id);
         $model->title = $request->title;
         $model->service_id = $request->service_id;
+        $model->slug = Str::slug($title , '-');
 
         if($request->has('image')){
             if(isset($model->image)){
