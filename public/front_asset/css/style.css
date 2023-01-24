@@ -869,23 +869,23 @@ margin: 5px;
     color: #fff!important;
     display: flex;
   }
-  .instagram-li:hover > a{
+  .instagram-li:hover, .instagram-li:hover > a{
     background-color: #d04545!important;
     color: #fff!important;
   }
-  .instagram-fo:hover > a{
+  .instagram-fo:hover, .instagram-fo:hover > a{
     background-color: #22a568!important;
     color: #fff!important;
   }
-  .instagram-ply:hover > a{
+  .instagram-ply:hover, .instagram-ply:hover > a{
     background-color: #b34c82!important;
     color: #fff!important;
   }
-  .instagram-cmnt:hover > a{
+  .instagram-cmnt:hover, .instagram-cmnt:hover > a{
     background-color: #b47306!important;
     color: #fff!important;
   }
-  .instagram-reel:hover > a{
+  .instagram-reel:hover, .instagram-reel:hover > a{
     background-color: #e93f33!important;
     color: #fff!important;
   }
