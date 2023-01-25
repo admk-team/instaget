@@ -158,7 +158,7 @@
 
           <div class="service">
             <li class="btn list-group-item naver-icon d-flex">
-              <span class="naver-span">N</span> &nbsp;
+              <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt=""> &nbsp;
             </li>
             <div class="content">
               <div class="accordion">
@@ -389,7 +389,7 @@
       <div class="dropdown me-2">
         <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown"
           data-mdb-toggle="dropdown" aria-expanded="false">
-          <span class="naver-span  text-white">N</span> &nbsp;
+          <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt="">
           <span class="d-none d-md-block  text-white">N사마케팅</span>
         </button>
         <ul class="dropdown-menu youtube-web active naver-web" aria-labelledby="youtubeDropDow">
@@ -598,7 +598,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
@@ -695,7 +695,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container d-block d-md-none mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
@@ -792,7 +792,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container d-block d-md-none mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>

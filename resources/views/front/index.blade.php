@@ -66,7 +66,7 @@
                 <a class="nav-link" href="{{ url('/faq') }}">Frequently Asked Questions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Login</a>
+                <a class="nav-link" href="{{ route('front.login') }}">Login</a>
               </li>
             </ul>
           </div>
@@ -333,32 +333,32 @@
         <div class="d-flex flex-column align-items-center">
           <div class="dark-section-cards row d-flex justify-content-center align-items-center mt-3">
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/insta-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/instagram.png') }}"  alt="">
               <h5 class="dark-section-card-title">인스타그램 마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/youtube-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/youtube.png') }}"  alt="">
               <h5 class="dark-section-card-title">유튜브 마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/N-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/naver.png') }}"  alt="">
               <h5 class="dark-section-card-title">N쇼핑,N플레이스 마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/talk-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/talk.png') }}" alt="">
               <h5 class="dark-section-card-title">K사 마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/android-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/android.png') }}"  alt="">
               <h5 class="dark-section-card-title">구글플레이 앱마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4">
-              <img class="mb-3" src="{{ asset('front_asset/images/A-icon.png') }}" alt="">
+              <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/google-play.png') }}"  alt="">
               <h5 class="dark-section-card-title">앱스토어 앱마케팅</h5>
               <p class="dark-section-card-text-1">인스타 팔로워 늘리기는  계정 인지도와 직결됩니다. 한국인 팔로워 구매를 통해 단기간에 계정활성화가 가능합니다. 인스타 좋아요 늘리기를 통해 게시물마다 인게이지먼트를 높여 해시태그마다 인기게시물에 올려드립니다.</p>
             </div>

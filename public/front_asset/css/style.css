@@ -26,6 +26,7 @@ body {
 }
 .navbar-dark .navbar-nav .nav-link {
     color: white;
+    font-family: var(--font);
 }
 .font-family {
     font-family: "Nunito", sans-serif;
@@ -521,10 +522,20 @@ body {
 }
 
 .talk-img {
-    height: 20px;
-    margin-top: 5px;
-    margin-bottom: -1px;
+    height: 38px;
+    position: relative;
+    margin-bottom: -19px;
+    margin-top: -7px;
 }
+@media (max-width: 480px) {
+    .talk-img {
+        height: 36px;
+        position: relative;
+        margin-bottom: -11px;
+        margin-top: -9px;
+    }
+}
+
 
 .heading {
     font-size: 24px;
@@ -1840,3 +1851,17 @@ button,label,span{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
+.social-media-icon{
+    border-radius: 25px;
+    height: 40px;
+}
+
+/* Login */
+.loginform{
+    height: 80px;
+   }
+   .kakoa , 
+   .google{
+    margin-top: -20px;
+   }
+   
