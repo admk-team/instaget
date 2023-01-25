@@ -1818,10 +1818,15 @@ button,label,span{
     margin: -15px;
     border-top: 1px solid black;
     padding-top: 10px;
-    display: none!important;
+    display: none;
 }
 .mobile-checkout-main-show{
-    display: block!important;
+    display: block;
+}
+@media (min-width: 480px) {
+    .mobile-checkout-main-show{
+        display: none !important;
+    }
 }
 .close-down-btn{
     position: relative;
