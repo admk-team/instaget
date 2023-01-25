@@ -264,8 +264,8 @@
     </div>
     <div class="container pt-5 d-none d-md-flex justify-content-center">
       <div class="dropdown me-2">
-        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown" data-mdb-toggle="dropdown"
-          aria-expanded="false">
+        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown"
+          data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-instagram text-white"></i>&nbsp;
           <span class="d-none d-md-block text-white">인스 타 그램</span>
         </button>
@@ -353,8 +353,8 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="youtubeDropDow" data-mdb-toggle="dropdown"
-          aria-expanded="false">
+        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="youtubeDropDow"
+          data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-youtube  text-white"></i>&nbsp;
           <span class="d-none d-md-block  text-white">유튜브</span>
         </button>
@@ -387,8 +387,8 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown" data-mdb-toggle="dropdown"
-          aria-expanded="false">
+        <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown"
+          data-mdb-toggle="dropdown" aria-expanded="false">
           <span class="naver-span  text-white">N</span> &nbsp;
           <span class="d-none d-md-block  text-white">N사마케팅</span>
         </button>
@@ -421,8 +421,8 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-          aria-expanded="false">
+        <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
+          data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-phone text-white"></i> &nbsp;
           <span class="d-none d-md-block text-white">앱마케팅</span>
         </button>
@@ -455,8 +455,8 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-          aria-expanded="false">
+        <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
+          data-mdb-toggle="dropdown" aria-expanded="false">
           <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
           <span class="d-none d-md-block text-white">K사마케팅</span>
         </button>
@@ -598,6 +598,46 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
+              <div class="container d-block d-md-none mobile-checkout-main">
+                <div class="row">
+                  <div class="row justify-content-center close-down-btn">
+                    <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="col-12">
+                    <div class="row justify-center">
+                      <div class="col-4">
+                          <label for="">옵션</label>
+                      </div>
+                      <div class="col-8">
+                        <select name="" id="" class="form-control mb-1">
+                          <option value="">후속 조치</option>
+                          <option value="">좋아요/보기</option>
+                          <option value="">일일 후속 조치</option>
+                        </select>
+                        <select name="" id="" class="form-control">
+                          <option value="">팔로워 50명 추가</option>
+                          <option value="">팔로워 250명 확보</option>
+                          <option value="">팔로워 500명 확보</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-2 mobile-total-section">
+                    <div class="row">
+                      <div class="col-4">
+                        <span>합집합</span>
+                      </div>
+                      <div class="col-8 text-end">
+                        <span>₩0</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
+                    <button class="btn btn-light">쇼핑 바구니</button>
+                    <button class="btn btn-secondary">선택한 제품 주문</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="d-flex pt-4 justify-content-center">
@@ -654,6 +694,46 @@
               <div class="p-3 justify-content-center">
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
+              </div>
+              <div class="container d-block d-md-none mobile-checkout-main">
+                <div class="row">
+                  <div class="row justify-content-center close-down-btn">
+                    <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="col-12">
+                    <div class="row justify-center">
+                      <div class="col-4">
+                          <label for="">옵션</label>
+                      </div>
+                      <div class="col-8">
+                        <select name="" id="" class="form-control mb-1">
+                          <option value="">후속 조치</option>
+                          <option value="">좋아요/보기</option>
+                          <option value="">일일 후속 조치</option>
+                        </select>
+                        <select name="" id="" class="form-control">
+                          <option value="">팔로워 50명 추가</option>
+                          <option value="">팔로워 250명 확보</option>
+                          <option value="">팔로워 500명 확보</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-2 mobile-total-section">
+                    <div class="row">
+                      <div class="col-4">
+                        <span>합집합</span>
+                      </div>
+                      <div class="col-8 text-end">
+                        <span>₩0</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
+                    <button class="btn btn-light">쇼핑 바구니</button>
+                    <button class="btn btn-secondary">선택한 제품 주문</button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -712,10 +792,51 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
+              <div class="container d-block d-md-none mobile-checkout-main">
+                <div class="row">
+                  <div class="row justify-content-center close-down-btn">
+                    <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="col-12">
+                    <div class="row justify-center">
+                      <div class="col-4">
+                          <label for="">옵션</label>
+                      </div>
+                      <div class="col-8">
+                        <select name="" id="" class="form-control mb-1">
+                          <option value="">후속 조치</option>
+                          <option value="">좋아요/보기</option>
+                          <option value="">일일 후속 조치</option>
+                        </select>
+                        <select name="" id="" class="form-control">
+                          <option value="">팔로워 50명 추가</option>
+                          <option value="">팔로워 250명 확보</option>
+                          <option value="">팔로워 500명 확보</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 mt-2 mobile-total-section">
+                    <div class="row">
+                      <div class="col-4">
+                        <span>합집합</span>
+                      </div>
+                      <div class="col-8 text-end">
+                        <span>₩0</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
+                    <button class="btn btn-light">쇼핑 바구니</button>
+                    <button class="btn btn-secondary">선택한 제품 주문</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
     <footer class="footer">
       <div class="container p-5">
@@ -808,14 +929,6 @@
       })
   </script>
   <script>
-  //   $('.insta-web-show').hover(function(event) {
-  //     console.log('first')
-  //     $('.instagram-pkg-dropdown').addClass('instagram-pkg-dropdown-show');
-  // }, function() {
-  //     $('.instagram-pkg-dropdown').removeClass('instagram-pkg-dropdown-show');
-  // });
-  </script>
-  <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
   const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
   const serviceBtns = mobileSeriveNav.querySelectorAll('.service > .btn');
@@ -850,6 +963,14 @@
       });
     })
   })
+  </script>
+  <script>
+    $('.bg_orange').click(function (event) {
+      $('.mobile-checkout-main').addClass('mobile-checkout-main-show');
+     })
+    $('.close-down-btn').click(function (event) {
+      $('.mobile-checkout-main').removeClass('mobile-checkout-main-show');
+     })
   </script>
 </body>
 

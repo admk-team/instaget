@@ -1786,3 +1786,51 @@ li {
     width: auto;
     height: 36px;
 }
+button,label,span{
+    font-family: var(--font);
+}
+.mobile-total-section{
+    background-color: rgb(252, 82, 48) !important;
+    margin: 0px;
+    padding: 12px;
+}
+.mobile-total-section span{
+    color: #ffffff;
+}
+.mobile-down-btn{
+    margin: 0;
+    padding: 10px;
+}
+.mobile-down-btn button{
+    height: 50px;
+    border-radius: 0;
+    margin: 0;
+}
+.mobile-down-btn .btn-light{
+    background-color: #f3f0ff;
+}
+.mobile-checkout-main{
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    background: white;
+    margin: -15px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    display: none!important;
+}
+.mobile-checkout-main-show{
+    display: block!important;
+}
+.close-down-btn{
+    position: relative;
+    top: -29px;
+}
+.close-down-btn .bi-chevron-down::before {
+    background: #00000070;
+    color: white;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
