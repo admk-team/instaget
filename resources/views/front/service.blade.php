@@ -598,7 +598,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container d-block d-md-none mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
@@ -695,7 +695,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container d-block d-md-none mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
@@ -792,7 +792,7 @@
                 <button class="purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
-              <div class="container d-block d-md-none mobile-checkout-main">
+              <div class="container d-md-none mobile-checkout-main">
                 <div class="row">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
