@@ -1800,6 +1800,7 @@ button,label,span{
 .mobile-down-btn{
     margin: 0;
     padding: 10px;
+    margin-bottom: 10px;
 }
 .mobile-down-btn button{
     height: 50px;
