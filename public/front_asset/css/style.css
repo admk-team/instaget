@@ -26,6 +26,7 @@ body {
 }
 .navbar-dark .navbar-nav .nav-link {
     color: white;
+    font-family: var(--font);
 }
 .font-family {
     font-family: "Nunito", sans-serif;
@@ -1849,4 +1850,8 @@ button,label,span{
     padding-left: 25px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+}
+.social-media-icon{
+    border-radius: 25px;
+    height: 40px;
 }
