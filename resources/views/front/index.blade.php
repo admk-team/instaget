@@ -58,7 +58,7 @@
                 <a class="nav-link">Frequently Asked Questions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Login</a>
+                <a class="nav-link" href="{{ route('front.login') }}">Login</a>
               </li>
             </ul>
           </div>

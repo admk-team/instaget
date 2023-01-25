@@ -90,7 +90,6 @@
 </div>
 
 <script type="text/javascript">
-debugger;
  function isNumberKey(evt)
        {
           var charCode = (evt.which) ? evt.which : evt.keyCode;

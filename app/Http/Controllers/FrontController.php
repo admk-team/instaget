@@ -20,4 +20,8 @@ class FrontController extends Controller
         echo "<pre>";
         return Artisan::output();
     }
+
+    public function login(){
+        return view('front.login');
+    }
 }
