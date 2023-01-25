@@ -19,7 +19,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $package = Package::orderBy('id' , 'desc')->with('category')->with('sub_category')->get();
+         $package = Package::orderBy('id' , 'desc')->with('category')->with('sub_category')->get();
         return view('admin.packages.index'  , compact('package'));
     }
 
@@ -64,8 +64,7 @@ class PackageController extends Controller
         }else{
             return redirect()->route('admin.package.index')->with('error' , 'Failed to Added Package');
         }
-        
-        
+           
     }
 
     /**
@@ -108,7 +107,7 @@ class PackageController extends Controller
             'subcategory_id' => 'required',
             'original_price' => 'required'
         ]);
-
+ 
         $title = strtolower($request->title);
         $model = Package::findorFail($id);
         $model->title = $request->title;
@@ -140,7 +139,6 @@ class PackageController extends Controller
             return redirect()->route('admin.package.index')->with('error' , 'Failed to Delete Package !');
         }
     }
-
     public function status($id , $status){
 
         $package = Package::findorFail($id);

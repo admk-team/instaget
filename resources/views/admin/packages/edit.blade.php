@@ -56,14 +56,14 @@
                             <div class="form-group row">
                                 <div class="col-12 m-2">
                                     <label for="title">Original Price</label>
-                                    <input type="number" name="original_price" value="{{ old('title') ?? $package->original_price }}" class="form-control" placeholder="Original Price">
+                                    <input type="text" onkeypress=" return isNumberKey(event);" name="original_price" value="{{ old('title') ?? $package->original_price }}" class="form-control" placeholder="Original Price">
                                     @error('original_price') 
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="col-12 m-2">
                                     <label for="title">Sale Price</label>
-                                    <input type="text" name="sale_price" value="{{ old('sale_price') ?? $package->sale_price }}" class="form-control" placeholder="Sale Price ">
+                                    <input type="text" onkeypress=" return isNumberKey(event);" name="sale_price" value="{{ old('sale_price') ?? $package->sale_price }}" class="form-control" placeholder="Sale Price ">
                                     @error('sale_price') 
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -79,4 +79,15 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+  debugger;
+   function isNumberKey(evt)
+         {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31 
+              && (charCode < 48 || charCode > 57))
+               return false;
+            return true;
+         }
+  </script>
 @endsection
