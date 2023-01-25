@@ -542,9 +542,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .mobile-checkout-main-show{
-        display: block!important;
-    }
     .social_icon {
         /* display: flex;
 flex-direction: column; */
@@ -1823,7 +1820,9 @@ button,label,span{
     padding-top: 10px;
     display: none!important;
 }
-
+.mobile-checkout-main-show{
+    display: block!important;
+}
 .close-down-btn{
     position: relative;
     top: -29px;
