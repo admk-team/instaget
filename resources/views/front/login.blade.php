@@ -19,32 +19,6 @@
         crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Instaget</title>
-    <style>
-       .form{
-        height: 80px;
-       }
-       .form1 , 
-       .form2{
-        margin-bottom: -23px;
-       }
-       .fa-solid{
-        color:black;
-       }
-       .kakoa , 
-       .google{
-        margin-top: -20px;
-       }
-       .bgimage{
-        background-image: url('front_asset/images/header-login.png');
-    background-size: contain;
-    margin: 62px auto 0;
-    width: 340.2px;
-    background-repeat: no-repeat;
-    font-size: 45.0px;
-    height: 176.4px;
-       }
-       
-    </style>
 </head>
 
 <body>
@@ -96,26 +70,42 @@
   <div class="container py-5 h-100 ">
     <div class="row d-flex justify-content-center  h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
-        <h1>Login</h1>
+        <h1 class="text-center">Login</h1>
             <div class="mb-md-5 mt-md-4 pb-5">
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="emial" name="email" class="form-control form-control-lg form form1" placeholder="Email Address" />
+              <div class="form-outline form-white mb-1">
+                <input type="email" id="emial" name="email" class="form-control form-control-lg loginform form1" placeholder="Email Address" />
               </div>
               <div class="form-outline form-white mb-4">
-                <input type="password" id="password" name="password" class="form-control form-control-lg form form2" placeholder="Password" />
+                <input type="password" id="password" name="password" class="form-control form-control-lg loginform form2" placeholder="Password" />
               </div>
               <div class="form-outline form-white mb-4">
-                <input type="submit" class="form-control form-control-lg form" value="Login" />
+                {{-- <input type="submit" class="form-control form-control-lg form" value="Login" /> --}}
+                <button type="submit" class="form-control form-control-lg bg-dark loginform"> <span class="text-white">Login</span> </button>
               </div>
 
               <div class="form-outline form-white mb-4">
-                <button type="submit" class="form-control form-control-lg form naver" style="background-color: #1fc700"><i class="fa-sharp fa-solid fa-n"></i>Never Login</button>
+                <button type="submit" class="form-control form-control-lg form naver" >
+                    <div  style="margin-left: -249px;">
+                    <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="img-fluid rounded" style="width: 50px; ">
+                   <span>Never Login</span> 
+                </div>
+                </button>
               </div>
               <div class="form-outline form-white mb-4">
-                <button type="submit" class="form-control form-control-lg form kakoa"><i class="fa-solid fa-n"></i>Kakao talk</button>
+                <button type="submit" class="form-control form-control-lg form kakoa">
+                    <div  style="margin-left: -255px;">
+                        <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="img-fluid rounded" style="width: 50px; ">
+                       <span> Kakao talk</span>
+                    </div>
+                </button>
               </div>
               <div class="form-outline form-white mb-4">
-                <button type="submit" class="form-control form-control-lg form google"><i class="fa-solid fa-n"></i>Google</button>
+                <button type="submit" class="form-control form-control-lg loginform google">
+                    <div  style="margin-left: -285px;">
+                        <img src="{{ asset('front_asset/images/icons/google.png') }}" class="img-fluid rounded" style="width: 50px; ">
+                       <span>Google</span> 
+                    </div>
+                </button>
               </div>
               <div class="d-flex justify-content-between">
                 <p>New to Instagram ?</p>
@@ -131,9 +121,6 @@
     </div>
   </div>
 </section>
-
-
-
         <footer class="footer">
             <div class="container">
                 <div class="row">
