@@ -548,50 +548,50 @@
           </div>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div class="d-flex pt-4 justify-content-center">
+              <div class="d-flex pt-4 justify-content-center mb-3">
                 <div class="tab-pane-header">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="row tab-content-row">
-                <div class="col-3 col-md-2 bg_orange active text-center">
+              <div class="d-flex flex-wrap">
+                <div class="package-box bg_orange active text-center">
                   <h4>50</h4>
                   <span>팔로워</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>250</h4>
                   <span>5%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>500</h4>
                   <span>10%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>18%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>18%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>18%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>2000</h4>
                   <span>20%팔로워</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>3000</h4>
                   <span>23%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>5000</h4>
                   <span>26%할인</span>
                 </div>
-                <div class="col-3 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>30%할인</span>
                 </div>
@@ -645,50 +645,50 @@
               </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="d-flex pt-4 justify-content-center">
+              <div class="d-flex pt-4 justify-content-center mb-3">
                 <div class="tab-pane-header">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="row tab-content-row">
-                <div class="col-5 col-md-2 bg_orange text-center">
+              <div class="d-flex flex-wrap">
+                <div class="package-box bg_orange text-center">
                   <h4>50</h4>
                   <span>팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>250</h4>
                   <span>5%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange active text-center">
+                <div class="package-box bg_orange active text-center">
                   <h4>500</h4>
                   <span>10%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>18%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>2000</h4>
                   <span>20%팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>3000</h4>
                   <span>23%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>5000</h4>
                   <span>26%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>30%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>30%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>30%할인</span>
                 </div>
@@ -742,50 +742,50 @@
               </div>
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-              <div class="d-flex pt-4 justify-content-center">
+              <div class="d-flex pt-4 justify-content-center mb-3">
                 <div class="tab-pane-header">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="row tab-content-row">
-                <div class="col-5 col-md-2 bg_orange text-center">
+              <div class="d-flex flex-wrap">
+                <div class="package-box bg_orange text-center">
                   <h4>50</h4>
                   <span>팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>250</h4>
                   <span>5%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>500</h4>
                   <span>10%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>18%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>2000</h4>
                   <span>20%팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>2000</h4>
                   <span>20%팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>2000</h4>
                   <span>20%팔로워</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange active text-center">
+                <div class="package-box bg_orange active text-center">
                   <h4>3000</h4>
                   <span>23%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>5000</h4>
                   <span>26%할인</span>
                 </div>
-                <div class="col-5 col-md-2 bg_orange text-center">
+                <div class="package-box bg_orange text-center">
                   <h4>1000</h4>
                   <span>30%할인</span>
                 </div>

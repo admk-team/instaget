@@ -538,12 +538,12 @@ body {
 
 
 .heading {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .title {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .pakg_heading {
@@ -2091,4 +2091,30 @@ button,label,span{
 .services-feedback-list ul li div{
     border-radius: 0;
     border-bottom: 1px solid #212529;
+}
+
+.package-box {
+    min-width: 117px;
+    width: calc((100% / 1) - 20px);
+}
+
+@media (min-width: 293px) {
+    .package-box {
+        min-width: 117px;
+        width: calc((100% / 2) - 20px);
+    }
+}
+
+@media (min-width: 426px) {
+    .package-box {
+        min-width: 117px;
+        width: calc((100% / 3) - 20px);
+    }
+}
+
+@media (min-width: 764px) {
+    .package-box {
+        min-width: 117px;
+        width: calc((100% / 4) - 20px);
+    }
 }
