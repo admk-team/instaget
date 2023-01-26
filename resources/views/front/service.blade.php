@@ -901,8 +901,8 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid p-5 testimonials-fluid">
-      <div class="container">
+    <div class="container-fluid py-5 testimonials-fluid">
+      <div class="container-fluid">
         <div class="services-testimonials justify-content-center">
           <div class="row owl-carousel owl-theme" id="services_testimonials">
             <div class="col-12 services-testimonials-col">
