@@ -1,9 +1,9 @@
+
 @font-face {
     font-family: "Roboto";
     src: url("font/NotoSansKR-Regular.otf") format("opentype");
     font-style: normal;
 }
-
 :root {
     --orange: #ff5a09;
     --orange-light: #ffa500;
@@ -1858,12 +1858,16 @@ button,label,span{
 }
 
 /* Login */
+.loginText{
+    font-family: var(--font);
+    font-size: 47px;
+}
 .loginform{
     height: 80px;
    }
    .kakoa , 
    .google{
-    margin-top: -20px;
+    margin-top: -15px;
    }
 
 .service-card{
@@ -2075,9 +2079,9 @@ button,label,span{
     padding-bottom: 3rem;
 }
 .services-feedback-list ul{
-    box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%);
-    height: 410px;
-    overflow: auto;
+    /* box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%); */
+    /* height: 410px;
+    overflow: auto; */
 }
 .services-feedback-list ul li{
     border-radius: 0;
@@ -2118,3 +2122,106 @@ button,label,span{
         width: calc((100% / 4) - 20px);
     }
 }
+.services-feedback-list ul li{
+    width: 300px;
+    margin: 30px;
+    box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%);
+}
+.services-feedback-list ul li:after {
+    content:'';
+    position: absolute;
+    left: 165px;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 50px solid #ffffff;
+    border-left: 50px solid transparent;
+    border-right: 0px solid transparent;
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%);
+}
+   .naver{
+    display: flex;
+    align-items: flex-start;
+   }
+   .naver span{
+    margin-left: 130px;
+    align-self: center;
+    color: #fff;
+    font-size: 28px;
+    font-family: var(--font);
+
+
+   }
+   .kakao_talk{
+    display: flex;
+    align-items: flex-start;
+   }
+   .kakao_talk span{
+    margin-left: 130px;
+    align-self: center;
+    font-size: 28px;
+    font-family: var(--font);
+
+   }
+   .google_search{
+    display: flex;
+    align-items: flex-start;
+   }
+   .google_search span{
+    margin-left: 110px;
+    align-self: center;
+    color:#fff;
+    font-size: 28px;
+    font-family: var(--font);
+
+   }
+   .loginbtn {
+    font-size: 25px;
+    font-family: var(--font);
+   }
+   .rounded-border{
+    border-radius: 14px;
+   }
+.bg-naver{
+    background: rgb(6, 198, 57) !important;
+}
+.bg-kakoa{
+    background: rgb(255, 239, 0) !important;
+}
+
+.bg-google{
+background: rgb(255, 103, 49)!important;
+}
+
+@media only screen and (max-width:480px){
+    .naver span{
+        font-size: 17px;
+        margin-left: 60px;
+    font-family: var(--font);
+
+    }
+    .kakoa span{
+        font-size: 17px;
+        margin-left: 60px;
+    font-family: var(--font);
+
+
+    }
+    .google span{
+        font-size: 17px;
+        margin-left: 50px;
+    font-family: var(--font);
+
+
+    }
+    .new_to_insta{
+        font-size: 15px;
+    font-family: var(--font);
+
+    }
+    .signup{
+        font-size: 15px;
+    }
+}
+   
