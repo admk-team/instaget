@@ -396,7 +396,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                  <img src="{{ asset('front_asset/images/3.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -414,7 +414,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/4.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -432,61 +432,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/5.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -507,7 +453,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                  <img src="{{ asset('front_asset/images/3.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -525,7 +471,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/4.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -543,61 +489,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/5.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -618,7 +510,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                  <img src="{{ asset('front_asset/images/3.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -636,7 +528,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/4.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
@@ -654,61 +546,7 @@
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
-                </div>
-                <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
-                </div>
-              </div>
-              <div class="icon d-flex">
-                <span class="bi bi-quote"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-            <div class="info d-flex align-items-center justify-content-between">
-              <div class="author d-flex align-items-center gap-3">
-                <div class="img">
-                  <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/beautiful-woman-girl-natural-casual-portrait--e1661943078993.jpg" alt="">
+                <img src="{{ asset('front_asset/images/5.png') }}" alt="">
                 </div>
                 <div>
                   <div class="name">Nydia Larson</div>
