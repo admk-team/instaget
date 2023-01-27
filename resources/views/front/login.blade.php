@@ -67,10 +67,10 @@
         </header>
 
         {{-- Login Page Code Start here --}}
-        <section class="gradient-custom ">
+        <section class="gradient-custom background--smoke ">
             <div class="container py-5 h-100 ">
                 <div class="row d-flex justify-content-center  h-100">
-                    <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-5 box--shadow">
                         <h1 class="text-center loginText">로그인</h1>
                         <div class="mb-md-5 mt-md-4 pb-5">
                             <form method="" action="">
@@ -93,7 +93,7 @@
                                 <button type="submit"
                                     class="form-control form-control-lg  loginform rounded-border bg-naver border-0">
                                     <div class="naver">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="55"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="paeqmul3mu"
                                             x="0px" y="0px" width="100%" height="100%" viewBox="0 0 85.5 85.375"
                                             enable-background="new 0 0 85.5 85.375" xml:space="preserve" isInit="true"
@@ -114,7 +114,7 @@
                                             </g>
                                             <defs></defs>
                                         </svg>
-                                        <span>네이버 로그인</span>
+                                        <span>네이버 간편가입</span>
                                     </div>
                                 </button>
                             </div>
@@ -124,7 +124,7 @@
                                     <div class="kakao_talk">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="kahw7qv11x"
-                                            x="0px" y="0px" width="55" viewBox="0 0 85.5 85.375"
+                                            x="0px" y="0px" width="30" viewBox="0 0 85.5 85.375"
                                             enable-background="new 0 0 85.5 85.375" xml:space="preserve" isInit="true"
                                             preserveAspectRatio="none" opacity="1">
                                             <g isInit="true">
@@ -146,7 +146,7 @@
                                             </g>
                                             <defs></defs>
                                         </svg>
-                                        <span> 코코아 이야기</span>
+                                        <span>카카오톡 가입</span>
                                     </div>
                                 </button>
                             </div>
@@ -154,7 +154,7 @@
                                 <button type="submit"
                                     class="form-control form-control-lg loginform google rounded-border bg-google border-0">
                                     <div class="google_search">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="70"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="35"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="fcxgslfzvt"
                                             x="0px" y="0px" viewBox="0 0 800 800" enable-background="new 0 0 800 800"
                                             xml:space="preserve">
@@ -168,18 +168,18 @@
                                             </g>
                                             <defs></defs>
                                         </svg>
-                                        <span>구글</span>
+                                        <span>구글 간편가입</span>
 
                                     </div>
                                 </button>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="h5 new_to_insta">인스타그램을 처음 접하다 ?</p>
-                                <a href="#"><span class="h6 signup">가입하기 ?</span></a>
+                            <div class="d-flex justify-content-between responsive">
+                                <p class="new_to_insta">인스타그램을 처음 접하다 ?</p>
+                                <a href="#"><span class="signup">가입하기 ?</span></a>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="h5 new_to_insta">계정을 잊어버리세요 ?</p>
-                                <a href="#"><span class="h6 signup">비밀번호 초기화 ?</span></a>
+                            <div class="d-flex justify-content-between responsive">
+                                <p class="new_to_insta">계정을 잊어버리세요 ?</p>
+                                <a href="#"><span class="signup">비밀번호 초기화 ?</span></a>
                             </div>
                         </div>
                     </div>
