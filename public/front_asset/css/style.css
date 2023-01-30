@@ -1105,6 +1105,15 @@ border: 1px solid rgba(0,0,0,.5); */
 .insta-success:not(.collapsed) {
     color: white;
 }
+.insta-primary:not(.collapsed) {
+    color: white;
+}
+.insta-warning:not(.collapsed) {
+    color: white;
+}
+.insta-info:not(.collapsed) {
+    color: white;
+}
 
 .mobile-services-nav .accordion-button::after {
     color: white;
@@ -1129,6 +1138,18 @@ border: 1px solid rgba(0,0,0,.5); */
 
 .insta-success {
     background-color: #22a568 !important;
+    color: white;
+}
+.insta-primary {
+    background-color: #2252a5 !important;
+    color: white;
+}
+.insta-warning {
+    background-color: #a59c22 !important;
+    color: white;
+}
+.insta-info {
+    background-color: #19bedc !important;
     color: white;
 }
 
@@ -1901,12 +1922,12 @@ button,label,span{
     color: rgb(252, 82, 48);;
 }
 .section-dark .dark-inner{
-    border-radius: 20px;
+    /* border-radius: 20px; */
     padding: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    /* margin-left: 100px;
+    margin-right: 100px; */
     background-color: #1b2430;
 }
 @media (max-width: 480px){
@@ -2034,21 +2055,22 @@ button,label,span{
     text-align: center;
 }
 .blog_carousel .card .card-body .img img{
-    height: 200px;
+    height: 100px;
     width: -webkit-fill-available;
 }
 .blog_carousel .card .card-body .text h2{
     font-size: 23px;
-    line-height: 35px;
-    padding: 20px 20px 0px 20px;
     font-weight: 700;
+    text-align: center;
+    padding: 10px;
 }
 .blog_carousel .card .card-body .text p{
     font-size: 16px;
     line-height: 1.875;
     font-weight: 400;
     color: #616161;
-    padding: 20px 0px 0px 20px;
+    text-align: center;
+    padding: 0;
 }
 .blog_carousel .card:hover{
     box-shadow: 3px 2px 18px 0px rgb(0 0 0 / 10%);
@@ -2288,4 +2310,45 @@ background: rgb(255, 103, 49)!important;
 
     }
 }
-   
+.desktop-social-btn{
+    box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%);
+    border-radius: 10px 10px 10px 10px;
+    height: 80px;
+    width: 105px;
+    padding: 10px 5px 3px 5px;
+}
+.desktop-social-btn:hover .icon-title p{
+    color: white!important;
+}
+.desktop-social-btn div i{
+    font-size: 20px;
+    color: #000000;
+}
+.desktop-social-btn div img{
+    height: 30px;
+}
+.desktop-social-btn div p{
+    font-weight: 800;
+    color: #000000;
+}
+.for-instagram:hover{
+    background-color: rgb(252, 82, 48);
+}
+.for-instagram:hover .icon-title p{
+    color: white!important;
+}
+.for-instagram:hover .icon i{
+    color: white!important;
+}
+.for-youtube:hover{
+    background-color: red;
+}
+.for-naver:hover{
+    background-color: #31b500;
+}
+.for-appMarketing:hover{
+    background-color: #4f96d5;
+}
+.for-talk:hover{
+    background-color: rgb(245, 211, 0);
+}

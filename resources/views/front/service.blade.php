@@ -77,189 +77,71 @@
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">
+          @foreach ($services as $service)
           <div class="service">
+            @if($service->slug=='instagram')
             <li class="btn list-group-item instagram-icon d-flex">
               <i class="bi bi-instagram"></i>&nbsp;
             </li>
-            <div class="content">
-              <div class="accordion">
-                <div class="accordion-item">
-                  <div class="accordion-header" id="headingOne">
-                    <button class="accordion-button shadow-none collapsed insta-danger" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                      aria-controls="collapseOne">
-                      Buy Instagram Likes
-                    </button>
-                  </div>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body instagram-accordion-body">
-                      <ul class="instagram-likes-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed shadow-none insta-success" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                      aria-controls="collapseTwo">
-                      Buy Instagram Followers
-                    </button>
-                  </div>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body instagram-accordion-body">
-                      <ul class="instagram-likes-ul follower-ul">
-                        <li>Buy Instagram Likes</li>
-                        <li>Buy Automatic Instagram Likes</li>
-                        <li>Buy Instagram Monthly Likes</li>
-                        <li>Free Instagram Likes</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="service">
+            @elseif($service->slug=='youtube')
             <li class="btn list-group-item youtube-icon d-flex">
               <i class="bi bi-youtube"></i>&nbsp;
             </li>
-            <div class="content">
-              <div class="accordion">
-                <div class="accordion-item">
-                  <div class="accordion-header youtube-accordion" id="youtubeH1">
-                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
-                      data-bs-target="#youtubeH1" aria-expanded="false" aria-controls="youtubeH1">
-                      Buy Backlinks
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header youtube-accordion" id="youtubeH2">
-                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
-                      data-bs-target="#youtubeH2" aria-expanded="false" aria-controls="youtubeH2">
-                      SEO Services & Packages
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header youtube-accordion" id="youtubeH3">
-                    <button class="btn d-block shadow-none btn-youtube" type="button" data-bs-toggle=""
-                      data-bs-target="#youtubeH3" aria-expanded="false" aria-controls="youtubeH3">
-                      Buy SEO Consulting
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="service">
+            @elseif($service->slug=='naver')
             <li class="btn list-group-item naver-icon d-flex">
               <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt=""> &nbsp;
             </li>
-            <div class="content">
-              <div class="accordion">
-                <div class="accordion-item">
-                  <div class="accordion-header naver-accordion" id="naverH1">
-                    <button class="btn d-block shadow-none naver-bnt" type="button" data-bs-toggle=""
-                      data-bs-target="#naverH1" aria-expanded="false" aria-controls="naverH1">
-                      Buy Instagram Followers
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header naver-accordion" id="naverH2">
-                    <button class="btn d-block shadow-none naver-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#naverH2" aria-expanded="false" aria-controls="naverH2">
-                      Buy Instagram Followers
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header naver-accordion" id="naverH3">
-                    <button class="btn d-block shadow-none naver-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#naverH3" aria-expanded="false" aria-controls="naverH3">
-                      Buy Instagram Like
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service">
+            @elseif($service->slug=='app-marketing')
             <li class="btn list-group-item appMarketing-icon d-flex instagram-btns">
               <i class="bi bi-phone"></i> &nbsp;
             </li>
-            <div class="content">
-              <div class="accordion">
-                <div class="accordion-item">
-                  <div class="accordion-header mobile-accordion" id="mobileH1">
-                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#mobileH1" aria-expanded="false" aria-controls="mobileH1">
-                      Buy Instagram Followers
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header mobile-accordion" id="mobileH2">
-                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Accordion Item #2
-                    </button>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header mobile-accordion" id="mobileH3">
-                    <button class="btn d-block shadow-none mobile-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#mobileH3" aria-expanded="false" aria-controls="mobileH3">
-                      Accordion Item #3
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service">
+            @elseif($service->slug=='kako')
             <li class="btn list-group-item talk-icon d-flex instagram-btns">
               <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
             </li>
+            @else
+            <li class="btn list-group-item instagram-icon d-flex">
+              <i class="bi bi-instagram"></i>&nbsp;
+            </li>
+            @endif
             <div class="content">
               <div class="accordion">
+                @foreach ($service->categories as $category)
                 <div class="accordion-item">
-                  <div class="accordion-header talk-accordion" id="talkH1">
-                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#talkH1" aria-expanded="false" aria-controls="talkH1">
-                      Accordion Item #1
+                  <div class="accordion-header" id="heading{{ $category->id }}">
+                    <button class="accordion-button shadow-none collapsed 
+                    @if ($loop->iteration==1)
+                      insta-danger
+                    @elseif($loop->iteration==2)
+                      insta-success
+                    @elseif($loop->iteration==3)
+                    insta-primary
+                    @elseif($loop->iteration==4)
+                    insta-warning
+                    @elseif($loop->iteration==5)
+                    insta-info
+                    @endif" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}" aria-expanded="false"
+                      aria-controls="collapse{{ $category->id }}">
+                      {{ $category->title ?? '' }}
                     </button>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header talk-accordion" id="talkH2">
-                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#talkH2" aria-expanded="false" aria-controls="talkH2">
-                      Accordion Item #2
-                    </button>
+                  <div id="collapse{{ $category->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $category->id }}"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body instagram-accordion-body">
+                      <ul class="instagram-likes-ul">
+                        @foreach ($category->subcategories as $subcategory)
+                          <li>{{ $category->title }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <div class="accordion-header talk-accordion" id="talkH3">
-                    <button class="btn d-block shadow-none talk-btn" type="button" data-bs-toggle=""
-                      data-bs-target="#talkH3" aria-expanded="false" aria-controls="talkH3">
-                      Accordion Item #3
-                    </button>
-                  </div>
-                </div>
+                @endforeach 
               </div>
             </div>
           </div>
+          @endforeach
         </div>
         <div class="active-service" style="display: none;">
 
@@ -267,232 +149,45 @@
       </div>
 
     </div>
+    {{-- For Desktop --}}
     <div class="container pt-5 d-none d-md-flex justify-content-center">
+      @foreach ($services as $service)
       <div class="dropdown me-2">
-        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-instagram text-white"></i>&nbsp;
-          <span class="d-none d-md-block text-white">인스 타 그램</span>
-        </button>
+        <div href="javascript:void(0)" class="text-center desktop-social-btn @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+          <div class="icon">
+            @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img src="http://127.0.0.1:8000/front_asset/images/icons/naver.png" alt="">  @elseif($loop->iteration==4) <i class="bi bi-phone"></i>  @elseif($loop->iteration==5) <img src="http://127.0.0.1:8000/front_asset/images/icons/talk.png" alt=""> @endif
+          </div>
+          <div class="icon-title">
+            <p class="">{{ $service->title ?? '' }}</p>
+          </div>
+        </div>
+        @if(count($service->categories)>0)
         <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
-          <li class="instagram-li">
+          @foreach ($service->categories as $category)
+          <li class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
             <a class="dropdown-item" href="#">
-              <i class="bi bi-heart p-1"></i> Buy Instagram Likes
+              <i class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i> {{ $category->title ?? '' }}
+              @if(count($category->subcategories)>0)
               <i class="bi bi-caret-right"></i>
+              @endif
             </a>
+            @if(count($category->subcategories)>0)
             <ul class="dropdown-menu dropdown-submenu">
+              @foreach ($category->subcategories as $subcategory)
               <li>
-                <a class="dropdown-item" href="#">Buy Instagram Likes</a>
+                <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
               </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Automatic Instagram Likes</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Monthly Likes</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Free Instagram Likes</a>
-              </li>
-              <li>
+              @endforeach
             </ul>
+            @endif
           </li>
-          <li class="instagram-fo">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-person p-1"></i> Buy Instagram Likes
-            </a>
-          </li>
-          <li class="instagram-ply">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-play-fill"></i> Buy Instagram Views
-              <i class="bi bi-caret-right"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Views</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Automatic Instagram Views</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Free Instagram Views</a>
-              </li>
-              <li>
-            </ul>
-          </li>
-          <li class="instagram-cmnt">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-chat-fill"></i> Buy Instagram Comments
-              <i class="bi bi-caret-right"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Comments</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Automatic Instagram Comments</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Comments Like</a>
-              </li>
-              <li>
-            </ul>
-          </li>
-          <li class="instagram-reel">
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-file-play"></i> Instagram Reels
-              <i class="bi bi-caret-right"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Reels Video Views</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Reels Like</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Buy Instagram Reels Comments</a>
-              </li>
-              <li>
-            </ul>
-          </li>
+          @endforeach
         </ul>
+        @endif
       </div>
-      <div class="dropdown me-2">
-        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="youtubeDropDow"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-youtube  text-white"></i>&nbsp;
-          <span class="d-none d-md-block  text-white">유튜브</span>
-        </button>
-        <ul class="dropdown-menu youtube-web active" aria-labelledby="youtubeDropDow">
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Views
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Comments
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Instagram Reels
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="dropdown me-2">
-        <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt="">
-          <span class="d-none d-md-block  text-white">N사마케팅</span>
-        </button>
-        <ul class="dropdown-menu youtube-web active naver-web" aria-labelledby="youtubeDropDow">
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Views
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Comments
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Instagram Reels
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="dropdown me-2">
-        <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-phone text-white"></i> &nbsp;
-          <span class="d-none d-md-block text-white">앱마케팅</span>
-        </button>
-        <ul class="dropdown-menu youtube-web active mobile-web" aria-labelledby="youtubeDropDow">
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Views
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Comments
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Instagram Reels
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="dropdown me-2">
-        <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
-          <span class="d-none d-md-block text-white">K사마케팅</span>
-        </button>
-        <ul class="dropdown-menu youtube-web active tlak-web" aria-labelledby="youtubeDropDow">
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Likes
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Views
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Buy Instagram Comments
-            </a>
-          </li>
-          <li class="">
-            <a class="dropdown-item" href="#">
-              Instagram Reels
-            </a>
-          </li>
-        </ul>
-      </div>
+      @endforeach
+      
+      
       {{-- <ul class="list-group list-group-horizontal social_icon">
         <li class="list-group-item instagram-icon d-flex instagram-btns">
           <i class="bi bi-instagram"></i>&nbsp;
@@ -518,7 +213,7 @@
     </div>
     <div class="container pb-5">
       <div class="row justify-content-center">
-        <div class="d-none d-md-block col-lg-6 pakg_heading p-2 mb-1 ">
+        <div class="d-none d-md-block col-lg-6 pakg_heading p-4 mb-1">
           <h3 class="text-center heading">인스타팔로워늘리기</h3>
           <span class="text-center p-3 title">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다.</span> <br> <span
             class="text-center p-3 title">365일24시간연중무휴자동주문처리</span>
@@ -849,7 +544,7 @@
             class="orange-span-text">9,840,561,378</span> likes</h1>
       </div>
     </div>
-    <div class="container pb-4">
+    {{-- <div class="container pb-4">
       <h1 class="text-center pb-5 pt-5">How It Works</h1>
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
@@ -900,8 +595,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid py-5 testimonials-fluid">
+    </div> --}}
+    {{-- <div class="container-fluid py-5 testimonials-fluid">
       <div class="container-fluid">
         <div class="services-testimonials justify-content-center">
           <div class="row owl-carousel owl-theme" id="services_testimonials">
@@ -959,47 +654,45 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <div class="container p-4">
-      <h1 class="text-center">Ready to buy Instagram likes?</h1>
-      <p class="text-center">Buying likes for your Instagram posts is the best way to gain more engagement and success.
-        Improve your social media marketing strategy with Buzzoid.</p>
-      <div class="row">
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+      <h1 class="text-center">인스 타 그램 좋아요를 구매할 준비가 되셨나요?</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-1.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>1. INSTANT DELIVERY GUARANTEED</h2>
-                <p>Don't wait to get your likes. Orders typically process within minutes of purchase.</p>
+                <h2>1. 즉시 배송 보장</h2>
+                <p>좋아요를 받을 때까지 기다리지 마세요. 주문은 일반적으로 구매 후 몇 분 이내에 처리됩니다.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-2.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>2. 100% REAL LIKES</h2>
-                <p>Get high quality, instant likes from real users with real accounts (no fake accounts).</p>
+                <h2>2. 100% 실제 좋아요</h2>
+                <p>실제 계정(가짜 계정 없음)을 가진 실제 사용자로부터 고품질의 즉각적인 좋아요를 받으세요.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-3.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>3. 24/7 CUSTOMER SUPPORT</h2>
-                <p>Nothing worse than dealing with bad customer support. We strive to provide quality service.</p>
+                <h2>3. 24/7 고객 지원</h2>
+                <p>나쁜 고객 지원을 처리하는 것보다 더 나쁜 것은 없습니다. 우리는 양질의 서비스를 제공하기 위해 노력합니다.</p>
               </div>
             </div>
           </div>

@@ -12,4 +12,7 @@ class Category extends Model
     public function service(){
         return $this->belongsTo(Service::class , 'service_id' , 'id');
     }
+    public function subcategories(){
+        return $this->hasMany(SubCategory::class);
+    }
 }

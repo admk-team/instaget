@@ -39,15 +39,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
             'title' => 'required|unique:services,title',
             'image' => 'required',
         ]);
-        $title = strtolower($request->title);
         $model = new Service();
         $model->title = $request->title;
-        $model->slug = Str::slug($title , '-');
+        $model->slug = str_replace('_', ' ', $request->title);
         if($request->hasFile('image')){
             $path  = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
@@ -96,11 +94,9 @@ class ServiceController extends Controller
             'title' => 'required',
             'image' => 'image'
         ]);
-        
-        $title = strtolower($request->title);
         $model = Service::findorFail($id);
         $model->title = $request->title;
-        $model->slug = Str::slug($title , '-');
+        $model->slug = str_replace('_', ' ', $request->title);
 
         if($request->has('image')){
             if(isset($model->image)){

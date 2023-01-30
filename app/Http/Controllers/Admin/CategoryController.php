@@ -45,7 +45,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:categories,title',
-            'image' => 'required',
+            'image' => 'image',
             'service_id' => 'required'
         ]);
 

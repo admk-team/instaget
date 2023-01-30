@@ -28,11 +28,10 @@
     <div class="page-body">
       <div class="row">
         <div class="col-lg-12">
-
-          @include('admin.partial.alert')
           <div class="card">
             <div class="card-block">
-              <h4 class="title">Add Categpry</h4>
+              @include('admin.partial.alert')
+              <h4 class="title">Add Category</h4>
               <div class="table-responsive ">
                 <table class="mb-0 table ">
                   <thead>
