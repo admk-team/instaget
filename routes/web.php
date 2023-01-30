@@ -17,16 +17,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 //Admin  Routes//
-Route::name('admin.')->group(function () {
-    Route::get('index' , [AdminController::class , 'index'])->name('index');
-
+Route::prefix('admin')->name('admin.')->group(function () { 
+    Route::get('/dashboard' , [AdminController::class , 'index'])->name('dashboard');
     // Categories 
     Route::resource('category' , CategoryController::class);
     Route::get('category/{id}/{status}', [CategoryController::class, 'status'])->name('category.status');
-
     // Sub Category
     Route::resource('subcategory' , SubCategoryController::class);
     Route::get('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
@@ -38,8 +34,8 @@ Route::name('admin.')->group(function () {
     // Packages 
     Route::resource('package' , PackageController::class );
     Route::get('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
-
 });
+
 
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//

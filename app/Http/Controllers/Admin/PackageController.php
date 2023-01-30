@@ -45,8 +45,8 @@ class PackageController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:packages,title',
-            'category_id' => 'required',
-            'subcategory_id' => 'required',
+            'category_id' => 'required_without:subcategory_id',
+            'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required',
         ]);
 
@@ -103,8 +103,8 @@ class PackageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'category_id' => 'required',
-            'subcategory_id' => 'required',
+            'category_id' => 'required_without:subcategory_id',
+            'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required'
         ]);
  
