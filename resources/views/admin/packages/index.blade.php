@@ -31,6 +31,7 @@
                                   <th>Sub Category</th>
                                   <th>Original Price</th>
                                   <th>Sale Price</th>
+                                  <th>Quantity</th>
                                   <th>Action</th>
                                 </tr>
                               </thead>
@@ -43,6 +44,7 @@
                                   <td>{{ $list->sub_category->title ?? '' }}</td>
                                   <td>{{ $list->original_price ?? '' }}</td>
                                   <td>{{ $list->sale_price ?? '' }}</td>
+                                  <td>{{ $list->qty ?? '' }}</td>
                            
                                   <td>
                                     <div class="dropdown d-inline-block show">
