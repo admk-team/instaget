@@ -269,11 +269,19 @@
     </div>
     <div class="container pt-5 d-none d-md-flex justify-content-center">
       <div class="dropdown me-2">
-        <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown"
+        <div href="javascript:void(0)" class="text-center desktop-social-btn for-instagram">
+          <div class="icon">
+            <i class="bi bi-instagram "></i>
+          </div>
+          <div class="icon-title">
+            <p class="">인스 타 그램</p>
+          </div>
+        </div>
+        {{-- <button class="btn instagram-icon d-flex instagram-btns insta-web-show" type="button" id="instaDropDown"
           data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-instagram text-white"></i>&nbsp;
           <span class="d-none d-md-block text-white">인스 타 그램</span>
-        </button>
+        </button> --}}
         <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
           <li class="instagram-li">
             <a class="dropdown-item" href="#">
@@ -358,11 +366,19 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn youtube-icon d-flex instagram-btns" type="button" id="youtubeDropDow"
+        <div href="javascript:void(0)" class="text-center desktop-social-btn for-youtube">
+          <div class="icon">
+            <i class="bi bi-youtube "></i>
+          </div>
+          <div>
+            <p class="">유튜브</p>
+          </div>
+        </div>
+        {{-- <button class="btn youtube-icon d-flex instagram-btns" type="button" id="youtubeDropDow"
           data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-youtube  text-white"></i>&nbsp;
           <span class="d-none d-md-block  text-white">유튜브</span>
-        </button>
+        </button> --}}
         <ul class="dropdown-menu youtube-web active" aria-labelledby="youtubeDropDow">
           <li class="">
             <a class="dropdown-item" href="#">
@@ -392,11 +408,19 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown"
+        <div href="javascript:void(0)" class="text-center desktop-social-btn for-naver">
+          <div class="icon">
+            <img src="{{ asset('front_asset/images/icons/naver.png') }}" alt="">
+          </div>
+          <div>
+            <p class="">N사마케팅</p>
+          </div>
+        </div>
+        {{-- <button class="btn  naver-icon d-flex instagram-btns" type="button" id="instaDropDown"
           data-mdb-toggle="dropdown" aria-expanded="false">
           <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt="">
           <span class="d-none d-md-block  text-white">N사마케팅</span>
-        </button>
+        </button> --}}
         <ul class="dropdown-menu youtube-web active naver-web" aria-labelledby="youtubeDropDow">
           <li class="">
             <a class="dropdown-item" href="#">
@@ -426,11 +450,19 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
+        <div href="javascript:void(0)" class="text-center desktop-social-btn for-appMarketing">
+          <div class="icon">
+            <i class="bi bi-phone "></i>
+          </div>
+          <div>
+            <p class="">앱마케팅</p>
+          </div>
+        </div>
+        {{-- <button class="btn  appMarketing-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
           data-mdb-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-phone text-white"></i> &nbsp;
           <span class="d-none d-md-block text-white">앱마케팅</span>
-        </button>
+        </button> --}}
         <ul class="dropdown-menu youtube-web active mobile-web" aria-labelledby="youtubeDropDow">
           <li class="">
             <a class="dropdown-item" href="#">
@@ -460,11 +492,19 @@
         </ul>
       </div>
       <div class="dropdown me-2">
-        <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
+        <div href="javascript:void(0)" class="text-center desktop-social-btn for-talk">
+          <div class="icon">
+            <img src="{{ asset('front_asset/images/icons/talk.png') }}" alt="">
+          </div>
+          <div>
+            <p class="">K사마케팅</p>
+          </div>
+        </div>
+        {{-- <button class="btn talk-icon d-flex instagram-btns" type="button" id="dropdownMenuButton"
           data-mdb-toggle="dropdown" aria-expanded="false">
           <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
           <span class="d-none d-md-block text-white">K사마케팅</span>
-        </button>
+        </button> --}}
         <ul class="dropdown-menu youtube-web active tlak-web" aria-labelledby="youtubeDropDow">
           <li class="">
             <a class="dropdown-item" href="#">
@@ -518,7 +558,7 @@
     </div>
     <div class="container pb-5">
       <div class="row justify-content-center">
-        <div class="d-none d-md-block col-lg-6 pakg_heading p-2 mb-1 ">
+        <div class="d-none d-md-block col-lg-6 pakg_heading p-4 mb-1">
           <h3 class="text-center heading">인스타팔로워늘리기</h3>
           <span class="text-center p-3 title">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다.</span> <br> <span
             class="text-center p-3 title">365일24시간연중무휴자동주문처리</span>
@@ -849,7 +889,7 @@
             class="orange-span-text">9,840,561,378</span> likes</h1>
       </div>
     </div>
-    <div class="container pb-4">
+    {{-- <div class="container pb-4">
       <h1 class="text-center pb-5 pt-5">How It Works</h1>
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
@@ -900,8 +940,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid py-5 testimonials-fluid">
+    </div> --}}
+    {{-- <div class="container-fluid py-5 testimonials-fluid">
       <div class="container-fluid">
         <div class="services-testimonials justify-content-center">
           <div class="row owl-carousel owl-theme" id="services_testimonials">
@@ -959,47 +999,45 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <div class="container p-4">
-      <h1 class="text-center">Ready to buy Instagram likes?</h1>
-      <p class="text-center">Buying likes for your Instagram posts is the best way to gain more engagement and success.
-        Improve your social media marketing strategy with Buzzoid.</p>
-      <div class="row">
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+      <h1 class="text-center">인스 타 그램 좋아요를 구매할 준비가 되셨나요?</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-1.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>1. INSTANT DELIVERY GUARANTEED</h2>
-                <p>Don't wait to get your likes. Orders typically process within minutes of purchase.</p>
+                <h2>1. 즉시 배송 보장</h2>
+                <p>좋아요를 받을 때까지 기다리지 마세요. 주문은 일반적으로 구매 후 몇 분 이내에 처리됩니다.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-2.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>2. 100% REAL LIKES</h2>
-                <p>Get high quality, instant likes from real users with real accounts (no fake accounts).</p>
+                <h2>2. 100% 실제 좋아요</h2>
+                <p>실제 계정(가짜 계정 없음)을 가진 실제 사용자로부터 고품질의 즉각적인 좋아요를 받으세요.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 blog_carousel d-flex align-items-stretch">
+        <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
           <div class="card">
             <div class="card-body">
               <div class="img">
                 <img src="{{ asset('front_asset/images/icons/list-services--img-3.svg') }}" alt="">
               </div>
               <div class="text">
-                <h2>3. 24/7 CUSTOMER SUPPORT</h2>
-                <p>Nothing worse than dealing with bad customer support. We strive to provide quality service.</p>
+                <h2>3. 24/7 고객 지원</h2>
+                <p>나쁜 고객 지원을 처리하는 것보다 더 나쁜 것은 없습니다. 우리는 양질의 서비스를 제공하기 위해 노력합니다.</p>
               </div>
             </div>
           </div>

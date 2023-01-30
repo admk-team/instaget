@@ -49,7 +49,7 @@ class SubCategoryController extends Controller
         $request->validate([
             'category_id' => 'required',
             'title' => 'required|unique:sub_categories,title',
-            'image' => 'required'
+            'image' => 'image'
         ]);
         $title = strtolower($request->title);
         $model = new SubCategory();

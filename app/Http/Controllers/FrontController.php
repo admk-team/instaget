@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -13,7 +14,8 @@ class FrontController extends Controller
 
     public function service()
     {
-        return view('front.service');
+        $services = Service::with('categories.subcategories')->where('status', 1)->get();
+        return view('front.service',compact('services'));
     }
     public function reviews()
     {
