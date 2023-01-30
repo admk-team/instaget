@@ -885,10 +885,34 @@
     </div>
     <div class="contaier section-dark mb-5">
       <div class="dark-inner">
-        <h1 class="text-center text-white">We have proudly delivered over <span
-            class="orange-span-text">9,840,561,378</span> likes</h1>
+        <h1 class="text-center text-white">배송완료 된 좋아요 수 <span
+            class="orange-span-text">9,840,561,378</span> 개</h1>
       </div>
     </div>
+
+    {{-- <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt=""> --}}
+    
+    <div class="container box-container py-5 my-5">
+      <h2 class="text-center">저비용 고효율 SNS마케팅을 경험해 보세요</h2>
+      <div class="box-section d-flex justify-content-center align-items-center mt-5">
+        <div class="box1 box d-flex flex-column align-items-center justify-content-center">
+          <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt="" class="box-icon">
+          <span class="box-title text-center my-4">24시간 주문가동</span>
+          <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+        </div>
+        <div class="box2 box d-flex flex-column align-items-center justify-content-center">
+          <img src="{{ asset('front_asset/images/service-icon-2.png') }}" alt="" class="box-icon">
+          <span class="box-title text-center my-4">24시간 주문가동</span>
+          <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+        </div>
+        <div class="box3 box d-flex flex-column align-items-center justify-content-center">
+          <img src="{{ asset('front_asset/images/service-icon-3.png') }}" alt="" class="box-icon">
+          <span class="box-title text-center my-4">24시간 주문가동</span>
+          <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+        </div>
+      </div>
+    </div>
+    
     {{-- <div class="container pb-4">
       <h1 class="text-center pb-5 pt-5">How It Works</h1>
       <div class="row">
@@ -1000,7 +1024,7 @@
         </div>
       </div>
     </div> --}}
-    <div class="container p-4">
+    {{-- <div class="container p-4">
       <h1 class="text-center">인스 타 그램 좋아요를 구매할 준비가 되셨나요?</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
@@ -1043,9 +1067,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
-    <section class="faq-section mt-5 pt-5">
+    {{-- <section class="faq-section mt-5 pt-5">
       <div class="container">
         <div class="faq-badge d-flex justify-content-center">
           <h6 class="text-uppercase">Buy Instagram Likes Easily With Buzzoid</h6>
@@ -1285,7 +1309,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <footer class="footer">
       <div class="container p-5">
         <div class="row">
