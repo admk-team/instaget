@@ -93,8 +93,8 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|unique:categories,title',
-            'image' => 'required'
+            'title' => 'required',
+            'image' => 'image'
         ]);
         
         $title = strtolower($request->title);
@@ -144,12 +144,14 @@ class ServiceController extends Controller
     }
 
     public function status($id , $status){
+         
         $service = Service::findorFail($id);
         $service->status = $status;
         if($service->update()){
-            return redirect()->route('admin.services.index')->with('sucsess' , 'Status Updated Successfully');
+            return redirect()->route('admin.services.index')->with('success' , 'Status Updated Successfully');
         }else{
             return reidriect()->route('admin.services.index')->with('error' , 'Failed to Updated Status !');
         }
+
     }
 }

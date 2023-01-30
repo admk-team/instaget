@@ -46,15 +46,14 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
-            'sub_category' => 'required',
-            'title' => 'required|unique:categories,title',
+            'category_id' => 'required',
+            'title' => 'required|unique:sub_categories,title',
             'image' => 'required'
         ]);
         $title = strtolower($request->title);
         $model = new SubCategory();
-        $model->category_id = $request->sub_category;
+        $model->category_id = $request->category_id;
         $model->title = $request->title ;
         $model->slug = Str::slug($title , '-');
         if($request->hasFile('image')){
@@ -106,8 +105,8 @@ class SubCategoryController extends Controller
     {
        $request->validate([
         'sub_category' => 'required',
-        'title' => 'required|unique:categories,title',
-        'image' => 'required'
+        'title' => 'required',
+        'image' => 'image'
        ]);
        $title = strtolower($request->title);
        $model = SubCategory::findorFail($id);
