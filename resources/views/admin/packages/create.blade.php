@@ -76,6 +76,14 @@
 
                 <div class="form-group row">
                   <div class="col-12 m-2">
+                    <label for="qty">Quantity</label>
+                    <input type="number" name="quantity" value="{{ old('qty') }}" class="form-control">
+                    @error('quantity')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
+                  </div>
+                  <div class="col-12 m-2">
                     <label for="title">Original Price</label>
                     <input type="text" onkeypress="return isNumberKey(event);" name="original_price"
                       value="{{ old('original_price') }}" class="form-control" placeholder="Original Price">

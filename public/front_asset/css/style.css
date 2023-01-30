@@ -2317,6 +2317,9 @@ background: rgb(255, 103, 49)!important;
     width: 105px;
     padding: 10px 5px 3px 5px;
 }
+.desktop-social-btn:hover .icon-title p{
+    color: white!important;
+}
 .desktop-social-btn div i{
     font-size: 20px;
     color: #000000;
@@ -2331,7 +2334,10 @@ background: rgb(255, 103, 49)!important;
 .for-instagram:hover{
     background-color: rgb(252, 82, 48);
 }
-.for-instagram:hover.icon-title p{
+.for-instagram:hover .icon-title p{
+    color: white!important;
+}
+.for-instagram:hover .icon i{
     color: white!important;
 }
 .for-youtube:hover{

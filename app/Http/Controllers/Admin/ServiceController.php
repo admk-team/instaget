@@ -39,15 +39,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
             'title' => 'required|unique:services,title',
             'image' => 'required',
         ]);
-        $title = strtolower($request->title);
         $model = new Service();
         $model->title = $request->title;
-        $model->slug = Str::slug($title , '-');
+        $model->slug = str_replace('_', ' ', $request->title);
         if($request->hasFile('image')){
             $path  = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
@@ -93,14 +91,12 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|unique:categories,title',
-            'image' => 'required'
+            'title' => 'required',
+            'image' => 'image'
         ]);
-        
-        $title = strtolower($request->title);
         $model = Service::findorFail($id);
         $model->title = $request->title;
-        $model->slug = Str::slug($title , '-');
+        $model->slug = str_replace('_', ' ', $request->title);
 
         if($request->has('image')){
             if(isset($model->image)){
@@ -144,12 +140,14 @@ class ServiceController extends Controller
     }
 
     public function status($id , $status){
+         
         $service = Service::findorFail($id);
         $service->status = $status;
         if($service->update()){
-            return redirect()->route('admin.services.index')->with('sucsess' , 'Status Updated Successfully');
+            return redirect()->route('admin.services.index')->with('success' , 'Status Updated Successfully');
         }else{
             return reidriect()->route('admin.services.index')->with('error' , 'Failed to Updated Status !');
         }
+
     }
 }

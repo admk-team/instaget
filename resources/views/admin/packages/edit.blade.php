@@ -103,6 +103,13 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        <div class="col-12 m-2">
+                                          <label for="qty">Quantity</label>
+                                          <input type="number" class="form-control" name="quantity" value="{{ old('qty') ?? $package->qty }}">
+                                          @error('quantity')
+                                            <span class="text-danger">{{ $message }}</span>
+                                          @enderror
+                                        </div>
                                     </div>
                                     <button class="mt-1 btn btn-primary">Submit</button>
                                 </form>

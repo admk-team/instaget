@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin_assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin_assets/css/jquery.mCustomScrollbar.css') }}">
 </head>
-</head>
+
 
 <body>
     <div id="pcoded" class="pcoded">

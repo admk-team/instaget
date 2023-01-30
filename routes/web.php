@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\AdminDashboard;
+
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -18,22 +22,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Admin  Routes//
+Route::get('/admin', [AdminDashboard::class, 'login'])->name('login');
+Route::post('/admin/login', [AdminController::class, 'adminLogin'])->name('admin-login');
+
+Route::group(['middleware' => ['adminauth']], function () {
 Route::prefix('admin')->name('admin.')->group(function () { 
     Route::get('/dashboard' , [AdminController::class , 'index'])->name('dashboard');
     // Categories 
     Route::resource('category' , CategoryController::class);
-    Route::get('category/{id}/{status}', [CategoryController::class, 'status'])->name('category.status');
+    Route::any('category/{id}/{status}', [CategoryController::class, 'status'])->name('category.status');
     // Sub Category
     Route::resource('subcategory' , SubCategoryController::class);
-    Route::get('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
+    Route::any('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
 
     // Services 
     Route::resource('services' , ServiceController::class);
-    Route::get('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
-
+    Route::any('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
     // Packages 
     Route::resource('package' , PackageController::class );
-    Route::get('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
+    Route::any('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
+});
 });
 
 

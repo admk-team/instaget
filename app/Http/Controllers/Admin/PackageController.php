@@ -48,6 +48,7 @@ class PackageController extends Controller
             'category_id' => 'required_without:subcategory_id',
             'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required',
+            'quantity' => 'required',
         ]);
 
         $title = strtolower($request->title);
@@ -57,6 +58,7 @@ class PackageController extends Controller
         $model->sub_category_id = $request->subcategory_id;
         $model->original_price = $request->original_price;
         $model->sale_price = $request->sale_price;
+        $model->qty = $request->quantity;
         $model->slug = Str::slug($title , '-');
 
         if($model->save()){
@@ -103,6 +105,7 @@ class PackageController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'quantity' => 'required',
             'category_id' => 'required_without:subcategory_id',
             'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required'
@@ -115,6 +118,7 @@ class PackageController extends Controller
         $model->sub_category_id  = $request->subcategory_id;
         $model->original_price = $request->original_price;
         $model->sale_price = $request->sale_price;
+        $model->qty = $request->quantity;
         $model->slug = Str::slug($title , '-');
 
         if($model->update()){
