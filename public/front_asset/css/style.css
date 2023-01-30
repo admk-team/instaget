@@ -2353,43 +2353,116 @@ background: rgb(255, 103, 49)!important;
     background-color: rgb(245, 211, 0);
 }
 
-.box-container .box-section .box {
+.box {
     background-color: #ffffff;
-    margin-right: 25px;
+    margin-right: 36px;
     width: 306px;
-    /* height: 312px; */
     border-radius: 30px;
     box-shadow: 0 6px 38px rgba(0, 0, 0, 0.1);
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-top: 42px;
+    padding-bottom: 42px;
 }
 
-.box-container .box-section .box .box-icon {
+.box-container-title {
+    font-weight: 600;
+}
+
+.box .box-icon {
     width: auto;
     height: 100px;
     border-radius: 40px;
     -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.1));
 }
 
-.box-container .box-section .box2 .box-icon {
+.box1 {
+    padding-top: 57px !important;
+}
+
+.box2 .box-icon {
     height: 113px !important;
 }
 
-.box-container .box-section .box3 .box-icon {
+.box3 .box-icon {
     height: 113px !important;
 }
 
-.box-container .box-section .box .box-title {
+.box .box-title {
     font-size: 26px;
     font-weight: 600;
 }
 
-.box-container .box-section .box .box-description {
+.box .box-description {
     font-size: 20px;
     font-weight: 400;
     max-width: 199px;
 }
 
-@media(max-width:1022px) {
-    
+.service-faq-section {
+    background-color: #f5f7f8;
+    padding: 95px 0px;
+}
+
+.service-faq-title {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.service-faq-box {
+    width: 48%;
+}
+
+.service-faq-box {
+    box-shadow: 0 6px 13px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.service-faq-question {
+    font-size: 20px;
+    padding-top: 21px;
+    padding-bottom: 15px;
+}
+
+.service-faq-question-title {
+    font-size: 23px;
+}
+
+.service-faq-question .service-faq-question-title::before {
+    content: "\F264";
+    display: inline;
+    font-size: 25px;
+    color: gray;
+    margin-right: 14px;
+}
+
+.service-faq-question-icon {
+    font-size: 39px;
+    margin-right: 10px;
+}
+
+.service-faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.service-lower-section {
+    padding: 95px 0px;
+}
+
+@media(max-width:991px) {
+    .box-section {
+        flex-direction: column !important;
+    }
+
+    .box {
+        width: 393px;
+        margin-bottom: 35px;
+        margin-right: 0px;
+    }
+}
+
+@media(max-width:481px) {
+    .box {
+        max-width: 306px;
+    }
 }
