@@ -78,7 +78,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="overlay">
-              <video class="fullscreen" src="{{ asset('front_asset/images/bg.mp4')}}" playsinline autoplay muted loop>
+              <video class="fullscreen" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
               </video>
             </div>
 

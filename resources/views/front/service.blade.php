@@ -19,7 +19,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
@@ -120,24 +120,23 @@
                     insta-warning
                     @elseif($loop->iteration==5)
                     insta-info
-                    @endif" type="button"
-                      data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}" aria-expanded="false"
-                      aria-controls="collapse{{ $category->id }}">
+                    @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
+                      aria-expanded="false" aria-controls="collapse{{ $category->id }}">
                       {{ $category->title ?? '' }}
                     </button>
                   </div>
-                  <div id="collapse{{ $category->id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $category->id }}"
-                    data-bs-parent="#accordionExample">
+                  <div id="collapse{{ $category->id }}" class="accordion-collapse collapse"
+                    aria-labelledby="heading{{ $category->id }}" data-bs-parent="#accordionExample">
                     <div class="accordion-body instagram-accordion-body">
                       <ul class="instagram-likes-ul">
                         @foreach ($category->subcategories as $subcategory)
-                          <li>{{ $category->title }}</li>
+                        <li>{{ $category->title }}</li>
                         @endforeach
                       </ul>
                     </div>
                   </div>
                 </div>
-                @endforeach 
+                @endforeach
               </div>
             </div>
           </div>
@@ -153,9 +152,14 @@
     <div class="container pt-5 d-none d-md-flex justify-content-center">
       @foreach ($services as $service)
       <div class="dropdown me-2">
-        <div href="javascript:void(0)" class="text-center desktop-social-btn @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+        <div href="javascript:void(0)"
+          class="text-center desktop-social-btn @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
           <div class="icon">
-            @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img src="http://127.0.0.1:8000/front_asset/images/icons/naver.png" alt="">  @elseif($loop->iteration==4) <i class="bi bi-phone"></i>  @elseif($loop->iteration==5) <img src="http://127.0.0.1:8000/front_asset/images/icons/talk.png" alt=""> @endif
+            @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
+              class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
+              src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
+              class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
+              src="{{ asset('front_asset/images/icons/talk.png') }}" alt=""> @endif
           </div>
           <div class="icon-title">
             <p class="">{{ $service->title ?? '' }}</p>
@@ -164,9 +168,12 @@
         @if(count($service->categories)>0)
         <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
           @foreach ($service->categories as $category)
-          <li class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
+          <li
+            class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
             <a class="dropdown-item" href="#">
-              <i class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i> {{ $category->title ?? '' }}
+              <i
+                class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i>
+              {{ $category->title ?? '' }}
               @if(count($category->subcategories)>0)
               <i class="bi bi-caret-right"></i>
               @endif
@@ -186,8 +193,8 @@
         @endif
       </div>
       @endforeach
-      
-      
+
+
       {{-- <ul class="list-group list-group-horizontal social_icon">
         <li class="list-group-item instagram-icon d-flex instagram-btns">
           <i class="bi bi-instagram"></i>&nbsp;
@@ -540,10 +547,63 @@
     </div>
     <div class="contaier section-dark mb-5">
       <div class="dark-inner">
-        <h1 class="text-center text-white">We have proudly delivered over <span
-            class="orange-span-text">9,840,561,378</span> likes</h1>
+        <h1 class="text-center text-white">배송완료 된 좋아요 수 <span class="orange-span-text">9,840,561,378</span> 개</h1>
       </div>
     </div>
+
+    {{-- <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt=""> --}}
+
+    <div class="container box-container py-5 my-5">
+      <h2 class="box-container-title text-center pb-3">저비용 고효율 SNS마케팅을 경험해 보세요</h2>
+      <div>
+        <div class="box-section d-flex justify-content-center align-items-center mt-5">
+          <div class="box1 box d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt="" class="box-icon">
+            <span class="box-title text-center my-4">24시간 주문가동</span>
+            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+          </div>
+          <div class="box2 box d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ asset('front_asset/images/service-icon-2.png') }}" alt="" class="box-icon">
+            <span class="box-title text-center my-4">24시간 주문가동</span>
+            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+          </div>
+          <div class="box3 box d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ asset('front_asset/images/service-icon-3.png') }}" alt="" class="box-icon">
+            <span class="box-title text-center my-4">24시간 주문가동</span>
+            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-faq-section">
+      <h2 class="service-faq-title text-center">이용자 자주묻는 질문?</h2>
+      <div class="service-faq-container container d-flex mt-5 justify-content-between">
+        <div class="service-faq-box">
+          <div class="service-faq-question d-flex justify-content-between align-items-center">
+            <h4 class="service-faq-question-title mb-0 px-4 bi">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+          </div>
+          <div class="service-faq-answer bg-white px-4">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumenda ab consequatur dolor accusamus. Ipsa culpa dignissimos est ut, ad, harum distinctio nemo voluptas provident, nostrum iure architecto. Quidem, dolore aperiam. Provident at vel repellendus. Suscipit recusandae pariatur totam asperiores distinctio tempora consequuntur aut ullam officia dolorem, laborum eius, corporis commodi minus voluptatum praesentium! Iure vero ipsum sit porro consequatur, distinctio reiciendis impedit qui possimus quia natus eaque blanditiis cum animi ab aperiam rem nesciunt expedita nisi iste. Amet officia reiciendis doloremque deleniti veniam, quia optio veritatis qui. Eum voluptates, autem eaque quos suscipit est animi esse quaerat tempore iusto sunt! Aut dolorem delectus quis ad, magni dolorum, ex tempora necessitatibus sit quidem natus? Error quaerat provident cupiditate illum voluptatem iure doloremque, porro dolores animi laborum, veritatis in, debitis mollitia! Esse nam nulla expedita? Officiis, aliquam, voluptates nisi, hic iste numquam nemo velit saepe dicta eum facilis obcaecati esse id earum. Mollitia illum consequuntur deserunt, molestiae adipisci porro numquam quam labore accusantium optio quas beatae! Delectus esse, magni totam velit sequi aspernatur perferendis rerum! Nostrum ipsum eum deserunt nemo reprehenderit, asperiores dolorem distinctio animi doloribus totam aliquam est voluptate alias saepe, natus aliquid laboriosam nesciunt quisquam, fugit dicta sed cupiditate! Vero nulla tempore temporibus repellat minus est assumenda saepe, earum, officiis rem eos corrupti illo sed doloremque! Quidem enim illo, eos sed excepturi id vitae eligendi eum tempore cum temporibus corporis, ex ea nam delectus velit. Autem pariatur, odit dolorem quis libero adipisci inventore eveniet esse deleniti ad eos minima, iusto vitae, doloremque quidem rerum minus alias quae facere? Cumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</span>
+          </div>
+        </div>
+        <div class="service-faq-box">
+          <div class="service-faq-question d-flex justify-content-between align-items-center">
+            <h4 class="service-faq-question-title mb-0 px-4 bi">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+          </div>
+          <div class="service-faq-answer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-lower-section">
+    
+    </div>
+
     {{-- <div class="container pb-4">
       <h1 class="text-center pb-5 pt-5">How It Works</h1>
       <div class="row">
@@ -655,7 +715,7 @@
         </div>
       </div>
     </div> --}}
-    <div class="container p-4">
+    {{-- <div class="container p-4">
       <h1 class="text-center">인스 타 그램 좋아요를 구매할 준비가 되셨나요?</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-md-3 blog_carousel d-flex align-items-stretch">
@@ -698,14 +758,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
-    <section class="faq-section mt-5 pt-5">
+    {{-- <section class="faq-section mt-5 pt-5">
       <div class="container">
         <div class="faq-badge d-flex justify-content-center">
           <h6 class="text-uppercase">Buy Instagram Likes Easily With Buzzoid</h6>
         </div>
-        <p class="text-center">Over 1,000 daily customers trust us as the best site to deliver real Instagram likes</p>
+        <p class="text-center">Over 1,000 daily customers trust us as the best site to deliver real Instagram likes
+        </p>
         <div class="faqs mt-4">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 mb-3 pb-1">
@@ -713,27 +774,35 @@
                 <span class="faq-question">WHY CHOOSE BUZZOID?​</span>
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </div>
-              <p class="faq-answer">Buzzoid was formed by a team of digital media experts with over a decade of experience operating social media accounts.
+              <p class="faq-answer">Buzzoid was formed by a team of digital media experts with over a decade of
+                experience operating social media accounts.
 
-                We’re constantly testing new methods of driving social engagement and know what works and what doesn’t. We’ve grown thousands of accounts and delivered millions of likes over the past several years.
-                
-                We're proud to report more than 1000 recurring monthly customers that using Buzzoid to grow their social media presence.
-                
-                Need social proof? Check our reviews page to see what our past customers are saying about our service</p>
+                We’re constantly testing new methods of driving social engagement and know what works and what
+                doesn’t. We’ve grown thousands of accounts and delivered millions of likes over the past several
+                years.
+
+                We're proud to report more than 1000 recurring monthly customers that using Buzzoid to grow their
+                social media presence.
+
+                Need social proof? Check our reviews page to see what our past customers are saying about our service
+              </p>
             </div>
             <div class="col-lg-6 mb-3 pb-1">
               <div class="faq-column">
                 <span class="faq-question">WHICH PACKAGE SHOULD I CHOOSE?​</span>
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </div>
-              <p class="faq-answer">We offer several different packages to fit your brand’s unique marketing goals and budget.
+              <p class="faq-answer">We offer several different packages to fit your brand’s unique marketing goals and
+                budget.
 
                 First, you should decide whether you want high-quality likes or premium likes.
-                
-                The high-quality package is a little bit more affordable. It works great for accounts that need a general boost in engagement.
-                
-                The premium package is better for new accounts or those looking to really step their game up and drive more followers and conversions.
-                
+
+                The high-quality package is a little bit more affordable. It works great for accounts that need a
+                general boost in engagement.
+
+                The premium package is better for new accounts or those looking to really step their game up and drive
+                more followers and conversions.
+
                 Both packages come in quantities of 50, 100, & 250 per photo or video.</p>
             </div>
             <div class="col-lg-6 mb-3 pb-1">
@@ -741,18 +810,26 @@
                 <span class="faq-question">HOW FAST IS YOUR TURNAROUND TIME?​</span>
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </div>
-              <p class="faq-answer mb-3 pb-1">We don't waste any time. Our system will process your order within minutes. However, our users are 100% authentic, so it can take up to 24 hours to roll out completely.
+              <p class="faq-answer mb-3 pb-1">We don't waste any time. Our system will process your order within
+                minutes. However, our users are 100% authentic, so it can take up to 24 hours to roll out completely.
 
-                We've also learned to avoid Instagram's spam filter by matching the velocity of our likes roll out depending on where the accounts are registered. This is a sophisticated process, but it works. There's no point buying likes if it's going to penalize your content and slow your growth. This is why we prefer to be methodical in how the likes are rolled out depending on the timezone in which most of your userbase is registered.</p>
+                We've also learned to avoid Instagram's spam filter by matching the velocity of our likes roll out
+                depending on where the accounts are registered. This is a sophisticated process, but it works. There's
+                no point buying likes if it's going to penalize your content and slow your growth. This is why we
+                prefer to be methodical in how the likes are rolled out depending on the timezone in which most of
+                your userbase is registered.</p>
             </div>
             <div class="col-lg-6 mb-3 pb-1">
               <div class="faq-column">
                 <span class="faq-question">WHAT INFORMATION DO I NEED TO PROVIDE?</span>
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </div>
-              <p class="faq-answer">The only information we need is your username and instructions regarding which photo or video you want to receive the likes.
+              <p class="faq-answer">The only information we need is your username and instructions regarding which
+                photo or video you want to receive the likes.
 
-                We will never ask for your password or any private information about your account. Be wary of companies asking for logins or other sensitive information when buying Instagram likes online — this simply isn’t needed to roll out this type of service.</p>
+                We will never ask for your password or any private information about your account. Be wary of
+                companies asking for logins or other sensitive information when buying Instagram likes online — this
+                simply isn’t needed to roll out this type of service.</p>
             </div>
           </div>
         </div>
@@ -781,7 +858,8 @@
                     C-5,27.4,4.5,10.5,14.7,1.3c0.7-0.7-0.3-1.7-1.1-1.1C5.2,7.9-2.9,19.6,1,31.5c2.8,8.4,12.2,16.1,21.3,12
                     c9.3-4.1,7.1-16.5-1.4-20.1c-8.5-3.5-20.1,4-14.3,13.4C7.2,37.8,8.5,37,8,36.2L8,36.2z"></path>
                   </svg>
-                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for such a cheap price?”</p>
+                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for
+                    such a cheap price?”</p>
                 </div>
               </li>
               <li class="list-group-item">
@@ -839,7 +917,8 @@
                     C-5,27.4,4.5,10.5,14.7,1.3c0.7-0.7-0.3-1.7-1.1-1.1C5.2,7.9-2.9,19.6,1,31.5c2.8,8.4,12.2,16.1,21.3,12
                     c9.3-4.1,7.1-16.5-1.4-20.1c-8.5-3.5-20.1,4-14.3,13.4C7.2,37.8,8.5,37,8,36.2L8,36.2z"></path>
                   </svg>
-                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for such a cheap price?”</p>
+                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for
+                    such a cheap price?”</p>
                 </div>
               </li>
               <li class="list-group-item">
@@ -897,7 +976,8 @@
                     C-5,27.4,4.5,10.5,14.7,1.3c0.7-0.7-0.3-1.7-1.1-1.1C5.2,7.9-2.9,19.6,1,31.5c2.8,8.4,12.2,16.1,21.3,12
                     c9.3-4.1,7.1-16.5-1.4-20.1c-8.5-3.5-20.1,4-14.3,13.4C7.2,37.8,8.5,37,8,36.2L8,36.2z"></path>
                   </svg>
-                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for such a cheap price?”</p>
+                  <p>How did you make verified users with hundreds of thousands of followers to like my picture for
+                    such a cheap price?”</p>
                 </div>
               </li>
               <li class="list-group-item">
@@ -940,7 +1020,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <footer class="footer">
       <div class="container p-5">
         <div class="row">
@@ -1085,7 +1165,6 @@
     });
   </script>
   <script>
-
     let prevoius_element = "";
 
     $(".faq-column").on("click", (event) => {
@@ -1144,7 +1223,7 @@
         $("#answer-slider").slideDown("slow");
     });
 
-</script>
+  </script>
 </body>
 
 </html>
