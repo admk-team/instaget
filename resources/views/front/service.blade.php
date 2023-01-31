@@ -253,49 +253,49 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="d-flex pt-4 justify-content-center mb-3">
                 <div class="tab-pane-header">
-                  <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
+                  <img src="{{ asset('front_asset/images/service-tick-icon.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
               <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange active text-center">
-                  <h4>50</h4>
+                  <h4 class="fw-bolder">50</h4>
                   <span>팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>250</h4>
+                  <h4 class="fw-bolder">250</h4>
                   <span>5%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>500</h4>
+                  <h4 class="fw-bolder">500</h4>
                   <span>10%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>18%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>18%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>18%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>2000</h4>
+                  <h4 class="fw-bolder">2000</h4>
                   <span>20%팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>3000</h4>
+                  <h4 class="fw-bolder">3000</h4>
                   <span>23%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>5000</h4>
+                  <h4 class="fw-bolder">5000</h4>
                   <span>26%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>30%할인</span>
                 </div>
               </div>
@@ -356,43 +356,43 @@
               </div>
               <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange text-center">
-                  <h4>50</h4>
+                  <h4 class="fw-bolder">50</h4>
                   <span>팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>250</h4>
+                  <h4 class="fw-bolder">250</h4>
                   <span>5%할인</span>
                 </div>
                 <div class="package-box bg_orange active text-center">
-                  <h4>500</h4>
+                  <h4 class="fw-bolder">500</h4>
                   <span>10%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>18%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>2000</h4>
+                  <h4 class="fw-bolder">2000</h4>
                   <span>20%팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>3000</h4>
+                  <h4 class="fw-bolder">3000</h4>
                   <span>23%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>5000</h4>
+                  <h4 class="fw-bolder">5000</h4>
                   <span>26%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>30%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>30%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>30%할인</span>
                 </div>
               </div>
@@ -453,43 +453,43 @@
               </div>
               <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange text-center">
-                  <h4>50</h4>
+                  <h4 class="fw-bolder">50</h4>
                   <span>팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>250</h4>
+                  <h4 class="fw-bolder">250</h4>
                   <span>5%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>500</h4>
+                  <h4 class="fw-bolder">500</h4>
                   <span>10%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>18%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>2000</h4>
+                  <h4 class="fw-bolder">2000</h4>
                   <span>20%팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>2000</h4>
+                  <h4 class="fw-bolder">2000</h4>
                   <span>20%팔로워</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>2000</h4>
+                  <h4 class="fw-bolder">2000</h4>
                   <span>20%팔로워</span>
                 </div>
                 <div class="package-box bg_orange active text-center">
-                  <h4>3000</h4>
+                  <h4 class="fw-bolder">3000</h4>
                   <span>23%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>5000</h4>
+                  <h4 class="fw-bolder">5000</h4>
                   <span>26%할인</span>
                 </div>
                 <div class="package-box bg_orange text-center">
-                  <h4>1000</h4>
+                  <h4 class="fw-bolder">1000</h4>
                   <span>30%할인</span>
                 </div>
               </div>
@@ -548,7 +548,7 @@
     </div>
     <div class="contaier section-dark mb-5">
       <div class="dark-inner">
-        <h1 class="text-center text-white">배송완료 된 좋아요 수 <span class="orange-span-text">9,840,561,378</span> 개</h1>
+        <h1 class="text-center text-white fw-bolder">배송완료 된 좋아요 수 <span class="orange-span-text">9,840,561,378</span> 개</h1>
       </div>
     </div>
 

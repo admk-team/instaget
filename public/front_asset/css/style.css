@@ -606,6 +606,17 @@ body {
     background-color: #eeeeee !important;
 }
 
+.purchase-btn, .shop-btn {
+    border-radius: 13px !important;
+    height: 55px !important;
+    width: 131px !important;
+}
+
+.purchase-btn, .shop-btn {
+    background-color: #5f5f5f !important;
+    color: white !important;
+}
+
 @media (max-width: 480px) {
     .social_icon {
         /* display: flex;
