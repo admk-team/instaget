@@ -2649,6 +2649,12 @@ background: rgb(255, 103, 49)!important;
     }
 }
 
+@media(max-width:995px) {
+    .service-icon-4 {
+        display: none !important;
+    }
+}
+
 @media(max-width:1070px) {
     .service-faq-container {
         flex-direction: column !important;

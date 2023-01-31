@@ -626,7 +626,7 @@
       <span class="service-lower-description text-center mt-3">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
       <div class="d-flex service-lower-lower-section">
         <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
-          <img src="{{ asset('front_asset/images/service-icon-4.png') }}" alt="">
+          <img src="{{ asset('front_asset/images/service-icon-4.png') }}" class="service-icon-4" alt="">
           <button class="service-lower-button">후기작성</button>
         </div>
         <div class="service-lower-text">
