@@ -41,7 +41,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Packages 
     Route::resource('package' , PackageController::class );
     Route::any('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
+    //Logout 
+    Route::get('/logout' , [AdminController::class , 'Logout'])->name('logout');
 });
+
 });
 
 
