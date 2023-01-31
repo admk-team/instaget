@@ -230,16 +230,16 @@
       <div class="row justify-content-center tab-content-parent">
         <div class="col-lg-6 justify-content-center text-center">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link tabs-button active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+            <li class="nav-item service-upper-button-li" role="presentation">
+              <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                 type="button" role="tab" aria-controls="home" aria-selected="true">실제한국인팔로워</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link tabs-button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+            <li class="nav-item service-upper-button-li" role="presentation">
+              <button class="nav-link tabs-button service-upper-button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
                 type="button" role="tab" aria-controls="profile" aria-selected="false">리얼한국인팔로워</button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link tabs-button" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+            <li class="nav-item service-upper-button-li" role="presentation">
+              <button class="nav-link tabs-button service-upper-button" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
                 type="button" role="tab" aria-controls="contact" aria-selected="false">외국인팔로워</button>
             </li>
           </ul>
@@ -257,7 +257,7 @@
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="d-flex flex-wrap">
+              <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange active text-center">
                   <h4>50</h4>
                   <span>팔로워</span>
@@ -354,7 +354,7 @@
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="d-flex flex-wrap">
+              <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange text-center">
                   <h4>50</h4>
                   <span>팔로워</span>
@@ -451,7 +451,7 @@
                   <span> &nbsp; 상품상세</span>
                 </div>
               </div>
-              <div class="d-flex flex-wrap">
+              <div class="d-flex flex-wrap justify-content-center">
                 <div class="package-box bg_orange text-center">
                   <h4>50</h4>
                   <span>팔로워</span>

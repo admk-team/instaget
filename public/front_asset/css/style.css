@@ -14,6 +14,7 @@
     src: url('front_asset/fonts/SCDream3.otf') format("opentype");
     font-style: normal;
 }
+
 @font-face {
     font-family: "SCDREAM4";
     src: url('front_asset/fonts/SCDream4.otf') format("opentype");
@@ -424,6 +425,8 @@ body {
 }
 .tab-content {
     padding-top: 30px;
+    border-radius: 20px !important;
+    margin-top: -13px !important;
 }
 .premium-tab {
     width: 200px;
@@ -590,9 +593,17 @@ body {
 }
 
 .pakg_heading {
-    border-bottom: 1px solid black;
     text-align: center;
     padding-bottom: 10px;
+}
+
+.heading {
+    font-size: 29px !important;
+    font-weight: 800;
+}
+
+.shop-btn {
+    background-color: #eeeeee !important;
 }
 
 @media (max-width: 480px) {
@@ -629,6 +640,7 @@ margin: 5px;
         width: 280px !important;
         margin-top: 7px !important;
         margin-right: 16px !important;
+        background-color: red !important;
     }
 
     .tab-content {
@@ -667,7 +679,7 @@ margin: 5px;
 }
 
 .tabs-button.active {
-    background-color: rgb(252, 82, 48) !important;
+    background-color: #e75e3e !important;
     color: white !important;
 }
 
@@ -709,7 +721,7 @@ margin: 5px;
 }
 
 .bg_orange.active {
-    background-color: rgb(252, 82, 48);
+    background-color: #e75e3e !important;
 }
 
 .bg_orange {
@@ -736,7 +748,7 @@ margin: 5px;
 }
 
 .purchase-btn {
-    background: rgb(252, 82, 48);
+    background-color: #e75e3e !important;
     border: 0;
     margin: 2px;
     color: white;
@@ -762,8 +774,8 @@ margin: 5px;
 }
 
 .tab-pane-header {
-    border-bottom: 1px solid black;
     padding: 5px;
+    font-weight: 600;
 }
 
 .list-group-item {
@@ -2152,6 +2164,7 @@ button,label,span{
 .package-box {
     min-width: 117px;
     width: calc((100% / 1) - 20px);
+    background-color: #eeeeee !important;
 }
 
 @media (min-width: 293px) {
@@ -2171,7 +2184,7 @@ button,label,span{
 @media (min-width: 764px) {
     .package-box {
         min-width: 117px;
-        width: calc((100% / 4) - 20px);
+        width: calc((82% / 4) - 20px);
     }
 }
 .services-feedback-list ul li{
@@ -2581,6 +2594,30 @@ background: rgb(255, 103, 49)!important;
 .faq-answer-active-icon {
     display: inherit;
     transform: rotate(45deg);
+}
+
+.service-upper-button-li {
+    width: 201px !important;
+}
+
+.service-upper-button-li:nth-child(1) {
+    margin-right: 10px;
+}
+
+.service-upper-button-li:nth-child(2) {
+    margin-right: 6px;
+    margin-left: 5px;
+}
+
+.service-upper-button-li:nth-child(3) {
+    margin-left: 10px;
+}
+
+.service-upper-button {
+    width: 100% !important;
+    border-radius: 20px 20px 0px 0px !important;
+    padding-bottom: 50px !important;
+    background-color: #eeeeee !important;
 }
 
 @media(max-width:991px) {
