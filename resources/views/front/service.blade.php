@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
@@ -564,13 +565,13 @@
           </div>
           <div class="box2 box d-flex flex-column align-items-center justify-content-center">
             <img src="{{ asset('front_asset/images/service-icon-2.png') }}" alt="" class="box-icon">
-            <span class="box-title text-center my-4">24시간 주문가동</span>
-            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+            <span class="box-title text-center my-4">실제한국인서비스</span>
+            <span class="box-description text-center">모든 SNS마케팅에 실제한국인계정으로 제공됩니다.</span>
           </div>
           <div class="box3 box d-flex flex-column align-items-center justify-content-center">
             <img src="{{ asset('front_asset/images/service-icon-3.png') }}" alt="" class="box-icon">
-            <span class="box-title text-center my-4">24시간 주문가동</span>
-            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+            <span class="box-title text-center my-4">1:1전문 상담원</span>
+            <span class="box-description text-center">분야 별 전문 마케터가 SNS홍보전략을 상당해드립니다.</span>
           </div>
         </div>
       </div>
@@ -581,27 +582,84 @@
       <div class="service-faq-container container d-flex mt-5 justify-content-between">
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 bi">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumenda ab consequatur dolor accusamus. Ipsa culpa dignissimos est ut, ad, harum distinctio nemo voluptas provident, nostrum iure architecto. Quidem, dolore aperiam. Provident at vel repellendus. Suscipit recusandae pariatur totam asperiores distinctio tempora consequuntur aut ullam officia dolorem, laborum eius, corporis commodi minus voluptatum praesentium! Iure vero ipsum sit porro consequatur, distinctio reiciendis impedit qui possimus quia natus eaque blanditiis cum animi ab aperiam rem nesciunt expedita nisi iste. Amet officia reiciendis doloremque deleniti veniam, quia optio veritatis qui. Eum voluptates, autem eaque quos suscipit est animi esse quaerat tempore iusto sunt! Aut dolorem delectus quis ad, magni dolorum, ex tempora necessitatibus sit quidem natus? Error quaerat provident cupiditate illum voluptatem iure doloremque, porro dolores animi laborum, veritatis in, debitis mollitia! Esse nam nulla expedita? Officiis, aliquam, voluptates nisi, hic iste numquam nemo velit saepe dicta eum facilis obcaecati esse id earum. Mollitia illum consequuntur deserunt, molestiae adipisci porro numquam quam labore accusantium optio quas beatae! Delectus esse, magni totam velit sequi aspernatur perferendis rerum! Nostrum ipsum eum deserunt nemo reprehenderit, asperiores dolorem distinctio animi doloribus totam aliquam est voluptate alias saepe, natus aliquid laboriosam nesciunt quisquam, fugit dicta sed cupiditate! Vero nulla tempore temporibus repellat minus est assumenda saepe, earum, officiis rem eos corrupti illo sed doloremque! Quidem enim illo, eos sed excepturi id vitae eligendi eum tempore cum temporibus corporis, ex ea nam delectus velit. Autem pariatur, odit dolorem quis libero adipisci inventore eveniet esse deleniti ad eos minima, iusto vitae, doloremque quidem rerum minus alias quae facere? Cumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 bi">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
-          <div class="service-faq-answer">
-
+          <div class="service-faq-answer bg-white px-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+          </div>
+        </div>
+      </div>
+      <div class="service-faq-container container d-flex mt-5 justify-content-between">
+        <div class="service-faq-box">
+          <div class="service-faq-question d-flex justify-content-between align-items-center">
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+          </div>
+          <div class="service-faq-answer bg-white px-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+          </div>
+        </div>
+        <div class="service-faq-box">
+          <div class="service-faq-question d-flex justify-content-between align-items-center">
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+          </div>
+          <div class="service-faq-answer bg-white px-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="service-lower-section">
-    
+    <div class="service-lower-section container d-flex flex-column justify-content-center align-items-center">
+      <h2 class="service-lower-title text-center">서비스를 구매하셨나요?</h2>
+      <span class="service-lower-description text-center mt-3">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
+      <div class="d-flex service-lower-lower-section">
+        <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
+          <img src="{{ asset('front_asset/images/service-icon-4.png') }}" alt="">
+          <button class="service-lower-button">후기작성</button>
+        </div>
+        <div class="service-lower-text">
+          <div class="lower-review mt-5">
+              <div class="d-flex align-items-center bi">
+                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
+              of followers to like my picture for such a cheap price?</p>
+          </div>
+          <div class="lower-review mt-5">
+              <div class="d-flex align-items-center bi">
+                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
+              of followers to like my picture for such a cheap price?</p>
+          </div>
+          <div class="lower-review mt-5">
+              <div class="d-flex align-items-center bi">
+                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
+              of followers to like my picture for such a cheap price?</p>
+          </div>
+          <div class="lower-review mt-5">
+              <div class="d-flex align-items-center bi">
+                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
+              of followers to like my picture for such a cheap price?</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     {{-- <div class="container pb-4">
@@ -1221,6 +1279,41 @@
         icon.classList.add("mt-1");
         answer.setAttribute("id", "answer-slider");
         $("#answer-slider").slideDown("slow");
+    });
+
+  </script>
+  <script>
+
+    let element = "";
+
+    $(document).on("click", (event) => {
+        if(event.target.closest(".service-faq-box")){
+          let mainFaqBox = event.target.closest(".service-faq-box");
+          let faqAnswer = mainFaqBox.getElementsByClassName("service-faq-answer")[0];
+          let icon = mainFaqBox.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0];
+          
+          if(element === faqAnswer){
+            faqAnswer.classList.remove("service-faq-answer-active");
+            faqAnswer.classList.add("service-faq-answer-inactive");
+            icon.classList.remove("faq-answer-active-icon");
+            element = "";
+            return;
+          }
+          element = faqAnswer;
+
+          let allFaqAnswers = document.querySelectorAll(".service-faq-answer");
+          for(let i=0; i<allFaqAnswers.length; i++){
+              if(faqAnswer !== allFaqAnswers[i] && allFaqAnswers[i].classList.contains("service-faq-answer-active")){
+                allFaqAnswers[i].classList.remove("service-faq-answer-active");
+                allFaqAnswers[i].classList.add("service-faq-answer-inactive");
+                allFaqAnswers[i].parentNode.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0].classList.remove("faq-answer-active-icon");
+              }
+          }
+
+          faqAnswer.classList.remove("service-faq-answer-inactive");
+          faqAnswer.classList.add("service-faq-answer-active");
+          icon.classList.add("faq-answer-active-icon");
+        }
     });
 
   </script>

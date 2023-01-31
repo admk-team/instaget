@@ -78,7 +78,8 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="overlay">
-              <video class="fullscreen" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
+              <img src="{{ asset('front_asset/images/home-bg-placeholder.png')}}" id="home-bg-placeholder" class="img-fluid" alt="">
+              <video class="fullscreen" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
               </video>
             </div>
 
@@ -781,6 +782,17 @@
 
     );
 }
+</script>
+<script>
+
+$("#home-video").css("visibility", "hidden");
+let video = document.getElementById("home-video");
+video.oncanplay = function(){
+  $("#home-video").css("visibility", "visible");
+  $("#home-bg-placeholder").css("visibility", "hidden");
+  $("#home-bg-placeholder").pause();
+};
+
 </script>
 </body>
 
