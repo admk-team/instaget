@@ -100,7 +100,7 @@
                                 <ul class="show-notification profile-notification">
                                     <li><a href="#!"><i class="ti-settings"></i>Settings </a></li>
                                     <li><a href="#"><i class="ti-user"></i>Profile </a></li>
-                                    <li><a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout
+                                    <li><a href="{{ route('admin.logout') }}"><i class="ti-layout-sidebar-left"></i>Logout
                                         </a></li>
                                 </ul>
                             </li>

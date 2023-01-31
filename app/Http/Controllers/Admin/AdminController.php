@@ -11,6 +11,7 @@ use App\Models\SubCategory;
 use App\Models\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -31,11 +32,18 @@ class AdminController extends Controller
             'password' => 'required'
         ]);
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            
+            $request->session()->put('email' , $request->email);
             return redirect()->intended('/admin/dashboard');
         }
         
         return back()->with('error','Invalid Login details');
+    }
+
+    public function Logout(Request $request){
+        
+        Auth::logout();
+        Session::flush();
+        return view('admin.login');
     }
 
     

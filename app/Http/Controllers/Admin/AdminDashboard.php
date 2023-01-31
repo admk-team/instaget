@@ -10,7 +10,14 @@ class AdminDashboard extends Controller
 {
     public function login(){
         // return auth()->user();
+
+        if(session()->has('email')){
+            
+            return redirect()->route('admin.dashboard');
+        }else{
+
         return view('admin.login');
+        }
     }
     
 }
