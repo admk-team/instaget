@@ -43,7 +43,7 @@ class AdminController extends Controller
         
         Auth::logout();
         Session::flush();
-        return view('admin.login');
+        return redirect()->route('login');
     }
 
     
