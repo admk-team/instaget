@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -28,7 +27,6 @@
   <title>Instaget</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
-
 <body>
   <div class="container-fluid m-0 p-0">
     <header>
