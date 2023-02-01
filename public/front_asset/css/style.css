@@ -621,12 +621,10 @@ body {
 }
 
 .instagram-icon {
-    background-image: linear-gradient(to bottom right,
-            #feda75,
-            #fa7e1e,
-            #d62976,
-            #962fbf,
-            #4f5bd5);
+    background-color: white;
+    border: 0;
+    box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%);
+    border-radius: 10px !important;
 }
 
 .youtube-icon {
@@ -1666,6 +1664,14 @@ li {
     .section-testimonials .testimonial {
         max-width: 448.328px;
     }
+
+    #contact-tab {
+        margin-left: 11px !important;
+    }
+    
+    #profile-tab {
+        margin-left: 6.5px !important;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -2195,6 +2201,16 @@ span {
     }
 }
 
+@media(min-width:1024px) {
+    #contact-tab {
+        margin-left: 4px !important;
+    }
+    
+    #profile-tab {
+        margin-left: 2px !important;
+    }
+}
+
 .services-testimonials {
     background-color: #ffffff;
     margin: 0% 6% 0% 6%;
@@ -2343,6 +2359,7 @@ span {
         width: 150px;
         text-align: center;
         justify-content: center;
+        border-radius: 10px !important;
     }
 }
 
@@ -2425,9 +2442,33 @@ span {
     .service-upper-button-li {
         margin-right: 5px;
     }
+    
+    #home-tab, #profile-tab, #contact-tab {
+        padding-bottom: 77px !important;
+    }
+    
+    #contact-tab {
+        margin-left: 7px;
+    }
+    
+    #profile-tab {
+        margin-left: 3px;
+    }
+
+    .tab-content {
+        margin-top: -83px !important;
+    }
 }
 
 @media (min-width: 480px) {
+    #contact-tab {
+        margin-left: 6px;
+    }
+    
+    #profile-tab {
+        margin-left: 0px;
+    }
+
     .tab-content {
         width: 452px;
         margin-top: -34px !important;
@@ -2816,7 +2857,12 @@ span {
     box-shadow: 0 6px 13px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #ffffff;
-    height: fit-content;
+    max-height: 85px !important;
+    max-width: 574.61px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    transition: all 0.5s ease-in-out;
 }
 
 .service-faq-question {
@@ -2963,6 +3009,14 @@ span {
     background-color: #eeeeee !important;
 }
 
+.isDropdown {
+    max-height: 1000px !important;
+}
+
+.list-group-item {
+    background-color: white !important;
+}
+
 @media(max-width:991px) {
     .box-section {
         flex-direction: column !important;
@@ -3031,6 +3085,12 @@ span {
     }
 }
 
+@media(max-width:1070px) {
+    .service-faq-container {
+        align-items: center !important;
+    }
+}
+
 @keyframes faq-answer-active {
     0% {
         max-height: 0vh;
@@ -3050,6 +3110,19 @@ span {
         max-height: 0vh;
     }
 }
+<<<<<<< HEAD
 .footer .container-fluid{
     border-bottom: 1px solid rgb(79, 79, 79);
+=======
+
+.instagram-icon {
+    background-color: white;
+    border: 0;
+    box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%);
+    border-radius: 10px !important;
+}
+
+.mbl-service-icon {
+    background-color: red !important;
+>>>>>>> fe8459f4598fdd5a03b2ab3ebc34160a50678518
 }
