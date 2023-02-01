@@ -183,7 +183,7 @@
               class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
               src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
               class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
-              src="{{ asset('front_asset/images/icons/talk.png') }}" alt=""> @endif
+              src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
           </div>
           <div class="icon-title">
             <p class="">{{ $service->title ?? '' }}</p>

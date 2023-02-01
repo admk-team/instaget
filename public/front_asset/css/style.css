@@ -3158,3 +3158,14 @@ span {
 #mbl-service-box-icon-5:hover {
     background: #ffce25 !important;
 }
+
+.for-youtube .icon i{
+    color: #fb0000;
+}
+
+.for-youtube:hover .icon .bi-youtube{
+    color: #ffffff;
+}
+.for-appMarketing:hover .icon .bi-phone{
+    color: #ffffff;
+}
