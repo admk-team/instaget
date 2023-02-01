@@ -1224,6 +1224,6 @@
     });
 
   </script>
-</body>
+ </body>
 
 </html>
