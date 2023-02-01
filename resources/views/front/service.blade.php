@@ -22,7 +22,6 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
@@ -32,79 +31,17 @@
 
 <body>
   <div class="container-fluid m-0 p-0">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <span>Intagram likes</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSUpportedContent" aria-controls="navbarSUpportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSUpportedContent">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">What is Instagram?</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Service
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Instagram</a></li>
-                  <li><a class="dropdown-item" href="#">Youtube</a></li>
-                  <li><a class="dropdown-item" href="#">Facebook</a></li>
-                  <li><a class="dropdown-item" href="#">Ticktok</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Frequently Asked Questions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Login</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+   @include('layouts.header')
     <div class="container py-1  d-block d-sm-none">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">
           @foreach ($services as $service)
           <div class="service">
-            @if($service->slug=='instagram')
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
+            <li class="btn list-group-item instagram-icon d-flex mbl-service-icon">
+              <i class="bi bi-instagram"></i>
+              <span>{{ $service->title }}</span>
             </li>
-            @elseif($service->slug=='youtube')
-            <li class="btn list-group-item youtube-icon d-flex">
-              <i class="bi bi-youtube"></i>&nbsp;
-            </li>
-            @elseif($service->slug=='naver')
-            <li class="btn list-group-item naver-icon d-flex">
-              <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @elseif($service->slug=='app-marketing')
-            <li class="btn list-group-item appMarketing-icon d-flex instagram-btns">
-              <i class="bi bi-phone"></i> &nbsp;
-            </li>
-            @elseif($service->slug=='kako')
-            <li class="btn list-group-item talk-icon d-flex instagram-btns">
-              <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @else
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
-            </li>
-            @endif
             <div class="content">
               <div class="accordion">
                 @foreach ($service->categories as $category)
@@ -529,17 +466,17 @@
       <div>
         <div class="box-section d-flex justify-content-center align-items-center mt-5">
           <div class="box1 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/001.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">24시간 주문가동</span>
             <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
           </div>
           <div class="box2 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-2.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/002.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">실제한국인서비스</span>
             <span class="box-description text-center">모든 SNS마케팅에 실제한국인계정으로 제공됩니다.</span>
           </div>
           <div class="box3 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-3.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/003.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">1:1전문 상담원</span>
             <span class="box-description text-center">분야 별 전문 마케터가 SNS홍보전략을 상당해드립니다.</span>
           </div>
@@ -596,7 +533,7 @@
       <span class="service-lower-description text-center mt-3">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
       <div class="d-flex service-lower-lower-section">
         <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
-          <img src="{{ asset('front_asset/images/service-icon-4.png') }}" class="service-icon-4" alt="">
+          <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
           <button class="service-lower-button">후기작성</button>
         </div>
         <div class="service-lower-text">
@@ -850,6 +787,7 @@
             faqAnswer.classList.add("service-faq-answer-inactive");
             icon.classList.remove("faq-answer-active-icon");
             element = "";
+            mainFaqBox.classList.remove("isDropdown");
             return;
           }
           element = faqAnswer;
@@ -860,9 +798,11 @@
                 allFaqAnswers[i].classList.remove("service-faq-answer-active");
                 allFaqAnswers[i].classList.add("service-faq-answer-inactive");
                 allFaqAnswers[i].parentNode.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0].classList.remove("faq-answer-active-icon");
+                allFaqAnswers[i].parentNode.classList.remove("isDropdown");
               }
           }
 
+          mainFaqBox.classList.add("isDropdown");
           faqAnswer.classList.remove("service-faq-answer-inactive");
           faqAnswer.classList.add("service-faq-answer-active");
           icon.classList.add("faq-answer-active-icon");
