@@ -80,31 +80,96 @@
         <div class="services">
           @foreach ($services as $service)
           <div class="service">
-            @if($service->slug=='instagram')
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
+            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0"
+            @if ($loop->iteration == 1)
+            id="mbl-service-box-icon-1"
+        @elseif($loop->iteration == 2)
+          id="mbl-service-box-icon-2"
+        @elseif($loop->iteration == 3)
+          id="mbl-service-box-icon-3"
+        @elseif($loop->iteration == 4)
+          id="mbl-service-box-icon-4"
+        @elseif($loop->iteration == 5)
+          id="mbl-service-box-icon-5"
+        @endif
+            >
+              @if ($loop->iteration == 1)
+                  <img src="{{ asset('front_asset/images/insta-before-click.png') }}" class="mbl-service-img"
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  alt="">
+              @endif
+              @if ($loop->iteration == 2)
+                  <img src="{{ asset('front_asset/images/youtube-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 3)
+                  <img src="{{ asset('front_asset/images/mbl-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 4)
+                  <img src="{{ asset('front_asset/images/navar-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 5)
+                  <img src="{{ asset('front_asset/images/talk-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              <span class="mbl-serice-icon-text text-dark">유튜브</span>
             </li>
-            @elseif($service->slug=='youtube')
-            <li class="btn list-group-item youtube-icon d-flex">
-              <i class="bi bi-youtube"></i>&nbsp;
-            </li>
-            @elseif($service->slug=='naver')
-            <li class="btn list-group-item naver-icon d-flex">
-              <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @elseif($service->slug=='app-marketing')
-            <li class="btn list-group-item appMarketing-icon d-flex instagram-btns">
-              <i class="bi bi-phone"></i> &nbsp;
-            </li>
-            @elseif($service->slug=='kako')
-            <li class="btn list-group-item talk-icon d-flex instagram-btns">
-              <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @else
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
-            </li>
-            @endif
             <div class="content">
               <div class="accordion">
                 @foreach ($service->categories as $category)
@@ -1314,6 +1379,90 @@
           faqAnswer.classList.add("service-faq-answer-active");
           icon.classList.add("faq-answer-active-icon");
         }
+    });
+
+  </script>
+  <script>
+
+    $(document).on("click", (event) => {
+      if(!event.target.closest(".mbl-service-icon")){
+        let allImgs = document.querySelectorAll(".mbl-service-img");
+        for(let i=0; i<allImgs.length; i++) {
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-1"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/insta-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-2"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/youtube-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-3"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/mbl-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-4"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/navar-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-5"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/talk-before-click.png') }}");
+          }
+          allImgs[i].parentNode.getElementsByClassName("mbl-serice-icon-text")[0].classList.remove("text-white");
+        }
+      }
+    });
+
+    $(".mbl-service-icon").on("mouseenter", (event) => {
+      if(event.target.closest(".mbl-service-icon")){
+        let allImgs = document.querySelectorAll(".mbl-service-img");
+        for(let i=0; i<allImgs.length; i++) {
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-1"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/insta-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-2"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/youtube-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-3"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/mbl-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-4"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/navar-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-5"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/talk-before-click.png') }}");
+          }
+          
+          allImgs[i].parentNode.getElementsByClassName("mbl-serice-icon-text")[0].classList.remove("text-white");
+        }
+
+        let item = event.target.closest(".mbl-service-icon");
+        let image = $(item).find("img:eq(0)");
+
+        $(item).find(".mbl-serice-icon-text:eq(0)").addClass("text-white");
+        if(image.attr("id") == "mbl-service-icon-1"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/intsa-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-2"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/youtube-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-3"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/mbl-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-4"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/navar-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-5"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/talk-after-click.png")
+        }
+      }
     });
 
   </script>
