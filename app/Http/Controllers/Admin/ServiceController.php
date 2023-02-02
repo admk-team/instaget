@@ -42,13 +42,20 @@ class ServiceController extends Controller
         $request->validate([
             'title' => 'required|unique:services,title',
             'image' => 'required',
+            'bg_image' => 'required',
+            'color' => 'required'
         ]);
         $model = new Service();
         $model->title = $request->title;
         $model->slug = str_replace('_', ' ', $request->title);
+        $model->color = $request->color;
         if($request->hasFile('image')){
             $path  = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
+        }
+        if($request->hasFile('bg_image')){
+            $path = $request->file('bg_image')->store('/images/services/background_Image' , 'public');
+            $model->bg_image = $path;
         }
 
         if($model->save()){
@@ -92,11 +99,14 @@ class ServiceController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'image'
+            'image' => 'image',
+            'color' => 'required',
+            'bg_image' => 'required',
         ]);
         $model = Service::findorFail($id);
         $model->title = $request->title;
         $model->slug = str_replace('_', ' ', $request->title);
+        $model->color = $request->color;
 
         if($request->has('image')){
             if(isset($model->image)){
@@ -108,6 +118,17 @@ class ServiceController extends Controller
             $path = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
         }
+        if($request->has('bg_image')){
+            if(isset($model->bg_image)){
+                $image_path  = public_path('storage/'.$model->bg_image);
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $path = $request->file('bg_image')->store('/images/services/background_Image' , 'public');
+            $model->bg_image = $path;
+        }
+        
 
         if($model->update()){
             return redirect()->route('admin.services.index')->with('success' , 'Services Updated Successfully ');
