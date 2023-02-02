@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="col-12 m-2">
                                         <label for="color">Hover Color</label>
-                                          <input type="color" value="" name="color" class="form-control" /> 
+                                          <input type="color" value="" name="color" class="form-control" style="height: 50px" /> 
                                     </div>
                                 </div>
                                 <button class="mt-1 btn btn-primary">Submit</button>

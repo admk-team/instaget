@@ -101,7 +101,7 @@ class ServiceController extends Controller
             'title' => 'required',
             'image' => 'image',
             'color' => 'required',
-            'bg_image' => 'required',
+            'bg_image' => 'image',
         ]);
         $model = Service::findorFail($id);
         $model->title = $request->title;
