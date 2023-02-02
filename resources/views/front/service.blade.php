@@ -787,7 +787,7 @@
 
   </script>
   <script>
-    let element = "";
+    // let element = "";
 
     $(document).on("click", (event) => {
         if(event.target.closest(".service-faq-box")){
@@ -1010,13 +1010,13 @@ $('.social-icons-image4').on({
 
   </script>
   <script>
-    $('.service-front-imge').hover(function(){
-      $(this).hide();
-      $('.service-bg-imge').show();
-    }, function(){
-      $('.service-front-imge').show();
-      $('.service-bg-imge').hide();
-    });
+    // $('.service-front-imge').hover(function(){
+    //   $(this).hide();
+    //   $('.service-bg-imge').show();
+    // }, function(){
+    //   $('.service-front-imge').show();
+    //   $('.service-bg-imge').hide();
+    // });
   </script>
 </body>
 </html>
