@@ -3170,3 +3170,6 @@ span {
 .for-appMarketing:hover .icon .bi-phone{
     color: #ffffff;
 }
+.footer .container-fluid .container .list-group .list-group-item{
+    background-color: transparent !important;
+}
