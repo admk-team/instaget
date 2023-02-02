@@ -3228,3 +3228,7 @@ span {
 .packages .tab-content {
     width: 100% !important;
 }
+
+.footer .container-fluid .container .list-group .list-group-item{
+    background-color: transparent !important;
+}
