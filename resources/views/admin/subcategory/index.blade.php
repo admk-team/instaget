@@ -40,6 +40,7 @@
                       <th>Title</th>
                       <th> Sub Title</th>
                       <th>Images</th>
+                      <th>Color</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
@@ -52,6 +53,7 @@
                       <td>{{ $list->title ?? '' }}</td>
                       <td><img src="{{ asset('storage/'.$list->image) }}" alt="" style="width: 100px; height:100px">
                       </td>
+                      <td> <span><input type="color" value="{{ $list->color ?? '' }}"></span></td>
                       <td>
                         <div class="dropdown d-inline-block show">
                           @php

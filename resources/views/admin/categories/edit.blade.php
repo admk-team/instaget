@@ -66,6 +66,21 @@
                                     <img src="{{ asset('storage/'.$category->image) }}" alt="" style="width: 100px; height:100px">
 
                                 </div>
+                                <div class="col-12 m-2">
+                                  <label for="Image">Background Image</label>
+                                  <input name="bg_image" type="file" class="form-control" value="{{ old('image') }}" >
+                                  @error('bg_image')
+                                      <span class="text-danger">{{ $message }}</span>
+                                  @enderror
+                                  <img src="{{ asset('storage/'.$category->bg_image) }}" alt="" style="width:100px; height:100px">
+                              </div>
+                              <div class="col-12 m-2">
+                                  <label for="color">Hover Color</label>
+                                  <input type="color" name="color" value="{{ old('color') ?? $category->color }}" class="form-control">
+                                  @error('color')
+                                  <span class="text-danger">{{ $message }}</span>
+                                  @enderror
+                              </div>
                             </div>
                             <button class="mt-1 btn btn-primary">Submit</button>
                         </form>

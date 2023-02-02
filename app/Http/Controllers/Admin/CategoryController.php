@@ -46,18 +46,25 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required|unique:categories,title',
             'image' => 'image',
-            'service_id' => 'required'
-        ]);
+            'service_id' => 'required',
+            'bg_image' => 'image',
+            'color' => 'required'
+        ]); 
 
         $title = strtolower($request->title);
         $model = new Category();
         $model->title = $request->title;
         $model->service_id = $request->service_id;
         $model->slug = Str::slug($title , '-');
+        $model->color = $request->color;
 
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/category' , 'public');
             $model->image = $image_path;
+        }
+        if($request->hasFile('bg_image')){
+            $image_path = $request->file('bg_image')->store('/images/category/background_image' , 'public');
+            $model->bg_image = $image_path;
         }
 
         if($model->save()){
@@ -104,13 +111,16 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
             'image' => 'image',
-            'service_id' => 'required'
+            'service_id' => 'required',
+            'bg_image' => 'image',
+            'color' => 'required'
         ]);
         $title = strtolower($request->title);
         $model = Category::findorFail($id);
         $model->title = $request->title;
         $model->service_id = $request->service_id;
         $model->slug = Str::slug($title , '-');
+        $model->color = $request->color;
 
         if($request->has('image')){
             if(isset($model->image)){
@@ -121,6 +131,16 @@ class CategoryController extends Controller
             }
             $path = $request->file('image')->store('/images/category' , 'public');
             $model->image = $path;
+        }
+        if($request->has('bg_image')){
+            if(isset($model->bg_image)){
+                $image_path = public_path('storage/'.$model->bg_image);
+                if(file_exists($image_path)){
+                    unlink($image_path);
+                }
+            }
+            $path = $request->file('bg_image')->store('/images/category/background_image' , 'public');
+            $model->bg_image = $path;
         }
 
         if($model->update()){
