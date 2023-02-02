@@ -830,7 +830,7 @@ margin: 5px;
 
 .bg_orange h4 {
     color: rgb(0, 0, 0);
-    font-size: 1.6rem !important;
+    /* font-size: 1.6rem !important; */
 }
 
 .bg_orange span {
@@ -2524,7 +2524,7 @@ span {
         height: 122.84px;
     }
     .package-box h4 {
-        font-size: 20px;
+        font-size: 1.6rem !important;
         padding-top: 33px;
         margin: 0;
         padding-bottom: 18px;
