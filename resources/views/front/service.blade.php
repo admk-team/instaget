@@ -30,101 +30,16 @@
 </head>
 <body>
   <div class="container-fluid m-0 p-0">
-   @include('layouts.header')
+    @include('layouts.header')
     <div class="container py-1  d-block d-sm-none">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">
           @foreach ($services as $service)
           <div class="service">
-            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0"
-            @if ($loop->iteration == 1)
-            id="mbl-service-box-icon-1"
-        @elseif($loop->iteration == 2)
-          id="mbl-service-box-icon-2"
-        @elseif($loop->iteration == 3)
-          id="mbl-service-box-icon-3"
-        @elseif($loop->iteration == 4)
-          id="mbl-service-box-icon-4"
-        @elseif($loop->iteration == 5)
-          id="mbl-service-box-icon-5"
-        @endif
-            >
-              @if ($loop->iteration == 1)
-                  <img src="{{ asset('front_asset/images/insta-before-click.png') }}" class="mbl-service-img"
-                  @if ($loop->iteration == 1)
-                  id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-                id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-                id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-                id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-                id="mbl-service-icon-5"
-              @endif
-                  alt="">
-              @endif
-              @if ($loop->iteration == 2)
-                  <img src="{{ asset('front_asset/images/youtube-before-click.png') }}" class="mbl-service-img" alt=""
-                  @if ($loop->iteration == 1)
-                  id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-                id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-                id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-                id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-                id="mbl-service-icon-5"
-              @endif
-                  >
-              @endif
-              @if ($loop->iteration == 3)
-                  <img src="{{ asset('front_asset/images/mbl-before-click.png') }}" class="mbl-service-img" alt=""
-                  @if ($loop->iteration == 1)
-                  id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-                id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-                id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-                id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-                id="mbl-service-icon-5"
-              @endif
-                  >
-              @endif
-              @if ($loop->iteration == 4)
-                  <img src="{{ asset('front_asset/images/navar-before-click.png') }}" class="mbl-service-img" alt=""
-                  @if ($loop->iteration == 1)
-                  id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-                id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-                id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-                id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-                id="mbl-service-icon-5"
-              @endif
-                  >
-              @endif
-              @if ($loop->iteration == 5)
-                  <img src="{{ asset('front_asset/images/talk-before-click.png') }}" class="mbl-service-img" alt=""
-                  @if ($loop->iteration == 1)
-                  id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-                id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-                id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-                id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-                id="mbl-service-icon-5"
-              @endif
-                  >
-              @endif
+            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0" onmouseover="this.style.backgroundColor='{{ $service->color ?? '' }}';this.style.color='{{ 'white' }}'"
+              ><img src="{{ asset('storage/'.$service->image) }}" class="mbl-service-img"
+              alt="">
               <span class="mbl-serice-icon-text text-dark">유튜브</span>
             </li>
             <div class="content">
@@ -132,18 +47,7 @@
                 @foreach ($service->categories as $category)
                 <div class="accordion-item">
                   <div class="accordion-header" id="heading{{ $category->id }}">
-                    <button class="accordion-button shadow-none collapsed 
-                    @if ($loop->iteration==1)
-                      insta-danger
-                    @elseif($loop->iteration==2)
-                      insta-success
-                    @elseif($loop->iteration==3)
-                    insta-primary
-                    @elseif($loop->iteration==4)
-                    insta-warning
-                    @elseif($loop->iteration==5)
-                    insta-info
-                    @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
+                    <button class="accordion-button shadow-none collapsed" style="background-color: {{ $category->color }};color:white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
                       aria-expanded="false" aria-controls="collapse{{ $category->id }}">
                       {{ $category->title ?? '' }}
                     </button>
@@ -153,7 +57,7 @@
                     <div class="accordion-body instagram-accordion-body">
                       <ul class="instagram-likes-ul">
                         @foreach ($category->subcategories as $subcategory)
-                        <li>{{ $category->title }}</li>
+                        <li style="border-left: 3px solid {{ $subcategory->color }};">{{ $category->title }}</li>
                         @endforeach
                       </ul>
                     </div>
@@ -176,15 +80,13 @@
       <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
           @foreach ($services as $service)
-          <div class="dropdown {{ !$loop->last? 'me-3': ''  }}" style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+          <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
+            style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
             <div href="javascript:void(0)"
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
-                @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
-                  class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
-                  src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
-                  class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
-                  src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
+                <img src="{{ asset('storage/'.$service->image ?? '') }}" alt="" class="service-front-imge">
+                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-bg-imge icon-hover">
               </div>
               <div class="icon-title">
                 {{ $service->title ?? '' }}
@@ -194,10 +96,9 @@
             <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
               @foreach ($service->categories as $category)
               <li
-                class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
-                <a class="dropdown-item" href="#">
-                  <i
-                    class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i>
+                class="instagram-list" onmouseover="changeColors(this, '{{ $category->color ?? 'white' }}', '{{ 'white' }}')" onmouseout="changeColors(this, 'white', '{{ 'black' }}')">
+                <a class="dropdown-item" href="#" style="color:{{ $category->color }}">
+                  <img src="{{ asset('storage/'.$category->image ?? '') }}" alt="" style="height: 25px;width: auto"> 
                   {{ $category->title ?? '' }}
                   @if(count($category->subcategories)>0)
                   <i class="bi bi-caret-right"></i>
@@ -206,7 +107,7 @@
                 @if(count($category->subcategories)>0)
                 <ul class="dropdown-menu dropdown-submenu">
                   @foreach ($category->subcategories as $subcategory)
-                  <li>
+                  <li onmouseover="this.style.borderLeft='3px solid {{ $subcategory->color ?? '' }}'" onmouseout="this.style.borderLeft='0'">
                     <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
                   </li>
                   @endforeach
@@ -232,16 +133,19 @@
         <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                type="button" role="tab" aria-controls="home" aria-selected="true">실제한국인팔로워</button>
+              <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                aria-selected="true">실제한국인팔로워</button>
             </li>
             <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                type="button" role="tab" aria-controls="profile" aria-selected="false">리얼한국인팔로워</button>
+              <button class="nav-link tabs-button service-upper-button" id="profile-tab" data-bs-toggle="tab"
+                data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                aria-selected="false">리얼한국인팔로워</button>
             </li>
             <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                type="button" role="tab" aria-controls="contact" aria-selected="false">외국인팔로워</button>
+              <button class="nav-link tabs-button service-upper-button" id="contact-tab" data-bs-toggle="tab"
+                data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                aria-selected="false">외국인팔로워</button>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
@@ -543,7 +447,8 @@
     </div>
     <div class="contaier section-dark mb-5">
       <div class="dark-inner">
-        <h1 class="text-center text-white fw-bolder">배송완료 된 좋아요 수 <span class="orange-span-text">9,840,561,378</span> 개</h1>
+        <h1 class="text-center text-white fw-bolder">배송완료 된 좋아요 수 <span class="orange-span-text">9,840,561,378</span> 개
+        </h1>
       </div>
     </div>
 
@@ -571,7 +476,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="service-faq-section">
       <h2 class="service-faq-title text-center">이용자 자주묻는 질문?</h2>
       <div class="service-faq-container container d-flex mt-5 justify-content-between">
@@ -581,7 +486,13 @@
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
+              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
+              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
+              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
+              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
+              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
+              molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
         <div class="service-faq-box">
@@ -590,7 +501,13 @@
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
+              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
+              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
+              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
+              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
+              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
+              molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
       </div>
@@ -601,7 +518,13 @@
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
+              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
+              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
+              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
+              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
+              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
+              molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
         <div class="service-faq-box">
@@ -610,7 +533,13 @@
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at molestias ad! Ullam, voluptates!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
+              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
+              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
+              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
+              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
+              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
+              molestias ad! Ullam, voluptates!</p>
           </div>
         </div>
       </div>
@@ -626,29 +555,29 @@
         </div>
         <div class="service-lower-text">
           <div class="lower-review mt-5">
-              <div class="d-flex align-items-center bi">
-                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
             <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
               of followers to like my picture for such a cheap price?</p>
           </div>
           <div class="lower-review mt-5">
-              <div class="d-flex align-items-center bi">
-                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
             <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
               of followers to like my picture for such a cheap price?</p>
           </div>
           <div class="lower-review mt-5">
-              <div class="d-flex align-items-center bi">
-                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
             <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
               of followers to like my picture for such a cheap price?</p>
           </div>
           <div class="lower-review mt-5">
-              <div class="d-flex align-items-center bi">
-                <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
             <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
               of followers to like my picture for such a cheap price?</p>
@@ -670,8 +599,8 @@
       <div class="container">
         <div class="row ps-3 pt-4">
           <p class="text-white">애드피플</p>
-          <p class="text-white">사업자등록번호 : 6865200365  |</p>
-          <p class="text-white">대표자 : 강연  |  주소 : 서울특별시 영등포구 가마</p>
+          <p class="text-white">사업자등록번호 : 6865200365 |</p>
+          <p class="text-white">대표자 : 강연 | 주소 : 서울특별시 영등포구 가마</p>
         </div>
         <div class="row ps-3 pt-4">
           <p class="text-secondary pt-4">Copyright © INSTAGET. All rights reserved.</p>
@@ -705,6 +634,14 @@
           }
       })
   </script>
+  <script>
+      function changeColors(self, bg = 'white', color = 'white') {
+        self.style.backgroundColor = bg;
+        self.style.color = color;
+        self.querySelector('a').style.backgroundColor = bg;
+        self.querySelector('a').style.color = color;
+      }
+    </script>
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
   const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
@@ -819,7 +756,6 @@
 
   </script>
   <script>
-
     let element = "";
 
     $(document).on("click", (event) => {
@@ -857,7 +793,6 @@
 
   </script>
   <script>
-
     $(document).on("click", (event) => {
       if(!event.target.closest(".mbl-service-icon")){
         let allImgs = document.querySelectorAll(".mbl-service-img");
@@ -1042,6 +977,15 @@ $('.social-icons-image4').on({
  });
 });
 
+  </script>
+  <script>
+    $('.service-front-imge').hover(function(){
+      $(this).hide();
+      $('.service-bg-imge').show();
+    }, function(){
+      $('.service-front-imge').show();
+      $('.service-bg-imge').hide();
+    });
   </script>
 </body>
 </html>
