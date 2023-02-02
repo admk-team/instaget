@@ -831,7 +831,7 @@ margin: 5px;
 
 .bg_orange h4 {
     color: rgb(0, 0, 0);
-    font-size: 1.6rem !important;
+    /* font-size: 1.6rem !important; */
 }
 
 .bg_orange span {
@@ -2081,10 +2081,11 @@ span {
     z-index: 99999;
     bottom: 0;
     background: white;
-    margin: -15px;
-    border-top: 1px solid black;
-    padding-top: 10px;
+    border-top: 3px solid #4c4c4c;
     display: none;
+    left: 0;
+    width: 100%;
+    padding: 1.6rem 0;
 }
 
 .mobile-checkout-main-show {
@@ -2098,8 +2099,17 @@ span {
 }
 
 .close-down-btn {
-    position: relative;
-    top: -29px;
+    position: absolute;
+    top: -32px;
+    left: calc(50% - 31px);
+    width: fit-content;
+    padding: 4px;
+    background-color: #4c4c4c;
+    border-radius: 16px 16px 0 0;
+}
+
+.close-down-btn .bi-chevron-down::before {
+    background-color: #4c4c4c !important;
 }
 
 .close-down-btn .bi-chevron-down::before {
@@ -2521,7 +2531,7 @@ span {
         height: 122.84px;
     }
     .package-box h4 {
-        font-size: 20px;
+        font-size: 1.6rem !important;
         padding-top: 33px;
         margin: 0;
         padding-bottom: 18px;
@@ -3242,6 +3252,40 @@ span {
     background-color: transparent !important;
 }
 
+.mobile-checkout-main .options label {
+    font-weight: 800;
+    color: #2e2e2e;
+}
+
+.mobile-checkout-main .options select {
+    box-shadow: none;
+    font-weight: 800;
+    color: #2e2e2e;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+}
+
+.mobile-checkout-main .options select:focus {
+    border: 1px solid #e75e3e;
+}
+
+.mobile-checkout-main .bar {
+    background-color: #e75e3e;
+    padding: .8rem 2rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.mobile-checkout-main .mobile .shop-btn,
+.mobile-checkout-main .mobile .purchase-btn {
+    font-size: 15px !important;
+    border-radius: 8px !important;
+}
 .dropdown-menu li {
     border-radius: 0 !important;
 }
