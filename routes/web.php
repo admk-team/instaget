@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AdminDashboard;
+use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -59,4 +60,12 @@ Route::name('front.')->group(function () {
 
 Route::get('/faq', function(){
     return view('front.faq');
+});
+
+// Admin Password Resetting
+Route::middleware('guest:admin')->group(function () {
+   Route::get('/password/reset', [AdminPasswordResetController::class, 'index'])->name('password.reset.page');
+   Route::post('/password/reset/email', [AdminPasswordResetController::class, 'email'])->name('password.reset.email');
+   Route::get('/reset/password/{token}', [AdminPasswordResetController::class, 'reset_page'])->name('password.reset');
+   Route::post('/reset/change/password', [AdminPasswordResetController::class, 'change_password'])->name('reset.change.password');
 });
