@@ -1099,11 +1099,7 @@ margin: 5px;
     color: #e93f33 !important;
 }
 
-.instagram-li a,
-.instagram-fo a,
-.instagram-ply a,
-.instagram-cmnt a,
-.instagram-reel a {
+.instagram-list {
     font-weight: 700 !important;
     line-height: 1.5 !important;
     white-space: normal !important;
@@ -1140,7 +1136,7 @@ margin: 5px;
 
 .insta-web .dropdown-submenu li a:hover {
     background-color: white !important;
-    border-left: 3px solid #d04545 !important;
+    /* border-left: 3px solid #d04545 !important; */
 }
 
 .insta-web .instagram-ply li a:hover {
@@ -2789,13 +2785,25 @@ span {
     height: 100%;
 }
 
+.desktop-social-btn .icon > .icon-hover {
+    display: none;
+}
+
+.desktop-social-btn:hover .icon > * {
+    display: none;
+}
+
+.desktop-social-btn:hover .icon > .icon-hover {
+    display: block;
+}
+
 .desktop-social-btn .icon * {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-.desktop-social-btn:hover .icon-title p {
+.desktop-social-btn:hover .icon-title {
     color: white !important;
 }
 
@@ -3277,4 +3285,7 @@ span {
 .mobile-checkout-main .mobile .purchase-btn {
     font-size: 15px !important;
     border-radius: 8px !important;
+}
+.dropdown-menu li {
+    border-radius: 0 !important;
 }
