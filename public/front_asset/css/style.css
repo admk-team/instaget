@@ -2775,6 +2775,18 @@ span {
     height: 100%;
 }
 
+.desktop-social-btn .icon > .icon-hover {
+    display: none;
+}
+
+.desktop-social-btn:hover .icon > * {
+    display: none;
+}
+
+.desktop-social-btn:hover .icon > .icon-hover {
+    display: block;
+}
+
 .desktop-social-btn .icon * {
     width: 100%;
     height: 100%;
@@ -3228,4 +3240,8 @@ span {
 
 .footer .container-fluid .container .list-group .list-group-item{
     background-color: transparent !important;
+}
+
+.dropdown-menu li {
+    border-radius: 0 !important;
 }

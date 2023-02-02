@@ -86,7 +86,7 @@
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
                 <img src="{{ asset('storage/'.$service->image ?? '') }}" alt="" class="service-front-imge">
-                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" style="display: none" class="service-bg-imge">
+                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-bg-imge icon-hover">
               </div>
               <div class="icon-title">
                 {{ $service->title ?? '' }}
@@ -96,8 +96,8 @@
             <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
               @foreach ($service->categories as $category)
               <li
-                class="instagram-list">
-                <a class="dropdown-item" href="#" style="color:{{ $category->color }}" onmouseover="this.style.backgroundColor='{{ $category->color ?? '' }}';this.style.color='{{ 'white' }}'" onmouseout="this.style.backgroundColor='white';this.style.color='{{ 'black' }}'">
+                class="instagram-list" onmouseover="changeColors(this, '{{ $category->color ?? 'white' }}', '{{ 'white' }}')" onmouseout="changeColors(this, 'white', '{{ 'black' }}')">
+                <a class="dropdown-item" href="#" style="color:{{ $category->color }}">
                   <img src="{{ asset('storage/'.$category->image ?? '') }}" alt="" style="height: 25px;width: auto"> 
                   {{ $category->title ?? '' }}
                   @if(count($category->subcategories)>0)
@@ -107,8 +107,8 @@
                 @if(count($category->subcategories)>0)
                 <ul class="dropdown-menu dropdown-submenu">
                   @foreach ($category->subcategories as $subcategory)
-                  <li>
-                    <a class="dropdown-item" href="#" onmouseover="this.style.borderLeft='3px solid {{ $subcategory->color ?? '' }}'" onmouseout="this.style.borderLeft='0'">{{ $subcategory->title ?? '' }}</a>
+                  <li onmouseover="this.style.borderLeft='3px solid {{ $subcategory->color ?? '' }}'" onmouseout="this.style.borderLeft='0'">
+                    <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
                   </li>
                   @endforeach
                 </ul>
@@ -634,6 +634,14 @@
           }
       })
   </script>
+  <script>
+      function changeColors(self, bg = 'white', color = 'white') {
+        self.style.backgroundColor = bg;
+        self.style.color = color;
+        self.querySelector('a').style.backgroundColor = bg;
+        self.querySelector('a').style.color = color;
+      }
+    </script>
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
   const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
