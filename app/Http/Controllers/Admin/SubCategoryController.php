@@ -49,13 +49,15 @@ class SubCategoryController extends Controller
         $request->validate([
             'category_id' => 'required',
             'title' => 'required',
-            'image' => 'image'
+            'image' => 'image',
+            'color' => 'required',
         ]);
         $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->category_id;
         $model->title = $request->title ;
         $model->slug = Str::slug($title , '-');
+        $model->color = $request->color;
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/subcategory' , 'public');
             $model->image  = $image_path;
@@ -106,13 +108,15 @@ class SubCategoryController extends Controller
        $request->validate([
         'sub_category' => 'required',
         'title' => 'required',
-        'image' => 'image'
+        'image' => 'image',
+        'color' => 'required',
        ]);
        $title = strtolower($request->title);
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
        $model->slug = Str::slug($title , '-');
+       $model->color = $request->color;
        
        if($request->has('image')){
         if(isset($model->image)){

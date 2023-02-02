@@ -22,13 +22,12 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
   <title>Instaget</title>
-
 </head>
-
 <body>
   <div class="container-fluid m-0 p-0">
    @include('layouts.header')
@@ -970,7 +969,109 @@
       }
     });
 
+
+
+    let element = "";
+
+    $(document).on("click", (event) => {
+        if(event.target.closest(".service-faq-box")){
+          let mainFaqBox = event.target.closest(".service-faq-box");
+          let faqAnswer = mainFaqBox.getElementsByClassName("service-faq-answer")[0];
+          let icon = mainFaqBox.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0];
+          
+          if(element === faqAnswer){
+            faqAnswer.classList.remove("service-faq-answer-active");
+            faqAnswer.classList.add("service-faq-answer-inactive");
+            icon.classList.remove("faq-answer-active-icon");
+            element = "";
+            return;
+          }
+          element = faqAnswer;
+
+          let allFaqAnswers = document.querySelectorAll(".service-faq-answer");
+          for(let i=0; i<allFaqAnswers.length; i++){
+              if(faqAnswer !== allFaqAnswers[i] && allFaqAnswers[i].classList.contains("service-faq-answer-active")){
+                allFaqAnswers[i].classList.remove("service-faq-answer-active");
+                allFaqAnswers[i].classList.add("service-faq-answer-inactive");
+                allFaqAnswers[i].parentNode.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0].classList.remove("faq-answer-active-icon");
+              }
+          }
+
+          faqAnswer.classList.remove("service-faq-answer-inactive");
+          faqAnswer.classList.add("service-faq-answer-active");
+          icon.classList.add("faq-answer-active-icon");
+        }
+    });
+
+    // $('.social-icons-image1').click(function(){
+    //   let img = $(this).attr('src');
+    //   let getUrl = window.location.origin;
+    //   var youtube_image='/front_asset/images/icons/youtube-before-click.png';
+    //   var instagram_image='/front_asset/images/icons/insta-before-click.png';
+    //   var navar_image='/front_asset/images/icons/navar-before-click.png';
+    //   var talk_image='/front_asset/images/icons/talk-before-click.png';
+      
+    //   console.log(instagram_image)
+    //   if(img==getUrl+'/front_asset/images/icons/youtube-before-click.png'){
+    //     console.log(instagram_image)
+    //     $('#instagram-image').attr("src",instagram_image);
+    //      $('#navar-image').attr("src", navar_image);
+    //     $('#talk-image').attr("src", talk_image);
+    //     $(this).attr("src", 'front_asset/images/icons/youtube-after-click.png');
+
+    //   }else if(img==getUrl+'/front_asset/images/icons/insta-before-click.png'){
+    //     // console.log(youtube_image)
+    //     $('#youtube-image').attr("src", youtube_image);
+    //     $('#navar-image').attr("src", navar_image);
+    //     $('#talk-image').attr("src", talk_image);
+    //     $(this).attr("src", 'front_asset/images/icons/intsa-after-click.png');
+
+    //   }else if(img==getUrl+'/front_asset/images/icons/navar-before-click.png'){
+
+    //     $('#youtube-image').attr("src", youtube_image);
+    //     $('#instagram-image').attr("src", instagram_image);
+    //     $('#talk-image').attr("src", talk_image);
+    //     $(this).attr("src", 'front_asset/images/icons/navar-after-click.png');
+
+    //   }else if(img==getUrl+'/front_asset/images/icons/talk-before-click.png'){
+
+    //     $('#youtube-image').attr("src", youtube_image);
+    //     $('#instagram-image').attr("src", instagram_image);
+    //     $('#navar-image').attr("src", navar_image);
+    //     $(this).attr("src", 'front_asset/images/icons/talk-after-click.png');
+
+    //   }
+    // })
+
+    jQuery(document).ready(function($){
+      let getUrl = window.location.origin;
+
+$('.social-icons-image1').on({
+     'click': function(){
+      let src = ($('#image1').attr('src')===getUrl+'front_asset/images/icons/youtube-after-click.png') ?'front_asset/images/icons/youtube-after-click.png' :'front_asset/images/icons/youtube-before-click.png';
+      $('#image1').attr('src', src);
+     }
+ });
+ 
+$('.social-icons-image2').on({
+     'click': function(){
+         $('#image2').attr('src','/front_asset/images/icons/intsa-after-click.png');
+     }
+ });
+ 
+$('.social-icons-image3').on({
+     'click': function(){
+         $('#image3').attr('src','/front_asset/images/icons/navar-after-click.png');
+     }
+ });
+ 
+$('.social-icons-image4').on({
+     'click': function(){
+         $('#image4').attr('src','/front_asset/images/icons/talk-after-click.png');
+     }
+ });
+});
+
   </script>
 </body>
-
 </html>

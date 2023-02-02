@@ -66,6 +66,14 @@
                                     <img src="{{ asset('storage/'.$sub_category->image) }}" alt="" style="width: 100px; height:100px">
 
                                 </div>
+                                <div class="col-12 m-2">
+                                    <label for="color">Color</label>
+                                    <input type="color" name="color" value="{{ $sub_category->color ?? '' }}" class="form-control">
+                                    @error('color')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
+                                </div>
                             </div>
                             <button class="mt-1 btn btn-primary">Submit</button>
                         </form>

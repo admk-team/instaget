@@ -66,6 +66,13 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
+                                        <div class="col-12 m-2">
+                                            <label for="color">Hover Color</label>
+                                            <input name="color" type="color" class="form-control" value="">
+                                            @error('color')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <button class="mt-1 btn btn-primary">Submit</button>
                                 </form>
