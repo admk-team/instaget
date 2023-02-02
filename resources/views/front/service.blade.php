@@ -173,61 +173,64 @@
 
     </div>
     {{-- For Desktop --}}
-    <div class="container pt-5 d-none d-md-flex justify-content-center">
-      @foreach ($services as $service)
-      <div class="dropdown me-3">
-        <div href="javascript:void(0)"
-          class="text-center desktop-social-btn @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
-          <div class="icon">
-            @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
-              class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
-              src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
-              class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
-              src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
-          </div>
-          <div class="icon-title">
-            <p class="">{{ $service->title ?? '' }}</p>
-          </div>
-        </div>
-        @if(count($service->categories)>0)
-        <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
-          @foreach ($service->categories as $category)
-          <li
-            class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
-            <a class="dropdown-item" href="#">
-              <i
-                class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i>
-              {{ $category->title ?? '' }}
-              @if(count($category->subcategories)>0)
-              <i class="bi bi-caret-right"></i>
-              @endif
-            </a>
-            @if(count($category->subcategories)>0)
-            <ul class="dropdown-menu dropdown-submenu">
-              @foreach ($category->subcategories as $subcategory)
-              <li>
-                <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
+    <div class="container pt-5 d-none d-md-block mb-5">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
+          @foreach ($services as $service)
+          <div class="dropdown {{ !$loop->last? 'me-3': ''  }}" style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+            <div href="javascript:void(0)"
+              class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+              <div class="icon">
+                @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
+                  class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
+                  src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
+                  class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
+                  src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
+              </div>
+              <div class="icon-title">
+                {{ $service->title ?? '' }}
+              </div>
+            </div>
+            @if(count($service->categories)>0)
+            <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
+              @foreach ($service->categories as $category)
+              <li
+                class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
+                <a class="dropdown-item" href="#">
+                  <i
+                    class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i>
+                  {{ $category->title ?? '' }}
+                  @if(count($category->subcategories)>0)
+                  <i class="bi bi-caret-right"></i>
+                  @endif
+                </a>
+                @if(count($category->subcategories)>0)
+                <ul class="dropdown-menu dropdown-submenu">
+                  @foreach ($category->subcategories as $subcategory)
+                  <li>
+                    <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
+                  </li>
+                  @endforeach
+                </ul>
+                @endif
               </li>
               @endforeach
             </ul>
             @endif
-          </li>
+          </div>
           @endforeach
-        </ul>
-        @endif
+        </div>
       </div>
-      @endforeach
     </div>
     <div class="container pb-5">
       <div class="row justify-content-center">
         <div class="d-block col-lg-6 pakg_heading p-4 mb-1">
-          <h3 class="text-center heading">인스타팔로워늘리기</h3>
-          <span class="text-center p-3 title">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다.</span> <br> <span
-            class="text-center p-3 title">365일24시간연중무휴자동주문처리</span>
+          <h3 class="text-center heading mb-2">인스타팔로워늘리기</h3>
+          <p class="text-center p-3 title m-0 px-0">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다. 365일24시간연중무휴자동주문처리</p>
         </div>
       </div>
       <div class="row justify-content-center tab-content-parent">
-        <div class="col-xl-6 col-lg-8 justify-content-center text-center">
+        <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item service-upper-button-li" role="presentation">
               <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
@@ -245,7 +248,7 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header">
+                <div class="tab-pane-header d-flex align-items-center justify-content-center">
                   <img src="{{ asset('front_asset/images/service-tick-icon.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
@@ -342,7 +345,7 @@
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header">
+                <div class="tab-pane-header d-flex align-items-center justify-content-center">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
@@ -439,7 +442,7 @@
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
               <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header">
+                <div class="tab-pane-header d-flex align-items-center justify-content-center">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
                   <span> &nbsp; 상품상세</span>
                 </div>
