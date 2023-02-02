@@ -30,38 +30,103 @@
 </head>
 <body>
   <div class="container-fluid m-0 p-0">
-      @include('layouts.header')
+   @include('layouts.header')
     <div class="container py-1  d-block d-sm-none">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
         <div class="services">
           @foreach ($services as $service)
           <div class="service">
-            @if($service->slug=='instagram')
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
+            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0"
+            @if ($loop->iteration == 1)
+            id="mbl-service-box-icon-1"
+        @elseif($loop->iteration == 2)
+          id="mbl-service-box-icon-2"
+        @elseif($loop->iteration == 3)
+          id="mbl-service-box-icon-3"
+        @elseif($loop->iteration == 4)
+          id="mbl-service-box-icon-4"
+        @elseif($loop->iteration == 5)
+          id="mbl-service-box-icon-5"
+        @endif
+            >
+              @if ($loop->iteration == 1)
+                  <img src="{{ asset('front_asset/images/insta-before-click.png') }}" class="mbl-service-img"
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  alt="">
+              @endif
+              @if ($loop->iteration == 2)
+                  <img src="{{ asset('front_asset/images/youtube-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 3)
+                  <img src="{{ asset('front_asset/images/mbl-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 4)
+                  <img src="{{ asset('front_asset/images/navar-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              @if ($loop->iteration == 5)
+                  <img src="{{ asset('front_asset/images/talk-before-click.png') }}" class="mbl-service-img" alt=""
+                  @if ($loop->iteration == 1)
+                  id="mbl-service-icon-1"
+              @elseif($loop->iteration == 2)
+                id="mbl-service-icon-2"
+              @elseif($loop->iteration == 3)
+                id="mbl-service-icon-3"
+              @elseif($loop->iteration == 4)
+                id="mbl-service-icon-4"
+              @elseif($loop->iteration == 5)
+                id="mbl-service-icon-5"
+              @endif
+                  >
+              @endif
+              <span class="mbl-serice-icon-text text-dark">유튜브</span>
             </li>
-            @elseif($service->slug=='youtube')
-            <li class="btn list-group-item youtube-icon d-flex">
-              <i class="bi bi-youtube"></i>&nbsp;
-            </li>
-            @elseif($service->slug=='naver')
-            <li class="btn list-group-item naver-icon d-flex">
-              <img src="{{ asset('front_asset/images/icons/naver.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @elseif($service->slug=='app-marketing')
-            <li class="btn list-group-item appMarketing-icon d-flex instagram-btns">
-              <i class="bi bi-phone"></i> &nbsp;
-            </li>
-            @elseif($service->slug=='kako')
-            <li class="btn list-group-item talk-icon d-flex instagram-btns">
-              <img src="{{ asset('front_asset/images/icons/talk.png') }}" class="talk-img" alt=""> &nbsp;
-            </li>
-            @else
-            <li class="btn list-group-item instagram-icon d-flex">
-              <i class="bi bi-instagram"></i>&nbsp;
-            </li>
-            @endif
             <div class="content">
               <div class="accordion">
                 @foreach ($service->categories as $category)
@@ -109,15 +174,15 @@
     {{-- For Desktop --}}
     <div class="container pt-5 d-none d-md-flex justify-content-center">
       @foreach ($services as $service)
-      <div class="dropdown me-2"onclick=" changeImage(this)">
+      <div class="dropdown me-3">
         <div href="javascript:void(0)"
           class="text-center desktop-social-btn @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
           <div class="icon">
-            @if($loop->iteration==1) <img src="{{ asset('front_asset/images/icons/youtube-before-click.png') }}" id="image1" class="social-icons-image1"> 
-            @elseif($loop->iteration==2) <img src="{{ asset('front_asset/images/icons/insta-before-click.png') }}" id="image2" class="social-icons-image2"> @elseif($loop->iteration==3) <img
-              src="{{ asset('front_asset/images/icons/navar-before-click.png') }}" alt="" class="social-icons-image3" id="image3"> @elseif($loop->iteration==4) <img
-              src="{{ asset('front_asset/images/icons/talk-before-click.png') }}" alt="" class="social-icons-image4" id="image4">  @elseif($loop->iteration==5) <img
-              src="{{ asset('front_asset/images/icons/talk.png') }}" alt="" class="social-icons-image5"> @endif
+            @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
+              class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
+              src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
+              class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
+              src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
           </div>
           <div class="icon-title">
             <p class="">{{ $service->title ?? '' }}</p>
@@ -486,17 +551,17 @@
       <div>
         <div class="box-section d-flex justify-content-center align-items-center mt-5">
           <div class="box1 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-1.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/001.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">24시간 주문가동</span>
             <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
           </div>
           <div class="box2 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-2.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/002.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">실제한국인서비스</span>
             <span class="box-description text-center">모든 SNS마케팅에 실제한국인계정으로 제공됩니다.</span>
           </div>
           <div class="box3 box d-flex flex-column align-items-center justify-content-center">
-            <img src="{{ asset('front_asset/images/service-icon-3.png') }}" alt="" class="box-icon">
+            <img src="{{ asset('front_asset/images/003.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">1:1전문 상담원</span>
             <span class="box-description text-center">분야 별 전문 마케터가 SNS홍보전략을 상당해드립니다.</span>
           </div>
@@ -553,7 +618,7 @@
       <span class="service-lower-description text-center mt-3">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
       <div class="d-flex service-lower-lower-section">
         <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
-          <img src="{{ asset('front_asset/images/service-icon-4.png') }}" class="service-icon-4" alt="">
+          <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
           <button class="service-lower-button">후기작성</button>
         </div>
         <div class="service-lower-text">
@@ -590,65 +655,23 @@
     </div>
 
     <footer class="footer">
-      <div class="container p-5">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="footer-img">
-              <img src="{{ asset('front_asset/images/logo.png') }}" alt="">
-            </div>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <i class="bi bi-envelope"></i> &nbsp;
-                <span>info@instaget.com</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-telephone"></i> &nbsp;
-                <span>++0012345678</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-geo-alt"></i> &nbsp;
-                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul
-                  (Seongsu-dong 2-ga)</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Services</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Followers</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Likes</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Views</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Insatgrams Reels</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Company</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Contact Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>About Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Privacy Policy</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Term of Services</span>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <div class="container">
+          <ul class="list-group list-group-horizontal border-0">
+            <li class="text-white border-0 list-group-item">이용약관 <span class="ps-4">|</span></li>
+            <li class="text-white border-0 list-group-item">개인정보취급방침 <span class="ps-4">|</span></li>
+            <li class="text-white border-0 list-group-item">이용안내</li>
+          </ul>
         </div>
-        <div class="row pt-5">
-          <p class="text-center text-white">Copyright © INSTAGET. All rights reserved.</p>
+      </div>
+      <div class="container">
+        <div class="row ps-3 pt-4">
+          <p class="text-white">애드피플</p>
+          <p class="text-white">사업자등록번호 : 6865200365  |</p>
+          <p class="text-white">대표자 : 강연  |  주소 : 서울특별시 영등포구 가마</p>
+        </div>
+        <div class="row ps-3 pt-4">
+          <p class="text-secondary pt-4">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -793,6 +816,127 @@
 
   </script>
   <script>
+
+    let element = "";
+
+    $(document).on("click", (event) => {
+        if(event.target.closest(".service-faq-box")){
+          let mainFaqBox = event.target.closest(".service-faq-box");
+          let faqAnswer = mainFaqBox.getElementsByClassName("service-faq-answer")[0];
+          let icon = mainFaqBox.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0];
+          
+          if(element === faqAnswer){
+            faqAnswer.classList.remove("service-faq-answer-active");
+            faqAnswer.classList.add("service-faq-answer-inactive");
+            icon.classList.remove("faq-answer-active-icon");
+            element = "";
+            mainFaqBox.classList.remove("isDropdown");
+            return;
+          }
+          element = faqAnswer;
+
+          let allFaqAnswers = document.querySelectorAll(".service-faq-answer");
+          for(let i=0; i<allFaqAnswers.length; i++){
+              if(faqAnswer !== allFaqAnswers[i] && allFaqAnswers[i].classList.contains("service-faq-answer-active")){
+                allFaqAnswers[i].classList.remove("service-faq-answer-active");
+                allFaqAnswers[i].classList.add("service-faq-answer-inactive");
+                allFaqAnswers[i].parentNode.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0].classList.remove("faq-answer-active-icon");
+                allFaqAnswers[i].parentNode.classList.remove("isDropdown");
+              }
+          }
+
+          mainFaqBox.classList.add("isDropdown");
+          faqAnswer.classList.remove("service-faq-answer-inactive");
+          faqAnswer.classList.add("service-faq-answer-active");
+          icon.classList.add("faq-answer-active-icon");
+        }
+    });
+
+  </script>
+  <script>
+
+    $(document).on("click", (event) => {
+      if(!event.target.closest(".mbl-service-icon")){
+        let allImgs = document.querySelectorAll(".mbl-service-img");
+        for(let i=0; i<allImgs.length; i++) {
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-1"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/insta-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-2"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/youtube-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-3"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/mbl-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-4"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/navar-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-5"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/talk-before-click.png') }}");
+          }
+          allImgs[i].parentNode.getElementsByClassName("mbl-serice-icon-text")[0].classList.remove("text-white");
+        }
+      }
+    });
+
+    $(".mbl-service-icon").on("mouseenter", (event) => {
+      if(event.target.closest(".mbl-service-icon")){
+        let allImgs = document.querySelectorAll(".mbl-service-img");
+        for(let i=0; i<allImgs.length; i++) {
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-1"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/insta-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-2"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/youtube-before-click.png') }}");
+          }
+
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-3"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/mbl-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-4"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/navar-before-click.png') }}");
+          }
+          
+          if(allImgs[i].getAttribute("id") == "mbl-service-icon-5"){
+            allImgs[i].setAttribute("src", "{{ asset('front_asset/images/talk-before-click.png') }}");
+          }
+
+          allImgs[i].parentNode.getElementsByClassName("mbl-serice-icon-text")[0].classList.remove("text-white");
+        }
+
+        let item = event.target.closest(".mbl-service-icon");
+        let image = $(item).find("img:eq(0)");
+
+        $(item).find(".mbl-serice-icon-text:eq(0)").addClass("text-white");
+        if(image.attr("id") == "mbl-service-icon-1"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/intsa-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-2"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/youtube-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-3"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/mbl-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-4"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/navar-after-click.png")
+        }
+
+        if(image.attr("id") == "mbl-service-icon-5"){
+          image.attr("src", "http://127.0.0.1:8000/front_asset/images/talk-after-click.png")
+        }
+      }
+    });
+
+
 
     let element = "";
 
