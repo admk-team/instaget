@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Instaget</title>
@@ -16,8 +15,7 @@
 </head>
 <body>
   <div class="page-wrapper">
-   @include('layouts.header')
-   
+@include('layouts.header')
     @yield('container')
     <footer class="main-footer" style="background-image: url(/front/images/background/6.png);">
       <div class="auto-container">

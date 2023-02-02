@@ -1,88 +1,43 @@
-<header class="main-header header-style-one">
-    <div class="auto-container">
-      <div class="top-header">
-        <div class="left-header-area">
-          <ul class="contact-area">
-            <li>Call: 1600-5635</li>
-            <li><span class="far fa-paper-plane"></span> #302, Building A, Seoul Forest SKV1TOWER</li>
-            <li><span class="far fa-envelope"></span> <a href="#">support@herren.co.kr</a></li>
-          </ul>
-        </div>
-        <div class="right-header-area">
-          <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="header-lower">
-        <div class="main-box clearfix">
-          <div class="logo-box">
-            <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
-          </div>
-          <div class="nav-outer clearfix">
-            <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
-            <nav class="main-menu navbar-expand-md ">
-              <div class="collapse show navbar-collapse clearfix" id="navbarSupportedContent">
-                <ul class="navigation clearfix">
-                  <li class="current"><a href="{{ route('front.index') }}">Home</a>
-                  </li>
-                  <li class="dropdown"><a href="#">Instagram</a>
-                    <ul>
-                      <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Followers']) }}">Instagram Followers</a></li>
-                      <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Likes']) }}">Instagram Likes</a></li>
-                      <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Comments']) }}">Instagram Comments</a></li>
-                      <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Views']) }}">Instagram Views</a></li>
-                      <li><a href="{{ route('front.service', ['service' => 'Instagram', 'category' => 'Instagram Impression']) }}">Instagram Impression</a></li>
-                    </ul>
-                  </li>
-                  <li class=""><a href="#">Youtube</a></li>
-                  <li class=""><a href="#">Naver</a></li>
-                  <li class=""><a href="#">Googleplay App</a></li>
-                  <li class=""><a href="#">IOS App</a></li>
-                  <li class=""><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sticky-header">
-      <div class="auto-container clearfix">
-        <div class="main-box clearfix">
-          <div class="logo-box">
-            <div class="logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
-          </div>
-          <div class="nav-outer clearfix">
-            <div class="mobile-nav-toggler"><span class="icon flaticon flaticon-menu"></span></div>
-            <nav class="main-menu navbar-expand-md "> </nav>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mobile-menu">
-      <div class="menu-backdrop"></div>
-      <div class="close-btn"><span class="icon fas fa-times"></span></div>
-      <nav class="menu-box">
-        <div class="nav-logo"><a href="{{ route('front.index') }}"><img src="{{asset('front/images/logo1.png')}}" alt="" title=""></a></div>
-        <div class="menu-outer"></div>
-        <div class="options-box clearfix">
-          <div class="social-box">
-            <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-              <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span>Intagram likes</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSUpportedContent" aria-controls="navbarSUpportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSUpportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('front.index') }}">What is Instagram?</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Service
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Instagram</a></li>
+              <li><a class="dropdown-item" href="#">Youtube</a></li>
+              <li><a class="dropdown-item" href="#">Facebook</a></li>
+              <li><a class="dropdown-item" href="#">Ticktok</a></li>
             </ul>
-          </div>
-        </div>
-      </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Frequently Asked Questions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('front.login') }}">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
-  <div class="form-back-drop"></div>
+  </nav>
+</header>
+<div class="form-back-drop"></div>
