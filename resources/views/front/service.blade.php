@@ -97,7 +97,8 @@
               @foreach ($service->categories as $category)
               <li
                 class="instagram-list" onmouseover="changeColors(this, '{{ $category->color ?? 'white' }}', '{{ 'white' }}')" onmouseout="changeColors(this, 'white', '{{ 'black' }}')">
-                <a class="dropdown-item" href="#" style="color:{{ $category->color }}">
+                <a class="dropdown-item" href="#" style="color:{{ $category->color }};display: flex;
+                  gap: 0.8rem;">
                   <img src="{{ asset('storage/'.$category->image ?? '') }}" alt="" style="height: 25px;width: auto"> 
                   {{ $category->title ?? '' }}
                   @if(count($category->subcategories)>0)
