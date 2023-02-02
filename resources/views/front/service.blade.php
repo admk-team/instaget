@@ -306,7 +306,7 @@
                 <div class="row justify-content-center close-down-btn">
                   <i class="bi bi-chevron-down"></i>
                 </div>
-                <div class="options">
+                <div class="options mb-4">
                   <div class="row px-4 mb-2">
                     <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                     <div class="col-auto col-9">
@@ -328,8 +328,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="bar d-flex justify-content-between align-items-center">
-                  
+                <div class="bar d-flex justify-content-between align-items-center mb-2">
+                  <div>합집합</div>
+                  <div>₩0</div>
+                </div>
+                <div class="p-3 d-flex align-items-center justify-content-center mobile gap-2">
+                  <button class="purchase-btn">구매하기</button>
+                  <button class="shop-btn">장바구니</button>
                 </div>
                 <div class="row">
                   <!-- <div class="col-12">
@@ -351,7 +356,7 @@
                       </div>
                     </div>
                   </div> -->
-                  <div class="col-lg-12 mt-2 mobile-total-section">
+                  <!-- <div class="col-lg-12 mt-2 mobile-total-section">
                     <div class="row">
                       <div class="col-4">
                         <span>합집합</span>
@@ -360,11 +365,11 @@
                         <span>₩0</span>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
+                  </div> -->
+                  <!-- <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
                     <button class="btn btn-light">쇼핑 바구니</button>
                     <button class="btn btn-secondary">선택한 제품 주문</button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
