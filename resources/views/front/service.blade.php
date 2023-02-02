@@ -37,88 +37,9 @@
         <div class="services">
           @foreach ($services as $service)
           <div class="service">
-            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0" @if ($loop->iteration == 1)
-              id="mbl-service-box-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-box-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-box-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-box-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-box-icon-5"
-              @endif
-              >
-              @if ($loop->iteration == 1)
-              <img src="{{ asset('front_asset/images/insta-before-click.png') }}" class="mbl-service-img" @if($loop->iteration == 1)
-              id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-icon-5"
-              @endif
+            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0" onmouseover="this.style.backgroundColor='{{ $service->color ?? '' }}';this.style.color='{{ 'white' }}'"
+              ><img src="{{ asset('storage/'.$service->image) }}" class="mbl-service-img"
               alt="">
-              @endif
-              @if ($loop->iteration == 2)
-              <img src="{{ asset('front_asset/images/youtube-before-click.png') }}" class="mbl-service-img" alt="" @if($loop->iteration == 1)
-              id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-icon-5"
-              @endif
-              >
-              @endif
-              @if ($loop->iteration == 3)
-              <img src="{{ asset('front_asset/images/mbl-before-click.png') }}" class="mbl-service-img" alt="" @if($loop->iteration == 1)
-              id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-icon-5"
-              @endif
-              >
-              @endif
-              @if ($loop->iteration == 4)
-              <img src="{{ asset('front_asset/images/navar-before-click.png') }}" class="mbl-service-img" alt="" @if($loop->iteration == 1)
-              id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-icon-5"
-              @endif
-              >
-              @endif
-              @if ($loop->iteration == 5)
-              <img src="{{ asset('front_asset/images/talk-before-click.png') }}" class="mbl-service-img" alt="" @if($loop->iteration == 1)
-              id="mbl-service-icon-1"
-              @elseif($loop->iteration == 2)
-              id="mbl-service-icon-2"
-              @elseif($loop->iteration == 3)
-              id="mbl-service-icon-3"
-              @elseif($loop->iteration == 4)
-              id="mbl-service-icon-4"
-              @elseif($loop->iteration == 5)
-              id="mbl-service-icon-5"
-              @endif
-              >
-              @endif
               <span class="mbl-serice-icon-text text-dark">유튜브</span>
             </li>
             <div class="content">
@@ -126,18 +47,7 @@
                 @foreach ($service->categories as $category)
                 <div class="accordion-item">
                   <div class="accordion-header" id="heading{{ $category->id }}">
-                    <button class="accordion-button shadow-none collapsed 
-                    @if ($loop->iteration==1)
-                      insta-danger
-                    @elseif($loop->iteration==2)
-                      insta-success
-                    @elseif($loop->iteration==3)
-                    insta-primary
-                    @elseif($loop->iteration==4)
-                    insta-warning
-                    @elseif($loop->iteration==5)
-                    insta-info
-                    @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
+                    <button class="accordion-button shadow-none collapsed" style="background-color: {{ $category->color }};color:white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
                       aria-expanded="false" aria-controls="collapse{{ $category->id }}">
                       {{ $category->title ?? '' }}
                     </button>
@@ -147,7 +57,7 @@
                     <div class="accordion-body instagram-accordion-body">
                       <ul class="instagram-likes-ul">
                         @foreach ($category->subcategories as $subcategory)
-                        <li>{{ $category->title }}</li>
+                        <li style="border-left: 3px solid {{ $subcategory->color }};">{{ $category->title }}</li>
                         @endforeach
                       </ul>
                     </div>
@@ -175,11 +85,8 @@
             <div href="javascript:void(0)"
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
-                @if($loop->iteration==1) <i class="bi bi-instagram"></i> @elseif($loop->iteration==2) <i
-                  class="bi bi-youtube"></i> @elseif($loop->iteration==3) <img
-                  src="{{ asset('front_asset/images/icons/naver.png') }}" alt=""> @elseif($loop->iteration==4) <i
-                  class="bi bi-phone"></i> @elseif($loop->iteration==5) <img
-                  src="{{ asset('front_asset/images/talk-before-click.png') }}" alt=""> @endif
+                <img src="{{ asset('storage/'.$service->image ?? '') }}" alt="" class="service-front-imge">
+                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" style="display: none" class="service-bg-imge">
               </div>
               <div class="icon-title">
                 {{ $service->title ?? '' }}
@@ -189,10 +96,9 @@
             <ul class="dropdown-menu insta-web instagram-pkg-dropdown" aria-labelledby="instaDropDown">
               @foreach ($service->categories as $category)
               <li
-                class="@if($loop->iteration==1) instagram-li @elseif($loop->iteration==2) instagram-fo @elseif($loop->iteration==3) instagram-ply @elseif($loop->iteration==4) instagram-cmnt  @elseif($loop->iteration==5) instagram-reel @endif">
-                <a class="dropdown-item" href="#">
-                  <i
-                    class="bi @if($loop->iteration==1) bi-heart @elseif($loop->iteration==2) bi-person @elseif($loop->iteration==3) bi-play-fill @elseif($loop->iteration==4) bi bi-chat-fill  @elseif($loop->iteration==5) bi bi-file-play @endif p-1"></i>
+                class="instagram-list">
+                <a class="dropdown-item" href="#" style="color:{{ $category->color }}" onmouseover="this.style.backgroundColor='{{ $category->color ?? '' }}';this.style.color='{{ 'white' }}'" onmouseout="this.style.backgroundColor='white';this.style.color='{{ 'black' }}'">
+                  <img src="{{ asset('storage/'.$category->image ?? '') }}" alt="" style="height: 25px;width: auto"> 
                   {{ $category->title ?? '' }}
                   @if(count($category->subcategories)>0)
                   <i class="bi bi-caret-right"></i>
@@ -202,7 +108,7 @@
                 <ul class="dropdown-menu dropdown-submenu">
                   @foreach ($category->subcategories as $subcategory)
                   <li>
-                    <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
+                    <a class="dropdown-item" href="#" onmouseover="this.style.borderLeft='3px solid {{ $subcategory->color ?? '' }}'" onmouseout="this.style.borderLeft='0'">{{ $subcategory->title ?? '' }}</a>
                   </li>
                   @endforeach
                 </ul>
@@ -1063,6 +969,15 @@ $('.social-icons-image4').on({
  });
 });
 
+  </script>
+  <script>
+    $('.service-front-imge').hover(function(){
+      $(this).hide();
+      $('.service-bg-imge').show();
+    }, function(){
+      $('.service-front-imge').show();
+      $('.service-bg-imge').hide();
+    });
   </script>
 </body>
 </html>

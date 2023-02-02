@@ -1099,11 +1099,7 @@ margin: 5px;
     color: #e93f33 !important;
 }
 
-.instagram-li a,
-.instagram-fo a,
-.instagram-ply a,
-.instagram-cmnt a,
-.instagram-reel a {
+.instagram-list {
     font-weight: 700 !important;
     line-height: 1.5 !important;
     white-space: normal !important;
@@ -1140,7 +1136,7 @@ margin: 5px;
 
 .insta-web .dropdown-submenu li a:hover {
     background-color: white !important;
-    border-left: 3px solid #d04545 !important;
+    /* border-left: 3px solid #d04545 !important; */
 }
 
 .insta-web .instagram-ply li a:hover {
@@ -2785,7 +2781,7 @@ span {
     display: block;
 }
 
-.desktop-social-btn:hover .icon-title p {
+.desktop-social-btn:hover .icon-title {
     color: white !important;
 }
 
