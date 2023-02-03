@@ -566,64 +566,25 @@
     <!-- End: Blog Section -->
 
     <footer class="footer">
-      <div class="container p-5">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="footer-img">
-              <img src="{{ asset('front_asset/images/logo.png') }}" alt="">
-            </div>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <i class="bi bi-envelope"></i> &nbsp;
-                <span>info@instaget.com</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-telephone"></i> &nbsp;
-                <span>++0012345678</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-geo-alt"></i> &nbsp;
-                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul (Seongsu-dong 2-ga)</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Services</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Followers</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Likes</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Views</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Insatgrams Reels</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Company</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Contact Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>About Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Privacy Policy</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Term of Services</span>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <div class="container">
+          <ul class="list-group list-group-horizontal border-0 mb-3">
+            <li class="text-white list-group-item p-1">이용약관</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white list-group-item p-1">개인정보취급방침</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white border-0 list-group-item p-1">이용안내</li>
+          </ul>
         </div>
-        <div class="row pt-5">
-          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
+      </div>
+      <div class="container">
+        <div class="row ps-3 pt-4">
+          <p class="text-white">애드피플</p>
+          <p class="text-white">사업자등록번호 : 6865200365 |</p>
+          <p class="text-white">대표자 : 강연 | 주소 : 서울특별시 영등포구 가마</p>
+        </div>
+        <div class="row ps-3 pt-4">
+          <p class="text-secondary pt-4">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
     </footer>
