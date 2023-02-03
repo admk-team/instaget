@@ -625,10 +625,12 @@
     <footer class="footer">
       <div class="container-fluid">
         <div class="container">
-          <ul class="list-group list-group-horizontal border-0">
-            <li class="text-white border-0 list-group-item">이용약관 <span class="ps-4">|</span></li>
-            <li class="text-white border-0 list-group-item">개인정보취급방침 <span class="ps-4">|</span></li>
-            <li class="text-white border-0 list-group-item">이용안내</li>
+          <ul class="list-group list-group-horizontal border-0 mb-3">
+            <li class="text-white list-group-item p-1">이용약관</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white list-group-item p-1">개인정보취급방침</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white border-0 list-group-item p-1">이용안내</li>
           </ul>
         </div>
       </div>
