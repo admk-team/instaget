@@ -31,17 +31,22 @@
 <body>
   <div class="container-fluid m-0 p-0">
     @include('layouts.header')
-    <div class="container py-1  d-block d-sm-none">
+    <div class="container py-1  d-block d-sm-none p-2 mt-4">
       <!-- New Mobile Menu -->
       <div class="mobile-services-nav">
-        <div class="services">
+        <div class="services gap-2">
           @foreach ($services as $service)
-          <div class="service">
-            <li class="btn list-group-item instagram-icon mbl-service-icon d-flex flex-column px-0" onmouseover="this.style.backgroundColor='{{ $service->color ?? '' }}';this.style.color='{{ 'white' }}'"
-              ><img src="{{ asset('storage/'.$service->image) }}" class="mbl-service-img"
-              alt="">
-              <span class="mbl-serice-icon-text text-dark">유튜브</span>
-            </li>
+          <div class="service" style="width: calc((100% - 2rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; max-height: 64px;">
+            <div href="javascript:void(0)"
+              class="text-center btn mobile-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+              <div class="icon">
+                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-front-imge">
+                <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-bg-imge icon-hover">
+              </div>
+              <!-- <div class="icon-title">
+                {{ $service->title ?? '' }}
+              </div> -->
+            </div>
             <div class="content">
               <div class="accordion">
                 @foreach ($service->categories as $category)
@@ -81,7 +86,7 @@
         <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
           @foreach ($services as $service)
           <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
-            style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+            style="width: calc((100% - 4rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
             <div href="javascript:void(0)"
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
@@ -100,7 +105,7 @@
                 <a class="dropdown-item" href="#" style="color:{{ $category->color }};display: flex;
                   gap: 0.8rem;">
                   <img src="{{ asset('storage/'.$category->image ?? '') }}" alt="" style="height: 25px;width: auto"> 
-                  {{ $category->title ?? '' }}
+                  <span class="flex-grow-1">{{ $category->title ?? '' }}</span>
                   @if(count($category->subcategories)>0)
                   <i class="bi bi-caret-right"></i>
                   @endif
@@ -236,7 +241,7 @@
                   <div>합집합</div>
                   <div>₩0</div>
                 </div>
-                <div class="p-3 d-flex align-items-center justify-content-center mobile gap-2">
+                <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
                   <button class="purchase-btn">구매하기</button>
                   <button class="shop-btn">장바구니</button>
                 </div>
@@ -620,10 +625,12 @@
     <footer class="footer">
       <div class="container-fluid">
         <div class="container">
-          <ul class="list-group list-group-horizontal border-0">
-            <li class="text-white border-0 list-group-item">이용약관 <span class="ps-4">|</span></li>
-            <li class="text-white border-0 list-group-item">개인정보취급방침 <span class="ps-4">|</span></li>
-            <li class="text-white border-0 list-group-item">이용안내</li>
+          <ul class="list-group list-group-horizontal border-0 mb-3">
+            <li class="text-white list-group-item p-1">이용약관</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white list-group-item p-1">개인정보취급방침</li>
+            <li class="text-white list-group-item p-1"><strong>|</strong></li>
+            <li class="text-white border-0 list-group-item p-1">이용안내</li>
           </ul>
         </div>
       </div>
