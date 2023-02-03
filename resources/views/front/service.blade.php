@@ -241,7 +241,7 @@
                   <div>합집합</div>
                   <div>₩0</div>
                 </div>
-                <div class="p-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
+                <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
                   <button class="purchase-btn">구매하기</button>
                   <button class="shop-btn">장바구니</button>
                 </div>
