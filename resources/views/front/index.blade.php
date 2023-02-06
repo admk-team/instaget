@@ -407,126 +407,35 @@
 
   </div>
 
-   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="{{ asset('front_asset/js/owl.carousel.min.js') }}"></script>  
   <script>
-    AOS.init();
-  </script>
-  <!-- custom JS code after importing jquery and owl -->
-  <script type="text/javascript">
-      $(document).ready(function() {
-          $("#owl-row-1").owlCarousel();
-      });
-      $('#owl-row-1').owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: false,
-          responsive: {
-              0: {
-                  items: 1
-              },
-              600: {
-                  items: 1
-              },
-              1000: {
-                  items: 1
-              }
-          }
-      })
-  </script>
-
-  <script>
-    $(document).ready(function(){
-      $('#testimonials').owlCarousel({
-        items: 3,
-        nav: false
-      });
-
-      $('#testimonials_md').owlCarousel({
-        items: 1,
-        nav: false
-      });
-
-      $('#testimonials_lg').owlCarousel({
-        items: 2,
-        nav: false
+    $(document).ready(function() {
+      window.addEventListener('scroll', (event) => {
+        if (isInViewport($("#animateNumber1").get(0)))
+          $("#animateNumber1").animateNumbers(1159250);
+        if (isInViewport($("#animateNumber2").get(0)))
+          $("#animateNumber2").animateNumbers(3689);
+        if (isInViewport($("#animateNumber3").get(0)))
+          $("#animateNumber3").animateNumbers(146800);
       });
     });
-  </script>
-
-<script>
-  (function($) {
-    $.fn.animateNumbers = function(stop, commas, duration, ease) {
-        return this.each(function() {
-            var $this = $(this);
-            var isInput = $this.is('input');
-            var start = parseInt(isInput ? $this.val().replace(/,/g, "") : $this.text().replace(/,/g, ""));
-            var regex = /(\d)(?=(\d\d\d)+(?!\d))/g;
-            commas = commas === undefined ? true : commas;
-            
-            // number inputs can't have commas or it blanks out
-            if (isInput && $this[0].type === 'number') {
-                commas = false;
-            }
-            
-            $({value: start}).animate({value: stop}, {
-                duration: duration === undefined ? 1000 : duration,
-                easing: ease === undefined ? "swing" : ease,
-                step: function() {
-                    isInput ? $this.val(Math.floor(this.value)) : $this.text(Math.floor(this.value));
-                    if (commas) {
-                        isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
-                    }
-                },
-                complete: function() {
-                    if (parseInt($this.text()) !== stop || parseInt($this.val()) !== stop) {
-                        isInput ? $this.val(stop) : $this.text(stop);
-                        if (commas) {
-                            isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
-                        }
-                    }
-                }
-            });
-        });
-    };
-  })(jQuery);
-</script>
-
-<script>
-  $(document).ready(function(){
-    window.addEventListener('scroll', (event) => {
-      if (isInViewport($("#animateNumber1").get(0)))
-        $("#animateNumber1").animateNumbers(1159250);
-      if (isInViewport($("#animateNumber2").get(0)))
-        $("#animateNumber2").animateNumbers(3689);
-      if (isInViewport($("#animateNumber3").get(0)))
-        $("#animateNumber3").animateNumbers(146800);
-    });
-  });
-
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
         rect.top >= 0 &&
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
-    );
-}
-</script>
-<script>
-
-$("#home-video").css("visibility", "hidden");
-let video = document.getElementById("home-video");
-video.oncanplay = function(){
-  $("#home-video").css("visibility", "visible");
-  $("#home-bg-placeholder").css("visibility", "hidden");
-  $("#home-bg-placeholder").pause();
-};
-
-</script>
+      );
+    }
+  </script>
+  <script>
+    $("#home-video").css("visibility", "hidden");
+    let video = document.getElementById("home-video");
+    video.oncanplay = function() {
+      $("#home-video").css("visibility", "visible");
+      $("#home-bg-placeholder").css("visibility", "hidden");
+      $("#home-bg-placeholder").pause();
+    };
+  </script>
 @endsection
