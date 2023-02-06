@@ -55,8 +55,9 @@ Route::name('front.')->group(function () {
     Route::get('/service', [FrontController::class, 'service'])->name('service');
     Route::get('/login' , [FrontController::class , 'login'])->name('login');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
+    Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
 });
 
-Route::get('/faq', function(){
-    return view('front.faq');
-});
+// Route::get('/faq', function(){
+//     return view('front.faq');
+// });

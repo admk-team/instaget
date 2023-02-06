@@ -1,4 +1,4 @@
-<header>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="{{ route('front.index') }}">
@@ -30,7 +30,7 @@
             <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Frequently Asked Questions</a>
+            <a class="nav-link" href="{{ route('front.faq') }}">Frequently Asked Questions</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('front.login') }}">Login</a>

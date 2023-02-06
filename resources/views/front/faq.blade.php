@@ -1,17 +1,5 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAQ</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
-  </head>
-  <body>
-    
+@extends('layouts.layout')
+@section('container')
     <section class="wallpaper-section">
         <div class="wallpaper-container container-fluid">
             <div class="background-overly">
@@ -287,5 +275,4 @@
 
     </script>
 
-  </body>
-</html>
+@endsection
