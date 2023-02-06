@@ -30,8 +30,17 @@ class FrontController extends Controller
     public function login(){
         return view('front.login');
     }
+    public function signup(){
+        return view('front.signup');
+    }
     
     public function faq(){
         return view('front.faq');
+    }
+    public function order(){
+        return view('front.order');
+    }
+    public function membership(){
+        return view('front.membership');
     }
 }

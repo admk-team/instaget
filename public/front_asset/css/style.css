@@ -3357,11 +3357,178 @@ span {
     font-size: 1.2rem;
 }
 
-.mobile-checkout-main .mobile .shop-btn,
+.mobile-checkout-main .mobile .shop-btn,    
 .mobile-checkout-main .mobile .purchase-btn {
     font-size: 20px !important;
     border-radius: 8px !important;
 }
 .dropdown-menu li {
     border-radius: 0 !important;
+}
+/* order page  */
+ 
+.heading {
+   font-size: 2.2rem !important;
+   font-weight: 800;
+   margin-bottom: 1.2rem !important;
+   text-align: center;
+ }
+ .box {
+   position: relative;
+   background: #fff;
+   box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+   border-radius: 20px;
+   padding: 40px;
+}
+ img, svg {
+   vertical-align: middle;
+   width: 18px;
+   height: 19px;
+ }
+ .button-group {
+   background-color: #ff563d;
+   text-align: center;
+   border-radius: 3.25rem;
+   margin-top: 4%;
+ }
+ #basic-addon1 {
+
+   background-color: transparent;
+ }
+ label {
+   text-align: start;
+   background-color: #a6a6a6;
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+ .selector {
+   position: relative;
+   font-size: 18px;
+   color: #000;
+   font-weight: 400;
+}
+.form-control {
+   display: block;
+   height: 45px;
+    width: 100%;
+   padding: 15px 16px 16px 53px;
+   line-height: 24px;
+   outline: 0;
+   background: #fff;
+   border: 1px solid #e5e5e5;
+   font-size: 18px;
+   text-align: left;
+   font-weight: 400;
+   color: #000;
+   box-sizing: border-box;
+   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+}
+.selector>button.form-control {
+   position: relative;
+   margin-bottom: 6px;
+   padding-right: 56px;
+}
+button, input, select, textarea {
+   font-family: inherit;
+   font-size: inherit;
+   line-height: inherit;
+}
+.selector>button.form-control:after {
+   content: "";
+   position: absolute;
+   top: 25px;
+   right: 18px;
+   width: 0;
+   height: 0;
+   border-color: #464b4d transparent transparent;
+   border-style: solid;
+   border-width: 6px 5px 0;
+}
+.selector .alt {
+   margin-left: 10px;
+   float: right;
+   font-size: 16px;
+   font-weight: 400;
+   color: #000;
+   text-align: right;
+}
+.form-group .input-icon {
+   z-index: 100;
+   pointer-events: none;
+   margin: 0;
+   position: absolute;
+   top: 18px;
+   left: 17px;
+}
+.card {
+   position: relative;
+   background: #fff;
+   box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+   border-radius: 20px;
+   padding: 40px;
+}
+.cardbox {
+   background-color: #f3f3f6;
+   padding: 1rem;
+   margin-top: 12%;
+ }
+img {
+   vertical-align: middle;
+}
+.btn.btn-block {
+   color: #fff;
+   font-size: 19.6px;
+ }F
+h4 {
+   font-size: 12px;
+   font-weight: bold;
+   color:rgb(0, 0, 0),
+ }
+ .card-text {
+   font-size: 10px;
+ }
+img {
+   border: 0;
+}
+.order-title{
+   text-align: center !important;
+   margin-bottom: 5%;
+   font-size: 23.7px;
+   font-weight: bolder;
+ }
+ .dropdown-menu {
+   position: relative;
+   padding: 0;
+   max-height: 275px;
+}
+.border-left-0{
+   border-left: 0;
+}
+/* login */
+.logintxt {
+   text-align: center;
+   font-size: 14px;
+
+ }
+ .memberbtn{
+   text-align: center;
+   border-radius: 1rem;   
+   margin-top: 10%;
+   height: 45px;
+   border: 2px solid #f3f3f6;
+  
+ }
+ .btn.btn-block {
+   color: #000;
+   font-size: 12px;
+   height: 45px;
+}
+.regtxt{
+   color: #ff563d;
+}
+.sharepost{
+   
 }
