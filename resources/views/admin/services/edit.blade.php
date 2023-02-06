@@ -70,6 +70,14 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <div class="col-12 m-2">
+                                        <label for="description">Description </label>
+                                        <textarea class="form-control" name="description">{{ old('description') ??  $service->description }}</textarea>
+                                        @error('description')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <button class="mt-1 btn btn-primary">Submit</button>
                             </form>

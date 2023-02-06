@@ -17,7 +17,7 @@
   <div class="page-wrapper">
 @include('layouts.header')
     @yield('container')
-    <footer class="main-footer" style="background-image: url(/front/images/background/6.png);">
+    {{-- <footer class="main-footer" style="background-image: url(/front/images/background/6.png);">
       <div class="auto-container">
         <div class="widgets-section">
           <div class="row">
@@ -113,7 +113,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> --}}
+    @include('layouts.footer')
   </div>
   <div class="scroll-to-top scroll-to-target theme-btn btn-style-one" data-target="html">
     <span class="txt"><i class="fas fa-arrow-up"></i></span>

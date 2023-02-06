@@ -145,7 +145,7 @@
             </div>
         </section>
         {{-- Login Page Code End here --}}
-
+{{-- 
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -187,7 +187,8 @@
                     <p class="copy-right">Copyright © INSTAGET. All rights reserved.</p>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
+        @include('layouts.footer')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>

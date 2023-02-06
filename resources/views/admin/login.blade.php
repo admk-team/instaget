@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="container-fluid m-0 p-0">
+    <div class="container-fluid m-0 p-0">    
         {{-- Login Page Code Start here --}}
         <section class="gradient-custom background--smoke ">
             <div class="container py-5 h-100 ">

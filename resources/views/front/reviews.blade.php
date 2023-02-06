@@ -263,7 +263,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
+    {{-- <footer class="footer">
       <div class="container p-5">
         <div class="row">
           <div class="col-lg-4">
@@ -324,7 +324,8 @@
           <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </footer> --}}
+    @include('layouts.footer')
   </div>
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
