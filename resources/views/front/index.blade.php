@@ -263,7 +263,6 @@
               </div>
             </div>
           </div>
-
           <div class="testimonial">
             <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             <div class="info d-flex align-items-center justify-content-between">

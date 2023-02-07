@@ -8,8 +8,6 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AdminDashboard;
-
-
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +55,3 @@ Route::name('front.')->group(function () {
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
     Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
 });
-
-// Route::get('/faq', function(){
-//     return view('front.faq');
-// });
