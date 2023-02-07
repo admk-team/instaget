@@ -17,8 +17,10 @@ class FrontController extends Controller
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-        return $packages = $categories->flatMap->packages->flatten();
-        return view('front.service',compact('services'));
+        $packages1 = $categories->flatMap->packages->where('type_id',0)->flatten();
+        $packages2 = $categories->flatMap->packages->where('type_id',1)->flatten();
+        $packages3 = $categories->flatMap->packages->where('type_id',2)->flatten();
+        return view('front.service',compact('services','packages1','packages2','packages3'));
     }
     public function reviews()
     {
