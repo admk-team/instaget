@@ -85,7 +85,7 @@
                 <ul class="dropdown-menu dropdown-submenu">
                   @foreach ($category->subcategories as $subcategory)
                   <li onmouseover="this.style.borderLeft='3px solid {{ $subcategory->color ?? '' }}'" onmouseout="this.style.borderLeft='0'">
-                    <a class="dropdown-item" href="#">{{ $subcategory->title ?? '' }}</a>
+                    <a class="dropdown-item" href="{{ route('front.subcategory_packages' , $subcategory->slug) }}">{{ $subcategory->title ?? '' }}</a>
                   </li>
                   @endforeach
                 </ul>
