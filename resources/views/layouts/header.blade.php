@@ -20,10 +20,10 @@
               Service
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Instagram</a></li>
-              <li><a class="dropdown-item" href="#">Youtube</a></li>
-              <li><a class="dropdown-item" href="#">Facebook</a></li>
-              <li><a class="dropdown-item" href="#">Ticktok</a></li>
+              <li><a class="dropdown-item" href="{{ route('front.service') }}">Instagram</a></li>
+              <li><a class="dropdown-item" href="{{ route('front.service') }}">Youtube</a></li>
+              <li><a class="dropdown-item" href="{{ route('front.service') }}">Facebook</a></li>
+              <li><a class="dropdown-item" href="{{ route('front.service') }}">Ticktok</a></li>
             </ul>
           </li>
           <li class="nav-item">

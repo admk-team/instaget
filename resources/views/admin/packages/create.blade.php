@@ -99,6 +99,18 @@
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
+                  <div class="col-12 m-2">
+                    <label for="Type"> Select Type</label>
+                    <select name="type" id="type_id" class="form-control" >
+                      <option value="">Select Type</option>
+                      <option value="0">일반 조회수</option>
+                      <option value="1">순위상승 조회수</option>
+                      <option value="2">시청시간</option>
+                    </select>
+                    @error('type')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
                 </div>
                 <button class="mt-1 btn btn-primary">Submit</button>
               </form>
