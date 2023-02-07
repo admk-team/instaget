@@ -7,6 +7,7 @@ use App\Models\SubCategory;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use GuzzleHttp\Client;
 
 class FrontController extends Controller
 {
@@ -66,6 +67,22 @@ class FrontController extends Controller
         return view('front.payment');
     }
     public function post(){
+        $access_token = '3ce954dea42e5463561fb436b924333b';
+        $instagram_user_id = 'directory';
+        
+        // Create a Guzzle HTTP client
+        $client = new Client();
+        
+        // Make a GET request to the Instagram Basic Display API endpoint
+        $response = $client->get('https://graph.instagram.com/' . $instagram_user_id . '/media', [
+            'query' => [
+                'fields' => 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp',
+                'access_token' => $access_token
+            ]
+        ]);
+        
+        // Decode the JSON response into an associative array
+        $posts = json_decode($response->getBody(), true);
         return view('front.post');
     }
 }
