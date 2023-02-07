@@ -134,46 +134,26 @@
                 </div>
               </div>
               <div class="d-flex flex-wrap justify-content-center">
-                <div class="package-box bg_orange active text-center">
-                  <h4 class="fw-bolder">50</h4>
-                  <span>팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">250</h4>
-                  <span>5%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">500</h4>
-                  <span>10%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>18%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>18%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>18%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">2000</h4>
-                  <span>20%팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">3000</h4>
-                  <span>23%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">5000</h4>
-                  <span>26%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>30%할인</span>
-                </div>
+                @foreach ($packages1 as $pakage1)
+                  <div class="package-box bg_orange @if ($loop->iteration==1)
+                    active
+                  @endif text-center first-box">
+                    <h4 class="fw-bolder">
+                      @if($pakage1->sale_price)
+                      {{ floor($pakage1->sale_price) }}
+                      @else
+                      {{ floor($pakage1->original_price) }}
+                      @endif
+                    </h4>
+                    <span>
+                      @if($pakage1->sale_price)
+                      {{ floor((($pakage1->original_price-$pakage1->sale_price)*100)/$pakage1->original_price) }}
+                      %
+                      @endif
+                      {{ $pakage1->title }}
+                    </span>
+                  </div>
+                @endforeach
               </div>
               <div class="p-4 justify-content-center d-flex">
                 <h4 class="sale-price">57,000원 </h4> &nbsp;<del class="orignal-price"> 60,000</del>
@@ -216,41 +196,6 @@
                   <button class="purchase-btn">구매하기</button>
                   <button class="shop-btn">장바구니</button>
                 </div>
-                <div class="row">
-                  <!-- <div class="col-12">
-                    <div class="row justify-center">
-                      <div class="col-4">
-                        <label for="">옵션</label>
-                      </div>
-                      <div class="col-8">
-                        <select name="" id="" class="form-control mb-1">
-                          <option value="">후속 조치</option>
-                          <option value="">좋아요/보기</option>
-                          <option value="">일일 후속 조치</option>
-                        </select>
-                        <select name="" id="" class="form-control">
-                          <option value="">팔로워 50명 추가</option>
-                          <option value="">팔로워 250명 확보</option>
-                          <option value="">팔로워 500명 확보</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="col-lg-12 mt-2 mobile-total-section">
-                    <div class="row">
-                      <div class="col-4">
-                        <span>합집합</span>
-                      </div>
-                      <div class="col-8 text-end">
-                        <span>₩0</span>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
-                    <button class="btn btn-light">쇼핑 바구니</button>
-                    <button class="btn btn-secondary">선택한 제품 주문</button>
-                  </div> -->
-                </div>
               </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -261,46 +206,26 @@
                 </div>
               </div>
               <div class="d-flex flex-wrap justify-content-center">
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">50</h4>
-                  <span>팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">250</h4>
-                  <span>5%할인</span>
-                </div>
-                <div class="package-box bg_orange active text-center">
-                  <h4 class="fw-bolder">500</h4>
-                  <span>10%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>18%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">2000</h4>
-                  <span>20%팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">3000</h4>
-                  <span>23%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">5000</h4>
-                  <span>26%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>30%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>30%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>30%할인</span>
-                </div>
+                @foreach ($packages2 as $pakage2)
+                  <div class="package-box bg_orange @if ($loop->iteration==1)
+                    active
+                  @endif text-center">
+                    <h4 class="fw-bolder">
+                      @if($pakage2->sale_price)
+                      {{ floor($pakage2->sale_price) }}
+                      @else
+                      {{ floor($pakage2->original_price) }}
+                      @endif
+                    </h4>
+                    <span>
+                      @if($pakage2->sale_price)
+                      {{ floor((($pakage2->original_price-$pakage2->sale_price)*100)/$pakage2->original_price) }}
+                      %
+                      @endif
+                      {{ $pakage2->title }}
+                    </span>
+                  </div>
+                @endforeach
               </div>
               <div class="p-4 justify-content-center d-flex">
                 <h4 class="sale-price">57,000원 </h4> &nbsp;<del class="orignal-price"> 60,000</del>
@@ -358,46 +283,26 @@
                 </div>
               </div>
               <div class="d-flex flex-wrap justify-content-center">
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">50</h4>
-                  <span>팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">250</h4>
-                  <span>5%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">500</h4>
-                  <span>10%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>18%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">2000</h4>
-                  <span>20%팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">2000</h4>
-                  <span>20%팔로워</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">2000</h4>
-                  <span>20%팔로워</span>
-                </div>
-                <div class="package-box bg_orange active text-center">
-                  <h4 class="fw-bolder">3000</h4>
-                  <span>23%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">5000</h4>
-                  <span>26%할인</span>
-                </div>
-                <div class="package-box bg_orange text-center">
-                  <h4 class="fw-bolder">1000</h4>
-                  <span>30%할인</span>
-                </div>
+                @foreach ($packages3 as $pakage3)
+                  <div class="package-box bg_orange @if ($loop->iteration==1)
+                    active
+                  @endif text-center">
+                    <h4 class="fw-bolder">
+                      @if($pakage3->sale_price)
+                      {{ floor($pakage3->sale_price) }}
+                      @else
+                      {{ floor($pakage3->original_price) }}
+                      @endif
+                    </h4>
+                    <span>
+                      @if($pakage3->sale_price)
+                      {{ floor((($pakage3->original_price-$pakage3->sale_price)*100)/$pakage3->original_price) }}
+                      %
+                      @endif
+                      {{ $pakage3->title }}
+                    </span>
+                  </div>
+                @endforeach
               </div>
               <div class="p-4 justify-content-center d-flex">
                 <h4 class="sale-price">57,000원 </h4> &nbsp;<del class="orignal-price"> 60,000</del>
