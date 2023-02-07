@@ -50,7 +50,7 @@ Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::get('/service', [FrontController::class, 'service'])->name('service');
+    Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
     Route::get('/login' , [FrontController::class , 'login'])->name('login');
     Route::get('/signup' , [FrontController::class , 'signup'])->name('signup');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
