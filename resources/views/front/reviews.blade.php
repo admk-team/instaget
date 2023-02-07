@@ -1,31 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    crossorigin="anonymous" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    crossorigin="anonymous" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
-  <title>Instaget</title>
-</head>
-
-<body>
+@extends('layouts.layout')
+@section('container')
   <div class="container-fluid m-0 p-0">
-   @include('layouts.header')
     <div class="reviews-section-hero">
       <div class="container">
         <div class="text text-center">
@@ -263,74 +238,6 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container p-5">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="footer-img">
-              <img src="{{ asset('front_asset/images/logo.png') }}" alt="">
-            </div>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <i class="bi bi-envelope"></i> &nbsp;
-                <span>info@instaget.com</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-telephone"></i> &nbsp;
-                <span>++0012345678</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-geo-alt"></i> &nbsp;
-                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul (Seongsu-dong 2-ga)</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Services</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Followers</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Likes</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Views</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Insatgrams Reels</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Company</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Contact Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>About Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Privacy Policy</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Term of Services</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row pt-5">
-          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-</body>
-
-</html>
+@endsection

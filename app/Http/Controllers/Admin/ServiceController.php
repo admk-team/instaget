@@ -43,12 +43,14 @@ class ServiceController extends Controller
             'title' => 'required|unique:services,title',
             'image' => 'required',
             'bg_image' => 'required',
-            'color' => 'required'
+            'color' => 'required',
+            'description' => 'required'
         ]);
         $model = new Service();
         $model->title = $request->title;
         $model->slug = str_replace('_', ' ', $request->title);
         $model->color = $request->color;
+        $model->description = $request->description;
         if($request->hasFile('image')){
             $path  = $request->file('image')->store('/images/services' , 'public');
             $model->image = $path;
@@ -101,12 +103,14 @@ class ServiceController extends Controller
             'title' => 'required',
             'image' => 'image',
             'color' => 'required',
-            'bg_image' => 'required',
+            'bg_image' => 'image',
+            'description'=>'required'
         ]);
         $model = Service::findorFail($id);
         $model->title = $request->title;
         $model->slug = str_replace('_', ' ', $request->title);
         $model->color = $request->color;
+        $model->description = $request->description;
 
         if($request->has('image')){
             if(isset($model->image)){

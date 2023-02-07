@@ -1,17 +1,5 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAQ</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
-  </head>
-  <body>
-    
+@extends('layouts.layout')
+@section('container')
     <section class="wallpaper-section">
         <div class="wallpaper-container container-fluid">
             <div class="background-overly">
@@ -221,71 +209,4 @@
      </div>
     </div>
     <!-- End: Blog Section -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <script>
-
-        let prevoius_element = "";
-
-        $(".faq-column").on("click", (event) => {
-            if(event.target.closest(".faq-question")){
-                event.target = event.target.parentNode;
-            }
-
-            if(event.target.closest(".fa")){
-                event.target = event.target.parentNode;
-            }
-
-            let element = event.target;
-            let get_slider = $("#answer-slider");
-            let question = element.getElementsByClassName("faq-question")[0];
-            let answer = element.parentNode.getElementsByClassName("faq-answer")[0];
-            let icon = element.getElementsByClassName("fa")[0];
-            let faq_columns = document.querySelectorAll(".faq-column-active");
-
-            if(prevoius_element == element){
-                element.removeAttribute("id");
-                element.classList.remove("faq-column-active");
-                icon.classList.remove("fa-chevron-up");
-                icon.classList.add("fa-chevron-left");
-                icon.classList.remove("mt-1");
-                if(get_slider.length != 0){
-                    $("#answer-slider").slideUp("slow");
-                    get_slider.removeAttr("id");
-                }
-                prevoius_element = "";
-                return;
-            }
-
-            prevoius_element = element;
-
-            for(let i=0; i<faq_columns.length; i++){
-                if(faq_columns[i].classList.contains("faq-column-active")){
-                    faq_columns[i].classList.remove("faq-column-active");
-                    if(faq_columns[i].getElementsByClassName("fa")[0].classList.contains("fa-chevron-up")){
-                        faq_columns[i].getElementsByClassName("fa")[0].classList.remove("fa-chevron-up");
-                        faq_columns[i].getElementsByClassName("fa")[0].classList.add("fa-chevron-left");
-                        faq_columns[i].getElementsByClassName("fa")[0].classList.remove("mt-1");
-                    }
-                }
-            }
-
-            if(get_slider.length != 0){
-                $("#answer-slider").slideUp("slow");
-                get_slider.removeAttr("id");
-            }
-
-            element.classList.add("faq-column-active");
-            icon.classList.remove("fa-chevron-left");
-            icon.classList.add("fa-chevron-up");
-            icon.classList.add("mt-1");
-            answer.setAttribute("id", "answer-slider");
-            $("#answer-slider").slideDown("slow");
-        });
-
-    </script>
-
-  </body>
-</html>
+@endsection

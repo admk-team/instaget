@@ -45,8 +45,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Profile
     Route::get('/profile/edit', [AdminProfileController::class, 'index'])->name('profile.edit');
     Route::post('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
+    Route::get('get/subcategories/{id}' ,  [PackageController::class , 'get_subcategory']);
     //Logout 
     Route::get('/logout' , [AdminController::class , 'Logout'])->name('logout');
+    
 });
 });
 
@@ -62,11 +64,16 @@ Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::get('/service', [FrontController::class, 'service'])->name('service');
+    Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
+    Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
+    Route::get('/post' , [FrontController::class , 'post'])->name('post');
+    Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
     Route::get('/login' , [FrontController::class , 'login'])->name('login');
+    Route::get('/signup' , [FrontController::class , 'signup'])->name('signup');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
-});
-
-Route::get('/faq', function(){
-    return view('front.faq');
+    Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
+    Route::post('/order' , [FrontController::class , 'order'])->name('order');
+    Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
+    Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
+   
 });

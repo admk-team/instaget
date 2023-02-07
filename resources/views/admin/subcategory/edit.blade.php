@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-12 m-2">
                                     <label for="color">Color</label>
-                                    <input type="color" name="color" value="{{ $sub_category->color ?? '' }}" class="form-control">
+                                    <input type="color" name="color" value="{{ $sub_category->color ?? '' }}" class="form-control" style="height: 50px">
                                     @error('color')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

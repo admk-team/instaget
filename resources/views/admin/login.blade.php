@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="container-fluid m-0 p-0">
+    <div class="container-fluid m-0 p-0">    
         {{-- Login Page Code Start here --}}
         <section class="gradient-custom background--smoke ">
             <div class="container py-5 h-100 ">
@@ -66,7 +66,7 @@
                                             
                                         @enderror
                                 </div>
-                                <div class="form-outline form-white mb-4 ">
+                                <div class="form-outline form-white mb-4 d-flex">
                                     <button type="submit" class="form-control form-control-lg bg-dark loginform border-0"> <span 
                                         class="text-white loginbtn">로그인</span> </button>
                                     </div>

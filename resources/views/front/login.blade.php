@@ -1,29 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <title>Instaget</title>
-</head>
-
-<body>
+@extends('layouts.layout')
+@section('container')
     <div class="container-fluid m-0 p-0">
-        @include('layouts.header')
         {{-- Login Page Code Start here --}}
         <section class="gradient-custom background--smoke ">
             <div class="container py-5 h-100 ">
@@ -146,55 +123,7 @@
         </section>
         {{-- Login Page Code End here --}}
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <ul class="list-group list-group-horizontal border-0">
-                        <li class="list-group-item  border-0"><a href="#">Terms of Use |</a></li>
-                        <li class="list-group-item  border-0"><a href="#">Privacy Policy |</a></li>
-                        <li class="list-group-item  border-0"><a href="#">Information Use |</a></li>
-                    </ul>
-                </div>
-                <div class="row footer-time-col">
-                    <ul class="list-group list-group-horizontal border-0">
-                        <li class="list-group-item  border-0 text-white">
-                            <span>Service Center </span>
-                            <span class="footer-numbering">1600 - 5635</span>
-                        </li>
-                        <li class="list-group-item  border-0 text-white">
-                            <span>Customer centeroperating hours </span>
-                            <span class="footer-numbering">10:00 ~ 18:00</span>
-                        </li>
-                        <li class="list-group-item  border-0 text-white footer-lunch-time">
-                            <span>Lunch time is from 12:30pm to 1:30pm.
-                                We work weekends and holidays are off.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-horizontal border-0">
-                        <li class="list-group-item  border-0 text-white">
-                            <span class="footer-account-title">Kookmin Bank </span>
-                            <span class="footer-account_no">653201-04-084892 /</span>
-                        </li>
-                        <li class="list-group-item  border-0 text-white">
-                            <span class="footer-account-title">Shinhan Bank </span>
-                            <span class="footer-account_no">140-012-265570</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <p class="copy-right">Copyright © INSTAGET. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- custom JS code after importing jquery and owl -->
     <script type="text/javascript">
         $(document).ready(function() {
           $("#owl-row-1").owlCarousel();
@@ -216,6 +145,5 @@
           }
       })
     </script>
-</body>
 
-</html>
+@endsection

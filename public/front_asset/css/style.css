@@ -1,59 +1,73 @@
 @font-face {
-    font-family: SCDREAM9 ;
-    font-family: "SCDREAM1";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream1.otf') format("opentype");
     font-style: normal;
+    font-weight: 100;
 }
 
 @font-face {
-    font-family: "SCDREAM2";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream2.otf') format("opentype");
     font-style: normal;
+    font-weight: 200;
 }
 
 @font-face {
-    font-family: "SCDREAM3";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream3.otf') format("opentype");
     font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {
-    font-family: "SCDREAM4";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream4.otf') format("opentype");
     font-style: normal;
+    font-weight: 400;
 }
 
 @font-face {
-    font-family: "SCDREAM5";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream5.otf') format("opentype");
     font-style: normal;
+    font-weight: 500;
 }
 
 @font-face {
-    font-family: "SCDREAM5";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream6.otf') format("opentype");
     font-style: normal;
+    font-weight: 600;
 }
 
 @font-face {
-    font-family: "SCDREAM5";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream7.otf') format("opentype");
     font-style: normal;
+    font-weight: 700;
 }
 
 @font-face {
-    font-family: "SCDREAM5";
+    font-family: "SCDREAM";
     src: url('front_asset/fonts/SCDream8.otf') format("opentype");
     font-style: normal;
+    font-weight: 800;
 }
 
 @font-face {
+    font-family: "SCDREAM9";
+    src: url('front_asset/fonts/SCDream8.otf') format("opentype");
+    font-style: normal;
+    font-weight: 900;
+} */
+
+/* @font-face {
     font-family: SCDREAM9;
     src: url(../fonts/SCDream3.otf);
 }
 
 * {
-    font-family: SCDREAM9 !important;
+    font-family: "SCDREAM" Arial, Helvetica, sans-serif !important;
 }
 
 :root {
@@ -686,8 +700,20 @@ body {
 }
 
 .heading {
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
     font-weight: 800;
+    margin-bottom: 1.2rem !important;
+}
+
+@media (min-width: 576px) {
+    .heading {
+        font-size: 3rem !important;
+    }
+}
+
+.title {
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
 }
 
 .shop-btn {
@@ -831,7 +857,7 @@ margin: 5px;
 
 .bg_orange h4 {
     color: rgb(0, 0, 0);
-    font-size: 1.6rem !important;
+    /* font-size: 1.6rem !important; */
 }
 
 .bg_orange span {
@@ -1710,6 +1736,7 @@ li {
 
 .section-testimonials .testimonial .author .img img {
     width: 100%;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
 }
@@ -2081,10 +2108,11 @@ span {
     z-index: 99999;
     bottom: 0;
     background: white;
-    margin: -15px;
-    border-top: 1px solid black;
-    padding-top: 10px;
+    border-top: 3px solid #4c4c4c;
     display: none;
+    left: 0;
+    width: 100%;
+    padding: 1.6rem 0;
 }
 
 .mobile-checkout-main-show {
@@ -2098,8 +2126,17 @@ span {
 }
 
 .close-down-btn {
-    position: relative;
-    top: -29px;
+    position: absolute;
+    top: -32px;
+    left: calc(50% - 31px);
+    width: fit-content;
+    padding: 4px;
+    background-color: #4c4c4c;
+    border-radius: 16px 16px 0 0;
+}
+
+.close-down-btn .bi-chevron-down::before {
+    background-color: #4c4c4c !important;
 }
 
 .close-down-btn .bi-chevron-down::before {
@@ -2114,6 +2151,8 @@ span {
 .social-media-icon {
     border-radius: 25px;
     height: 40px;
+    width: 45px;
+    margin-top: 10px;
 }
 
 .service-card {
@@ -2521,7 +2560,7 @@ span {
         height: 122.84px;
     }
     .package-box h4 {
-        font-size: 20px;
+        font-size: 1.6rem !important;
         padding-top: 33px;
         margin: 0;
         padding-bottom: 18px;
@@ -2749,7 +2788,7 @@ span {
     }
 }
 
-.desktop-social-btn {
+.desktop-social-btn, .mobile-social-btn {
     /* box-shadow: 6px 5px 30px 0px rgb(0 0 0 / 12%); */
     box-shadow: 0px 0px 5px #ddd, 0px 8px 9px #e9e9e9;
     border-radius: 6px;
@@ -2766,76 +2805,91 @@ span {
     gap: .6rem;
     padding: .8em;
     overflow: hidden;
+    font-weight: 600;
+    color: #515151;
 }
 
-.desktop-social-btn .icon {
+.desktop-social-btn .icon, .mobile-social-btn .icon {
     max-width: 40px;
     max-height: 40px;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.desktop-social-btn .icon > .icon-hover {
+.desktop-social-btn .icon > .icon-hover, .mobile-social-btn .icon > .icon-hover {
     display: none;
 }
 
-.desktop-social-btn:hover .icon > * {
+.desktop-social-btn:hover .icon > *, .mobile-social-btn:hover .icon > * {
     display: none;
 }
 
-.desktop-social-btn:hover .icon > .icon-hover {
+.desktop-social-btn:hover .icon > .icon-hover, .mobile-social-btn:hover .icon > .icon-hover {
     display: block;
 }
 
-.desktop-social-btn .icon * {
-    width: 100%;
-    height: 100%;
+.desktop-social-btn .icon * , .mobile-social-btn .icon * {
+    width: auto;
+    max-height: 24px;
     display: block;
+    height: auto;
 }
 
-.desktop-social-btn:hover .icon-title {
+@media (min-width: 576px) {
+    .desktop-social-btn .icon * , .mobile-social-btn .icon * {
+        width: auto;
+        max-height: 30px;
+        display: block;
+        height: auto;
+    }   
+}
+
+.desktop-social-btn:hover .icon-title, .mobile-social-btn:hover .icon-title {
     color: white !important;
 }
 
-.desktop-social-btn div i {
+.desktop-social-btn div i, .mobile-social-btn div i {
     font-size: 20px;
     color: #000000;
 }
 
-.desktop-social-btn div img {
+.desktop-social-btn div img , .mobile-social-btn div img {
     height: 30px;
 }
 
-.desktop-social-btn div p {
+.desktop-social-btn div p, .mobile-social-btn div p {
     font-weight: 800;
     color: #000000;
 }
 
-.for-instagram:hover {
+.for-instagram:hover, .mobile-social-btn.for-instagram{
     background-color: rgb(252, 82, 48);
 }
 
-.for-instagram:hover .icon-title p {
+.for-instagram:hover .icon-title p, .mobile-social-btn.for-instagram .icon-title p{
     color: white !important;
 }
 
-.for-instagram:hover .icon i {
+.for-instagram:hover .icon i, .mobile-social-btn.for-instagram .icon i {
     color: white !important;
 }
 
-.for-youtube:hover {
+.for-youtube:hover, .mobile-social-btn.for-youtube {
     background-color: red;
 }
 
-.for-naver:hover {
+.for-naver:hover, .mobile-social-btn.for-naver {
     background-color: #31b500;
 }
 
-.for-appMarketing:hover {
+.for-appMarketing:hover, .mobile-social-btn.for-appMarketing {
     background-color: #4f96d5;
 }
 
-.for-talk:hover {
+.for-talk:hover, .mobile-social-btn.for-talk {
     background-color: rgb(245, 211, 0);
 }
 
@@ -3078,6 +3132,40 @@ span {
     .box {
         max-width: 306px;
     }
+    .footer {
+        font-size: 10px;
+    }
+    .footer .container {
+        font-size: 10px;
+    }
+    
+}
+@media(max-width:468px){
+    .footer li{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .footer .container p{
+        font-size: 10px;
+    }
+}
+
+@media(max-width:767px){
+    .footer li{
+        font-size: 10px;
+    }
+    .footer .container p{
+        font-size: 10px;
+    }
+}
+@media(max-width:300px){
+    .footer li{
+        font-size: 8px;
+    }
+    .footer .container p{
+        font-size: 10px;
+    }
 }
 
 @media(max-width:995px) {
@@ -3135,6 +3223,7 @@ span {
         align-items: center !important;
     }
 }
+
 
 @keyframes faq-answer-active {
     0% {
@@ -3242,6 +3331,402 @@ span {
     background-color: transparent !important;
 }
 
+.mobile-checkout-main .options label {
+    font-weight: 800;
+    color: #2e2e2e;
+}
+
+.mobile-checkout-main .options select {
+    box-shadow: none;
+    font-weight: 800;
+    color: #2e2e2e;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+}
+
+.mobile-checkout-main .options select:focus {
+    border: 1px solid #e75e3e;
+}
+
+.mobile-checkout-main .bar {
+    background-color: #e75e3e;
+    padding: .8rem 2rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.mobile-checkout-main .mobile .shop-btn,    
+.mobile-checkout-main .mobile .purchase-btn {
+    font-size: 20px !important;
+    border-radius: 8px !important;
+}
 .dropdown-menu li {
     border-radius: 0 !important;
+}
+/* order page  */
+ 
+.heading {
+    font-size: 2.2rem !important;
+    font-weight: 800;
+    margin-bottom: 1.2rem !important;
+    text-align: center;
+}
+
+.box {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+/* img,
+svg {
+    vertical-align: middle;
+    width: 18px;
+    height: 19px;
+} */
+
+.button-group {
+    background-color: #ff563d;
+    text-align: center;
+    border-radius: 3.25rem;
+    margin-top: 4%;
+}
+
+#basic-addon1 {
+
+    background-color: transparent;
+}
+
+/* label {
+    text-align: start;
+    background-color: #a6a6a6;
+    margin-left: 5%;
+    margin-right: 5%;
+} */
+
+.selector {
+    position: relative;
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+}
+
+/* .form-control {
+    display: block;
+    height: 45px;
+    width: 100%;
+    padding: 15px 16px 16px 53px;
+    line-height: 24px;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+} */
+.form-payment{
+    display: block;
+    height: 45px;
+    width: 80%;
+    line-height: 24px;
+    padding: 1rem;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+}
+.selector>button.form-control {
+    position: relative;
+    margin-bottom: 6px;
+    padding-right: 56px;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.selector>button.form-control:after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border-color: #464b4d transparent transparent;
+    border-style: solid;
+    border-width: 6px 5px 0;
+}
+
+.selector .alt {
+    margin-left: 10px;
+    float: right;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-align: right;
+}
+
+.form-group .input-icon {
+    z-index: 100;
+    pointer-events: none;
+    margin: 0;
+    position: absolute;
+    top: 18px;
+    left: 17px;
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.cardbox {
+    background-color: #f3f3f6;
+    padding: 1rem;
+    margin-top: 12%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.btn.btn-block {
+    color: #fff;
+    font-size: 19.6px;
+}
+
+F h4 {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(0, 0, 0),
+}
+
+.card-text {
+    font-size: 10px;
+}
+
+img {
+    border: 0;
+}
+
+.text-center {
+    text-align: center !important;
+    
+}
+
+/* .dropdown-menu {
+    position: relative;
+    padding: 0;
+    max-height: 275px;
+} */
+
+.border-left-0 {
+    border-left: 0;
+}
+
+/* login */
+.logintxt {
+    text-align: center;
+    font-size: 14px;
+
+}
+
+.memberbtn {
+    text-align: center;
+    border-radius: 1rem;
+    margin-top: 10%;
+    height: 45px;
+    border: 2px solid #f3f3f6;
+
+}
+
+.btn.btn-block {
+    color: #000;
+    font-size: 12px;
+    height: 45px;
+}
+
+.regtxt {
+    color: #ff563d;
+}
+
+.sharepost {
+    background-color: #ff563d;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.btn.btn-block.text-white {
+    font-size: 24px;
+}
+
+.profilepic {
+    height: 100px;
+    width: 100px;
+}
+
+.imglist {
+    width: auto;
+    height: 88%;
+}
+
+.list-group-horizontal>.list-group-item:first-child {
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 0;
+}
+
+.myimage {
+    width: auto;
+    height: 100%;
+}
+
+.topcontainer {
+    margin-top: 2%;
+}
+
+.ratingtxt {
+    margin-top: -11%;
+}
+
+.ratingpic {
+    height: 40%;
+    width: auto;
+
+}
+
+.ratingnum {
+    text-align: center;
+    color: purple;
+}
+
+.ratinghead {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.checkbtn {
+    background-color: #ff563d;
+    text-align: center;
+    border-radius: 3.25rem;
+    height: 58px;
+    width: 40%;
+    margin-left: 22%;
+
+}
+
+.cardcheck {
+    position: relative;
+    background: #f3f3f6;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.payheader {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.paycard {
+    position: relative;
+    background: #f3f3f6;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.pointcontainer {
+    margin-top: 5%;
+}
+
+.btnpoints {
+    background-color: #a359fe;
+    margin-left: 15%;
+    height: 45px;
+    width: 100%;
+
+}
+
+.btn.btn-outline-secondary.btnpoints {
+    color: #fff;
+}
+
+.finalamount {
+    justify-content: center;
+    text-align: center;
+}
+
+.method {
+    margin-top: 5%;
+
+}
+
+.paymentcheck {
+    background-color: #fff;
+    justify-content: center;
+}
+
+.paymentbtn {
+    background-color: #ff563d;
+    text-align: center;
+    border-radius: 3.25rem;
+    height: 58px;
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+}
+
+.border-radius-0 {
+    border-radius: 0 !important;
+}
+.w-60{
+    width: 60%;
+}
+.h-45{
+    height: 45px;
+}
+.input-group-text .input-icon{
+    height: 20px;
+}
+
+.order-page-selected-price {
+    position: absolute;
+    right: 0;
+    margin-right: 59px;
+    margin-top: 6px;
+    z-index: 1000;
 }

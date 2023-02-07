@@ -50,13 +50,11 @@
                                     <div class="form-group row">
                                         <div class="col-lg-12 m-2">
                                             <label for="menu" class="">Category</label>
-                                            <select name="category_id" id="parent_id" class="form-control"
+                                            <select name="category_id" id="category_id" class="form-control category_id" data-url="{{ '/admin/get/subcategories' }}"
                                                 value="{{ old('category_id') }}">
                                                 <option value="">Select Category</option>
                                                 @foreach ($category as $list)
-                                                    <option value="{{ $list->id }}"
-                                                        {{ $package->category_id == $list->id ? 'selected' : '' }}>
-                                                        {{ $list->title ?? '' }}</option>
+                                                    <option value="{{ $list->id }}" @if($package->category_id == $list->id) selected @endif>{{ $list->title ?? '' }}</option>
                                                 @endforeach
                                             </select>
                                             @error('category_id')
@@ -68,14 +66,9 @@
                                     <div class="form-group row">
                                         <div class="col-lg-12 m-2">
                                             <label for="menu" class="">Sub Category</label>
-                                            <select name="subcategory_id" id="parent_id" class="form-control"
+                                            <select name="subcategory_id" id="subcategory_id" class="form-control"
                                                 value="{{ old('subcategory_id') }}">
                                                 <option value="">Select Sub Category</option>
-                                                @foreach ($subcategory as $list)
-                                                    <option value="{{ $list->id }}"
-                                                        {{ $package->sub_category_id == $list->id ? 'selected' : '' }}>
-                                                        {{ $list->title ?? '' }}</option>
-                                                @endforeach
                                             </select>
                                             @error('parent_id')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -110,6 +103,18 @@
                                             <span class="text-danger">{{ $message }}</span>
                                           @enderror
                                         </div>
+                                        <div class="col-12 m-2">
+                                            <label for="Type"> Select Type</label>
+                                            <select name="type" id="type_id" class="form-control" >
+                                              <option value="">Select Type</option>
+                                              <option value="0" @if($package->type_id ==0) selected @endif>일반 조회수</option>
+                                              <option value="1" @if($package->type_id ==1) selected @endif>순위상승 조회수</option>
+                                              <option value="2" @if($package->type_id ==2) selected @endif>시청시간</option>
+                                            </select>
+                                            @error('type')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                          </div>
                                     </div>
                                     <button class="mt-1 btn btn-primary">Submit</button>
                                 </form>
@@ -128,5 +133,24 @@
                 return false;
             return true;
         }
+
+        $('.category_id').change( function(){
+    	let url = $(this).data('url');
+      let id = $(this).val();
+      console.log(url);
+      $.ajax({
+        type : 'get',
+        url : url+'/'+id,
+        success: function(response){
+          $.each(response , function (index , value) {
+            $('#subcategory_id').html('')
+            $('#subcategory_id').append('<option value="'+value.id+'">'+value.title+'</option>')
+          })
+        }
+      })
+
+    //   $("#subcategory_id"+demovalue).show();
+    });
+
     </script>
 @endsection

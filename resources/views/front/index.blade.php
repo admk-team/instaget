@@ -1,35 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
-  <title>Instaget</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-<body>
+@extends('layouts.layout')
+@section('container')
   <div class="container-fluid m-0 p-0">
-    @include('layouts.header')
     <section class="slider-section">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -57,138 +28,7 @@
         </div>
       </div>
     </section>
-    {{-- <section class="services-section mt-5">
-      <div class="container">
-        <div class="row">
-          <h3 class="text-center m-2 p-5">Services</h3>
-          <div class="col-lg-12">
-            <div class="row services-card">
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/1.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p>Follower Up</p>
-                    <span>250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Increase Instagram Followers</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/3.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p class="text-black">Follower Up</p>
-                    <span class="text-black">250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Instagram Likes & Views</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/6.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p>Follower Up</p>
-                    <span>250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Daily Followers</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row services-card">
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/6.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p>Follower Up</p>
-                    <span>250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Increase Instagram Followers</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/2.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p>Follower Up</p>
-                    <span>250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Increase Instagram Followers</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                <div class="card border-0">
-                  <img src="{{ asset('front_asset/images/icons/3.png')}}" class="card-img-top" alt="...">
-                  <div class="d-block image-caption">
-                    <p class="text-black">Follower Up</p>
-                    <span class="text-black">250</span>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Increase Instagram Followers</h5>
-                    <p class="card-text">Your followers will grow in no time.
-                      A high follower count increases your brand's credibility and
-                      helps you attract more followers.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> --}}
-    {{-- <section class="about-us" style="background-image: url('{{ asset('front_asset/images/bg.png') }}');">
-      <div class="row">
-        <div class="col-lg-6"></div>
-        <div class="col-lg-6">
-          <h4 class="text-white">Why instaget should i use?</h4>
-          <p class="text-white">Instaget's services are based on marketing and account management agency know-how, and are
-            proven solutions that have been servicing for many years since the early days of Instagram, YouTube, and Facebook</p>
-            <a class="see-more">See more >></a>
-        </div>
-      </div>
-    </section> --}}
-    {{-- <section class="customer-feedback">
-      <h3 class="text-center text-white">Customer Reviews</h3>
-      <div id="owl-row-1" class="owl-carousel owl-theme">
-        <div class="item">
-          <h3>No tea at all! It's really natural!!</h3>
-            <p>It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural! (I've bought Koreans from other companies before, but the photos were too tidy and unfollowed) I </p>
-        </div>
-        <div class="item">
-          <h3>No tea at all! It's really natural!!</h3>
-            <p>It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural! (I've bought Koreans from other companies before, but the photos were too tidy and unfollowed) I </p>
-        </div>
-        <div class="item">
-          <h3>No tea at all! It's really natural!!</h3>
-            <p>It's my first time doing it on Instagram, so I ordered only 250 people, but I'm really satisfied with it because it's really natural! (I've bought Koreans from other companies before, but the photos were too tidy and unfollowed) I </p>
-        </div>
-    </div>
-    </section> --}}
-
+  
     <section class="card-section py-5 my-5 font-family">
       <div class="container">
         <div class="row">
@@ -423,7 +263,6 @@
               </div>
             </div>
           </div>
-
           <div class="testimonial">
             <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             <div class="info d-flex align-items-center justify-content-between">
@@ -565,192 +404,37 @@
     </div>
     <!-- End: Blog Section -->
 
-    <footer class="footer">
-      <div class="container p-5">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="footer-img">
-              <img src="{{ asset('front_asset/images/logo.png') }}" alt="">
-            </div>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <i class="bi bi-envelope"></i> &nbsp;
-                <span>info@instaget.com</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-telephone"></i> &nbsp;
-                <span>++0012345678</span>
-              </li>
-              <li class="list-group-item border-0">
-                <i class="bi bi-geo-alt"></i> &nbsp;
-                <span>Address: #302, Building A, Seoul Forest SKV1TOWER, 5 Seongsuil-ro 8-gil, Seongdong-gu, Seoul (Seongsu-dong 2-ga)</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Services</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Followers</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Likes</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Buy Insatgrams Views</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Insatgrams Reels</span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h2 class="footer-heading">Company</h2>
-            <ul class="list-group border-0">
-              <li class="list-group-item border-0">
-                <span>Contact Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>About Us</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Privacy Policy</span>
-              </li>
-              <li class="list-group-item border-0">
-                <span>Term of Services</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row pt-5">
-          <p class="text-center text-white copywrite">Copyright © INSTAGET. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="{{ asset('front_asset/js/owl.carousel.min.js') }}"></script>
-  <script>
-    AOS.init();
-  </script>
-  <!-- custom JS code after importing jquery and owl -->
-  <script type="text/javascript">
-      $(document).ready(function() {
-          $("#owl-row-1").owlCarousel();
-      });
-      $('#owl-row-1').owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: false,
-          responsive: {
-              0: {
-                  items: 1
-              },
-              600: {
-                  items: 1
-              },
-              1000: {
-                  items: 1
-              }
-          }
-      })
-  </script>
 
   <script>
-    $(document).ready(function(){
-      $('#testimonials').owlCarousel({
-        items: 3,
-        nav: false
-      });
-
-      $('#testimonials_md').owlCarousel({
-        items: 1,
-        nav: false
-      });
-
-      $('#testimonials_lg').owlCarousel({
-        items: 2,
-        nav: false
+    $(document).ready(function() {
+      window.addEventListener('scroll', (event) => {
+        if (isInViewport($("#animateNumber1").get(0)))
+          $("#animateNumber1").animateNumbers(1159250);
+        if (isInViewport($("#animateNumber2").get(0)))
+          $("#animateNumber2").animateNumbers(3689);
+        if (isInViewport($("#animateNumber3").get(0)))
+          $("#animateNumber3").animateNumbers(146800);
       });
     });
-  </script>
-
-<script>
-  (function($) {
-    $.fn.animateNumbers = function(stop, commas, duration, ease) {
-        return this.each(function() {
-            var $this = $(this);
-            var isInput = $this.is('input');
-            var start = parseInt(isInput ? $this.val().replace(/,/g, "") : $this.text().replace(/,/g, ""));
-            var regex = /(\d)(?=(\d\d\d)+(?!\d))/g;
-            commas = commas === undefined ? true : commas;
-            
-            // number inputs can't have commas or it blanks out
-            if (isInput && $this[0].type === 'number') {
-                commas = false;
-            }
-            
-            $({value: start}).animate({value: stop}, {
-                duration: duration === undefined ? 1000 : duration,
-                easing: ease === undefined ? "swing" : ease,
-                step: function() {
-                    isInput ? $this.val(Math.floor(this.value)) : $this.text(Math.floor(this.value));
-                    if (commas) {
-                        isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
-                    }
-                },
-                complete: function() {
-                    if (parseInt($this.text()) !== stop || parseInt($this.val()) !== stop) {
-                        isInput ? $this.val(stop) : $this.text(stop);
-                        if (commas) {
-                            isInput ? $this.val($this.val().replace(regex, "$1,")) : $this.text($this.text().replace(regex, "$1,"));
-                        }
-                    }
-                }
-            });
-        });
-    };
-  })(jQuery);
-</script>
-
-<script>
-  $(document).ready(function(){
-    window.addEventListener('scroll', (event) => {
-      if (isInViewport($("#animateNumber1").get(0)))
-        $("#animateNumber1").animateNumbers(1159250);
-      if (isInViewport($("#animateNumber2").get(0)))
-        $("#animateNumber2").animateNumbers(3689);
-      if (isInViewport($("#animateNumber3").get(0)))
-        $("#animateNumber3").animateNumbers(146800);
-    });
-  });
-
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
         rect.top >= 0 &&
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
-    );
-}
-</script>
-<script>
-
-$("#home-video").css("visibility", "hidden");
-let video = document.getElementById("home-video");
-video.oncanplay = function(){
-  $("#home-video").css("visibility", "visible");
-  $("#home-bg-placeholder").css("visibility", "hidden");
-  $("#home-bg-placeholder").pause();
-};
-
-</script>
-</body>
-
-</html>
+      );
+    }
+  </script>
+  <script>
+    $("#home-video").css("visibility", "hidden");
+    let video = document.getElementById("home-video");
+    video.oncanplay = function() {
+      $("#home-video").css("visibility", "visible");
+      $("#home-bg-placeholder").css("visibility", "hidden");
+      $("#home-bg-placeholder").pause();
+    };
+  </script>
+@endsection

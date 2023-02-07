@@ -65,9 +65,17 @@
                                     </div>
                                     <div class="col-12 m-2">
                                         <label for="color">Hover Color</label>
-                                        <input type="color" name="color" value="{{ old('color') ?? $service->color }}" class="form-control">
+                                        <input type="color" name="color" value="{{ old('color') ?? $service->color }}" class="form-control" style="height: 50px">
                                         @error('color')
                                         <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-12 m-2">
+                                        <label for="description">Description </label>
+                                        <textarea class="form-control" name="description">{{ old('description') ??  $service->description }}</textarea>
+                                        @error('description')
+                                            <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
