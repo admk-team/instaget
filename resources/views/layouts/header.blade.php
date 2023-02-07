@@ -19,12 +19,7 @@
               aria-expanded="false">
               Service
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="{{ route('front.service') }}">Instagram</a></li>
-              <li><a class="dropdown-item" href="{{ route('front.service') }}">Youtube</a></li>
-              <li><a class="dropdown-item" href="{{ route('front.service') }}">Facebook</a></li>
-              <li><a class="dropdown-item" href="{{ route('front.service') }}">Ticktok</a></li>
-            </ul>
+         <x-navbar></x-navbar>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>

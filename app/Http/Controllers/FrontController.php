@@ -12,7 +12,7 @@ class FrontController extends Controller
         return view('front.index');
     }
 
-    public function service()
+    public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         return view('front.service',compact('services'));
