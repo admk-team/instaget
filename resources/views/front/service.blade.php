@@ -135,9 +135,7 @@
               </div>
               <div class="d-flex flex-wrap justify-content-center">
                 @foreach ($packages1 as $pakage1)
-                  <div class="package-box bg_orange @if ($loop->iteration==1)
-                    active
-                  @endif text-center first-box">
+                  <div class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
                     <h4 class="fw-bolder">
                       @if($pakage1->sale_price)
                       {{ floor($pakage1->sale_price) }}
@@ -156,10 +154,14 @@
                 @endforeach
               </div>
               <div class="p-4 justify-content-center d-flex">
-                <h4 class="sale-price">57,000원 </h4> &nbsp;<del class="orignal-price"> 60,000</del>
+                <h4 class="sale-price first-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price first-box-orignal-price"> 60,000</del>
               </div>
               <div class="p-3 justify-content-center d-none d-md-block">
-                <button class="purchase-btn">구매하기</button>
+                <form action="{{ route('front.order') }}" method="POST" class="first-box-form">
+                  @csrf
+                  <input type="hidden" name="pakage_id" id="first_pkg">
+                </form>
+                <button class="purchase-btn first-box-purchase-btn">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
               <div class="container d-md-none mobile-checkout-main">
@@ -502,38 +504,55 @@
   <!-- custom JS code after importing jquery and owl -->
   <script>
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
-  const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
-  const serviceBtns = mobileSeriveNav.querySelectorAll('.service > .btn');
-  serviceBtns.forEach((btn) => {
-    btn.addEventListener('click', (event) => {
-      const content = btn.nextElementSibling;
-      const contentClone = content.cloneNode(true);
+    const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
+    const serviceBtns = mobileSeriveNav.querySelectorAll('.service > .btn');
+    serviceBtns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const content = btn.nextElementSibling;
+        const contentClone = content.cloneNode(true);
 
-      let alreadyActiveBtn = false;
-      serviceBtns.forEach(el => {
-        if (el.classList.contains('active1'))
-          alreadyActiveBtn = el;
-      });
+        let alreadyActiveBtn = false;
+        serviceBtns.forEach(el => {
+          if (el.classList.contains('active1'))
+            alreadyActiveBtn = el;
+        });
 
-      if (alreadyActiveBtn && alreadyActiveBtn.isSameNode(btn)) {
-        alreadyActiveBtn.classList.remove('active1');
-        $(activeServiceContainer).slideUp();
-        activeServiceContainer.classList.remove('show');
-        return;
-      }
+        if (alreadyActiveBtn && alreadyActiveBtn.isSameNode(btn)) {
+          alreadyActiveBtn.classList.remove('active1');
+          $(activeServiceContainer).slideUp();
+          activeServiceContainer.classList.remove('show');
+          return;
+        }
 
-      if (alreadyActiveBtn) {
-        alreadyActiveBtn.classList.remove('active1');
-      }
+        if (alreadyActiveBtn) {
+          alreadyActiveBtn.classList.remove('active1');
+        }
 
-      btn.classList.add('active1');
-      activeServiceContainer.classList.add('show');
-      $(activeServiceContainer).slideUp('medium', function () {
-        activeServiceContainer.innerHTML = '';
-        activeServiceContainer.appendChild(contentClone);
-        $(activeServiceContainer).slideDown();
-      });
+        btn.classList.add('active1');
+        activeServiceContainer.classList.add('show');
+        $(activeServiceContainer).slideUp('medium', function () {
+          activeServiceContainer.innerHTML = '';
+          activeServiceContainer.appendChild(contentClone);
+          $(activeServiceContainer).slideDown();
+        });
+      })
     })
-  })
+  </script>
+  <script>
+    $('.first-box').click(function(){
+      let original_price=$(this).data('original')
+      let sale_price=$(this).data('sale')
+      let id=$(this).data('id');
+      $('.first-box-sale-price').html('')
+      $('.first-box-sale-price').append(sale_price)
+      $('.first-box-orignal-price').html('')
+      $('.first-box-orignal-price').append(original_price)
+      $("#first_pkg").val('');
+      $("#first_pkg").val($("input").val() + id);
+
+      $('.first-box-purchase-btn').click(function(){
+        $('.first-box-form').submit();
+      })
+    })
   </script>
 @endsection

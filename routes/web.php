@@ -55,6 +55,6 @@ Route::name('front.')->group(function () {
     Route::get('/signup' , [FrontController::class , 'signup'])->name('signup');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
     Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
-    Route::get('/order' , [FrontController::class , 'order'])->name('order');
+    Route::post('/order' , [FrontController::class , 'order'])->name('order');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
 });
