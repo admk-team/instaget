@@ -45,7 +45,7 @@ class PackageController extends Controller
     {
       
         $request->validate([
-            'title' => 'required|unique:packages,title',
+            'title' => 'required',
             'category_id' => 'required_without:subcategory_id',
             'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required',
@@ -157,5 +157,10 @@ class PackageController extends Controller
         }else{
             return redirect()->route('admin.package.index')->with('error' , 'Failed to Change Status');
         }
+    }
+
+    public function get_subcategory($id){
+        $category = Category::findorFail($id);
+      return  $sub_category = SubCategory::where('category_id' , $category->id)->get();
     }
 }
