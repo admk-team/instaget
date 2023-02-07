@@ -15,4 +15,9 @@ class Category extends Model
     public function subcategories(){
         return $this->hasMany(SubCategory::class);
     }
+
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
 }
