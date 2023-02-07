@@ -112,17 +112,17 @@
             <li class="nav-item service-upper-button-li" role="presentation">
               <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab"
                 data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                aria-selected="true">실제한국인팔로워</button>
+                aria-selected="true">일반 조회수</button>
             </li>
             <li class="nav-item service-upper-button-li" role="presentation">
               <button class="nav-link tabs-button service-upper-button" id="profile-tab" data-bs-toggle="tab"
                 data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                aria-selected="false">리얼한국인팔로워</button>
+                aria-selected="false">순위상승 조회수</button>
             </li>
             <li class="nav-item service-upper-button-li" role="presentation">
               <button class="nav-link tabs-button service-upper-button" id="contact-tab" data-bs-toggle="tab"
                 data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
-                aria-selected="false">외국인팔로워</button>
+                aria-selected="false">시청시간</button>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">

@@ -3499,11 +3499,11 @@ img {
    font-size: 23.7px;
    font-weight: bolder;
  }
- .dropdown-menu {
+ /* .dropdown-menu {
    position: relative;
    padding: 0;
    max-height: 275px;
-}
+} */
 .border-left-0{
    border-left: 0;
 }
