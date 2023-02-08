@@ -54,8 +54,10 @@ class FrontController extends Controller
     public function faq(){
         return view('front.faq');
     }
-    public function order(){
-        return view('front.order');
+    public function order(Request $request){
+        $package = Package::find($request->pakage_id);
+        $packages = Package::all();
+        return view('front.order', compact('package', 'packages'));
     }
     public function membership(){
         return view('front.membership');

@@ -3724,3 +3724,10 @@ img {
 .footer .container-fluid .container ul li{
     border: 0;
 }
+.order-page-selected-price {
+    position: absolute;
+    right: 0;
+    margin-right: 59px;
+    margin-top: 6px;
+    z-index: 1000;
+}

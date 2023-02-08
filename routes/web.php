@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AdminDashboard;
+use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -32,21 +36,29 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Sub Category
     Route::resource('subcategory' , SubCategoryController::class);
     Route::any('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
-
     // Services 
     Route::resource('services' , ServiceController::class);
     Route::any('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
     // Packages 
     Route::resource('package' , PackageController::class );
     Route::any('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
+    // Profile
+    Route::get('/profile/edit', [AdminProfileController::class, 'index'])->name('profile.edit');
+    Route::post('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
     Route::get('get/subcategories/{id}' ,  [PackageController::class , 'get_subcategory']);
     //Logout 
     Route::get('/logout' , [AdminController::class , 'Logout'])->name('logout');
     
 });
-
 });
 
+// Admin Password Resetting
+Route::middleware('guest:admin')->group(function () {
+    Route::get('/password/reset', [AdminPasswordResetController::class, 'index'])->name('password.reset.page');
+    Route::post('/password/reset/email', [AdminPasswordResetController::class, 'email'])->name('password.reset.email');
+    Route::get('/reset/password/{token}', [AdminPasswordResetController::class, 'reset_page'])->name('password.reset');
+    Route::post('/reset/change/password', [AdminPasswordResetController::class, 'change_password'])->name('reset.change.password');
+ });
 
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//

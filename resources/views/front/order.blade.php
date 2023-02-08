@@ -10,24 +10,25 @@
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><img class="input-icon"
                 src="{{ asset('front_asset/images/insta-icon.png')}}"> </span>
-            <input type="text" class="form-control border-left-0" placeholder="인스타그램 계정 입력" aria-label="Username"
+            <input type="text" class="form-control border-left-0" placeholder="인스타그램 계정 입력" name="insta_username" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><img class="input-icon" src="{{ asset('front_asset/images/at.svg')}}">
             </span>
-            <input type="text" class="form-control border-left-0" placeholder="이메일 입력" aria-label="email"
+            <input type="text" class="form-control border-left-0" placeholder="이메일 입력" name="email" aria-label="email"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><img class="input-icon"
                 src="{{ asset('front_asset/images/heart.PNG')}}"> </span>
-            <select class="form-select border-left-0" id="">
-              <option selected style="display: flex; gap:2rem">$2.97</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select border-left-0" name="insta_username" id="">
+              <option value="{{ $package->id }}" selected style="display: flex; gap:2rem">{{ $package->title }}</option>
+              @foreach ($packages as $item)
+                <option data-price="{{ $item->sale_price }}" value="{{ $item->id }}">{{ $item->title }}</option>
+              @endforeach
             </select>
+            <span class="order-page-selected-price">{{ '$'.$package->sale_price }}</span>
           </div>
           <hr>
           <div class="cardbox">
@@ -45,4 +46,5 @@
     </div>
   </div>
 </div>
+
 @endsection

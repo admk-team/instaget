@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Password | Reset</title>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <meta charset="utf-8">
@@ -28,49 +28,39 @@
 </head>
 
 <body>
-    <div class="container-fluid m-0 p-0">    
+    <div class="container-fluid m-0 p-0">
         {{-- Login Page Code Start here --}}
         <section class="gradient-custom background--smoke ">
             <div class="container py-5 h-100 ">
                 <div class="row d-flex justify-content-center  h-100">
                     <div class="col-12 col-md-6 col-lg-6 col-xl-5 box--shadow">
-                        <h1 class="text-center loginText">로그인</h1>
+                        <h1 class="text-center loginText">암호를 재설정</h1>
                         @if(session()->has('error'))
                         <div class="alert alert-danger alert-dismissible fade show">
                             {{ session()->get('error') }}
                         </div>
                         @endif
-                        @if(session()->has('status'))
+                        @if(session()->has('alert'))
                         <div class="alert alert-success alert-dismissible fade show">
-                            {{ session()->get('status') }}
+                            {{ session()->get('alert') }}
                         </div>
                         @endif
                         <div class="mb-md-5 mt-md-4 pb-5">
-                            <form method="POST" action="{{ route('admin-login') }}">
+                            <form method="POST" action="{{ route('password.reset.email') }}">
                                 @csrf
                                 <div class="form-outline form-white mb-3">
                                     <input type="email" id="emial" name="email"
                                         class="form-control form-control-lg loginform  rounded-border"
-                                        placeholder="여기로 이메일 보내기" />
+                                        placeholder="Email" />
                                         @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                             
                                         @enderror
                                 </div>
-                                <div class="form-outline form-white mb-4">
-                                    <input type="password" id="password" name="password"
-                                        class="form-control  form-control-lg loginform  rounded-border"
-                                        placeholder="이메일 비밀번호" />
-                                        @error('password')
-                                        <span class="text-danger">{{ $message }}</span>
-                                            
-                                        @enderror
-                                </div>
-                                <div class="form-outline form-white mb-4 d-flex">
+                                <div class="form-outline form-white mb-4 ">
                                     <button type="submit" class="form-control form-control-lg bg-dark loginform border-0"> <span 
-                                        class="text-white loginbtn">로그인</span> </button>
-                                    </div>
-                                    <span class="login-reset-text mb-4"><a href="{{ route('password.reset.page') }}">Forgot Password ?</a></span>
+                                        class="text-white loginbtn">제출하다</span> </button>
+                                </div>
                             </form> 
                         </div>
                     </div>
