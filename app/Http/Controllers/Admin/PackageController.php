@@ -50,7 +50,6 @@ class PackageController extends Controller
             'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required',
             'quantity' => 'required',
-            'type' => 'required'
         ]);
 
         $title = strtolower($request->title);
@@ -62,7 +61,7 @@ class PackageController extends Controller
         $model->sale_price = $request->sale_price;
         $model->qty = $request->quantity;
         $model->slug = Str::slug($title , '-');
-        $model->type_id = $request->type;
+
 
         if($model->save()){
             return redirect()->route('admin.package.index')->with('success' , 'Package Added Successfully');
@@ -112,7 +111,6 @@ class PackageController extends Controller
             'category_id' => 'required_without:subcategory_id',
             'subcategory_id' => 'required_without:category_id',
             'original_price' => 'required',
-            'type' => 'required'
         ]);
  
         $title = strtolower($request->title);
@@ -124,7 +122,6 @@ class PackageController extends Controller
         $model->sale_price = $request->sale_price;
         $model->qty = $request->quantity;
         $model->slug = Str::slug($title , '-');
-        $model->type_id = $request->type;
 
         if($model->update()){
             return redirect()->route('admin.package.index')->with('success' , 'Packages Updated Successfully');

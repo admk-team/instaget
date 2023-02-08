@@ -17,7 +17,7 @@ class FrontController extends Controller
 
     public function service($slug)
     {
-        $services = Service::with('categories.subcategories')->where('status', 1)->get();
+         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         $packages1 = $categories->flatMap->packages->where('type_id',0)->flatten();
@@ -25,10 +25,12 @@ class FrontController extends Controller
         $packages3 = $categories->flatMap->packages->where('type_id',2)->flatten();
         return view('front.service',compact('services','packages1','packages2','packages3'));
     }
+           
+
     public function subcategory_packages($subcategoryslug){
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $subcategory = SubCategory::where('slug' , $subcategoryslug)->first();
-        $packages1 = Package::where('sub_category_id' , $subcategory->id)->where('type_id',0)->get();
+         $packages1 = Package::where('sub_category_id' , $subcategory->id)->where('type_id',0)->get();
         $packages2 = Package::where('sub_category_id' , $subcategory->id)->where('type_id',1)->get();
         $packages3 = Package::where('sub_category_id' , $subcategory->id)->where('type_id',2)->get();
         return view('front.service',compact('services','packages1','packages2','packages3'));

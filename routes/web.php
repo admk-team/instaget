@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\AuthController as UserAuthController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -84,3 +85,12 @@ Route::name('front.')->group(function () {
    
 });
 
+// User Auth Routes
+Route::prefix('/auth')->group(function() {
+    // User Google Auth Routes
+    Route::get('/google/redirect', [UserAuthController::class, 'google_login_redirect'])->name('google.login.redirect');
+    Route::get('/google/callback', [UserAuthController::class, 'google_login_callback'])->name('google.login.callback');
+    // User Kakao Auth Routes
+    Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
+    Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
+});
