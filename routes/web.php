@@ -77,3 +77,16 @@ Route::name('front.')->group(function () {
     Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
    
 });
+Route::get('/auth/instagram', function () {
+    $fb = new \Facebook\Facebook([
+        'app_id' => '711758627169981',
+        'app_secret' => 'e710a48b2e1f652be7355188bf4676e9',
+        'default_graph_version' => 'v8.0',
+    ]);
+    $helper = $fb->getRedirectLoginHelper();
+    $permissions = ['user_profile', 'user_media']; // request permission to access user profile and media
+    $loginUrl = $helper->getLoginUrl('http://127.0.0.1:8000/post', $permissions);
+
+    return redirect($loginUrl);
+});
+
