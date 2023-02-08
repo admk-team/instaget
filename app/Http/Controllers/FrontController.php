@@ -67,22 +67,11 @@ class FrontController extends Controller
         return view('front.payment');
     }
     public function post(){
-        $access_token = '3ce954dea42e5463561fb436b924333b';
-        $instagram_user_id = 'directory';
-        
-        // Create a Guzzle HTTP client
+        $access_token = 'IGQVJYSE92d3c4cmF6ODlWckkzYlJQQ3VqOVFaOXlHZAFJoY1gzUXdwNzBQaW5DS1FlYXkxQ2FyU0pwVWZAmbWxVMjZAtZA0gtWXVXV3JLQlAzc0NucWgwWHR6Yy1MNl9iZAXhhSDcwNEZAXV0Y5dS1FSzctOQZDZD';
         $client = new Client();
-        
-        // Make a GET request to the Instagram Basic Display API endpoint
-        $response = $client->get('https://graph.instagram.com/' . $instagram_user_id . '/media', [
-            'query' => [
-                'fields' => 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp',
-                'access_token' => $access_token
-            ]
-        ]);
-        
-        // Decode the JSON response into an associative array
-        $posts = json_decode($response->getBody(), true);
+        $response = $client->get('https://api.instagram.com/v1/users/self/?access_token=' . $access_token);
+        $data = json_decode($response->getBody()->getContents());
+        return $data;
         return view('front.post');
     }
 }
