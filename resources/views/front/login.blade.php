@@ -54,6 +54,7 @@
                                 </button>
                             </div>
                             <div class="form-outline form-white mb-4 ">
+                                <a id="kakao_talk_login_trigger">
                                 <button type="submit"
                                     class="form-control form-control-lg  kakoa loginform rounded-border bg-kakoa border-0">
                                     <div class="kakao_talk">
@@ -84,11 +85,13 @@
                                         <span>카카오톡 가입</span>
                                     </div>
                                 </button>
+                                </a>
                             </div>
                             <div class="form-outline form-white mb-4 ">
                                 <button type="submit"
                                     class="form-control form-control-lg loginform google rounded-border bg-google border-0">
                                     <div class="google_search">
+                                        <a href="{{ route('google.login.redirect') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="fcxgslfzvt"
                                             x="0px" y="0px" viewBox="0 0 800 800" enable-background="new 0 0 800 800"
@@ -104,7 +107,7 @@
                                             <defs></defs>
                                         </svg>
                                         <span>구글 간편가입</span>
-
+                                        </a>
                                     </div>
                                 </button>
                             </div>
@@ -124,6 +127,17 @@
         {{-- Login Page Code End here --}}
 
     </div>
+    {{-- Kakao Talk --}}
+
+
+    <script>
+
+        $(document).on("click", (event) => {
+            window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=971ab799aa742e1f80c80c23e9c672ab&redirect_uri=http://127.0.0.1:8000/auth/kako&response_type=code";
+        });
+
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function() {
           $("#owl-row-1").owlCarousel();
