@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AdminDashboard;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -63,5 +64,11 @@ Route::name('front.')->group(function () {
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
     Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
+    Route::post('registeration' , [UserController::class , 'register'])->name('register');
+    Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
+
+
+    
    
 });
+

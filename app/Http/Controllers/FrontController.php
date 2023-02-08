@@ -68,4 +68,6 @@ class FrontController extends Controller
     public function post(){
         return view('front.post');
     }
+
+
 }
