@@ -7,6 +7,7 @@ use App\Models\SubCategory;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use GuzzleHttp\Client;
 
 class FrontController extends Controller
 {
@@ -68,6 +69,11 @@ class FrontController extends Controller
         return view('front.payment');
     }
     public function post(){
+        $access_token = 'IGQVJYSE92d3c4cmF6ODlWckkzYlJQQ3VqOVFaOXlHZAFJoY1gzUXdwNzBQaW5DS1FlYXkxQ2FyU0pwVWZAmbWxVMjZAtZA0gtWXVXV3JLQlAzc0NucWgwWHR6Yy1MNl9iZAXhhSDcwNEZAXV0Y5dS1FSzctOQZDZD';
+        $client = new Client();
+        $response = $client->get('https://api.instagram.com/v1/users/self/?access_token=' . $access_token);
+        $data = json_decode($response->getBody()->getContents());
+        return $data;
         return view('front.post');
     }
 }
