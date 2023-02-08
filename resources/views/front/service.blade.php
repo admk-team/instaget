@@ -135,7 +135,7 @@
               </div>
               <div class="d-flex flex-wrap justify-content-center">
                 @foreach ($packages1 as $pakage1)
-                  <div class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
+                  <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
                     <h4 class="fw-bolder">
                       @if($pakage1->sale_price)
                       {{ floor($pakage1->sale_price) }}
@@ -157,11 +157,11 @@
                 <h4 class="sale-price first-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price first-box-orignal-price"> 60,000</del>
               </div>
               <div class="p-3 justify-content-center d-none d-md-block">
-                <form action="{{ route('front.order') }}" method="POST" class="first-box-form">
+                <form action="{{ route('front.order') }}" id="orderForm" method="POST" class="first-box-form">
                   @csrf
                   <input type="hidden" name="pakage_id" id="first_pkg">
                 </form>
-                <button class="purchase-btn first-box-purchase-btn">구매하기</button>
+                <button class="purchase-btn first-box-purchase-btn" form="orderForm">구매하기</button>
                 <button class="shop-btn">장바구니</button>
               </div>
               <div class="container d-md-none mobile-checkout-main">
@@ -507,6 +507,20 @@
   </div>
   <!-- custom JS code after importing jquery and owl -->
   <script>
+    $(document).on("click", (event) => {
+      if(event.target.closest('.package-box')){
+        element = event.target.closest('.package-box');
+      }
+      
+      if(element){
+        $("#first_pkg").val($(element).data("package-id"));
+      }
+    });
+
+    $("#orderForm").on("submit", (event) => {
+      event.preventDefault();
+    });
+
     const mobileSeriveNav = document.querySelector('.mobile-services-nav');
     const activeServiceContainer = mobileSeriveNav.querySelector('.active-service');
     const serviceBtns = mobileSeriveNav.querySelectorAll('.service > .btn');

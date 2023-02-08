@@ -2151,7 +2151,6 @@ span {
 .social-media-icon {
     border-radius: 25px;
     height: 40px;
-    width: 45px;
     margin-top: 10px;
 }
 
@@ -3721,4 +3720,14 @@ img {
 }
 .input-group-text .input-icon{
     height: 20px;
+}
+.footer .container-fluid .container ul li{
+    border: 0;
+}
+.order-page-selected-price {
+    position: absolute;
+    right: 0;
+    margin-right: 59px;
+    margin-top: 6px;
+    z-index: 1000;
 }
