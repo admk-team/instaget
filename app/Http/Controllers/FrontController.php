@@ -8,6 +8,7 @@ use App\Models\Package;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Http;
 
 class FrontController extends Controller
 {
@@ -70,17 +71,31 @@ class FrontController extends Controller
     public function post(){
         return view('front.post');
     }
-    public function instagram(){
-        $accessToken = 'IGQVJXT3l3cU1uQ053WHZAveGtWN0pZAU3VGQ0piOC1fUHA4RlBsRGRWTENIZAnpQdVhlMnJ1bTY2YXZAqejJqQmlDV3g2T2ExRUVDWVNya25KYzN4LTV3UnRPY0c0NUQ2aVpwTVVEUmZArNEZAyNThXbENIOAZDZD';
-        $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
-
-        // Send the request to the Instagram API
-        $client = new Client();
-        $response = $client->get($url);
-        $responseJson = json_decode($response->getBody()->getContents());
+    public function instagram(Request $request){
+        $package = Package::find($request->pakage_id);
+        return view('front.instagram-form',compact('package'));
+    }
+    public function fetch_post(Request $request){
+        // $client = new Client();
+        $req=url('https://api.instagram.com/oauth/authorize', [
+                'client_id' => '711758627169981',
+                'redirect_uri' => 'https://instaget.test/instagram/callback',
+                'scope' => 'user_profile,user_media',
+                'response_type' => 'code',
+            ]);
+        return redirect($req);
+        // return $req->getBody();
+        // $response=$client->request('POST', 'https://api.instagram.com/oauth/authorize', [
+        //     'form_params' => [
+        //         'client_id' => '711758627169981',
+        //         'redirect_uri' => 'https://instaget.test/instagram/callback',
+        //         'scope' => 'user_profile,user_media',
+        //         'response_type' => 'code',
+        //     ]
+        // ]);
+        // return $response->getBody();
     }
     public function callback(Request $request){
         return $request;
-        return "callback";
     }
 }
