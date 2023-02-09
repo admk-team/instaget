@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -67,5 +68,17 @@ class FrontController extends Controller
     }
     public function post(){
         return view('front.post');
+    }
+    public function instagram(){
+        $accessToken = 'IGQVJWa25Id1NfOV9YLXdXMHl1MEdSVGRZAMEtJTGdscFdjOUZAGS1BGRENtTmlKWUd1dko4YzVDalgxbWNYajBQLUFfTk10em9FYXVDLV9rOHZARUW9VT0Ftd3FfcHluSDZAEU0R0RE1Ra290akpxZA1dzVAZDZD';
+        $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
+
+        // Send the request to the Instagram API
+        $client = new Client();
+        $response = $client->get($url);
+        $responseJson = json_decode($response->getBody()->getContents());
+    }
+    public function callback(){
+        return "callback";
     }
 }
