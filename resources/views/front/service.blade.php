@@ -110,20 +110,17 @@
       <div class="row justify-content-center tab-content-parent">
         <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
               <ul class="nav nav-tabs" id="myTab" role="tablist"> 
-                @foreach($buttonpackage->categories as $sub_category)
-                @foreach($sub_category->subcategories as $package)
-                <li class="nav-item service-upper-button-li" role="presentation">
-                  <button class="nav-link tabs-button service-upper-button  @if($loop->iteration == 1 )active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
-                    data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
-                    aria-selected="true" href="{{ route('front.login') }}">{{ $package->title ?? '' }}</button>
-                </li>
-            @endforeach
-            @endforeach
+                  @foreach(($buttonpackage->categories->first()->subcategories ?? []) as $package)
+                    <li class="nav-item service-upper-button-li" role="presentation">
+                      <button class="nav-link tabs-button service-upper-button  @if($loop->iteration == 1 )active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
+                        data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
+                        aria-selected="true" href="{{ route('front.login') }}">{{ $package->title ?? '' }}</button>
+                    </li>
+                @endforeach
                
               </ul>
           <div class="tab-content" id="myTabContent">
-            @foreach($buttonpackage->categories as $sub_category)
-              @foreach($sub_category->subcategories as $subcategory)
+              @foreach(($buttonpackage->categories->first()->subcategories ?? '') as $subcategory)
                 <div class="tab-pane fade @if($loop->iteration == 1 )show active @endif" id="home_{{ $loop->iteration }}" role="tabpanel" aria-labelledby="home-tab{{ $loop->iteration }}">
                   <div class="d-flex pt-4 justify-content-center mb-3">
                     <div class="tab-pane-header d-flex align-items-center justify-content-center">
@@ -210,7 +207,6 @@
                   {{-- for mobile end --}}
                 </div>
               @endforeach
-            @endforeach
           </div>
         </div>
       </div>

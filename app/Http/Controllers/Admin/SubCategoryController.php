@@ -55,8 +55,7 @@ class SubCategoryController extends Controller
         $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->category_id;
-        $model->title = $request->title ;
-        $model->slug = Str::slug($title , '-');
+        $model->title = $request->title;
         $model->color = $request->color;
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/subcategory' , 'public');
@@ -64,6 +63,8 @@ class SubCategoryController extends Controller
         }
 
         if($model->save()){
+            $model->slug = $request->title . '-' . $model->id;
+            $model->update();
             return redirect()->route('admin.subcategory.index')->with('success' , 'Sub Category Added Successfully');
         }else{
             return redirect()->route('admin.subcategory.index')->with('error', 'Failed to Add Sub categroy !');
@@ -115,7 +116,6 @@ class SubCategoryController extends Controller
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
-       $model->slug = Str::slug($title , '-');
        $model->color = $request->color;
        
        if($request->has('image')){
@@ -129,7 +129,7 @@ class SubCategoryController extends Controller
         $model->image = $path;
 
        }
-
+       $model->slug = $request->title . '-' . $model->id;
        if($model->update()){
         return redirect()->route('admin.subcategory.index')->with('success' , 'Sub Category Updated Successfully');
        }else{
