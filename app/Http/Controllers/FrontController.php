@@ -78,7 +78,8 @@ class FrontController extends Controller
         $response = $client->get($url);
         $responseJson = json_decode($response->getBody()->getContents());
     }
-    public function callback(){
+    public function callback(Request $request){
+        return $request;
         return "callback";
     }
 }
