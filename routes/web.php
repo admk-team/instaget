@@ -79,10 +79,9 @@ Route::name('front.')->group(function () {
     Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
     Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
+    Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
 
 
-    
-   
 });
 
 // User Auth Routes
