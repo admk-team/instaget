@@ -59,7 +59,7 @@
     src: url('front_asset/fonts/SCDream8.otf') format("opentype");
     font-style: normal;
     font-weight: 900;
-} */
+}
 
 /* @font-face {
     font-family: SCDREAM9;
@@ -206,7 +206,6 @@ body {
     z-index: 1;
     /* background:linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
     /* background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
-}
 
 .carousel-caption {
     top: 230px;
