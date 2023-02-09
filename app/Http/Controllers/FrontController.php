@@ -76,26 +76,33 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        // $client = new Client();
-        $req=url('https://api.instagram.com/oauth/authorize', [
+        $client = new Client();
+
+        $response = $client->request('GET', 'https://api.instagram.com/oauth/authorize', [
+            'query' => [
                 'client_id' => '711758627169981',
-                'redirect_uri' => 'https://instaget.test/instagram/callback',
+                'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
                 'scope' => 'user_profile,user_media',
                 'response_type' => 'code',
-            ]);
-        return redirect($req);
-        // return $req->getBody();
-        // $response=$client->request('POST', 'https://api.instagram.com/oauth/authorize', [
-        //     'form_params' => [
-        //         'client_id' => '711758627169981',
-        //         'redirect_uri' => 'https://instaget.test/instagram/callback',
-        //         'scope' => 'user_profile,user_media',
-        //         'response_type' => 'code',
-        //     ]
-        // ]);
-        // return $response->getBody();
+            ]
+        ]);
+
+        return $response->getBody()->getContents();
     }
     public function callback(Request $request){
         return $request;
+    }
+    public function test_insta($test_insta){
+        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        $nonPrivateAccountMedias = $instagram->getMedias($test_insta);
+        dump($nonPrivateAccountMedias[0]->getSquareImages());
+        exit;
+        $variables = json_encode([
+            'id' => (string)$test_insta
+        ]);
+        return "https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables=" . urlencode($variables);
+        return $url = 'https://www.instagram.com/' . $test_insta . '/?__a=1&__d=dis';
+        // dump($nonPrivateAccountMedias);
+        exit;
     }
 }

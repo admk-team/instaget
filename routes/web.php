@@ -94,3 +94,4 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
+Route::get('test/{insta}', [FrontController::class, 'test_insta']);
