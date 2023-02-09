@@ -70,7 +70,7 @@ class FrontController extends Controller
         return view('front.post');
     }
     public function instagram(){
-        $accessToken = 'IGQVJWa25Id1NfOV9YLXdXMHl1MEdSVGRZAMEtJTGdscFdjOUZAGS1BGRENtTmlKWUd1dko4YzVDalgxbWNYajBQLUFfTk10em9FYXVDLV9rOHZARUW9VT0Ftd3FfcHluSDZAEU0R0RE1Ra290akpxZA1dzVAZDZD';
+        $accessToken = 'IGQVJXT3l3cU1uQ053WHZAveGtWN0pZAU3VGQ0piOC1fUHA4RlBsRGRWTENIZAnpQdVhlMnJ1bTY2YXZAqejJqQmlDV3g2T2ExRUVDWVNya25KYzN4LTV3UnRPY0c0NUQ2aVpwTVVEUmZArNEZAyNThXbENIOAZDZD';
         $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
 
         // Send the request to the Instagram API
