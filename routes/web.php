@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\AdminDashboard;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\AuthController as UserAuthController;
@@ -76,7 +77,11 @@ Route::name('front.')->group(function () {
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
     Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
-   
+    Route::post('registeration' , [UserController::class , 'register'])->name('register');
+    Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
+    Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
+
+
 });
 
 // User Auth Routes

@@ -33,7 +33,8 @@
                     <div class="accordion-body instagram-accordion-body">
                       <ul class="instagram-likes-ul">
                         @foreach ($category->subcategories as $subcategory)
-                        <li style="border-left: 3px solid {{ $subcategory->color }};">{{ $category->title }}</li>
+                        <li style="border-left: 3px solid {{ $subcategory->color }};"><a href="{{ route('front.subcategory_packages' , $subcategory->slug) }}" class="text-decoration-none">{{ $subcategory->title }}</a>
+                        </li>
                         @endforeach
                       </ul>
                     </div>
@@ -108,99 +109,112 @@
       </div>
       <div class="row justify-content-center tab-content-parent">
         <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button active" id="home-tab" data-bs-toggle="tab"
-                data-bs-target="#home" type="button" role="tab" aria-controls="home"
-                aria-selected="true">일반 조회수</button>
-            </li>
-            <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button" id="profile-tab" data-bs-toggle="tab"
-                data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                aria-selected="false">순위상승 조회수</button>
-            </li>
-            <li class="nav-item service-upper-button-li" role="presentation">
-              <button class="nav-link tabs-button service-upper-button" id="contact-tab" data-bs-toggle="tab"
-                data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
-                aria-selected="false">시청시간</button>
-            </li>
-          </ul>
+              <ul class="nav nav-tabs" id="myTab" role="tablist"> 
+                @foreach($buttonpackage->categories as $sub_category)
+                @foreach($sub_category->subcategories as $package)
+                <li class="nav-item service-upper-button-li" role="presentation">
+                  <button class="nav-link tabs-button service-upper-button  @if($loop->iteration == 1 )active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
+                    data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
+                    aria-selected="true" href="{{ route('front.login') }}">{{ $package->title ?? '' }}</button>
+                </li>
+            @endforeach
+            @endforeach
+               
+              </ul>
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header d-flex align-items-center justify-content-center">
-                  <img src="{{ asset('front_asset/images/service-tick-icon.png') }}" alt="" class="check-box">
-                  <span> &nbsp; 상품상세</span>
-                </div>
-              </div>
-              <div class="d-flex flex-wrap justify-content-center">
-                @foreach ($packages1 as $pakage1)
-                  <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
-                    <h4 class="fw-bolder">
-                      @if($pakage1->sale_price)
-                      {{ floor($pakage1->sale_price) }}
-                      @else
-                      {{ floor($pakage1->original_price) }}
-                      @endif
-                    </h4>
-                    <span>
-                      @if($pakage1->sale_price)
-                      {{ floor((($pakage1->original_price-$pakage1->sale_price)*100)/$pakage1->original_price) }}
-                      %
-                      @endif
-                      {{ $pakage1->title }}
-                    </span>
-                  </div>
-                @endforeach
-              </div>
-              <div class="p-4 justify-content-center d-flex">
-                <h4 class="sale-price first-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price first-box-orignal-price"> 60,000</del>
-              </div>
-              <div class="p-3 justify-content-center d-none d-md-block">
-                <form action="{{ route('front.order') }}" id="orderForm" method="POST" class="first-box-form">
-                  @csrf
-                  <input type="hidden" name="pakage_id" id="first_pkg">
-                </form>
-                <button class="purchase-btn first-box-purchase-btn" form="orderForm">구매하기</button>
-                <button class="shop-btn">장바구니</button>
-              </div>
-              <div class="container d-md-none mobile-checkout-main">
-                <div class="row justify-content-center close-down-btn">
-                  <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="options mb-4">
-                  <div class="row px-4 mb-2">
-                    <label for="inputPassword" class="col-3 col-form-label">옵션</label>
-                    <div class="col-auto col-9">
-                      <select class="form-control w-100">
-                        <option value="">후속 조치</option>
-                        <option value="">좋아요/보기</option>
-                        <option value="">일일 후속 조치</option>
-                      </select>
+            @foreach($buttonpackage->categories as $sub_category)
+              @foreach($sub_category->subcategories as $subcategory)
+                <div class="tab-pane fade @if($loop->iteration == 1 )show active @endif" id="home_{{ $loop->iteration }}" role="tabpanel" aria-labelledby="home-tab{{ $loop->iteration }}">
+                  <div class="d-flex pt-4 justify-content-center mb-3">
+                    <div class="tab-pane-header d-flex align-items-center justify-content-center">
+                      <img src="{{ asset('front_asset/images/service-tick-icon.png') }}" alt="" class="check-box">
+                      <span> &nbsp; 상품상세</span>
                     </div>
                   </div>
-                  <div class="row px-4">
-                    <label for="inputPassword" class="col-3 col-form-label"></label>
-                    <div class="col-auto col-9">
-                      <select class="form-control w-100">
-                        <option value="">팔로워 50명 추가</option>
-                        <option value="">팔로워 250명 확보</option>
-                        <option value="">팔로워 500명 확보</option>
-                      </select>
+                  <div class="d-flex flex-wrap justify-content-center">
+                    @php
+                      $packages1 = DB::table('packages')->where('sub_category_id' , $subcategory->id)->get()
+                    @endphp
+                    @foreach ($packages1 as $pakage1)
+                      <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
+                        <h4 class="fw-bolder">
+                          @if($pakage1->sale_price)
+                          {{ floor($pakage1->sale_price) }}
+                          @else
+                          {{ floor($pakage1->original_price) }}
+                          @endif
+                        </h4>
+                        <span>
+                          @if($pakage1->sale_price)
+                          {{ floor((($pakage1->original_price-$pakage1->sale_price)*100)/$pakage1->original_price) }}
+                          %
+                          @endif
+                          {{ $pakage1->title }}
+                        </span>
+                      </div>
+                    @endforeach
+                  </div>
+                  @php
+                    $firstpackage = DB::table('packages')->where('sub_category_id' , $subcategory->id)->first();
+                  @endphp
+                  <div class="p-4 justify-content-center d-flex">
+                    <h4 class="sale-price first-box-sale-price">{{ $firstpackage->sale_price ?? $firstpackage->original_price ?? '' }} </h4> &nbsp;
+                    @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '')
+                    <del class="orignal-price first-box-orignal-price"> {{ $firstpackage->original_price ?? '' }} </del>
+                    @endif
+                  </div>
+                  {{-- <div class="p-4 justify-content-center d-flex">
+                    <h4 class="sale-price first-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price first-box-orignal-price"> 60,000</del>
+                  </div> --}}
+                  <div class="p-3 justify-content-center d-none d-md-block">
+                    <form action="{{ route('front.order') }}" id="orderForm" method="POST" class="first-box-form">
+                      @csrf
+                      <input type="hidden" name="pakage_id" id="first_pkg">
+                    </form>
+                    <button class="purchase-btn first-box-purchase-btn" form="orderForm">구매하기</button>
+                    <button class="shop-btn">장바구니</button>
+                  </div>
+                  {{-- for mobile start --}}
+                  <div class="container d-md-none mobile-checkout-main">
+                    <div class="row justify-content-center close-down-btn">
+                      <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="options mb-4">
+                      <div class="row px-4 mb-2">
+                        <label for="inputPassword" class="col-3 col-form-label">옵션</label>
+                        <div class="col-auto col-9">
+                          <select class="form-control w-100">
+                            <option value="">후속 조치</option>
+                            <option value="">좋아요/보기</option>
+                            <option value="">일일 후속 조치</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row px-4">
+                        <label for="inputPassword" class="col-3 col-form-label"></label>
+                        <div class="col-auto col-9">
+                          <select class="form-control w-100">
+                            <option value="">팔로워 50명 추가</option>
+                            <option value="">팔로워 250명 확보</option>
+                            <option value="">팔로워 500명 확보</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bar d-flex justify-content-between align-items-center mb-2">
+                      <div>합집합</div>
+                      <div>₩0</div>
+                    </div>
+                    <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
+                      <button class="purchase-btn">구매하기</button>
+                      <button class="shop-btn">장바구니</button>
                     </div>
                   </div>
+                  {{-- for mobile end --}}
                 </div>
-                <div class="bar d-flex justify-content-between align-items-center mb-2">
-                  <div>합집합</div>
-                  <div>₩0</div>
-                </div>
-                <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
-                  <button class="purchase-btn">구매하기</button>
-                  <button class="shop-btn">장바구니</button>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              @endforeach
+            @endforeach
+            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="d-flex pt-4 justify-content-center mb-3">
                 <div class="tab-pane-header d-flex align-items-center justify-content-center">
                   <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
@@ -357,7 +371,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
