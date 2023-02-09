@@ -88,3 +88,5 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
+Route::get('/instagram/posts', [FrontController::class, 'instagram']);
+Route::get('/instagram/callback', [FrontController::class, 'callback']);
