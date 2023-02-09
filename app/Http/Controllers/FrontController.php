@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-use GuzzleHttp\Client;
 
 class FrontController extends Controller
 {
@@ -55,10 +55,8 @@ class FrontController extends Controller
     public function faq(){
         return view('front.faq');
     }
-    public function order(Request $request){
-        $package = Package::find($request->pakage_id);
-        $packages = Package::all();
-        return view('front.order', compact('package', 'packages'));
+    public function order(){
+        return view('front.order');
     }
     public function membership(){
         return view('front.membership');
@@ -70,13 +68,18 @@ class FrontController extends Controller
         return view('front.payment');
     }
     public function post(){
-        $access_token = 'IGQVJYSE92d3c4cmF6ODlWckkzYlJQQ3VqOVFaOXlHZAFJoY1gzUXdwNzBQaW5DS1FlYXkxQ2FyU0pwVWZAmbWxVMjZAtZA0gtWXVXV3JLQlAzc0NucWgwWHR6Yy1MNl9iZAXhhSDcwNEZAXV0Y5dS1FSzctOQZDZD';
-        $client = new Client();
-        $response = $client->get('https://api.instagram.com/v1/users/self/?access_token=' . $access_token);
-        $data = json_decode($response->getBody()->getContents());
-        return $data;
         return view('front.post');
     }
+    public function instagram(){
+        $accessToken = 'IGQVJXT3l3cU1uQ053WHZAveGtWN0pZAU3VGQ0piOC1fUHA4RlBsRGRWTENIZAnpQdVhlMnJ1bTY2YXZAqejJqQmlDV3g2T2ExRUVDWVNya25KYzN4LTV3UnRPY0c0NUQ2aVpwTVVEUmZArNEZAyNThXbENIOAZDZD';
+        $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
 
-
+        // Send the request to the Instagram API
+        $client = new Client();
+        $response = $client->get($url);
+        $responseJson = json_decode($response->getBody()->getContents());
+    }
+    public function callback(){
+        return "callback";
+    }
 }
