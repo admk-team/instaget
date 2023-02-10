@@ -73,7 +73,8 @@ class FrontController extends Controller
         return view('front.post');
     }
     public function instagram(Request $request){
-        $package = Package::find($request->pakage_id);
+        return $package = Package::find($request->pakage_id);
+
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
