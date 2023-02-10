@@ -89,6 +89,6 @@ class FrontController extends Controller
                 'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
                 'code' => $request->code,
         ]);
-        return $response;
+        return  Redirect::to('https://graph.instagram.com/'.$response->json()->user_id.'?fields=id,username&access_token='.$response->json()->access_token);
     }
 }
