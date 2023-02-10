@@ -39,6 +39,7 @@
                             <div class="row" id="append_img">
                             </div>
                             <div class="checkbtn">
+                                
                                 <button type="submit" class="btn btn-block text-white justify-content-center">확인</button>
                             </div>
                         </div>
