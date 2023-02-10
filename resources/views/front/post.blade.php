@@ -50,14 +50,11 @@
 </div>
 <script>
     function select_img(e){
-        let img_container=$('<div class="col-4 col-md-3 col-lg-2">
-            <div class="child_img">
-
-            </div>
-            <p class="counttxt">3</p> 
-            </div>');
-            img_container.find('div.child_img').append(e);
-            $('#append_img').append(img_container);
+        let img=$('<img src=""/>');
+        img.attr('src',e.src);
+        let img_container=$('<div class="col-4 col-md-3 col-lg-2"><div class="child_img"></div><p class="counttxt">3</p></div>');
+        img_container.find('div.child_img').append(img);
+        $('#append_img').append(img_container);
     }
 </script>
 @endsection
