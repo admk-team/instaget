@@ -66,8 +66,6 @@ Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::post('/instagram', [FrontController::class, 'instagram'])->name('instagram.getpost');
-    Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('instagram.fetchpost');
     Route::get('/instagram/callback', [FrontController::class, 'callback']);
     Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
     Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
@@ -95,4 +93,7 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
+
+Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
+Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
 Route::get('test/{insta}', [FrontController::class, 'test_insta']);
