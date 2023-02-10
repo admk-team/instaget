@@ -3643,9 +3643,8 @@ img {
     text-align: center;
     border-radius: 3.25rem;
     height: 58px;
-    width: 40%;
-    margin-left: 22%;
-
+    width: 100%;
+    /* margin-left: 22%; */
 }
 
 .cardcheck {
@@ -3780,4 +3779,16 @@ img {
 .auto_upsell{
     background: #f4f4fa;
     padding: 1rem;
+}
+.orange_bg{
+    color:#ff563d;
+    font-size: 34px;
+}
+.order-paragraph{
+    font-size: 20px;
+    font-weight: 800;
+}
+.payment-method-heading{
+    font-size: 13px;
+    font-weight: 800;
 }

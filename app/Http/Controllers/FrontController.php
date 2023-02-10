@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
@@ -84,11 +83,11 @@ class FrontController extends Controller
     }
     public function instagram(Request $request){
         $package = Package::find($request->pakage_id);
-        
+        session()->put('PACKAGE_ID',$request->pakage_id);
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.askfullstack.com/instagram/callback&scope=user_profile,user_media&response_type=code');
+        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.test/instagram/callback&scope=user_profile,user_media&response_type=code');
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
@@ -96,7 +95,7 @@ class FrontController extends Controller
                 'client_id' => '711758627169981',
                 'client_secret'=>'e710a48b2e1f652be7355188bf4676e9',
                 'grant_type'=> 'authorization_code',
-                'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
+                'redirect_uri' => 'https://instaget.test/instagram/callback',
                 'code' => $request->code,
         ]);
         $res=$response->json();
@@ -104,6 +103,10 @@ class FrontController extends Controller
         $insta=Http::get('https://graph.instagram.com/me/media?fields=id,media_type,media_url,username&access_token='.$res['access_token']);
         $media=$insta->json();
         return view('front.post',compact('media'));
-        
+    }
+    public function place_order(Request $request){
+        $package_id=session()->get('PACKAGE_ID');
+        $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
+        return view('front.payment',compact('package'));
     }
 }
