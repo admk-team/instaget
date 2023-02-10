@@ -21,10 +21,9 @@ class FrontController extends Controller
         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
     }
-           
+    
 
     public function subcategory_packages($subcategoryslug){
         
@@ -39,6 +38,7 @@ class FrontController extends Controller
     {
         return view('front.reviews');
     }
+
     public function cmd($cmd){
         Artisan::call("$cmd");
         echo "<pre>";
@@ -48,6 +48,7 @@ class FrontController extends Controller
     public function login(){
         return view('front.login');
     }
+
     public function signup(){
         return view('front.signup');
     }
@@ -55,21 +56,31 @@ class FrontController extends Controller
     public function faq(){
         return view('front.faq');
     }
+
     public function order(){
         return view('front.order');
     }
+
     public function membership(){
         return view('front.membership');
     }
+
     public function pay(){
         return view('front.pay');
     }
+
+    public function getstarted(){
+        return view('front.getstarted');
+    }
+
     public function payment(){
         return view('front.payment');
     }
+
     public function post(){
         return view('front.post');
     }
+
     public function instagram(){
         $accessToken = 'IGQVJXT3l3cU1uQ053WHZAveGtWN0pZAU3VGQ0piOC1fUHA4RlBsRGRWTENIZAnpQdVhlMnJ1bTY2YXZAqejJqQmlDV3g2T2ExRUVDWVNya25KYzN4LTV3UnRPY0c0NUQ2aVpwTVVEUmZArNEZAyNThXbENIOAZDZD';
         $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
@@ -79,6 +90,7 @@ class FrontController extends Controller
         $response = $client->get($url);
         $responseJson = json_decode($response->getBody()->getContents());
     }
+    
     public function callback(){
         return "callback";
     }

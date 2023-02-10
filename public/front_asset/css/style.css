@@ -3731,3 +3731,34 @@ img {
     margin-top: 6px;
     z-index: 1000;
 }
+.boxheading{
+    font-size: 30px;
+}
+
+@media only screen and (max-width:478px){
+    .boxheading{
+        font-size: 30px;
+    }
+    .getstarted_form input::placeholder{
+       font-size: 16px;
+    }
+   .getstarted_form{
+    width: 100%;
+   }
+   .getstarted_form input{
+    width: 239px;
+    display: block;
+   }
+   .getstarted_btn{
+    width: 239px;
+   }
+   .getstarted_btn {
+    font-size: 16px;
+   }
+   .card{
+    padding: 8px;
+   }
+   .getstarted_form--input1{
+    width: 100%;
+   }
+}
