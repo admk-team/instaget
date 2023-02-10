@@ -25,7 +25,7 @@
                         @foreach ($media as $data)
                             <div class="col-6 col-md-3 col-lg-3">
                                 @if($data['media_type']=='IMAGE')
-                                    <img class="card-img" src="{{ $data->media_url }}" alt="">
+                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="">
                                 @endif
                             </div>
                         @endforeach
