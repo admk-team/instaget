@@ -33,7 +33,7 @@
                     <div class="row mt-3 justify-content-center text-center">
                         <div class="col-12 col-md-3 col-lg-3">
                             <p>게시물 선택게</p>
-                            <span>1 / 2</span>
+                            <span>0 / {{ count($data['media_type']) }}</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
                             <div class="row" id="append_img">
@@ -49,10 +49,12 @@
     </div>
 </div>
 <script>
+    var count=0;
     function select_img(e){
-        let img=$('<img src=""/>');
+        count++;
+        let img=$('<img src="" class="card-img"/>');
         img.attr('src',e.src);
-        let img_container=$('<div class="col-4 col-md-3 col-lg-2"><div class="child_img"></div><p class="counttxt">3</p></div>');
+        let img_container=$('<div class="col-4 col-md-3 col-lg-2"><div class="child_img"></div><p class="counttxt">'+count+'</p></div>');
         img_container.find('div.child_img').append(img);
         $('#append_img').append(img_container);
     }
