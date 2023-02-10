@@ -81,7 +81,6 @@ class FrontController extends Controller
         return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.askfullstack.com/instagram/callback&scope=user_profile,user_media&response_type=code');
     }
     public function callback(Request $request){
-        return $request->code;
         $url = 'https://api.instagram.com/oauth/access_token/';
         $query = [
             'client_id' => '711758627169981',
