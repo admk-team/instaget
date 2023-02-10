@@ -407,6 +407,7 @@
   </script>
   <script>
     $('.first-box').click(function(){
+      
       let original_price=$(this).data('original')
       let sale_price=$(this).data('sale')
       let id=$(this).data('id');

@@ -20,7 +20,7 @@ class FrontController extends Controller
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
