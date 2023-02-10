@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
-                        @foreach ($media->data as $data)
+                        @foreach ($media as $data)
                             <div class="col-6 col-md-3 col-lg-3">
                                 <img class="card-img" src="{{ $data->media_url }}" alt="">
                             </div>
