@@ -23,11 +23,11 @@
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
                         @foreach ($media['data'] as $data)
-                            <div class="col-6 col-md-3 col-lg-3">
-                                @if($data['media_type']=='IMAGE')
-                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="">
-                                @endif
-                            </div>
+                            @if($data['media_type']=='IMAGE')
+                                <div class="col-6 col-md-3 col-lg-3">
+                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="" onclick="select_img(this)">
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
@@ -36,27 +36,7 @@
                             <span>1 / 2</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
-                            <div class="row">
-                                <div class="col-4 col-md-3 col-lg-2">
-                                    <img src="{{asset('front_asset/images/im2.PNG')}}" class="card-img"
-                                    alt="..."><p class="counttxt">3</p> 
-                                </div>
-                                <div class="col-4 col-md-3 col-lg-2">
-                                    <img src="{{asset('front_asset/images/im2.PNG')}}" class="card-img"
-                                    alt="..."><p class="counttxt">3</p> 
-                                </div>
-                                <div class="col-4 col-md-3 col-lg-2">
-                                    <img src="{{asset('front_asset/images/im2.PNG')}}" class="card-img"
-                                    alt="..."><p class="counttxt">3</p> 
-                                </div>
-                                <div class="col-4 col-md-3 col-lg-2">
-                                    <img src="{{asset('front_asset/images/im2.PNG')}}" class="card-img"
-                                    alt="..."><p class="counttxt">3</p> 
-                                </div>
-                                <div class="col-4 col-md-3 col-lg-2">
-                                    <img src="{{asset('front_asset/images/im2.PNG')}}" class="card-img"
-                                    alt="..."><p class="counttxt">3</p> 
-                                </div>
+                            <div class="row" id="append_img">
                             </div>
                             <div class="checkbtn">
                                 <button type="submit" class="btn btn-block text-white justify-content-center">확인</button>
@@ -68,4 +48,16 @@
         </div>
     </div>
 </div>
+<script>
+    function select_img(e){
+        let img_container=$('<div class="col-4 col-md-3 col-lg-2">
+            <div class="child_img">
+
+            </div>
+            <p class="counttxt">3</p> 
+            </div>');
+            img_container.find('div.child_img').append(e);
+            $('#append_img').append(img_container);
+    }
+</script>
 @endsection
