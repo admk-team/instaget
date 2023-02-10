@@ -24,7 +24,9 @@
                     <div class="row mt-3 justify-content-center text-center">
                         @foreach ($media as $data)
                             <div class="col-6 col-md-3 col-lg-3">
-                                <img class="card-img" src="{{ $data->media_url }}" alt="">
+                                @if($data['media_type']=='IMAGE')
+                                    <img class="card-img" src="{{ $data->media_url }}" alt="">
+                                @endif
                             </div>
                         @endforeach
                     </div>
