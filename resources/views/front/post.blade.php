@@ -14,10 +14,10 @@
                             <h6>yanbly220</h6>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4 mb-2 text-center">
-                            <p class="">게시물 선택게시물 선택</p>
+                            <p class="">게시물 선택</p>
                         </div>
                         <div class="col-12 col-md-3 col-lg-4 mb-2 text-center">
-                            <p class="">게시물 선택게시물 선택100</p>
+                            <p class="">게시물 선택 100</p>
                             <p><span class="num">92</span>/100</p>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                         @foreach ($media['data'] as $data)
                             @if($data['media_type']=='IMAGE')
                                 <div class="col-6 col-md-3 col-lg-3">
-                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="" onclick="select_img(this)">
+                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="" onclick="select_img(this)" data-id="{{ $data['id'] }}">
                                 </div>
                             @endif
                         @endforeach
@@ -33,15 +33,20 @@
                     <div class="row mt-3 justify-content-center text-center">
                         <div class="col-12 col-md-3 col-lg-3">
                             <p>게시물 선택게</p>
-                            <span>0 / {{ count($media['data']) }}</span>
+                            <span class="total-select">0 </span><span>/ {{ count($media['data']) }}</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
                             <div class="row" id="append_img">
                             </div>
-                            <div class="checkbtn">
-                                
+                        </div>
+                        
+                        <div class="checkbtn mt-4">
+                            <form action="{{ route('front.place.order') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="user_id[]" class="set_user_ids">
                                 <button type="submit" class="btn btn-block text-white justify-content-center">확인</button>
-                            </div>
+                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -51,13 +56,20 @@
 </div>
 <script>
     var count=0;
+    var id=[];
     function select_img(e){
+        let user_id=e.dataset.id
         count++;
         let img=$('<img src="" class="card-img"/>');
         img.attr('src',e.src);
         let img_container=$('<div class="col-4 col-md-3 col-lg-2"><div class="child_img"></div><p class="counttxt">'+count+'</p></div>');
         img_container.find('div.child_img').append(img);
         $('#append_img').append(img_container);
+        $('.total-select').html('')
+        $('.total-select').append(count)
+        id.push(user_id);
+        $(".set_user_ids").val('');
+        $(".set_user_ids").val($("input.set_user_ids").val() + id);
     }
 </script>
 @endsection
