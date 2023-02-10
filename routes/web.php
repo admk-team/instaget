@@ -81,6 +81,7 @@ Route::name('front.')->group(function () {
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
     Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
+    Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
 });
 
 // User Auth Routes
