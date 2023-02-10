@@ -9,6 +9,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontController extends Controller
 {
@@ -76,33 +77,20 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        $client = new Client();
-
-        $response = $client->request('GET', 'https://api.instagram.com/oauth/authorize', [
-            'query' => [
-                'client_id' => '711758627169981',
-                'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
-                'scope' => 'user_profile,user_media',
-                'response_type' => 'code',
-            ]
-        ]);
-
-        return $response->getBody()->getContents();
+        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.askfullstack.com/instagram/callback&scope=user_profile,user_media&response_type=code');
     }
     public function callback(Request $request){
-        return $request;
-    }
-    public function test_insta($test_insta){
-        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
-        $nonPrivateAccountMedias = $instagram->getMedias($test_insta);
-        dump($nonPrivateAccountMedias[0]->getSquareImages());
-        exit;
-        $variables = json_encode([
-            'id' => (string)$test_insta
-        ]);
-        return "https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables=" . urlencode($variables);
-        return $url = 'https://www.instagram.com/' . $test_insta . '/?__a=1&__d=dis';
-        // dump($nonPrivateAccountMedias);
-        exit;
+        $url = 'https://api.instagram.com/oauth/access_token/';
+        $query = [
+            'client_id' => '711758627169981',
+            'client_secret'=>'e710a48b2e1f652be7355188bf4676e9',
+            'grant_type'=> 'authorization_code',
+            'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
+            'code' => $request->code,
+        ];
+
+        $response = Http::post($url, ['query' => $query]);
+
+        return $response->body();
     }
 }
