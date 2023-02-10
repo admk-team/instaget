@@ -93,8 +93,6 @@ class FrontController extends Controller
         // $media=Redirect::to('https://graph.instagram.com/me/media?fields=id,media_type,media_url,username&access_token='.$res['access_token']);
         $insta=Http::get('https://graph.instagram.com/me/media?fields=id,media_type,media_url,username&access_token='.$res['access_token']);
         $media=$insta->json();
-        var_dump($media);
-        exit;
         return view('front.post',compact('media'));
         
     }
