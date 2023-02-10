@@ -82,7 +82,7 @@ class FrontController extends Controller
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
-        $response = Http::post($url, [
+        $response = Http::asForm()->dd()->post($url, [
                 'client_id' => '711758627169981',
                 'client_secret'=>'e710a48b2e1f652be7355188bf4676e9',
                 'grant_type'=> 'authorization_code',
