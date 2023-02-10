@@ -33,7 +33,7 @@
                     <div class="row mt-3 justify-content-center text-center">
                         <div class="col-12 col-md-3 col-lg-3">
                             <p>게시물 선택게</p>
-                            <span>0 / {{ count($data['media_type']) }}</span>
+                            <span>0 / {{ count($media['data']) }}</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
                             <div class="row" id="append_img">
