@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\SubCategory;
 use App\Models\Category;
+use App\Models\Package;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 
@@ -55,15 +56,34 @@ class SubCategoryController extends Controller
         $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->category_id;
-        $model->title = $request->title ;
-        $model->slug = Str::slug($title , '-');
+        $model->title = $request->title;
         $model->color = $request->color;
+
+
         if($request->hasFile('image')){
             $image_path = $request->file('image')->store('/images/subcategory' , 'public');
             $model->image  = $image_path;
         }
 
         if($model->save()){
+            $category_id = $request->category_id;
+            $subcategory_id = $model->id;
+            if($request->has('qty')){
+                foreach($request->qty as $key => $q){
+               
+                    $package = new Package();
+                    $package->title  = $request->ptitle[$key];
+                    $package->category_id  =$category_id;
+                    $package->sub_category_id = $subcategory_id;
+                    $package->original_price = $request->original_price[$key];
+                    $package->sale_price = $request->sale_price[$key];
+                    $package->qty = $q;
+                    $package->slug = $request->ptitle[$key];
+                    $package->save();
+                }
+            }
+            $model->slug = $request->title . '-' . $model->id;
+            $model->update();
             return redirect()->route('admin.subcategory.index')->with('success' , 'Sub Category Added Successfully');
         }else{
             return redirect()->route('admin.subcategory.index')->with('error', 'Failed to Add Sub categroy !');
@@ -92,8 +112,9 @@ class SubCategoryController extends Controller
     {
        
        $sub_category = SubCategory::findorFail($id);
+       $packages  = Package::where('sub_category_id' , $id)->get();
        $category = Category::all();
-       return view('admin.subcategory.edit' , compact('sub_category' , 'category' ));
+       return view('admin.subcategory.edit' , compact('sub_category' , 'category' , 'packages' ));
     }
 
     /**
@@ -115,7 +136,6 @@ class SubCategoryController extends Controller
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
-       $model->slug = Str::slug($title , '-');
        $model->color = $request->color;
        
        if($request->has('image')){
@@ -129,8 +149,28 @@ class SubCategoryController extends Controller
         $model->image = $path;
 
        }
-
+       $model->slug = $request->title . '-' . $model->id;
        if($model->update()){
+        
+        $category_id = $request->category_id;
+        $subcategory_id = $model->id;
+        if($request->has('qty')){
+            foreach($request->qty as $key => $q){
+           
+                $package = Package::find($request->pid[$key] ?? 0);
+                $package = $package ?? new Package();
+                $package->title  = $request->ptitle[$key];
+                $package->category_id  =$category_id;
+                $package->sub_category_id = $subcategory_id;
+                $package->original_price = $request->original_price[$key];
+                $package->sale_price = $request->sale_price[$key];
+                $package->qty = $q;
+                $package->slug = $request->ptitle[$key];
+                $package->save();
+            }
+        }
+
+
         return redirect()->route('admin.subcategory.index')->with('success' , 'Sub Category Updated Successfully');
        }else{
         return redirect()->route('admin.subcategory.index')->with('error' ,'Failed to Update Sub Category !');

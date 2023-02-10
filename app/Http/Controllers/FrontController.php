@@ -8,6 +8,7 @@ use App\Models\Package;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Http;
 
 class FrontController extends Controller
 {
@@ -18,7 +19,7 @@ class FrontController extends Controller
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-        $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
@@ -80,18 +81,38 @@ class FrontController extends Controller
     public function post(){
         return view('front.post');
     }
-
-    public function instagram(){
-        $accessToken = 'IGQVJXT3l3cU1uQ053WHZAveGtWN0pZAU3VGQ0piOC1fUHA4RlBsRGRWTENIZAnpQdVhlMnJ1bTY2YXZAqejJqQmlDV3g2T2ExRUVDWVNya25KYzN4LTV3UnRPY0c0NUQ2aVpwTVVEUmZArNEZAyNThXbENIOAZDZD';
-        $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=$accessToken";
-
-        // Send the request to the Instagram API
-        $client = new Client();
-        $response = $client->get($url);
-        $responseJson = json_decode($response->getBody()->getContents());
+    public function instagram(Request $request){
+        $package = Package::find($request->pakage_id);
+        return view('front.instagram-form',compact('package'));
     }
-    
-    public function callback(){
-        return "callback";
+    public function fetch_post(Request $request){
+        $client = new Client();
+
+        $response = $client->request('GET', 'https://api.instagram.com/oauth/authorize', [
+            'query' => [
+                'client_id' => '711758627169981',
+                'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
+                'scope' => 'user_profile,user_media',
+                'response_type' => 'code',
+            ]
+        ]);
+
+        return $response->getBody()->getContents();
+    }
+    public function callback(Request $request){
+        return $request;
+    }
+    public function test_insta($test_insta){
+        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        $nonPrivateAccountMedias = $instagram->getMedias($test_insta);
+        dump($nonPrivateAccountMedias[0]->getSquareImages());
+        exit;
+        $variables = json_encode([
+            'id' => (string)$test_insta
+        ]);
+        return "https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables=" . urlencode($variables);
+        return $url = 'https://www.instagram.com/' . $test_insta . '/?__a=1&__d=dis';
+        // dump($nonPrivateAccountMedias);
+        exit;
     }
 }

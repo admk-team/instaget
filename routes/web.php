@@ -66,6 +66,9 @@ Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
+    Route::post('/instagram', [FrontController::class, 'instagram'])->name('instagram.getpost');
+    Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('instagram.fetchpost');
+    Route::get('/instagram/callback', [FrontController::class, 'callback']);
     Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
     Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
     Route::get('/post' , [FrontController::class , 'post'])->name('post');
@@ -81,8 +84,6 @@ Route::name('front.')->group(function () {
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
     Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
-
-
 });
 
 // User Auth Routes
@@ -94,5 +95,4 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
-Route::get('/instagram/posts', [FrontController::class, 'instagram']);
-Route::get('/instagram/callback', [FrontController::class, 'callback']);
+Route::get('test/{insta}', [FrontController::class, 'test_insta']);

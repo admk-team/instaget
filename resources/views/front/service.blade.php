@@ -7,9 +7,9 @@
       <div class="mobile-services-nav">
         <div class="services gap-2">
           @foreach ($services as $service)
-          <div class="service" style="width: calc((100% - 2rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; max-height: 64px;">
+          <div class="service" style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; max-height: 64px;">
             <div href="javascript:void(0)"
-              class="text-center btn mobile-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+              class="text-center btn mobile-social-btn  @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
                 <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-front-imge">
                 <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-bg-imge icon-hover">
@@ -58,7 +58,7 @@
         <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
           @foreach ($services as $service)
           <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
-            style="width: calc((100% - 4rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+            style="width: calc((100% - 9rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; height:81px;">
             <div href="javascript:void(0)"
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
@@ -110,20 +110,17 @@
       <div class="row justify-content-center tab-content-parent">
         <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
               <ul class="nav nav-tabs" id="myTab" role="tablist"> 
-                @foreach($buttonpackage->categories as $sub_category)
-                @foreach($sub_category->subcategories as $package)
-                <li class="nav-item service-upper-button-li" role="presentation">
-                  <button class="nav-link tabs-button service-upper-button  @if($loop->iteration == 1 )active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
-                    data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
-                    aria-selected="true" href="{{ route('front.login') }}">{{ $package->title ?? '' }}</button>
-                </li>
-            @endforeach
-            @endforeach
+                  @foreach(($buttonpackage->categories->first()->subcategories ?? []) as $package)
+                    <li class="nav-item service-upper-button-li" role="presentation">
+                      <button class="nav-link tabs-button service-upper-button  @if($loop->iteration == 1 )active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
+                        data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
+                        aria-selected="true" href="{{ route('front.login') }}">{{ $package->title ?? '' }}</button>
+                    </li>
+                @endforeach
                
               </ul>
           <div class="tab-content" id="myTabContent">
-            @foreach($buttonpackage->categories as $sub_category)
-              @foreach($sub_category->subcategories as $subcategory)
+              @foreach(($buttonpackage->categories->first()->subcategories ?? '') as $subcategory)
                 <div class="tab-pane fade @if($loop->iteration == 1 )show active @endif" id="home_{{ $loop->iteration }}" role="tabpanel" aria-labelledby="home-tab{{ $loop->iteration }}">
                   <div class="d-flex pt-4 justify-content-center mb-3">
                     <div class="tab-pane-header d-flex align-items-center justify-content-center">
@@ -163,13 +160,10 @@
                     <del class="orignal-price first-box-orignal-price"> {{ $firstpackage->original_price ?? '' }} </del>
                     @endif
                   </div>
-                  {{-- <div class="p-4 justify-content-center d-flex">
-                    <h4 class="sale-price first-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price first-box-orignal-price"> 60,000</del>
-                  </div> --}}
                   <div class="p-3 justify-content-center d-none d-md-block">
-                    <form action="{{ route('front.order') }}" id="orderForm" method="POST" class="first-box-form">
+                    <form action="{{ route('front.instagram.getpost') }}" id="orderForm" method="POST" class="first-box-form">
                       @csrf
-                      <input type="hidden" name="pakage_id" id="first_pkg">
+                      <input type="hidden" name="pakage_id" class="pakage_id" id="first_pkg">
                     </form>
                     <button class="purchase-btn first-box-purchase-btn" form="orderForm">구매하기</button>
                     <button class="shop-btn">장바구니</button>
@@ -213,165 +207,6 @@
                   {{-- for mobile end --}}
                 </div>
               @endforeach
-            @endforeach
-            {{-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header d-flex align-items-center justify-content-center">
-                  <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
-                  <span> &nbsp; 상품상세</span>
-                </div>
-              </div>
-              <div class="d-flex flex-wrap justify-content-center">
-                @foreach ($packages2 as $pakage2)
-                  <div class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center second-box" data-original="{{ floor($pakage2->original_price) }}" data-sale="{{ floor($pakage2->sale_price) }}" data-id="{{ $pakage2->id }}">
-                    <h4 class="fw-bolder">
-                      @if($pakage2->sale_price)
-                      {{ floor($pakage2->sale_price) }}
-                      @else
-                      {{ floor($pakage2->original_price) }}
-                      @endif
-                    </h4>
-                    <span>
-                      @if($pakage2->sale_price)
-                      {{ floor((($pakage2->original_price-$pakage2->sale_price)*100)/$pakage2->original_price) }}
-                      %
-                      @endif
-                      {{ $pakage2->title }}
-                    </span>
-                  </div>
-                @endforeach
-              </div>
-              <div class="p-4 justify-content-center d-flex">
-                <h4 class="sale-price second-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price second-box-orignal-price"> 60,000</del>
-              </div>
-              <div class="p-3 justify-content-center d-none d-md-block">
-                <form action="{{ route('front.order') }}" method="POST" class="second-box-form">
-                  @csrf
-                  <input type="hidden" name="pakage_id" id="second_pkg">
-                </form>
-                <button class="purchase-btn second-box-purchase-btn">구매하기</button>
-                <button class="shop-btn">장바구니</button>
-              </div>
-              <div class="container d-md-none mobile-checkout-main">
-                <div class="row">
-                  <div class="row justify-content-center close-down-btn">
-                    <i class="bi bi-chevron-down"></i>
-                  </div>
-                  <div class="col-12">
-                    <div class="row justify-center">
-                      <div class="col-4">
-                        <label for="">옵션</label>
-                      </div>
-                      <div class="col-8">
-                        <select name="" id="" class="form-control mb-1">
-                          <option value="">후속 조치</option>
-                          <option value="">좋아요/보기</option>
-                          <option value="">일일 후속 조치</option>
-                        </select>
-                        <select name="" id="" class="form-control">
-                          <option value="">팔로워 50명 추가</option>
-                          <option value="">팔로워 250명 확보</option>
-                          <option value="">팔로워 500명 확보</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 mt-2 mobile-total-section">
-                    <div class="row">
-                      <div class="col-4">
-                        <span>합집합</span>
-                      </div>
-                      <div class="col-8 text-end">
-                        <span>₩0</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
-                    <button class="btn btn-light">쇼핑 바구니</button>
-                    <button class="btn btn-secondary">선택한 제품 주문</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-              <div class="d-flex pt-4 justify-content-center mb-3">
-                <div class="tab-pane-header d-flex align-items-center justify-content-center">
-                  <img src="{{ asset('front_asset/images/icons/check.png') }}" alt="" class="check-box">
-                  <span> &nbsp; 상품상세</span>
-                </div>
-              </div>
-              <div class="d-flex flex-wrap justify-content-center">
-                @foreach ($packages3 as $pakage3)
-                  <div class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center third-box" data-original="{{ floor($pakage3->original_price) }}" data-sale="{{ floor($pakage3->sale_price) }}" data-id="{{ $pakage3->id }}">
-                    <h4 class="fw-bolder">
-                      @if($pakage3->sale_price)
-                      {{ floor($pakage3->sale_price) }}
-                      @else
-                      {{ floor($pakage3->original_price) }}
-                      @endif
-                    </h4>
-                    <span>
-                      @if($pakage3->sale_price)
-                      {{ floor((($pakage3->original_price-$pakage3->sale_price)*100)/$pakage3->original_price) }}
-                      %
-                      @endif
-                      {{ $pakage3->title }}
-                    </span>
-                  </div>
-                @endforeach
-              </div>
-              <div class="p-4 justify-content-center d-flex">
-                <h4 class="sale-price third-box-sale-price">57,000원 </h4> &nbsp;<del class="orignal-price third-box-orignal-price"> 60,000</del>
-              </div>
-              <div class="p-3 justify-content-center d-none d-md-block">
-                <form action="{{ route('front.order') }}" method="POST" class="third-box-form">
-                  @csrf
-                  <input type="hidden" name="pakage_id" id="third_pkg">
-                </form>
-                <button class="purchase-btn third-box-purchase-btn">구매하기</button>
-                <button class="shop-btn">장바구니</button>
-              </div>
-              <div class="container d-md-none mobile-checkout-main">
-                <div class="row">
-                  <div class="row justify-content-center close-down-btn">
-                    <i class="bi bi-chevron-down"></i>
-                  </div>
-                  <div class="col-12">
-                    <div class="row justify-center">
-                      <div class="col-4">
-                        <label for="">옵션</label>
-                      </div>
-                      <div class="col-8">
-                        <select name="" id="" class="form-control mb-1">
-                          <option value="">후속 조치</option>
-                          <option value="">좋아요/보기</option>
-                          <option value="">일일 후속 조치</option>
-                        </select>
-                        <select name="" id="" class="form-control">
-                          <option value="">팔로워 50명 추가</option>
-                          <option value="">팔로워 250명 확보</option>
-                          <option value="">팔로워 500명 확보</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 mt-2 mobile-total-section">
-                    <div class="row">
-                      <div class="col-4">
-                        <span>합집합</span>
-                      </div>
-                      <div class="col-8 text-end">
-                        <span>₩0</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 d-flex mt-2 justify-content-center mobile-down-btn">
-                    <button class="btn btn-light">쇼핑 바구니</button>
-                    <button class="btn btn-secondary">선택한 제품 주문</button>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
           </div>
         </div>
       </div>
@@ -585,57 +420,11 @@
         $('.first-box-sale-price').html('')
         $('.first-box-sale-price').append(original_price)
       }
-      $("#first_pkg").val('');
-      $("#first_pkg").val($("input").val() + id);
+      $(".pakage_id").val('');
+      $(".pakage_id").val($("input.pakage_id").val() + id);
 
       $('.first-box-purchase-btn').click(function(){
         $('.first-box-form').submit();
-      })
-    })
-  </script>
-  <script>
-    $('.second-box').click(function(){
-      let original_price=$(this).data('original')
-      let sale_price=$(this).data('sale')
-      let id=$(this).data('id');
-      if(sale_price!=''){
-        $('.second-box-sale-price').html('')
-        $('.second-box-sale-price').append(sale_price)
-        $('.second-box-orignal-price').html('')
-        $('.second-box-orignal-price').append(original_price)
-      }else{
-        $('.second-box-orignal-price').html('')
-        $('.second-box-sale-price').html('')
-        $('.second-box-sale-price').append(original_price)
-      }
-      $("#second_pkg").val('');
-      $("#second_pkg").val($("input").val() + id);
-
-      $('.second-box-purchase-btn').click(function(){
-        $('.second-box-form').submit();
-      })
-    })
-  </script>
-  <script>
-    $('.third-box').click(function(){
-      let original_price=$(this).data('original')
-      let sale_price=$(this).data('sale')
-      let id=$(this).data('id');
-      if(sale_price!=''){
-        $('.third-box-sale-price').html('')
-        $('.third-box-sale-price').append(sale_price)
-        $('.third-box-orignal-price').html('')
-        $('.third-box-orignal-price').append(original_price)
-      }else{
-        $('.third-box-orignal-price').html('')
-        $('.third-box-sale-price').html('')
-        $('.third-box-sale-price').append(original_price)
-      }
-      $("#third_pkg").val('');
-      $("#third_pkg").val($("input").val() + id);
-
-      $('.third-box-purchase-btn').click(function(){
-        $('.third-box-form').submit();
       })
     })
   </script>

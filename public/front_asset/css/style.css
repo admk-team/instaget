@@ -59,7 +59,7 @@
     src: url('front_asset/fonts/SCDream8.otf') format("opentype");
     font-style: normal;
     font-weight: 900;
-} */
+}
 
 /* @font-face {
     font-family: SCDREAM9;
@@ -206,7 +206,6 @@ body {
     z-index: 1;
     /* background:linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
     /* background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
-}
 
 .carousel-caption {
     top: 230px;
@@ -3088,6 +3087,7 @@ span {
 .service-upper-button-li:nth-child(1) {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    margin-left: 6px;
 }
 
 .service-upper-button-li:nth-child(2) {
@@ -3309,7 +3309,8 @@ span {
 
 .packages .nav-tabs .nav-item {
     margin-right: 0;
-    width: calc((100% - (.8rem * 2)) / 3) !important;
+    /* width: calc((100% - (.8rem * 2)) / 3) !important; */
+    width: calc((100% - (1.1rem * 2)) / 3) !important;
 }
 
 .packages .nav-tabs .nav-item:not(:last-child) {
@@ -3731,34 +3732,52 @@ img {
     margin-top: 6px;
     z-index: 1000;
 }
-.boxheading{
-    font-size: 30px;
-}
-
-@media only screen and (max-width:478px){
-    .boxheading{
-        font-size: 30px;
-    }
-    .getstarted_form input::placeholder{
-       font-size: 16px;
-    }
-   .getstarted_form{
-    width: 100%;
-   }
-   .getstarted_form input{
-    width: 239px;
+.instagram_user_field{
     display: block;
-   }
-   .getstarted_btn{
-    width: 239px;
-   }
-   .getstarted_btn {
-    font-size: 16px;
-   }
-   .card{
-    padding: 8px;
-   }
-   .getstarted_form--input1{
+    height: 56px;
     width: 100%;
-   }
+    padding: 15px 16px 16px 53px;
+    line-height: 24px;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.continue-btn{
+    position: relative;
+    display: inline-block;
+    height: 64px;
+    line-height: 63px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: none;
+    outline: 0;
+    border-radius: 32px;
+    border: 0;
+    background-color: #ff563b;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,opacity .1s ease-in-out;
+}
+.continue-btn button{
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+.auto_upsell{
+    background: #f4f4fa;
+    padding: 1rem;
 }
