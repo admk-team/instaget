@@ -90,23 +90,23 @@
                                             <div class="row mb-3">
                                                 <div class="col-1 pl-1 pr-1">
                                                     <label for="title">Title</label>
-                                                    <input type="text" class="form-control" name="ptitle[]" value="{{ $package->title ?? '' }}">
+                                                    <input type="text" class="form-control" name="ptitle[]" value="{{ $package->title ?? '' }}" placeholder="Title">
                                                    
                                                 </div>
                                                 <div class="col-3 pl-1 pr-1">
                                                     <label for="Qty">Quantity</label>
-                                                    <input type="text" class="form-control" name="qty[]" value="{{ $package->qty ?? '' }}">
+                                                    <input type="text" class="form-control" name="qty[]" value="{{ $package->qty ?? '' }}" placeholder="Quantity">
                                                    
                                                 </div>
                                                 <div class="col-3 pl-1 pr-1">
                                                     <label for="Original Price">Original Price</label>
-                                                    <input type="text" class="form-control" name="original_price[]" value="{{ $package->sale_price ?? '' }}">
+                                                    <input type="text" class="form-control" name="original_price[]" value="{{ $package->sale_price ?? '' }}" placeholder="Original Price">
                                                 
                                             </div>
                                             <div class=" col-3 pl-1 pr-1">
                                                     <label for="Sale Price">Sale Price</label>
                                                     <input type="text" class="form-control"
-                                                        name="sale_price[]" value="{{ $package->original_price ?? '' }}">
+                                                        name="sale_price[]" value="{{ $package->original_price ?? '' }}" placeholder="Sale Price">
                                                         
                                             </div>
                                             <div class=" col-2 pl-1 pr-1 d-flex align-items-center
@@ -144,16 +144,16 @@
     const url = event.target.closest('.Quantity').querySelector('.Quantity-body');
     $(url).append('<div class="row mb-3">' +
                               '<div class="col-1 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="ptitle[]"">' +
+                                '<input type="text" class="form-control"  placeholder="Title" name="ptitle[]"">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="qty[]"">' +
+                                '<input type="text" class="form-control" placeholder="Quantity" name="qty[]"">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="original_price[]"">' +
+                                '<input type="text" class="form-control" placeholder="Original Price" name="original_price[]"">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="sale_price[]">' +
+                                '<input type="text" class="form-control" placeholder="Sale Price" name="sale_price[]">' +
                               '</div>' +
                               '<div class="col-1 pl-1 pr-1 d-flex align-items-center justify-content-center">' +
                                 '<button type="button" class="btn btn-danger" onclick="deleteQty(event)">X</button>' +

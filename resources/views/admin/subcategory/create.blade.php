@@ -86,23 +86,23 @@
                                                 <div class="row mb-3">
                                                     <div class="col-1 pl-1 pr-1">
                                                         <label for="Title">Title</label>
-                                                        <input type="text" class="form-control" name="ptitle[]" value="">
+                                                        <input type="text" class="form-control" name="ptitle[]" value="" placeholder="Title">
                                                     </div>
                                                     <div class="col-3 pl-1 pr-1">
                                                         <label for="Qty">Quantity</label>
-                                                        <input type="text" class="form-control" name="qty[]" value="">
+                                                        <input type="text" class="form-control" name="qty[]" value="" placeholder="Quantity">
                                                     </div>
                                                     <div class="col-3 pl-1 pr-1">
                                                         <label for="Original Price">Original Price</label>
 
-                                                        <input type="text" class="form-control" name="original_price[]"
+                                                        <input type="text" class="form-control" name="original_price[]" placeholder="Original Price"
                                                         value="">
                                                 </div>
                                                 <div class=" col-3 pl-1 pr-1">
                                                         <label for="Sale Price">Sale Price</label>
 
                                                         <input type="text" class="form-control"
-                                                            name="sale_price[]" value="">
+                                                            name="sale_price[]" value="" placeholder="Sale Price">
                                                 </div>
                                                 <div class=" col-2 pl-1 pr-1 d-flex align-items-center
                                                             justify-content-center">
@@ -136,16 +136,16 @@
     const url = event.target.closest('.Quantity').querySelector('.Quantity-body');
     $(url).append('<div class="row mb-3">' +
                               '<div class="col-1 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="ptitle[]"">' +
+                                '<input type="text" class="form-control" name="ptitle[]"" placeholder="Title">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="qty[]"">' +
+                                '<input type="text" class="form-control" name="qty[]"" placeholder="Quantity">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="original_price[]"">' +
+                                '<input type="text" class="form-control" name="original_price[]"" placeholder="Original Price">' +
                               '</div>' +
                               '<div class="col-3 pl-1 pr-1">' +
-                                '<input type="text" class="form-control" name="sale_price[]">' +
+                                '<input type="text" class="form-control" name="sale_price[]" placeholder="Sale Price">' +
                               '</div>' +
                               '<div class="col-1 pl-1 pr-1 d-flex align-items-center justify-content-center">' +
                                 '<button type="button" class="btn btn-danger" onclick="deleteQty(event)">X</button>' +
