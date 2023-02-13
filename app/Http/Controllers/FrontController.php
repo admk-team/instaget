@@ -78,7 +78,7 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.test/instagram/callback&scope=user_profile,user_media&response_type=code');
+        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.askfullstack.com/instagram/callback&scope=user_profile,user_media&response_type=code');
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
@@ -86,7 +86,7 @@ class FrontController extends Controller
                 'client_id' => '711758627169981',
                 'client_secret'=>'e710a48b2e1f652be7355188bf4676e9',
                 'grant_type'=> 'authorization_code',
-                'redirect_uri' => 'https://instaget.test/instagram/callback',
+                'redirect_uri' => 'https://instaget.askfullstack.com/instagram/callback',
                 'code' => $request->code,
         ]);
         $res=$response->json();
