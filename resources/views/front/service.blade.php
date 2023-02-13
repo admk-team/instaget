@@ -7,7 +7,7 @@
       <div class="mobile-services-nav">
         <div class="services gap-2">
           @foreach ($services as $service)
-          <div class="service" style="width: calc((100% - 2rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; max-height: 64px;">
+          <div class="service" style="width: calc((100% - 5rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
             <div href="javascript:void(0)"
               class="text-center btn mobile-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
