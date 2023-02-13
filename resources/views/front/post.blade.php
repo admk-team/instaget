@@ -28,7 +28,7 @@
                         @endphp
                             @if($data['__typename']=='GraphImage')
                                 <div class="col-6 col-md-3 col-lg-3">
-                                    <img class="card-img" src="{{ $data['thumbnail_src'] }}" alt="" style="height: 200px;" onclick="select_img(this)" data-id="{{ $data['id'] }}">
+                                    <img class="card-img" src="{{ $data['thumbnail_resources[0]'] }}" alt="" style="height: 200px;" onclick="select_img(this)" data-id="{{ $data['id'] }}">
                                 </div>
                             @endif
                         @endforeach
