@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
+use Instagram\User\BusinessDiscovery;
 
 class FrontController extends Controller
 {
@@ -77,21 +78,7 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        
-        $url = Http::get('https://www.instagram.com/'.$request->instagram_username.'/?__a=1&__d=dis');
-        $data = $url->json();
-        if(empty($data['require_login']) && isset($data['graphql'])){
-            $media=$data['graphql']['user']['edge_owner_to_timeline_media']['edges'];
-            if($media){
-                return view('front.post',compact('media'));
-            }else{
-                return "graphql not found";
-            }
-        }else{
-            return $data['message'];
-        }
-        
-        // return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.test/instagram/callback&scope=user_profile,user_media&response_type=code');
+        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.test/instagram/callback&scope=user_profile,user_media&response_type=code');
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
