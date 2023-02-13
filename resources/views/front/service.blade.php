@@ -55,7 +55,7 @@
     {{-- For Desktop --}}
     <div class="container pt-5 d-none d-md-block mb-5">
       <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
+        <div class="col-xl-8 col-lg-8 d-flex justify-content-center text-center">
           @foreach ($services as $service)
           <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
             style="width: calc((100% - 4rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
