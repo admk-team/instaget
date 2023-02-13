@@ -22,10 +22,13 @@
                         </div>
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
-                        @foreach ($media['data'] as $data)
-                            @if($data['media_type']=='IMAGE')
+                        @foreach ($media as $data1)
+                        @php
+                            $data=$data1['node']
+                        @endphp
+                            @if($data['__typename']=='GraphImage')
                                 <div class="col-6 col-md-3 col-lg-3">
-                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="" onclick="select_img(this)" data-id="{{ $data['id'] }}">
+                                    <img class="card-img" src="{{ $data['thumbnail_src'] }}" alt="" style="height: 200px;" onclick="select_img(this)" data-id="{{ $data['id'] }}">
                                 </div>
                             @endif
                         @endforeach
@@ -33,7 +36,7 @@
                     <div class="row mt-3 justify-content-center text-center">
                         <div class="col-12 col-md-3 col-lg-3">
                             <p>게시물 선택게</p>
-                            <span class="total-select">0 </span><span>/ {{ count($media['data']) }}</span>
+                            <span class="total-select">0 </span><span>/ {{ count($media) }}</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
                             <div class="row" id="append_img">

@@ -78,21 +78,17 @@ class FrontController extends Controller
     }
     public function fetch_post(Request $request){
         
-        $url = Http::withHeaders(['User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 OPR/95.0.0.0', 'sec-ch-ua' => '"Opera";v="95", "Chromium";v="109", "Not;A=Brand";v="24"'])->get('https://www.instagram.com/'.$request->instagram_username.'/?__a=1&__d=dis');
-        return $media = $url->json();
-        if($media['require_login']!=true && isset($media['graphql'])){
-            $data=$media['graphql']['user']['edge_owner_to_timeline_media']['edges'];
-            if($data){
-                foreach($data as $node){
-                    foreach($node as $list){
-                        print_r($list);
-                    }
-                }
+        $url = Http::get('https://www.instagram.com/'.$request->instagram_username.'/?__a=1&__d=dis');
+        $data = $url->json();
+        if(empty($data['require_login']) && isset($data['graphql'])){
+            $media=$data['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+            if($media){
+                return view('front.post',compact('media'));
             }else{
                 return "graphql not found";
             }
         }else{
-            return $media['message'];
+            return $data['message'];
         }
         
         // return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instaget.test/instagram/callback&scope=user_profile,user_media&response_type=code');
