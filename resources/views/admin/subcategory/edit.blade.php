@@ -74,6 +74,56 @@
                                     @enderror
 
                                 </div>
+
+                                <div class="col-12 m-2">
+                                    <div class="Quantity">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <p class="flex-grow-1 text-center"><strong>Add Quantity & Original
+                                                        Price & Sale Price</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="Quantity-body mb-4">
+                                         @foreach($packages ?? [] as   $package)
+                                         
+                                         <input type="hidden" name="pid[]" value="{{ $package->id ?? '' }}">
+                                            <div class="row mb-3">
+                                                <div class="col-1 pl-1 pr-1">
+                                                    <label for="title">Title</label>
+                                                    <input type="text" class="form-control" name="ptitle[]" value="{{ $package->title ?? '' }}">
+                                                   
+                                                </div>
+                                                <div class="col-3 pl-1 pr-1">
+                                                    <label for="Qty">Quantity</label>
+                                                    <input type="text" class="form-control" name="qty[]" value="{{ $package->qty ?? '' }}">
+                                                   
+                                                </div>
+                                                <div class="col-3 pl-1 pr-1">
+                                                    <label for="Original Price">Original Price</label>
+                                                    <input type="text" class="form-control" name="original_price[]" value="{{ $package->sale_price ?? '' }}">
+                                                
+                                            </div>
+                                            <div class=" col-3 pl-1 pr-1">
+                                                    <label for="Sale Price">Sale Price</label>
+                                                    <input type="text" class="form-control"
+                                                        name="sale_price[]" value="{{ $package->original_price ?? '' }}">
+                                                        
+                                            </div>
+                                            <div class=" col-2 pl-1 pr-1 d-flex align-items-center
+                                                        justify-content-center">
+                                                    <button type="button" class="btn btn-danger"
+                                                        onclick="deleteQty(event)">X</button>
+                                                </div>
+                                            </div>
+                                         
+                                            @endforeach
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-warning add-timeslot-btn"
+                                                onclick="AddQty(event)" data-day-num="0">Add Multiple</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <button class="mt-1 btn btn-primary">Submit</button>
                         </form>
@@ -85,4 +135,31 @@
         </div>
     </div>
 </div>
+<script>
+    function deleteQty(event) {
+    event.target.closest('.row').remove();
+  }
+
+  function AddQty(event){
+    const url = event.target.closest('.Quantity').querySelector('.Quantity-body');
+    $(url).append('<div class="row mb-3">' +
+                              '<div class="col-1 pl-1 pr-1">' +
+                                '<input type="text" class="form-control" name="ptitle[]"">' +
+                              '</div>' +
+                              '<div class="col-3 pl-1 pr-1">' +
+                                '<input type="text" class="form-control" name="qty[]"">' +
+                              '</div>' +
+                              '<div class="col-3 pl-1 pr-1">' +
+                                '<input type="text" class="form-control" name="original_price[]"">' +
+                              '</div>' +
+                              '<div class="col-3 pl-1 pr-1">' +
+                                '<input type="text" class="form-control" name="sale_price[]">' +
+                              '</div>' +
+                              '<div class="col-1 pl-1 pr-1 d-flex align-items-center justify-content-center">' +
+                                '<button type="button" class="btn btn-danger" onclick="deleteQty(event)">X</button>' +
+                              '</div>' +
+                            '</div>');
+  }
+
+</script>
 @endsection

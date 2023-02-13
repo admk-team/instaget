@@ -9,7 +9,7 @@
           @foreach ($services as $service)
           <div class="service" style="width: calc((100% - 5rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
             <div href="javascript:void(0)"
-              class="text-center btn mobile-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
+              class="text-center btn mobile-social-btn  @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
                 <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-front-imge">
                 <img src="{{ asset('storage/'.$service->bg_image ?? '') }}" alt="" class="service-bg-imge icon-hover">
@@ -55,10 +55,14 @@
     {{-- For Desktop --}}
     <div class="container pt-5 d-none d-md-block mb-5">
       <div class="row justify-content-center">
+<<<<<<< HEAD
         <div class="col-xl-8 col-lg-8 d-flex justify-content-center text-center">
+=======
+        <div class="col-md-12 col-lg-8 col-xl-8 d-flex justify-content-center text-center">
+>>>>>>> rizwan
           @foreach ($services as $service)
           <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
-            style="width: calc((100% - 4rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+            style="width: calc((100% - 9rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; height:81px;">
             <div href="javascript:void(0)"
               class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">

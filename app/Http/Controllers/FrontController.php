@@ -20,13 +20,12 @@ class FrontController extends Controller
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-        $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
     }
-           
+    
 
     public function subcategory_packages($subcategoryslug){
         
@@ -41,6 +40,7 @@ class FrontController extends Controller
     {
         return view('front.reviews');
     }
+
     public function cmd($cmd){
         Artisan::call("$cmd");
         echo "<pre>";
@@ -50,6 +50,7 @@ class FrontController extends Controller
     public function login(){
         return view('front.login');
     }
+
     public function signup(){
         return view('front.signup');
     }
@@ -57,18 +58,27 @@ class FrontController extends Controller
     public function faq(){
         return view('front.faq');
     }
+
     public function order(){
         return view('front.order');
     }
+
     public function membership(){
         return view('front.membership');
     }
+
     public function pay(){
         return view('front.pay');
     }
+
+    public function getstarted(){
+        return view('front.getstarted');
+    }
+
     public function payment(){
         return view('front.payment');
     }
+
     public function post(){
         return view('front.post');
     }

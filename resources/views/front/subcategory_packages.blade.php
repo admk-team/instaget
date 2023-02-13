@@ -48,7 +48,6 @@
         @endforeach
       </div>
       <div class="active-service" style="display: none;">
-
       </div>
     </div>
 
@@ -59,7 +58,7 @@
       <div class="col-xl-6 col-lg-8 d-flex justify-content-center text-center">
         @foreach ($services as $service)
         <div class="dropdown {{ !$loop->last? 'me-3': ''  }}"
-          style="width: calc((100% - 4rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+          style="width: calc((100% - 9rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; height:81px;">
           <div href="javascript:void(0)"
             class="text-center desktop-social-btn h-100 @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
             <div class="icon">

@@ -24,7 +24,7 @@
                   위와 같은 경우, 서비스 환불 및 교환, 재작업은 불가합니다.</p>
               </div>
               <div class="d-block continue-btn">
-                <button class="" type="submit">계속하다</button>
+                <button class="w-100" type="submit">계속하다</button>
               </div>
             </form>
           </div>

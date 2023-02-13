@@ -3087,6 +3087,7 @@ span {
 .service-upper-button-li:nth-child(1) {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    margin-left: 6px;
 }
 
 .service-upper-button-li:nth-child(2) {
@@ -3308,7 +3309,8 @@ span {
 
 .packages .nav-tabs .nav-item {
     margin-right: 0;
-    width: calc((100% - (.8rem * 2)) / 3) !important;
+    /* width: calc((100% - (.8rem * 2)) / 3) !important; */
+    width: calc((100% - (1.1rem * 2)) / 3) !important;
 }
 
 .packages .nav-tabs .nav-item:not(:last-child) {
