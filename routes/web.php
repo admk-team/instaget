@@ -97,4 +97,4 @@ Route::prefix('/auth')->group(function() {
 
 Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
 Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
-Route::get('test/{insta}', [FrontController::class, 'test_insta']);
+Route::get('test', [FrontController::class, 'test_insta']);

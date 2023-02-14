@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
 use Instagram\User\BusinessDiscovery;
+use Phpfastcache\Helper\Psr16Adapter;
+
+
 
 class FrontController extends Controller
 {
@@ -110,9 +113,22 @@ class FrontController extends Controller
         $media=$insta->json();
         return view('front.post',compact('media'));
     }
+
     public function place_order(Request $request){
         $package_id=session()->get('PACKAGE_ID');
         $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
         return view('front.payment',compact('package'));
     }
+
+    public function test_insta(Request $request){
+        $username = $request->username;
+        $password = $request->password;
+        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
+        $instagram->login(true); // will use cached session if you want to force login $instagram->login(true)
+        $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+        $medias = $instagram->getMedias($request);
+        return view('front.post',compact('medias'));
+
+    }
+
 }
