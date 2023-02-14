@@ -107,7 +107,7 @@ class FrontController extends Controller
     }
     public function place_order(Request $request){
         $package_id=session()->get('PACKAGE_ID');
-        return $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
+        $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
         return view('front.payment',compact('package'));
     }
 }
