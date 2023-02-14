@@ -88,7 +88,12 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-        return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instamong.com/instagram/callback&scope=user_profile,user_media&response_type=code');
+         $username = $request->instagram_username;
+
+        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        $medias = $instagram->getMedias($username);
+        //return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instamong.com/instagram/callback&scope=user_profile,user_media&response_type=code');
+        return view('front.post',compact('medias'));
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
