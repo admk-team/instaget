@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('test-end', [FrontController::class, 'test_insta']);
+
 //Admin  Routes//
 Route::get('/admin', [AdminDashboard::class, 'login'])->name('login');
 Route::post('/admin/login', [AdminController::class, 'adminLogin'])->name('admin-login');
@@ -99,4 +102,3 @@ Route::prefix('/auth')->group(function() {
 
 Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
 Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
-Route::get('test', [FrontController::class, 'test_insta']);
