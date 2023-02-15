@@ -3330,6 +3330,9 @@ span {
 .footer .container-fluid .container .list-group .list-group-item{
     background-color: transparent !important;
 }
+.footer .container-fluid .container .list-group .list-group-item a{
+    text-decoration: none;
+}
 
 .mobile-checkout-main .options label {
     font-weight: 800;

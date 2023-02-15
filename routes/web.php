@@ -70,6 +70,8 @@ Route::name('front.')->group(function () {
     Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
     Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
     Route::get('/post' , [FrontController::class , 'post'])->name('post');
+    Route::get('/term-of-services',[FrontController::class,'termsOfService'])->name('termsOfService');
+    Route::get('/privacy-statement',[FrontController::class,'privacyStatement'])->name('privacyStatement');
     Route::get('/getstarted' , [FrontController::class , 'getstarted'])->name('getstarted');
     Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
     Route::get('/login' , [FrontController::class , 'login'])->name('login');

@@ -140,6 +140,7 @@
                           @else
                           {{ floor($pakage1->original_price) }}
                           @endif
+                          원
                         </h4>
                         <span>
                           @if($pakage1->sale_price)

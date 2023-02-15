@@ -130,5 +130,10 @@ class FrontController extends Controller
         return view('front.post',compact('medias'));
 
     }
-
+    public function termsOfService(){
+        return view('front.term-of-services');
+    }
+    public function privacyStatement(){
+        return view('front.privacy-statement');
+    }
 }
