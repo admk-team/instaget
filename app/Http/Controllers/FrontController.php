@@ -91,18 +91,27 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-         $username = $request->instagram_username;
-
-        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+         try {
+            $username = $request->instagram_username;
+         $old_data=session()->get($username);
+        if (!$old_data) {
+            $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
             $username1 = $request->username ?? 'instaget2gust';
             $password1 = $request->password ?? 'instaget2@gustr.coM';
             $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username1, $password1, new Psr16Adapter('Files'));
             $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
-        
-        $medias = $instagram->getMedias($username);
+
+            $medias = $instagram->getMedias($username);
+            session()->put($username, $medias);
+        }else{
+            $medias=$old_data;
+        }
         //return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instamong.com/instagram/callback&scope=user_profile,user_media&response_type=code');
         return view('front.post',compact('medias'));
+         } catch (\Exception $th) {
+            return redirect()->back();
+         }
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
