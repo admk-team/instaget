@@ -73,7 +73,7 @@ class SubCategoryController extends Controller
                
                     $package = new Package();
                     $package->title  = $request->ptitle[$key];
-                    $package->category_id  =$category_id;
+                    $package->category_id  = $category_id;
                     $package->sub_category_id = $subcategory_id;
                     $package->original_price = $request->original_price[$key];
                     $package->sale_price = $request->sale_price[$key];
