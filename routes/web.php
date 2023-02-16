@@ -67,6 +67,8 @@ Route::middleware('guest:admin')->group(function () {
 
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
+Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
+Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
     Route::get('/instagram/callback', [FrontController::class, 'callback']);
@@ -100,5 +102,3 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
 
-Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
-Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
