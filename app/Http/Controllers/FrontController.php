@@ -132,7 +132,8 @@ class FrontController extends Controller
             $medias = $instagram->getMedias($username);
             return view('front.post',compact('medias'));
         } catch (\Exception $th) {
-            return redirect()->back();
+            dd($th);
+            return redirect()->back()->with('error','Failed');
         }
     }
     public function callback(Request $request){

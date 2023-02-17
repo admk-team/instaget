@@ -1,4 +1,3 @@
-
   @extends('layouts.layout')
   @section('container')
   <div class="container-fluid m-0 p-0">
