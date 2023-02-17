@@ -25,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
+Route::any('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
 Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
-Route::post('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
 Route::get('/guest/instagram/post', [FrontController::class, 'guest_post'])->name('front.instagram.guestpost');
 Route::get('test-end', [FrontController::class, 'test_insta']);
 
