@@ -25,7 +25,7 @@
                         @foreach ($medias as $media)
                             {{-- @if($data['media_type']=='IMAGE') --}}
                                 <div class="col-6 col-md-3 col-lg-3 p-2">
-                              
+                                    
                                     <img crossorigin="instagram.fisb9-1.fna.fbcdn.net" class="card-img border-1" src="data:image/jpg;base64,{{ base64_encode(file_get_contents($media->getImageThumbnailUrl())) }}" height="120" alt="" onclick="select_img(this)" data-id="{{ $media->getId() }}">
                                 </div>
                             {{-- @endif --}}

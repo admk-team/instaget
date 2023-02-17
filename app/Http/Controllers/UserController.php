@@ -37,20 +37,47 @@ class UserController extends Controller
             return redirect()->route('front.signup');
         }
     }
+    public function user_register(Request $request){
+        
+        $request->validate([
+            'email' => 'required|unique:users,email',
+            'password' => 'required'
+        ]);
+        $password = bcrypt($request->password);
+        
+        $model = new User();
+        $model->name = '';
+        $model->email = $request->email;
+        $model->password = $password;
+        if($model->save()){
+            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            return redirect()->route('front.instagram.guestpost');
+        }else{
+            return redirect()->back();
+        }
+    }
 
     public function user_login(Request $request){
-        
-       
         $request->validate([
             'email' => 'required',
             'password' => 'required'
         ]);
-     
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('')
                         ->withSuccess('You have Successfully loggedin');
         }else{
             return redirect()->route('front.login')->with('error' , 'Please check email and password');
+        }
+    }
+    public function loginUser(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('front.instagram.guestpost');
+        }else{
+            return redirect()->back()->with('error' , 'Please check email and password');
         }
     }
 

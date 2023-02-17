@@ -152,14 +152,14 @@
                                             class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="{{  request()->routeIs('admin.package.*')? 'active' : '' }}">
+                                {{-- <li class="{{  request()->routeIs('admin.package.*')? 'active' : '' }}">
                                     <a href="{{ route('admin.package.index') }}">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span
                                             class="pcoded-mtext"data-i18n="nav.form-components.main">Packages</span><span
                                             class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
+                                </li> --}}
 
                             </ul>
 

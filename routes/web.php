@@ -68,7 +68,14 @@ Route::middleware('guest:admin')->group(function () {
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
+<<<<<<< HEAD
 Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+=======
+Route::post('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+Route::get('/guest/instagram/post', [FrontController::class, 'guest_post'])->name('front.instagram.guestpost');
+Route::get('/user/register', [FrontController::class, 'user_signup'])->name('front.user.register');
+Route::get('/user/login', [FrontController::class, 'user_login'])->name('front.user.login');
+>>>>>>> a4ab47b8e6e028aa31a6625b31937de32e214518
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
     Route::get('/instagram/callback', [FrontController::class, 'callback']);
@@ -87,7 +94,9 @@ Route::name('front.')->group(function () {
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
     Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
+    Route::post('register/user' , [UserController::class , 'user_register'])->name('user.registration');
     Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
+    Route::post('login/user' , [UserController::class , 'loginUser'])->name('user.login.store');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
 });
