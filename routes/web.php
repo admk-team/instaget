@@ -68,7 +68,7 @@ Route::middleware('guest:admin')->group(function () {
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
 Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
-Route::post('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
     Route::get('/instagram/callback', [FrontController::class, 'callback']);
