@@ -3795,3 +3795,75 @@ img {
     font-size: 13px;
     font-weight: 800;
 }
+.membership_btn:hover{
+    color: #ff603c;
+}
+.login-group{
+    height: 56px;
+    line-height: 24px;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.login-group input{
+    height: 56px;
+    line-height: 24px;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 400;
+    color: #000;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.login-card{
+    background: #fff!important;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 4%), 0 0 42px rgb(0 0 0 / 4%)!important;
+    border-radius: 20px!important;
+    padding: 40px!important;
+}
+.button-group .login{
+    position: relative;
+    display: inline-block;
+    height: 64px;
+    line-height: 63px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: none;
+    outline: 0;
+    border-radius: 32px;
+    border: 0;
+    background-color: #ff563b;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,opacity .1s ease-in-out;
+}
+.guest-login{
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    height: 48px;
+    line-height: 47px;
+    border-radius: 40px;
+    text-align: center;
+    margin-top: 3rem;
+}

@@ -4,13 +4,13 @@
   <div class="col-12 col-lg-5">
     <div class="login-card card">
       <div class="card-body">
-        <h2 class="text-center mb-3">가입하기</h2>
+        <h2 class="text-center mb-3">로그인</h2>
         <div class="justify-content-center d-flex gap-5">
-          <a href="{{ route('front.user.login') }}" class="text-dark text-decoration-none">이미 회원인가요?</a>
+          <a href="{{ route('front.user.register') }}" class="text-dark text-decoration-none">아직 회원이 아닌가요?</a>
           <a href="javascript:void(0)" class="text-oraing text-decoration-none membership_btn">회원가입 바로가기</a>
         </div>
         <hr>
-        <form method="POST" action="{{ route('front.user.registration') }}" class="mt-5">
+        <form method="POST" action="{{ route('front.user.login.store') }}" class="mt-5">
           @csrf
           <div class="input-group mb-3 login-group">
             <span class="input-group-text" id="basic-addon1"><img class="input-icon" src="{{ asset('front_asset/images/at.svg') }}"> </span>

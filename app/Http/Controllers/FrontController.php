@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
@@ -31,12 +32,10 @@ class FrontController extends Controller
     
 
     public function subcategory_packages($subcategoryslug){
-        
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $buttonpackage = SubCategory::with('packages')->where('status', 1)->where('slug' , $subcategoryslug)->first();
         $subcategories = SubCategory::where('category_id' , $buttonpackage->category_id)->get();
         return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories'));
-
     }
 
     public function reviews()
@@ -91,27 +90,50 @@ class FrontController extends Controller
         return view('front.instagram-form',compact('package'));
     }
     public function fetch_post(Request $request){
-         try {
-            $username = $request->instagram_username;
-         $old_data=session()->get($username);
-        if (!$old_data) {
+        session()->put('INSTAGRAM_USERNAME',$request->instagram_username);
+        $user=User::where('email',$request->email)->first();
+        if($user){
+            if(auth()->user()){
+                try {
+                    $username = $request->instagram_username;
+                    $old_data=session()->get($username);
+                    if (!$old_data) {
+                        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+                        $username1 = $request->username ?? 'instaget2gust';
+                        $password1 = $request->password ?? 'instaget2@gustr.coM';
+                        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username1, $password1, new Psr16Adapter('Files'));
+                        $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+                        $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+        
+                        $medias = $instagram->getMedias($username);
+                        session()->put($username, $medias);
+                    }else{
+                        $medias=$old_data;
+                    }
+                    return view('front.post',compact('medias'));
+                } catch (\Exception $th) {
+                    return redirect()->back();
+                }
+            }
+            return view('front.login-form',compact('request'));
+        }else{
+            return view('front.signup',compact('request'));
+        }
+    }
+    public function guest_post(){
+        try {
+            $username = session()->get('INSTAGRAM_USERNAME');
             $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
-            $username1 = $request->username ?? 'instaget2gust';
-            $password1 = $request->password ?? 'instaget2@gustr.coM';
+            $username1 = 'instaget2gust';
+            $password1 = 'instaget2@gustr.coM';
             $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username1, $password1, new Psr16Adapter('Files'));
             $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
-
             $medias = $instagram->getMedias($username);
-            session()->put($username, $medias);
-        }else{
-            $medias=$old_data;
-        }
-        //return  Redirect::to('https://api.instagram.com/oauth/authorize?client_id=711758627169981&redirect_uri=https://instamong.com/instagram/callback&scope=user_profile,user_media&response_type=code');
-        return view('front.post',compact('medias'));
-         } catch (\Exception $th) {
+            return view('front.post',compact('medias'));
+        } catch (\Exception $th) {
             return redirect()->back();
-         }
+        }
     }
     public function callback(Request $request){
         $url = 'https://api.instagram.com/oauth/access_token/';
@@ -168,5 +190,11 @@ class FrontController extends Controller
     }
     public function privacyStatement(){
         return view('front.privacy-statement');
+    }
+    public function user_signup(){
+        return view('front.signup');
+    }
+    public function user_login(){
+        return view('front.login-form');
     }
 }
