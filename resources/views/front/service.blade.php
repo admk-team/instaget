@@ -250,7 +250,9 @@
       <div class="service-faq-container container d-flex mt-5 justify-content-between">
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">
+              실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
@@ -265,7 +267,9 @@
         </div>
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+              
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
@@ -282,7 +286,9 @@
       <div class="service-faq-container container d-flex mt-5 justify-content-between">
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+              
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
@@ -297,7 +303,9 @@
         </div>
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
-            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
+            <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+              
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">

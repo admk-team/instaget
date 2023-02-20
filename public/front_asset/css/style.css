@@ -2976,7 +2976,7 @@ span {
 }
 
 .service-faq-question .service-faq-question-title::before {
-    content: "\f086";
+    /* content: "\f086"; */
     display: inline;
     font-size: 28px;
     color: gray;
