@@ -22,18 +22,19 @@
                         </div>
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
-                        @foreach ($media['data'] as $data)
-                            @if($data['media_type']=='IMAGE')
-                                <div class="col-6 col-md-3 col-lg-3">
-                                    <img class="card-img" src="{{ $data['media_url'] }}" alt="" onclick="select_img(this)" data-id="{{ $data['id'] }}">
+                        @foreach ($medias as $media)
+                            {{-- @if($data['media_type']=='IMAGE') --}}
+                                <div class="col-6 col-md-3 col-lg-3 p-2">
+                                    
+                                    <img crossorigin="instagram.fisb9-1.fna.fbcdn.net" class="card-img border-1" src="data:image/jpg;base64,{{ base64_encode(file_get_contents($media->getImageThumbnailUrl())) }}" height="120" alt="" onclick="select_img(this)" data-id="{{ $media->getId() }}">
                                 </div>
-                            @endif
+                            {{-- @endif --}}
                         @endforeach
                     </div>
                     <div class="row mt-3 justify-content-center text-center">
                         <div class="col-12 col-md-3 col-lg-3">
                             <p>게시물 선택게</p>
-                            <span class="total-select">0 </span><span>/ {{ count($media['data']) }}</span>
+                            <span class="total-select">0 </span><span>/ {{ count($medias) }}</span>
                         </div>
                         <div class="col-12 col-md-6 col-lg-9">
                             <div class="row" id="append_img">
@@ -58,7 +59,12 @@
     var count=0;
     var id=[];
     function select_img(e){
+        if(e.classList.contains('selected')){
+            return 0;
+        }
+
         let user_id=e.dataset.id
+        e.classList.add('selected');
         count++;
         let img=$('<img src="" class="card-img"/>');
         img.attr('src',e.src);

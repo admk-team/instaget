@@ -25,6 +25,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::any('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
+Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+Route::any('/fetch/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
+Route::get('/guest/instagram/post', [FrontController::class, 'guest_post'])->name('front.instagram.guestpost');
+Route::get('test-end', [FrontController::class, 'test_insta']);
+
 //Admin  Routes//
 Route::get('/admin', [AdminDashboard::class, 'login'])->name('login');
 Route::post('/admin/login', [AdminController::class, 'adminLogin'])->name('admin-login');
@@ -64,23 +70,32 @@ Route::middleware('guest:admin')->group(function () {
 
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
 //Front Routes//
+
+Route::get('/user/register', [FrontController::class, 'user_signup'])->name('front.user.register');
+Route::get('/user/login', [FrontController::class, 'user_login'])->name('front.user.login');
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
     Route::get('/instagram/callback', [FrontController::class, 'callback']);
     Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
     Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
     Route::get('/post' , [FrontController::class , 'post'])->name('post');
+    Route::get('/term-of-services',[FrontController::class,'termsOfService'])->name('termsOfService');
+    Route::get('/privacy-statement',[FrontController::class,'privacyStatement'])->name('privacyStatement');
     Route::get('/getstarted' , [FrontController::class , 'getstarted'])->name('getstarted');
     Route::get('/service/{slug}', [FrontController::class, 'service'])->name('service');
     Route::get('/login' , [FrontController::class , 'login'])->name('login');
     Route::get('/signup' , [FrontController::class , 'signup'])->name('signup');
+    Route::get('/user_signup' , [FrontController::class , 'usersignup'])->name('usersignup');
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
     Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
-    Route::get('/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
+    Route::get('/sub-category/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
+    Route::post('/user_registeration' , [UserController::class , 'userregisteration'])->name('userregisteration');
+    Route::post('register/user' , [UserController::class , 'user_register'])->name('user.registration');
     Route::post('userlogin' , [UserController::class , 'user_login'])->name('user_login');
+    Route::post('login/user' , [UserController::class , 'loginUser'])->name('user.login.store');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
 });
@@ -95,6 +110,3 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
 
-Route::post('/instagram', [FrontController::class, 'instagram'])->name('front.instagram.getpost');
-Route::post('/instagram/post', [FrontController::class, 'fetch_post'])->name('front.instagram.fetchpost');
-Route::get('test/{insta}', [FrontController::class, 'test_insta']);

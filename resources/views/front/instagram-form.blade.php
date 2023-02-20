@@ -9,12 +9,12 @@
             <hr>
             <form action="{{ route('front.instagram.fetchpost') }}" method="POST" class="pt-2 pb-2">
               @csrf
-              <input type="hidden" value="{{ $package->id }}" name="package_id">
+              <input type="hidden" value="{{ $package->id ?? session()->get('PACKAGE_ID') }}" name="package_id">
               <div class="input-group mb-3">
                 <input type="text" name="instagram_username" class="instagram_user_field" placeholder="인스타그램 아이디" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <div class="input-group mb-5">
-                <input type="email" class="instagram_user_field" placeholder="귀하의 이메일" aria-label="Username" aria-describedby="basic-addon1" required>
+                <input type="email" name="email" class="instagram_user_field" placeholder="귀하의 이메일" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <hr>
               <div class="m-3 auto_upsell">

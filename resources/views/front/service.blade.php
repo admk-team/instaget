@@ -1,4 +1,3 @@
-
   @extends('layouts.layout')
   @section('container')
   <div class="container-fluid m-0 p-0">
@@ -7,7 +6,7 @@
       <div class="mobile-services-nav">
         <div class="services gap-2">
           @foreach ($services as $service)
-          <div class="service" style="width: calc((100% - 1rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9; max-height: 64px;">
+          <div class="service" style="width: calc((100% - 5rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
             <div href="javascript:void(0)"
               class="text-center btn mobile-social-btn  @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
@@ -135,11 +134,12 @@
                     @foreach ($packages1 as $pakage1)
                       <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
                         <h4 class="fw-bolder">
-                          @if($pakage1->sale_price)
+                          {{-- @if($pakage1->sale_price)
                           {{ floor($pakage1->sale_price) }}
                           @else
                           {{ floor($pakage1->original_price) }}
-                          @endif
+                          @endif --}}
+                          {{ $pakage1->qty }}
                         </h4>
                         <span>
                           @if($pakage1->sale_price)
@@ -155,9 +155,9 @@
                     $firstpackage = DB::table('packages')->where('sub_category_id' , $subcategory->id)->first();
                   @endphp
                   <div class="p-4 justify-content-center d-flex">
-                    <h4 class="sale-price first-box-sale-price">{{ $firstpackage->sale_price ?? $firstpackage->original_price ?? '' }} </h4> &nbsp;
                     @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '')
-                    <del class="orignal-price first-box-orignal-price"> {{ $firstpackage->original_price ?? '' }} </del>
+                    <h4 class="sale-price first-box-sale-price">{{ floor($firstpackage->sale_price ?? $firstpackage->original_price) ?? '' }}  </h4><span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    <del class="orignal-price first-box-orignal-price"> {{ floor($firstpackage->original_price) ?? '' }}  </del><del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
                     @endif
                   </div>
                   <div class="p-3 justify-content-center d-none d-md-block">
