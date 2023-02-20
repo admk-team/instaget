@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ asset('front_asset/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('front_asset/css/faq.css') }}">
-
+<meta name="google-site-verification" content="K8pVDBx86ozlTMv5gY2FSKQcd-C75-mEUu_elY1eN0g" />
   {{-- for alert  --}}
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
