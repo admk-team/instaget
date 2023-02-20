@@ -100,13 +100,13 @@
                                                 </div>
                                                 <div class="col-3 pl-1 pr-1">
                                                     <label for="Original Price">Original Price</label>
-                                                    <input type="text" class="form-control" name="original_price[]" value="{{ $package->sale_price ?? '' }}">
+                                                    <input type="text" class="form-control" name="original_price[]" value="{{ $package->original_price ?? '' }}">
                                                 
                                             </div>
                                             <div class=" col-3 pl-1 pr-1">
                                                     <label for="Sale Price">Sale Price</label>
                                                     <input type="text" class="form-control"
-                                                        name="sale_price[]" value="{{ $package->original_price ?? '' }}">
+                                                        name="sale_price[]" value="{{ $package->sale_price ?? '' }}">
                                                         
                                             </div>
                                             <div class=" col-2 pl-1 pr-1 d-flex align-items-center
