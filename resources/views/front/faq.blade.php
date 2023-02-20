@@ -4,7 +4,7 @@
         <div class="wallpaper-container container-fluid">
             <div class="background-overly">
                 <h2 class="faq-page-title">Frequently Asked Question</h2>
-                <span class="breadcrumb">Home &nbsp&nbsp <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <span class="breadcrumb" style="background: none!important;">Home &nbsp&nbsp <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     &nbsp&nbsp FAQ</span>
             </div>
         </div>

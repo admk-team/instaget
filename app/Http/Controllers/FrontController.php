@@ -24,7 +24,7 @@ class FrontController extends Controller
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
@@ -112,7 +112,7 @@ class FrontController extends Controller
                     }
                     return view('front.post',compact('medias'));
                 } catch (\Exception $th) {
-                    return redirect()->back();
+                    return redirect()->back()->with('error',$th);
                 }
             }
             return view('front.login-form',compact('request'));
@@ -130,6 +130,11 @@ class FrontController extends Controller
             $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
             $medias = $instagram->getMedias($username);
+            if($medias){
+                return $medias;
+            }else{
+                return $medias;
+            }
             return view('front.post',compact('medias'));
         } catch (\Exception $th) {
             dd($th);
@@ -197,5 +202,8 @@ class FrontController extends Controller
     }
     public function user_login(){
         return view('front.login-form');
+    }
+    public function usersignup(){
+        return view('front.usersignup');
     }
 }

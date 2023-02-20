@@ -3,10 +3,11 @@
   <div class="container-fluid m-0 p-0">
     <div class="container py-1  d-block d-sm-none p-2 mt-4">
       <!-- New Mobile Menu -->
-      <div class="mobile-services-nav">
-        <div class="services gap-2">
+      <div class="mobile-services-nav justify-content-center text-center">
+        <div class="services">
           @foreach ($services as $service)
-          <div class="service" style="width: calc((100% - 5rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;">
+          {{-- style="width: calc((100% - 5rem) / {{ count($services) }}); aspect-ratio : 1 / 0.9;" --}}
+          <div class="service">
             <div href="javascript:void(0)"
               class="text-center btn mobile-social-btn  @if($loop->iteration==1) for-instagram @elseif($loop->iteration==2) for-youtube @elseif($loop->iteration==3) for-naver @elseif($loop->iteration==4) for-appMarketing  @elseif($loop->iteration==5) for-talk @endif">
               <div class="icon">
@@ -407,6 +408,7 @@
   </script>
   <script>
     $('.first-box').click(function(){
+      
       let original_price=$(this).data('original')
       let sale_price=$(this).data('sale')
       let id=$(this).data('id');

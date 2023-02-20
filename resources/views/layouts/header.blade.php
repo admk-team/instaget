@@ -27,9 +27,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('front.faq') }}">Frequently Asked Questions</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.login') }}">Login</a>
-          </li>
+          @if (!auth()->user())
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('front.login') }}">Login</a>
+            </li>
+          @endif
         </ul>
       </div>
     </div>

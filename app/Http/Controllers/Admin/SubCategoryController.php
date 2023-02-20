@@ -70,10 +70,11 @@ class SubCategoryController extends Controller
             $subcategory_id = $model->id;
             if($request->has('qty')){
                 foreach($request->qty as $key => $q){
-               
+                    
+                    
                     $package = new Package();
                     $package->title  = $request->ptitle[$key];
-                    $package->category_id  =$category_id;
+                    $package->category_id  = $category_id;
                     $package->sub_category_id = $subcategory_id;
                     $package->original_price = $request->original_price[$key];
                     $package->sale_price = $request->sale_price[$key];
@@ -156,7 +157,7 @@ class SubCategoryController extends Controller
         $subcategory_id = $model->id;
         if($request->has('qty')){
             foreach($request->qty as $key => $q){
-           
+
                 $package = Package::find($request->pid[$key] ?? 0);
                 $package = $package ?? new Package();
                 $package->title  = $request->ptitle[$key];

@@ -20,23 +20,26 @@ class UserController extends Controller
         //
     }
 
-    public function register(Request $request){
+    public function userregisteration(Request $request){
         
         $request->validate([
+            'name' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required'
         ]);
         $password = bcrypt($request->password);
         
         $model = new User();
+        $model->name = $request->name;
         $model->email = $request->email;
         $model->password = $password;
         if($model->save()){
-            return redirect()->route('front.login');
+            return redirect()->route('front.index');
         }else{
             return redirect()->route('front.signup');
         }
     }
+
     public function user_register(Request $request){
         
         $request->validate([
@@ -44,7 +47,6 @@ class UserController extends Controller
             'password' => 'required'
         ]);
         $password = bcrypt($request->password);
-        
         $model = new User();
         $model->name = '';
         $model->email = $request->email;
