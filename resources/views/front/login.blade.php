@@ -135,7 +135,7 @@
                         </div>
                         <div class="d-flex justify-content-between responsive">
                             <p class="new_to_insta">인스타그램을 처음 접하다 ?</p>
-                            <a href="{{ route('front.signup') }}"><span class="signup">가입하기 ?</span></a>
+                            <a href="{{ route('front.usersignup') }}"><span class="signup">가입하기 ?</span></a>
                         </div>
                         <div class="d-flex justify-content-between responsive">
                             <p class="new_to_insta">계정을 잊어버리세요 ?</p>
@@ -151,13 +151,13 @@
 </div>
 
 
-    <script>
+    {{-- <script>
 
         $('.kakoa').on("click", (event) => {
             window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=971ab799aa742e1f80c80c23e9c672ab&redirect_uri=http://127.0.0.1:8000/auth/kako&response_type=code";
         });
 
-    </script>
+    </script> --}}
 
     <script type="text/javascript">
         $(document).ready(function() {

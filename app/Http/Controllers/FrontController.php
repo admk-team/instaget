@@ -24,7 +24,7 @@ class FrontController extends Controller
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
@@ -112,7 +112,7 @@ class FrontController extends Controller
                     }
                     return view('front.post',compact('medias'));
                 } catch (\Exception $th) {
-                    return redirect()->back();
+                    return redirect()->back()->with('error',$th);
                 }
             }
             return view('front.login-form',compact('request'));
@@ -202,5 +202,8 @@ class FrontController extends Controller
     }
     public function user_login(){
         return view('front.login-form');
+    }
+    public function usersignup(){
+        return view('front.usersignup');
     }
 }
