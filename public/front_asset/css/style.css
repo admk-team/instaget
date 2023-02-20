@@ -3867,3 +3867,8 @@ img {
     text-align: center;
     margin-top: 3rem;
 }
+@media(max-width: 479px){
+    .service-faq-title{
+        font-size: 26px;
+    }
+}

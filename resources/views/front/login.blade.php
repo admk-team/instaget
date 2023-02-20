@@ -153,7 +153,7 @@
 
     <script>
 
-        $(document).on("click", (event) => {
+        $('.kakoa').on("click", (event) => {
             window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=971ab799aa742e1f80c80c23e9c672ab&redirect_uri=http://127.0.0.1:8000/auth/kako&response_type=code";
         });
 
