@@ -20,7 +20,9 @@
             @enderror
         </div>
           <div class="input-group mb-3 login-group">
-            <span class="input-group-text" id="basic-addon1"><img class="input-icon" src="{{ asset('front_asset/images/at.svg') }}"> </span>
+            <span class="input-group-text" id="basic-addon1" style="border: 0;position: absolute;top:10px ">
+              <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
+            </span>
             <input type="email" name="email" class="form-control border-left-0" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $request->email ?? '' }}">
           </div>
           @error('email')
