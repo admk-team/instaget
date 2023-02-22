@@ -2,8 +2,8 @@
   @section('container')
   <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card">
+      <div class="col-12 col-md-7">
+        <div class="card" style="border: 0;border-radius: 20px;">
           <div class="card-body">
             @if (session()->has('error'))
                 {{ session()->get('error') }}
@@ -14,9 +14,15 @@
               @csrf
               <input type="hidden" value="{{ $package->id ?? session()->get('PACKAGE_ID') }}" name="package_id">
               <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1" style="border: 0;position: absolute;top:10px ">
+                  <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
+                </span>
                 <input type="text" name="instagram_username" class="instagram_user_field" placeholder="인스타그램 아이디" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <div class="input-group mb-5">
+                <span class="input-group-text" id="basic-addon1" style="border: 0;position: absolute;top:10px ">
+                  <img src="{{ asset('front_asset/images/icons/instagram.svg') }}" alt="">
+                </span>
                 <input type="email" name="email" class="instagram_user_field" placeholder="귀하의 이메일" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <hr>

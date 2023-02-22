@@ -13,14 +13,18 @@
         <form method="POST" action="{{ route('front.user.login.store') }}" class="mt-5">
           @csrf
           <div class="input-group mb-3 login-group">
-            <span class="input-group-text" id="basic-addon1"><img class="input-icon" src="{{ asset('front_asset/images/at.svg') }}"> </span>
+            <span class="input-group-text" id="basic-addon1">
+              <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
+            </span>
             <input type="email" name="email" class="form-control border-left-0" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $request->email ?? '' }}">
           </div>
           @error('email')
           <span class="text-danger">{{$message }}</span>
           @enderror
           <div class="input-group mb-3 login-group">
-            <span class="input-group-text" id="basic-addon1"><img class="input-icon" src="{{ asset('front_asset/images/insta-icon.png') }}"> </span>
+            <span class="input-group-text" id="basic-addon1">
+              <img src="{{ asset('front_asset/images/icons/lock.svg') }}" alt="">
+            </span>
             <input type="password" name="password" class="form-control border-left-0" placeholder="비밀번호" aria-label="Password" aria-describedby="basic-addon1">
           </div>
           @error('password')
