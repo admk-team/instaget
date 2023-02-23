@@ -162,6 +162,7 @@ class FrontController extends Controller
         $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
         return view('front.payment',compact('package'));
     }
+    //  
 
     public function test_insta(Request $request){
          $username = $request->u;
