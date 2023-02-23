@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ $lang_code ?? 'ko' }}">
 
 <head>
   <meta charset="utf-8">
@@ -38,6 +38,17 @@
 
     <div class="page-wrapper">
       @include('layouts.header')
+
+        @if (session()->has('error'))
+        <div class="d-block">
+          <div class="d-flex mx-auto py-3">
+            <div class="alert alert-danger alert-dismissible fade show d-flex mx-auto" role="alert">
+                {{ session()->get('error') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        @endif
 
       @yield('container')
 
@@ -425,6 +436,20 @@
       });
 
     </script>
+    
+    <!-- Script for focus on first input -->
+
+    <script>
+      window.onload = function() {
+        // get input element
+        const input = document.querySelector('input:not([type=hidden])');
+
+        // focus on input element
+
+        let inputAction = input ? input.focus() : null;
+      };
+  </script>
+
 </body>
 
 </html>

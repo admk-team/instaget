@@ -112,12 +112,12 @@ class FrontController extends Controller
                     }
                     return view('front.post',compact('medias'));
                 } catch (\Exception $th) {
-                    return redirect()->back()->with('error',$th);
+                    return redirect()->back()->with('error',$th->getMessage());
                 }
             }
-            return view('front.login-form',compact('request'));
+            return view('front.login-form', ['email' => $request->email ?? '']);
         }else{
-            return view('front.signup',compact('request'));
+            return view('front.signup', ['email' => $request->email ?? '']);
         }
     }
     public function guest_post(){
@@ -135,10 +135,10 @@ class FrontController extends Controller
             }else{
                 return $medias;
             }
-            return view('front.post',compact('medias'));
+            return view('front.post', compact('medias'));
         } catch (\Exception $th) {
-            dd($th);
-            return redirect()->back()->with('error','Failed');
+            
+            return redirect()->back()->with('error',$th->getMessage());
         }
     }
     public function callback(Request $request){
