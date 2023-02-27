@@ -88,7 +88,7 @@ Route::name('front.')->group(function () {
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
     Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
-    // Route::get('/order1' , [FrontController::class , 'order1'])->name('order1');
+    Route::get('/order1' , [FrontController::class , 'order1'])->name('order1');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
     Route::get('/sub-category/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
