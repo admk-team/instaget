@@ -43,6 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Sub Category
     Route::resource('subcategory' , SubCategoryController::class);
     Route::any('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
+
     // Services 
     Route::resource('services' , ServiceController::class);
     Route::any('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
@@ -90,7 +91,7 @@ Route::name('front.')->group(function () {
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
     Route::get('/order1' , [FrontController::class , 'order1'])->name('order1');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
-    Route::get('/sub-category/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
+    Route::get('/sub-category/{subcategoryslug?}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
     Route::post('/user_registeration' , [UserController::class , 'userregisteration'])->name('userregisteration');
     Route::post('register/user' , [UserController::class , 'user_register'])->name('user.registration');
@@ -110,3 +111,4 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
 
+Route::get('admin/delete/packages/{id}' , [SubcategoryController::class , 'package_delete'])->name('package_delete');
