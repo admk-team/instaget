@@ -1310,7 +1310,9 @@ border: 1px solid rgba(0,0,0,.5); */
     width: calc(100% / 5);
 }
 .mobile-services-nav .services .service .mobile-social-btn{
-    width: 51px;
+    /* width: 51px; */
+    width: 65px;
+    height: 62px;
 }
 .mobile-services-nav .accordion-item {
     margin-bottom: 8px;
