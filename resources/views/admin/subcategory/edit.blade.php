@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="title">Edit Subategory</h4>
-                        <form  method="POST" action="{{ route('admin.subcategory.update' , $sub_category->id) }}" enctype="multipart/form-data">
+                        <form  method="POST" action="{{ route('admin.subcategory.update' , $sub_category->id) }}" enctype="multipart/form-data" id="checkvalue">
                             @csrf
                             @method('put')
                             <div class="form-group row">
@@ -100,32 +100,42 @@
                                                 </div>
                                                 <div class="col-2 pl-1 pr-1">
                                                     <label for="Original Price">Sale Price</label>
-                                                    <input type="text" class="form-control" name="original_price[]" value="{{ old('original_price.'.$i) ?? $package->sale_price ?? '' }}" placeholder="Sale">
+                                                    <input type="text" class="form-control orignial" name="original_price[]"  value="{{ old('original_price.'.$i) ?? $package->original_price ?? '' }}" placeholder="Sale">
                                                 
                                             </div>
                                             <div class=" col-2 pl-1 pr-1">
                                                     <label for="Sale Price">Price</label>
                                                     <input type="text" class="form-control"
-                                                        name="sale_price[]" value="{{ old('sale_price.'.$i) ?? $package->original_price ?? '' }}" placeholder=" Price">
-                                                        
+                                                        name="sale_price[]" value="{{ old('sale_price.'.$i) ?? $package->sale_price ?? '' }}"  placeholder=" Price">      
                                             </div>
-                                            <div class=" col-2 pl-1 pr-1 d-flex align-items-center
-                                                        justify-content-center">
-                                                    <button type="button" class="btn btn-danger"
-                                                        onclick="deleteQty(event)">X</button>
-                                                </div>
+                                    
+                                                <div class=" col-2 pl-1 pr-1 d-flex align-items-center
+                                                justify-content-center">
+                                            <button type="button" class="btn btn-danger deleteQty" onclick="deleteQty(event)" data-url="{{ url('admin/delete/packages/'.$package->id ?? '') }}">X</button>
+                            
+                                        </div>
+                                                
                                             </div>
                                          
                                             @endforeach
                                         </div>
+                                        @if (session()->has('error1'))
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                          {{ session()->get('error1') }}
+                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        @endif
                                         <div class="text-center">
                                             <button type="button" class="btn btn-warning add-timeslot-btn"
-                                                onclick="AddQty(event)" data-day-num="0">Add Multiple</button>
+                                                onclick="AddQty(event)"  data-day-num="0">Add Multiple</button>
                                         </div>
+                                      
                                     </div>
                                 </div>
                             </div>
-                            <button class="mt-1 btn btn-primary">Submit</button>
+                            <button class="mt-1 btn btn-primary" >Submit</button>
                         </form>
 
                     </div>
@@ -136,9 +146,60 @@
     </div>
 </div>
 <script>
+
+// $('#checkvalue').submit(function(e){
+// e.preventDefault();
+//     let original = $("[name='original_price[]']");
+//     let sale = $("[name='sale_price[]']");
+//     for(var i = 0; i <original.length; i++){
+//         var original_value = original[i];
+//         var sale_value = sale[i];
+//         if(original_value.value < sale_value.value){
+//             console.log('Ready to submit');
+//         }else{
+//             console.log('Original price must be less than sale price')
+//         }
+//     //     console.log("original["+i+"].value="+original_value.value);
+//     //  console.log("sale["+i+"].value="+sale_value.value);
+//     }
+// })
+// var inps = document.getElementsByName('original_price[]');
+// var sale = document.getElementsByName('sale_price[]');
+// for (var i = 0; i <inps.length; i++) {
+// var inp=inps[i];
+// var sale_price = sale[i];
+// if(inp.value < sale_price.value){
+//     console.log("Ya ready to continue");
+// // }
+// //     console.log("pname["+i+"].value="+inp.value);
+// //     console.log("sname["+i+"].value="+sale_price.value);
+
+// }else{
+//     console.log('Sale price must be less than original price');
+// }
+// }
+
+</script>
+<script>
+
+
     function deleteQty(event) {
-    event.target.closest('.row').remove();
+       
+     event.target.closest('.row').remove();
   }
+
+  $('.deleteQty').click(function(){
+    let url = $(this).data('url');
+    $.ajax({
+            url:url,
+            type:"GET",
+            dataType:'json',
+            success:function(data){
+             console.log(true)
+            }
+    })
+  })
+
 
   function AddQty(event){
     const url = event.target.closest('.Quantity').querySelector('.Quantity-body');

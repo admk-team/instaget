@@ -155,9 +155,20 @@
                     $firstpackage = DB::table('packages')->where('sub_category_id' , $subcategory->id)->first();
                   @endphp
                   <div class="p-4 justify-content-center d-flex">
-                    @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '')
-                    <h4 class="sale-price first-box-sale-price">{{ floor($firstpackage->sale_price ?? $firstpackage->original_price) ?? '' }}  </h4><span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
-                    <del class="orignal-price first-box-orignal-price"> {{ floor($firstpackage->original_price) ?? '' }}  </del><del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
+                    @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
+                    <h4 class="sale-price first-box-sale-price">
+                      {{ floor($firstpackage->sale_price) ?? '' }}
+                    </h4>
+                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    <del class="orignal-price first-box-orignal-price"> 
+                      {{ floor($firstpackage->original_price) ?? '' }}
+                    </del>
+                    <del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
+                    @else
+                    <h4 class="sale-price first-box-sale-price">
+                      {{ floor($firstpackage->original_price) ?? '' }}
+                    </h4>
+                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
                     @endif
                   </div>
                   <div class="p-3 justify-content-center d-none d-md-block">
