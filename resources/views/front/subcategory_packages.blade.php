@@ -174,10 +174,12 @@
                   </del>
                   <del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
                   @else
-                  <h4 class="sale-price first-box-sale-price">
-                    {{ floor($firstpackage->original_price) ?? '' }}
-                  </h4>
-                  <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
+                      <h4 class="sale-price first-box-sale-price">
+                        {{ floor($firstpackage->original_price) ?? '' }}
+                      </h4>
+                      <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    @endif
                   @endif
                 </div>
                 <div class="p-3 justify-content-center d-none d-md-block">
