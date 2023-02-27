@@ -70,8 +70,14 @@ class SubCategoryController extends Controller
             $subcategory_id = $model->id;
             if($request->has('qty')){
                 foreach($request->qty as $key => $q){
-                    
-                    
+                    $request->validate([
+                        'sale_price' => 'required_with:original_price',
+                        'original_price' => 'nullable|gte:sale_price',
+                    ], [
+                        'original_price.gte' => 'Sale price must be greater than or equal to the original price',
+                        'sale_price.required_with' => 'The original price field is required when the sale price field is present',
+                    ]);
+                  
                     $package = new Package();
                     $package->title  = $request->ptitle[$key];
                     $package->category_id  = $category_id;
@@ -157,7 +163,14 @@ class SubCategoryController extends Controller
         $subcategory_id = $model->id;
         if($request->has('qty')){
             foreach($request->qty as $key => $q){
-
+                
+                $request->validate([
+                    'sale_price' => 'required_with:original_price|gte:0',
+                    'original_price' => 'required_with:sale_price|gte:sale_price',
+                ],[
+                    'original_price.gte'=>'Sale price must greater then price',
+                    'sale_price.gte'=>'Price must be less than sale price',
+                ]);
                 $package = Package::find($request->pid[$key] ?? 0);
                 $package = $package ?? new Package();
                 $package->title  = $request->ptitle[$key];
