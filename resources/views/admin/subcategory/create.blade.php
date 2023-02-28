@@ -70,6 +70,13 @@
                                         @enderror
                                     </div>
                                     <div class="col-12 m-2">
+                                        <label for="description">Description</label>
+                                        <textarea name="description" class="form-control" style="height: 100px">{{ old('description') }}</textarea>
+                                        @error('description')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-12 m-2">
                                         <div class="Quantity">
                                             <div class="row">
                                                 <div class="col-5">
@@ -92,17 +99,17 @@
                                                         <input type="text" class="form-control" name="qty[]" value="{{ old('qty.'.$i) }}" placeholder="Quantity">
                                                     </div>
                                                     <div class="col-2 pl-1 pr-1">
-                                                        <label for="Original Price"> Sale Price</label>
+                                                        <label for="Original Price">  Price</label>
 
-                                                        <input type="text" class="form-control" name="original_price[]" placeholder=" Sale Price" value="{{ old('original_price.'.$i) }}">
+                                                        <input type="text" class="form-control" name="original_price[]" placeholder="Price" value="{{ old('original_price.'.$i) }}">
                                                         @error('original_price')
                                                         <span class="text-danger">{{ $message }}</span>
                                                         @enderror
                                                     </div>
                                                     <div class=" col-2 pl-1 pr-1">
-                                                        <label for="Sale Price"> Price</label>
+                                                        <label for="Sale Price"> Sale Price</label>
 
-                                                        <input type="text" class="form-control" name="sale_price[]" value="{{ old('sale_price.'.$i) }}" placeholder=" Price">
+                                                        <input type="text" class="form-control" name="sale_price[]" value="{{ old('sale_price.'.$i) }}" placeholder=" Sale Price">
                                                         @error('sale_price')
                                                         <span class="text-danger">{{ $message }}</span>
                                                         @enderror
@@ -153,10 +160,10 @@
             '<input type="text" class="form-control" name="qty[]"" placeholder="Quantity">' +
             '</div>' +
             '<div class="col-2 pl-1 pr-1">' +
-            '<input type="text" class="form-control" name="original_price[]"" placeholder="Sale Price" >' +
+            '<input type="text" class="form-control" name="original_price[]"" placeholder="Price" >' +
             '</div>' +
             '<div class="col-2 pl-1 pr-1">' +
-            '<input type="text" class="form-control" name="sale_price[]" placeholder=" Price" >' +
+            '<input type="text" class="form-control" name="sale_price[]" placeholder="Sale Price" >' +
             '</div>' +
             '<div class="col-1 pl-1 pr-1 d-flex align-items-center justify-content-center">' +
             '<button type="button" class="btn btn-danger" onclick="deleteQty(event)">X</button>' +

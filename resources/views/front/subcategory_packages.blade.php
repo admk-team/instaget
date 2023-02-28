@@ -18,7 +18,7 @@
               {{ $service->title ?? '' }}
             </div> -->
           </div>
-          <div class="content">
+          <div class="content">s
             <div class="accordion">
               @foreach ($service->categories as $category)
               <div class="accordion-item">
@@ -103,8 +103,10 @@
   <div class="container pb-5">
     <div class="row justify-content-center">
       <div class="d-block col-lg-6 pakg_heading p-4 mb-1">
-        <h3 class="text-center heading mb-2">인스타팔로워늘리기</h3>
-        <p class="text-center p-3 title m-0 px-0">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다. 365일24시간연중무휴자동주문처리</p>
+        @foreach($subcategories as $sub_category)
+        <h3 class="text-center heading mb-2">{{ $sub_category->title ?? '' }}</h3>
+        <p class="text-center p-3 title m-0 px-0">{{ $sub_category->description ?? '' }}</p>
+        @endforeach
       </div>
     </div>
     <div class="row justify-content-center tab-content-parent">
@@ -219,10 +221,26 @@
                   </div>
                   <div class="bar d-flex justify-content-between align-items-center mb-2">
                     <div>합집합</div>
-                    <div>₩0</div>
+                    <div class="p-4 justify-content-center d-flex">
+                      @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
+                      <h4 class="sale-price first-box-sale-price">
+                        {{ floor($firstpackage->sale_price) ?? '' }}
+                      </h4>
+                      <span  class="pt-2" style="font-size: 22px;font-weight: 800">₩</span>
+                      @else
+                        @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
+                          <h4 class="sale-price first-box-sale-price">
+                            {{ floor($firstpackage->original_price) ?? '' }}
+                          </h4>
+                          <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                        @endif
+                      @endif
+                    </div>
                   </div>
                   <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
+                    <a href="{{ route('front.instagram.getpost') }}">
                     <button class="purchase-btn">구매하기</button>
+                  </a>
                     <button class="shop-btn">장바구니</button>
                   </div>
                 </div>

@@ -23,8 +23,8 @@ class FrontController extends Controller
 
     public function service($slug)
     {
-        $services = Service::with('categories.subcategories')->where('status', 1)->get();
-          $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+         $services = Service::with('categories.subcategories')->where('status', 1)->get();
+        $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
         return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
@@ -32,7 +32,7 @@ class FrontController extends Controller
     
 
     public function subcategory_packages($subcategoryslug){
-        $services = Service::with('categories.subcategories')->where('status', 1)->get();
+         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $buttonpackage = SubCategory::with('packages')->where('status', 1)->where('slug' , $subcategoryslug)->first();
         $subcategories = SubCategory::where('category_id' , $buttonpackage->category_id)->get();
         return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories'));

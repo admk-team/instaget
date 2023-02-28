@@ -12,24 +12,25 @@
       <div class="collapse navbar-collapse" id="navbarSUpportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('front.index') }}">What is Instagram?</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('front.index') }}"> 인스타몽 소개</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Service
+              서비스
             </a>
          <x-navbar></x-navbar>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.reviews') }}">Customer Review</a>
+            <a class="nav-link" href="{{ route('front.reviews') }}">고객후기
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('front.faq') }}">Frequently Asked Questions</a>
+            <a class="nav-link" href="{{ route('front.faq') }}">자주 묻는 질문</a>
           </li>
           @if (!auth()->user())
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('front.login') }}">Login</a>
+              <a class="nav-link" href="{{ route('front.login') }}">로그인</a>
             </li>
           @endif
         </ul>

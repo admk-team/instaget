@@ -74,7 +74,13 @@
                                     @enderror
 
                                 </div>
-
+                                <div class="col-12 m-2">
+                                    <label for="color">Description</label>
+                                    <textarea name="description" class="form-control" style="height: 100px">{{ old('color') ?? $sub_category->description  }}</textarea>
+                                    @error('description')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 <div class="col-12 m-2">
                                     <div class="Quantity">
                                         <div class="row">
@@ -99,15 +105,16 @@
                                                    
                                                 </div>
                                                 <div class="col-2 pl-1 pr-1">
-                                                    <label for="Original Price">Sale Price</label>
-                                                    <input type="text" class="form-control orignial" name="original_price[]"  value="{{ old('original_price.'.$i) ?? $package->original_price ?? '' }}" placeholder="Sale">
+                                                    <label for="Original Price">Price</label>
+                                                    <input type="text" class="form-control orignial" name="original_price[]"  value="{{ old('original_price.'.$i) ?? $package->original_price ?? '' }}" placeholder="Price">
                                                 
                                             </div>
-                                            <div class=" col-2 pl-1 pr-1">
-                                                    <label for="Sale Price">Price</label>
+                                                <div class=" col-2 pl-1 pr-1">
+                                                    <label for="Sale Price"> Sale Price</label>
                                                     <input type="text" class="form-control"
-                                                        name="sale_price[]" value="{{ old('sale_price.'.$i) ?? $package->sale_price ?? '' }}"  placeholder=" Price">      
+                                                        name="sale_price[]" value="{{ old('sale_price.'.$i) ?? $package->sale_price ?? '' }}"  placeholder=" Sale Price">      
                                             </div>
+                                                
                                     
                                                 <div class=" col-2 pl-1 pr-1 d-flex align-items-center
                                                 justify-content-center">

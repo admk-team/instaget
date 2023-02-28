@@ -103,8 +103,10 @@
     <div class="container pb-5">
       <div class="row justify-content-center">
         <div class="d-block col-lg-6 pakg_heading p-4 mb-1">
-          <h3 class="text-center heading mb-2">인스타팔로워늘리기</h3>
-          <p class="text-center p-3 title m-0 px-0">주문후단기간에인스타팔로워가자연스럽게증가하는서비스입니다. 365일24시간연중무휴자동주문처리</p>
+          @foreach(($buttonpackage->categories->first()->subcategories ?? '') as $subcategory)
+          <h3 class="text-center heading mb-2">{{ $subcategory->title ?? '' }}</h3>
+          <p class="text-center p-3 title m-0 px-0">{{ $subcategory->description ?? '' }}</p>
+          @endforeach
         </div>
       </div>
       <div class="row justify-content-center tab-content-parent">
@@ -211,10 +213,26 @@
                     </div>
                     <div class="bar d-flex justify-content-between align-items-center mb-2">
                       <div>합집합</div>
-                      <div>₩0</div>
+                      <div class="p-4 justify-content-center d-flex">
+                        @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
+                        <h4 class="sale-price first-box-sale-price">
+                          {{ floor($firstpackage->sale_price) ?? '' }}
+                        </h4>
+                        <span class="pt-2" style="font-size: 22px;font-weight: 800">₩</span> 
+                        @else
+                          @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
+                            <h4 class="sale-price first-box-sale-price">
+                              {{ floor($firstpackage->original_price) ?? '' }}
+                            </h4>
+                            <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                          @endif
+                        @endif
+                      </div>
                     </div>
                     <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
-                      <button class="purchase-btn">구매하기</button>
+                      <a href="{{ route('front.instagram.getpost') }}">
+                        <button class="purchase-btn">구매하기</button>
+                      </a>
                       <button class="shop-btn">장바구니</button>
                     </div>
                   </div>
@@ -242,7 +260,7 @@
           <div class="box1 box d-flex flex-column align-items-center justify-content-center">
             <img src="{{ asset('front_asset/images/001.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">24시간 주문가동</span>
-            <span class="box-description text-center">주문 후 빠른 사직으로 24시간 주문가동됩니다.</span>
+            <span class="box-description text-center">주문 후 빠른 시작으로 24시간 주문이 가동됩니다.</span>
           </div>
           <div class="box2 box d-flex flex-column align-items-center justify-content-center">
             <img src="{{ asset('front_asset/images/002.png') }}" alt="" class="box-icon">
@@ -252,7 +270,7 @@
           <div class="box3 box d-flex flex-column align-items-center justify-content-center">
             <img src="{{ asset('front_asset/images/003.png') }}" alt="" class="box-icon">
             <span class="box-title text-center my-4">1:1전문 상담원</span>
-            <span class="box-description text-center">분야 별 전문 마케터가 SNS홍보전략을 상당해드립니다.</span>
+            <span class="box-description text-center">분야 별 전문 마케터가 SNS홍보전략을 상담해드립니다.</span>
           </div>
         </div>
       </div>
@@ -265,34 +283,22 @@
           <div class="service-faq-question d-flex justify-content-between align-items-center">
             <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
               <img src="{{ asset('front_asset/images/message.png') }}" alt="">
-              실제 유저로 작업이 되나요?</h4>
+              작업 시 계정은 안전한가요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-              molestias ad! Ullam, voluptates!</p>
+            <p>인스타그램뿐만 아니라 유튜브,네이버,앱마케팅 등 인스타몽이 제공하는 모든 서비스는 철저한 안전검증을 기반으로 단 한건도 문제가 생긴 적은 없습니다</p>
           </div>
         </div>
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
             <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
               
-              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">서비스 진행은 언제 시작 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-              molestias ad! Ullam, voluptates!</p>
+            <p>결제 완료 후 1분내로 시스템에 자동 접수 됩니다. 완료 시점은 상품에 따라 상이하오니 원하는 상품의 상세페이지를 확인하시기 바랍니다. </p>
           </div>
         </div>
       </div>
@@ -301,34 +307,22 @@
           <div class="service-faq-question d-flex justify-content-between align-items-center">
             <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
               
-              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
+              <img src="{{ asset('front_asset/images/message.png') }}" alt=""> 교환이나 환불 규정은 어떻게 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-              molestias ad! Ullam, voluptates!</p>
+            <p>서비스가 진행 된 경우 교환 및 환불이 불가합니다. 아이디 또는 링크 삽입 착오로 인한 환불은 불가하니 서비스 시작전 다시 한번 확인부탁드립니다. 주의 사항을 참고하지 않아 발생되는 피해는 책임지지 않습니다.</p>
           </div>
         </div>
         <div class="service-faq-box">
           <div class="service-faq-question d-flex justify-content-between align-items-center">
             <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
               
-              <img src="{{ asset('front_asset/images/message.png') }}" alt="">실제 유저로 작업이 되나요?</h4>
+              <img src="{{ asset('front_asset/images/message.png') }}" alt="">고객센터 운영시간은 어떻게 되나요?</h4>
             <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
           </div>
           <div class="service-faq-answer bg-white px-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-              fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-              fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-              pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-              blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-              assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-              molestias ad! Ullam, voluptates!</p>
+            <p>월 ~ 금(9:30 - 18:30) / 점심시간(12:00 - 13:00) 모든 문의는 최대한 빨리 답변드릴 수 있도록 노력하겠습니다. </p>
           </div>
         </div>
       </div>
@@ -347,30 +341,45 @@
             <div class="d-flex align-items-center bi">
               <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
-            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-              of followers to like my picture for such a cheap price?</p>
+            <p class="lower-text-description mt-4">좋아요가 이렇게 빨리 달릴 줄 몰랐고 완벽하게 되는거 같아요 다음에 또 이용할게요</p>
           </div>
           <div class="lower-review mt-5">
             <div class="d-flex align-items-center bi">
               <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
-            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-              of followers to like my picture for such a cheap price?</p>
+            <p class="lower-text-description mt-4">인스타그램 게시물 사진마다 좋아요 수량 분할이 되어 다른 곳보다 쓰기 편해요.</p>
           </div>
           <div class="lower-review mt-5">
             <div class="d-flex align-items-center bi">
               <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
-            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-              of followers to like my picture for such a cheap price?</p>
+            <p class="lower-text-description mt-4">노출 도달 덕분인지 조회수가 계속 늘어나네요 추천합니다 가성비 아주 좋습니다!</p>
           </div>
           <div class="lower-review mt-5">
             <div class="d-flex align-items-center bi">
               <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
             </div>
-            <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-              of followers to like my picture for such a cheap price?</p>
+            <p class="lower-text-description mt-4">한국인 팔로워 몇번이나 구입하고 있습니다. 조만간 팔로워 1만명 구입예정입니다. 잘 부탁드려요.</p>
           </div>
+          <div class="lower-review mt-5">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">한국인좋아요 배송이 아주 빠르고 좋습니다 금방 채워져요. 가성비템이에요 추천드려요~! </p>
+          </div>
+          <div class="lower-review mt-5">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">구글플레이 앱설치 한번 이용하고 나서 너무 마음에 들어 자주 이용하고 있습니다.  </p>
+          </div>
+          <div class="lower-review mt-5">
+            <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+            </div>
+            <p class="lower-text-description mt-4">유튜브 조회수 주문하고 엄청 빠르게 늘어났어요. 속도는 인스타몽이 최고인것 같습니다.   </p>
+          </div>
+          
         </div>
       </div>
     </div>

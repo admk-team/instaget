@@ -48,8 +48,8 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         for($i=0; $i<sizeof($request->original_price); $i++){
-            if($request->original_price[$i] <= $request->sale_price[$i]){
-                return redirect()->back()->with('error1' , 'Sale Price must be greater than  price');
+            if($request->original_price[$i] < $request->sale_price[$i]){
+                return redirect()->back()->with('error1' , 'Sale Price must be less than  price');
             }
         }
         $request->validate([
@@ -57,12 +57,14 @@ class SubCategoryController extends Controller
             'title' => 'required',
             'image' => 'image',
             'color' => 'required',
+            'description' => 'required',
         ]);
         $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->category_id;
         $model->title = $request->title;
         $model->color = $request->color;
+        $model->description = $request->description;
 
 
         if($request->hasFile('image')){
@@ -139,22 +141,25 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         for($i=0; $i<sizeof($request->original_price); $i++){
-            if($request->original_price[$i] <= $request->sale_price[$i]){
-                return redirect()->back()->with('error1' , 'Sale Price must be greater than  price');
+            if($request->original_price[$i] < $request->sale_price[$i]){
+                return redirect()->back()->with('error1' , 'Sale Price must be less than  price');
             }
         }
+        
         
         $request->validate([
         'sub_category' => 'required',
         'title' => 'required',
         'image' => 'image',
         'color' => 'required',
+        'description' => 'required',
        ]);
        $title = strtolower($request->title);
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
        $model->color = $request->color;
+       $model->description = $request->description;
        
        if($request->has('image')){
         if(isset($model->image)){
