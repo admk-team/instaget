@@ -36,14 +36,14 @@
                 <div class="form-group row">
                   <div class="col-12 m-2">
                     <label for="title">Title</label>
-                    <input type="text" name="title" value="{{ $review->title }}" class="form-control" placeholder="Title">
+                    <input type="text" name="title" value="{{ $review->title ?? '' }}" class="form-control" placeholder="Title">
                     @error('title')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
                   <div class="col-12 m-2">
                     <label for="description">Description </label>
-                    <textarea name="description" class="form-control" style="height:100px">{{ $review->description }}</textarea>
+                    <textarea name="description" class="form-control" style="height:100px">{{ $review->description ?? '' }}</textarea>
                     @error('title')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
