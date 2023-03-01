@@ -20,8 +20,8 @@
 }
 
 @font-face {
-    font-family: "SCDREAM";
-    src: url('front_asset/fonts/SCDream4.otf') format("opentype");
+    font-family: SCDREAM4;
+    src: url(front_asset/fonts/SCDream4.otf) format("opentype");
     font-style: normal;
     font-weight: 400;
 }
@@ -55,10 +55,13 @@
 }
 
 @font-face {
-    font-family: "SCDREAM9";
-    src: url('front_asset/fonts/SCDream8.otf') format("opentype");
+    font-family: SCDREAM9;
+    src: url(front_asset/fonts/SCDream8.otf) format("opentype");
     font-style: normal;
     font-weight: 900;
+}
+* {
+    font-family: SCDREAM4 ,  Arial, Helvetica, sans-serif !important;
 }
 
 /* @font-face {
@@ -66,9 +69,7 @@
     src: url(../fonts/SCDream3.otf);
 }
 
-* {
-    font-family: "SCDREAM" Arial, Helvetica, sans-serif !important;
-}
+
 
 :root {
     --orange: #ff5a09;

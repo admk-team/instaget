@@ -204,8 +204,8 @@
           </div>
           <div class="banner d-flex align-items-center justify-content-between flex-wrap">
             <div class="text mb-4 mb-lg-0">
-              <h1>서비스를 구매하셨나요?</h1>
-              <p>서비스 후기를 남겨 주시면 참고하여 더 좋은 서비스를 제공하도록 노력하겠습니다.</p>
+              <h1>{{ $review->title ?? '' }}</h1>
+              <p>{{ $review->description ?? '' }}</p>
             </div>
             <div>
               <a href="javascript:void(0)" class="btn btn-cta d-flex justify-content-center align-items-end">

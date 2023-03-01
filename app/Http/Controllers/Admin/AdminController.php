@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\Package;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +23,8 @@ class AdminController extends Controller
          $category = Category::count();
          $sub_category = SubCategory::count();
          $package = Package::count();
-        return view('admin.index' , compact('service' , 'category' , 'sub_category' , 'package'));
+         $user = User::count();
+        return view('admin.index' , compact('service' , 'category' , 'sub_category' , 'package' , 'user'));
         
     }
 

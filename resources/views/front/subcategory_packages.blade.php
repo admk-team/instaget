@@ -103,10 +103,8 @@
   <div class="container pb-5">
     <div class="row justify-content-center">
       <div class="d-block col-lg-6 pakg_heading p-4 mb-1">
-        @foreach($subcategories as $sub_category)
-        <h3 class="text-center heading mb-2">{{ $sub_category->title ?? '' }}</h3>
-        <p class="text-center p-3 title m-0 px-0">{{ $sub_category->description ?? '' }}</p>
-        @endforeach
+        <h3 class="text-center heading mb-2">{{ $subcategory_title->title ?? '' }}</h3>
+        <p class="text-center p-3 title m-0 px-0">{{ $subcategory_title->description ?? '' }}</p>
       </div>
     </div>
     <div class="row justify-content-center tab-content-parent">

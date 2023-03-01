@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
 use App\Models\User;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
@@ -23,11 +24,12 @@ class FrontController extends Controller
 
     public function service($slug)
     {
-         $services = Service::with('categories.subcategories')->where('status', 1)->get();
+        $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
+        $services_title = Service::where('slug' , $slug)->first();
+        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories' , 'services_title'));
     }
     
 
@@ -35,12 +37,14 @@ class FrontController extends Controller
          $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $buttonpackage = SubCategory::with('packages')->where('status', 1)->where('slug' , $subcategoryslug)->first();
         $subcategories = SubCategory::where('category_id' , $buttonpackage->category_id)->get();
-        return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories'));
+        $subcategory_title = Subcategory::where('slug' , $subcategoryslug)->first();
+        return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories' , 'subcategory_title'));
     }
 
     public function reviews()
     {
-        return view('front.reviews');
+        $review  = Review::first();
+        return view('front.reviews' , compact('review'));
     }
 
     public function cmd($cmd){

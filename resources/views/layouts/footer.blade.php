@@ -1,7 +1,7 @@
-<footer class="footer">
+<footer class="footer text-center">
   <div class="container-fluid">
     <div class="container">
-      <ul class="list-group list-group-horizontal border-0 mb-3">
+      <ul class="list-group list-group-horizontal border-0 mb-3 d-flex justify-content-center">
         <li class="text-white list-group-item p-1">
           <a href="{{ route('front.termsOfService') }}" class="text-white">이용약관</a>
         </li>
