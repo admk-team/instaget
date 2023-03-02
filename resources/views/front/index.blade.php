@@ -7,8 +7,9 @@
           <div class="carousel-item active">
             <div class="overlay">
               <img src="{{ asset('front_asset/images/home-bg-placeholder.png')}}" id="home-bg-placeholder" class="img-fluid" alt="">
-              <video class="fullscreen" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
+              <video class="fullscreen d-none d-md-block" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
               </video>
+              <img class="d-md-none d-block w-100" src="{{ asset('front_asset/images/background.jpg')}}"   alt="">
             </div>
 
             <div class="carousel-caption trickcenter">
@@ -123,11 +124,11 @@
 
     <section class="dark-section text-light mt-5 font-family">
       <div class="container py-4">
-        <h2 class="dark-section-title text-center">XXX  서비스 소개</h2>
+        {{-- <h2 class="dark-section-title text-center">XXX  서비스 소개</h2>
         <div class="d-flex justify-content-center">
           <p class="dark-section-text-1 text-center">XXX는 개인계정, 기업계정 관리 및 마케팅 전문 실행사입니다. 
             광고대행사에 맡기지 마시고 저렴한 비용으로 최대의 홍보효과를 체험하세요.</p>
-        </div>
+        </div> --}}
         <div class="d-flex flex-column align-items-center">
           <div class="dark-section-cards row d-flex justify-content-center align-items-center mt-3">
             <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark mx-3 mb-4" style="height:192px;">
@@ -169,9 +170,56 @@
       <div class="container d-flex flex-column justify-content-center align-items-center">
         <h2 class="image-section-title text-center">100%효과보는 인스타그램 홍보방법</h2>
         <p class="image-section-text-1 text-center">인기탭에 진출을 위한 브랜드 계정은 데일리팔로워+자동좋아요+자동댓글+자동인게트래픽 패키지로 추천드립니다.</p>
-        <img src="{{ asset('front_asset/images/insta-ad-image.png') }}" alt="">
+        <img src="{{ asset('front_asset/images/insta-ad-image.png') }}" alt="" class=" d-none d-md-block">
       </div>
     </section>
+
+
+
+    {{-- for mobile device --}}
+
+    <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100 " src="{{ asset('front_asset/images/Capture 1.PNG') }}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{{ asset('front_asset/images/Capture 2.PNG') }}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{{ asset('front_asset/images/Capture 3.PNG') }}" alt="Third slide">
+        </div>
+      </div>
+      <div class="carousel-item">
+          <img class="d-block w-100" src="{{ asset('front_asset/images/Capture 4.PNG') }}" alt="Third slide">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ asset('front_asset/images/Capture 5.PNG') }}" alt="Third slide">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('front_asset/images/Capture 6.PNG') }}" alt="Third slide">
+    </div>
+  </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    {{-- end for mobile device --}}
 
     <!-- START: Testimonias Section -->
     <div class="section section-testimonials mb-5">
@@ -198,7 +246,6 @@
                 </div>
                 <div>
                   <div class="name"> Nov***님</div>
-                  <div class="profession">Freelancer</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -216,7 +263,6 @@
                 </div>
                 <div>
                   <div class="name">Fiv20***님 </div>
-                  <div class="profession">Freelancer</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -234,7 +280,6 @@
                 </div>
                 <div>
                   <div class="name">Hun92***님</div>
-                  <div class="profession">Freelancer</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -247,15 +292,14 @@
         <!-- Carousel sm -->
         <div id="testimonials_md" class="testimonials owl-carousel owl-theme d-md-none">
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">인스타몽에서 좋아요와 인기게시물 트래픽 주문할때마다 인게 잘 올라가네요.</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                   <img src="{{ asset('front_asset/images/3.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name"> Nov***님</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -264,15 +308,14 @@
             </div>
           </div>
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">지인추천으로 알게되었는데 인스타몽 쓰고나니 유튜브 채널 키우는게 너무 쉬워졌네요. 수익창출 계정 1주일만에 도달했습니다!</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                 <img src="{{ asset('front_asset/images/4.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name">Fiv20***님</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -282,15 +325,14 @@
           </div>
 
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">이곳저곳 이용해보다가 인스타몽을 써본 결과 여기가 제일 주문하기가 쉬운것 같아요. 가격도 저렴하고 속도랑 품질이 완벽하네요! 저는 인스타몽만 이용합니다.</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                 <img src="{{ asset('front_asset/images/5.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name">Hun92***님</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -303,15 +345,14 @@
         <!-- Carousel md -->
         <div id="testimonials_lg" class="testimonials owl-carousel owl-theme d-none d-md-block d-xl-none">
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">지인추천으로 알게되었는데 인스타몽 쓰고나니 유튜브 채널 키우는게 너무 쉬워졌네요. 수익창출 계정 1주일만에 도달했습니다!</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                   <img src="{{ asset('front_asset/images/3.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name">Fiv20***님 </div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -321,15 +362,14 @@
           </div>
 
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">이곳저곳 이용해보다가 인스타몽을 써본 결과 여기가 제일 주문하기가 쉬운것 같아요. 가격도 저렴하고 속도랑 품질이 완벽하네요! 저는 인스타몽만 이용합니다.</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                 <img src="{{ asset('front_asset/images/4.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name">Hun92***님</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -339,15 +379,14 @@
           </div>
 
           <div class="testimonial">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+            <p class="text">이곳저곳 이용해보다가 인스타몽을 써본 결과 여기가 제일 주문하기가 쉬운것 같아요. 가격도 저렴하고 속도랑 품질이 완벽하네요! 저는 인스타몽만 이용합니다.</p>
             <div class="info d-flex align-items-center justify-content-between">
               <div class="author d-flex align-items-center gap-3">
                 <div class="img">
                 <img src="{{ asset('front_asset/images/5.png') }}" alt="">
                 </div>
                 <div>
-                  <div class="name">Nydia Larson</div>
-                  <div class="profession">Freelancer</div>
+                  <div class="name">Hun92***님</div>
                 </div>
               </div>
               <div class="icon d-flex">
@@ -405,7 +444,6 @@
     <!-- End: Blog Section -->
 
   </div>
-
   <script>
     $(document).ready(function() {
       window.addEventListener('scroll', (event) => {
@@ -437,8 +475,7 @@
       $("#home-bg-placeholder").pause();
     };
   </script>
-  
-  <script>
+ <script>
     $(document).ready(function(){
   var maxHeight = 0;
   $('.testimonial').each(function(){
@@ -446,5 +483,5 @@
   });
   $('.testimonial').height(maxHeight);
 });
-  </script>
+  </script> 
 @endsection

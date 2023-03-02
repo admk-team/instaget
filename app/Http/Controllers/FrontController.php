@@ -215,4 +215,9 @@ class FrontController extends Controller
     public function usersignup(){
         return view('front.usersignup');
     }
+
+    public function get_subcategory_title($id){
+        $append_subcategory = SubCategory::where('id',$id)->first();
+        return $append_subcategory;
+    }
 }

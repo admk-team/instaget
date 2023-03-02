@@ -102,7 +102,7 @@
   </div>
   <div class="container pb-5">
     <div class="row justify-content-center">
-      <div class="d-block col-lg-6 pakg_heading p-4 mb-1">
+      <div class="d-block col-lg-6 pakg_heading p-4 mb-1 title_append">
         <h3 class="text-center heading mb-2">{{ $subcategory_title->title ?? '' }}</h3>
         <p class="text-center p-3 title m-0 px-0">{{ $subcategory_title->description ?? '' }}</p>
       </div>
@@ -111,7 +111,7 @@
       <div class="packages col-xl-6 col-lg-8 justify-content-center text-center">
             <ul class="nav nav-tabs" id="myTab" role="tablist"> 
               @foreach($subcategories as $sub_category)
-              <li class="nav-item service-upper-button-li" role="presentation">
+              <li class="nav-item service-upper-button-li change_title" role="presentation"  data-url="{{ url('front/get/subcategory/title/'.$sub_category->id) }}">
                 <button class="nav-link tabs-button service-upper-button  @if($subcategoryslug == $sub_category->slug)active @endif" id="home-tab{{ $loop->iteration }}" data-bs-toggle="tab"
                   data-bs-target="#home_{{ $loop->iteration }}" type="submit" role="tab" aria-controls="home_{{ $loop->iteration }}"
                   aria-selected="true" href="{{ route('front.login') }}">{{ $sub_category->title ?? '' }}</button>
@@ -356,8 +356,76 @@
     <div class="d-flex service-lower-lower-section">
       <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
         <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
-        <button class="service-lower-button">후기작성</button>
-      </div>
+        <button class="service-lower-button" data-toggle="modal" data-target="#exampleModal1" type="button">후기작성</button>
+    </div>
+    {{-- Review Model start herer --}}
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write a review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="model-body container">
+                    <form>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Product Type</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <div class="rating">
+                                    <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:60px;">☆</label>
+                                    <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:60px;">☆</label>
+                                    <input type="radio" name="rating" value="3" id="3"><label for="3" style="font-size:60px;">☆</label>
+                                    <input type="radio" name="rating" value="2" id="2"><label for="2" style="font-size:60px;">☆</label>
+                                    <input type="radio" name="rating" value="1" id="1"><label for="1" style="font-size:60px;">☆</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label>Write a review</label>
+                                <input type="text" placeholder="Please enter a subject" class="form-control">
+                                <textarea name="review" class="form-control mt-3" style="height:100px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="background-color: #F6F6F6;">
+                            <div class="col-md-12">
+                                <div class="row mt-3 d-flex align-items-center">
+                                    <div class="col-md-6">
+                                        <i class="bi bi-file-arrow-up" style="font-size:100px; margin-left:100px"></i>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3>Attach files</h3>
+                                    </div>
+                                </div>
+                                <p class="text-center">Up to 3 can be attahced (jpg, png , jpeg)</p>
+                                <div>
+                                    <input type="file" style="opacity:-100">
+                                </div>
+                            </div>
+                        </div>
+                        <p> ※ If you write a review that does not fit the usage policy, it may be deleted without notice.</p>
+                </div>
+                <div style="margin:0px auto;" class="mb-3">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
+                    <button type="button" class="btn btn-primary">input completed</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    {{-- Review Model end  herer --}}
       <div class="service-lower-text">
         <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
@@ -466,4 +534,25 @@
     })
   })
 </script>
+<script>
+  $('.change_title').click(function(){
+      let url = $(this).data('url');
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          let title  = (data['title'] == null ? '' : data['title']);
+          let description = (data['description'] == null ? '' : data['description']);
+          console.log(title, description)
+            $('.title_append').html('')
+            $('.title_append').append(`<div class="d-block col-lg-6 pakg_heading p-4 mb-1 title_append">
+        <h3 class="text-center heading mb-2">`+title+`</h3>
+        <p class="text-center p-3 title m-0 px-0">`+description+`</p>
+      </div>`)
+    }
+      })
+  })
+</script>
+
 @endsection

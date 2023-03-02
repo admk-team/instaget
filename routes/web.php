@@ -120,3 +120,4 @@ Route::prefix('/auth')->group(function() {
 });
 
 Route::get('admin/delete/packages/{id}' , [SubcategoryController::class , 'package_delete'])->name('package_delete');
+Route::get('front/get/subcategory/title/{id}' , [FrontController::class , 'get_subcategory_title'])->name('get_subcategory_title');

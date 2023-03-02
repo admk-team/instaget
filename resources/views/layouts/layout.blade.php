@@ -187,13 +187,12 @@
       });
     </script>
     <script>
-      // let element = "";
+       let element = "";
       $(document).on("click", (event) => {
         if (event.target.closest(".service-faq-box")) {
           let mainFaqBox = event.target.closest(".service-faq-box");
           let faqAnswer = mainFaqBox.getElementsByClassName("service-faq-answer")[0];
           let icon = mainFaqBox.getElementsByClassName("service-faq-question")[0].getElementsByClassName("service-faq-question-icon")[0];
-
           if (element === faqAnswer) {
             faqAnswer.classList.remove("service-faq-answer-active");
             faqAnswer.classList.add("service-faq-answer-inactive");
@@ -218,6 +217,7 @@
           faqAnswer.classList.remove("service-faq-answer-inactive");
           faqAnswer.classList.add("service-faq-answer-active");
           icon.classList.add("faq-answer-active-icon");
+
         }
       });
 

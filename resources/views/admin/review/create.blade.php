@@ -8,7 +8,7 @@
           <div class="page-header-title">
             <i class="icofont icofont-file-code bg-c-blue"></i>
             <div class="d-inline">
-              <h4>Add Review</h4>
+              <h4>Update Reviews </h4>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="col-lg-6">
           <div class="card">
             <div class="card-block">
-              <h4 class="title">Add Review</h4>
+              <h4 class="title">Update Reviews</h4>
               <form method="POST" action="{{ route('admin.review.store') }}">
                 @csrf
                 <div class="form-group row">

@@ -15,7 +15,10 @@
             <a class="nav-link active" aria-current="page" href="{{ route('front.index') }}"> 인스타몽 소개</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <?php
+            $sercivce = DB::table('services')->first();
+               ?>
+            <a class="nav-link dropdown-toggle" onclick="window.location.href='{{ route('front.service',$sercivce->slug) }}'" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               서비스
             </a>
