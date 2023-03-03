@@ -168,6 +168,23 @@
                                             class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                <li class="{{  request()->routeIs('front.feedback.*')? 'active' : '' }}">
+                                    <a href="{{ route('front.feedback.index') }}">
+                                        <span class="pcoded-micon">
+                                            <i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext"
+                                            data-i18n="nav.form-components.main">Feedback</span><span
+                                            class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="{{  request()->routeIs('admin.blog.*')? 'active' : '' }}">
+                                    <a href="{{ route('admin.blog.index') }}">
+                                        <span class="pcoded-micon">
+                                            <i class="ti-layers"></i><b>FC</b></span><span class="pcoded-mtext"
+                                            data-i18n="nav.form-components.main">Blog</span><span
+                                            class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                
                                 {{-- <li class="{{  request()->routeIs('admin.package.*')? 'active' : '' }}">
                                     <a href="{{ route('admin.package.index') }}">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>

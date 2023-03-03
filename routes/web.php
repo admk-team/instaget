@@ -13,7 +13,10 @@ use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\GeneralSettingController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\AuthController as UserAuthController;
+use App\Http\Controllers\FeedbackController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -57,6 +60,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // General Settings
     Route::resource('general' , GeneralSettingController::class);
     Route::get('general/release/{key}' , [GeneralSettingController::class , 'release'])->name('general.release');
+       // Blog
+    Route::resource('blog' , BlogController::class);
+    Route::any('blog/{id}/{status}' , [BlogController::class , 'status'])->name('blog.status');
+
 
     // Profile
     Route::get('/profile/edit', [AdminProfileController::class, 'index'])->name('profile.edit');
@@ -107,6 +114,8 @@ Route::name('front.')->group(function () {
     Route::post('login/user' , [UserController::class , 'loginUser'])->name('user.login.store');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
+    Route::resource('feedback' , FeedbackController::class);
+    Route::any('feedback/{id}/{status}' , [FeedbackController::class , 'status'])->name('feedback.status');
 });
 
 // User Auth Routes

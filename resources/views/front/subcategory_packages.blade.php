@@ -362,21 +362,22 @@
     <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Write a review</h5>
+                <div class="modal-header" style="background-color:#e75e3e">
+                    <h5 class="modal-title text-white" id="exampleModalLabel"> 리뷰를 작성</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="model-body container">
-                    <form>
+                    <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
+                      @csrf
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Product Type</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" aria-label="Default select example" name="product">
+                                    <option selected>상품 유형</option>
+                                    @foreach($sub_category as $subcategory)
+                                    <option>{{ $subcategory->title ?? '' }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -393,32 +394,34 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <label>Write a review</label>
-                                <input type="text" placeholder="Please enter a subject" class="form-control">
-                                <textarea name="review" class="form-control mt-3" style="height:100px"></textarea>
+                                <label> 리뷰를 작성</label>
+                                <input type="text" placeholder="제목을 입력하세요" class="form-control" name="subject">
+                                <textarea name="description" class="form-control mt-3" style="height:100px" placeholder="리뷰를 3줄 이상 작성하셔야 적립금 1,000원을 드립니다. 서비스 전후 비교사진을 첨부하시면 적립금 2,000원을 드립니다."></textarea>
                             </div>
                         </div>
-                        <div class="row mt-3" style="background-color: #F6F6F6;">
-                            <div class="col-md-12">
+                        <div class="row mt-3 ">
+                            <div class="col-md-12" style="background-color: #F6F6F6;">
                                 <div class="row mt-3 d-flex align-items-center">
                                     <div class="col-md-6">
-                                        <i class="bi bi-file-arrow-up" style="font-size:100px; margin-left:100px"></i>
+                                        <i class="bi bi-plus-circle" style="font-size:100px; margin-left:70px"></i>
                                     </div>
                                     <div class="col-md-6">
-                                        <h3>Attach files</h3>
+                                        <h3>파일 첨부</h3>
                                     </div>
                                 </div>
-                                <p class="text-center">Up to 3 can be attahced (jpg, png , jpeg)</p>
+                                <p class="text-center">
+                                    최대 3개까지 첨부 가능 (jpg, png , jpeg)</p>
                                 <div>
-                                    <input type="file" style="opacity:-100">
+                                    <input type="file" style="opacity:-100" name="image">
                                 </div>
                             </div>
                         </div>
-                        <p> ※ If you write a review that does not fit the usage policy, it may be deleted without notice.</p>
+                        <div class="row" style="background-color: #EDEDED;width:106%;height:50px"></div>
+                        <p> ※ 이용정책에 맞지 않는 리뷰를 작성하시면 예고 없이 삭제될 수 있습니다.</p>
                 </div>
                 <div style="margin:0px auto;" class="mb-3">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
-                    <button type="button" class="btn btn-primary">input completed</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> 닫다 </button>
+                    <button type="submit" class="btn text-white" style="background-color:#e75e3e">입력완료</button>
                 </div>
                 </form>
 

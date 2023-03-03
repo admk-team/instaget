@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-md-block">
     <div class="container">
       <a class="navbar-brand" href="{{ route('front.index') }}">
         <span>Intagram likes</span>
@@ -40,5 +40,8 @@
       </div>
     </div>
   </nav>
+  <div class="w-100 d-md-none d-block" style="background-color:#2B2C34; height:100px;">
+  </div>
+
 </header>
 <div class="form-back-drop"></div>

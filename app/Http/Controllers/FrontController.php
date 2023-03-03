@@ -7,6 +7,8 @@ use App\Models\SubCategory;
 use App\Models\Package;
 use App\Models\User;
 use App\Models\Review;
+use App\Models\Feedback;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
@@ -19,17 +21,19 @@ use Phpfastcache\Helper\Psr16Adapter;
 class FrontController extends Controller
 {
     public function index(){
-        return view('front.index');
+        $blog = Blog::all();
+        return view('front.index' , compact('blog'));
     }
 
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
-        $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $services_title =  $buttonpackage->categories->first()->subcategories->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-        $services_title = Service::where('slug' , $slug)->first();
-        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories' , 'services_title'));
+         $sub_category = SubCategory::all();
+        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories' , 'services_title' , 'sub_category'));
     }
     
 
@@ -44,7 +48,9 @@ class FrontController extends Controller
     public function reviews()
     {
         $review  = Review::first();
-        return view('front.reviews' , compact('review'));
+        $feedback = Feedback::orderBy('id' ,'desc')->where('status' , 1)->get();
+        $sub_category = SubCategory::all();
+        return view('front.reviews' , compact('review' , 'feedback' , 'sub_category'));
     }
 
     public function cmd($cmd){
@@ -220,4 +226,6 @@ class FrontController extends Controller
         $append_subcategory = SubCategory::where('id',$id)->first();
         return $append_subcategory;
     }
+
+
 }
