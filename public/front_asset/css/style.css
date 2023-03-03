@@ -64,6 +64,10 @@
     font-family: SCDREAM4 ,  Arial, Helvetica, sans-serif !important;
 }
 
+body {
+    overflow-x: hidden !important;
+}
+
 /* @font-face {
     font-family: SCDREAM9;
     src: url(../fonts/SCDream3.otf);
