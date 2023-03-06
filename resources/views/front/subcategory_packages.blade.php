@@ -101,8 +101,8 @@
     </div>
   </div>
   <div class="container pb-5">
-    <div class="row justify-content-center">
-      <div class="d-block col-lg-6 pakg_heading p-4 mb-1 title_append">
+    <div class="row d-flex justify-content-center">
+      <div class=" col-lg-6 pakg_heading p-4 mb-1 title_append d-flex  flex-column align-items-center ">
         <h3 class="text-center heading mb-2">{{ $subcategory_title->title ?? '' }}</h3>
         <p class="text-center p-3 title m-0 px-0">{{ $subcategory_title->description ?? '' }}</p>
       </div>
@@ -358,77 +358,77 @@
         <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
         <button class="service-lower-button" data-toggle="modal" data-target="#exampleModal1" type="button">후기작성</button>
     </div>
-    {{-- Review Model start herer --}}
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color:#e75e3e">
-                    <h5 class="modal-title text-white" id="exampleModalLabel"> 리뷰를 작성</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="model-body container">
-                    <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
-                      @csrf
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <select class="form-select" aria-label="Default select example" name="product">
-                                    <option selected>상품 유형</option>
-                                    @foreach($sub_category as $subcategory)
-                                    <option>{{ $subcategory->title ?? '' }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <div class="rating">
-                                    <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:60px;">☆</label>
-                                    <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:60px;">☆</label>
-                                    <input type="radio" name="rating" value="3" id="3"><label for="3" style="font-size:60px;">☆</label>
-                                    <input type="radio" name="rating" value="2" id="2"><label for="2" style="font-size:60px;">☆</label>
-                                    <input type="radio" name="rating" value="1" id="1"><label for="1" style="font-size:60px;">☆</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <label> 리뷰를 작성</label>
-                                <input type="text" placeholder="제목을 입력하세요" class="form-control" name="subject">
-                                <textarea name="description" class="form-control mt-3" style="height:100px" placeholder="리뷰를 3줄 이상 작성하셔야 적립금 1,000원을 드립니다. 서비스 전후 비교사진을 첨부하시면 적립금 2,000원을 드립니다."></textarea>
-                            </div>
-                        </div>
-                        <div class="row mt-3 ">
-                            <div class="col-md-12" style="background-color: #F6F6F6;">
-                                <div class="row mt-3 d-flex align-items-center">
-                                    <div class="col-md-6">
-                                        <i class="bi bi-plus-circle" style="font-size:100px; margin-left:70px"></i>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h3>파일 첨부</h3>
-                                    </div>
-                                </div>
-                                <p class="text-center">
-                                    최대 3개까지 첨부 가능 (jpg, png , jpeg)</p>
-                                <div>
-                                    <input type="file" style="opacity:-100" name="image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" style="background-color: #EDEDED;width:106%;height:50px"></div>
-                        <p> ※ 이용정책에 맞지 않는 리뷰를 작성하시면 예고 없이 삭제될 수 있습니다.</p>
-                </div>
-                <div style="margin:0px auto;" class="mb-3">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> 닫다 </button>
-                    <button type="submit" class="btn text-white" style="background-color:#e75e3e">입력완료</button>
-                </div>
-                </form>
+ {{-- Review Model start herer --}}
+ <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header" style="background-color:#e75e3e">
+              <h5 class="modal-title text-white" id="exampleModalLabel"> 리뷰를 작성</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="text-white">&times;</span>
+              </button>
+          </div>
+          <div class="model-body container">
+              <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
+                  @csrf
+                  <div class="row mt-3">
+                      <div class="col-md-12">
+                          <select class="form-select" aria-label="Default select example" name="product">
+                              <option selected>상품 유형</option>
+                              @foreach($sub_category as $subcategory)
+                              <option>{{ $subcategory->title ?? '' }}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-12">
+                          <div class="rating">
+                              <input type="radio" name="rating" value="5" id="5"><label for="5" style="font-size:60px;">☆</label>
+                              <input type="radio" name="rating" value="4" id="4"><label for="4" style="font-size:60px;">☆</label>
+                              <input type="radio" name="rating" value="3" id="3"><label for="3" style="font-size:60px;">☆</label>
+                              <input type="radio" name="rating" value="2" id="2"><label for="2" style="font-size:60px;">☆</label>
+                              <input type="radio" name="rating" value="1" id="1"><label for="1" style="font-size:60px;">☆</label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-12">
+                          <label> 리뷰를 작성</label>
+                          <input type="text" placeholder="제목을 입력하세요" class="form-control" name="subject">
+                          <textarea name="description" class="form-control mt-3" style="height:100px" placeholder="리뷰를 3줄 이상 작성하셔야 적립금 1,000원을 드립니다. 서비스 전후 비교사진을 첨부하시면 적립금 2,000원을 드립니다."></textarea>
+                      </div>
+                  </div>
+                  <div class="row mt-3 ">
+                      <div class="col-md-12" style="background-color: #F6F6F6;">
+                          <div class="d-flex justify-content-center align-items-center">
+                              <i class="bi bi-plus-circle " style="font-size:50px;"></i>
 
-            </div>
-        </div>
-    </div>
-    {{-- Review Model end  herer --}}
+                              <h5 class="pl-2">파일 첨부</h5>
+                          </div>
+
+                          <p class="text-center">
+                              최대 3개까지 첨부 가능 (jpg, png , jpeg)</p>
+                          <div>
+                              <input type="file" style="opacity:-100" name="image">
+                          </div>
+                      </div>
+                  </div>
+                 <div class="row">
+                <div class="col-md-12" style="background-color: #EDEDED;height:50px"></div>
+                 </div>
+                  <p> ※ 이용정책에 맞지 않는 리뷰를 작성하시면 예고 없이 삭제될 수 있습니다.</p>
+          </div>
+          <div style="margin:0px auto;" class="mb-3">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"> 닫다 </button>
+              <button type="submit" class="btn text-white" style="background-color:#e75e3e">입력완료</button>
+          </div>
+          </form>
+
+      </div>
+  </div>
+</div>
+{{-- Review Model end  herer --}}
       <div class="service-lower-text">
         <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
@@ -549,7 +549,7 @@
           let description = (data['description'] == null ? '' : data['description']);
           console.log(title, description)
             $('.title_append').html('')
-            $('.title_append').append(`<div class="d-block col-lg-6 pakg_heading p-4 mb-1 title_append">
+            $('.title_append').append(`<div class="d-flex  flex-column align-items-center col-lg-6 pakg_heading p-4 mb-1 title_append">
         <h3 class="text-center heading mb-2">`+title+`</h3>
         <p class="text-center p-3 title m-0 px-0">`+description+`</p>
       </div>`)

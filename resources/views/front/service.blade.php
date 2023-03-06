@@ -335,12 +335,12 @@
                           <div class="modal-header" style="background-color:#e75e3e">
                               <h5 class="modal-title text-white" id="exampleModalLabel"> 리뷰를 작성</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
+                                  <span aria-hidden="true" class="text-white">&times;</span>
                               </button>
                           </div>
                           <div class="model-body container">
                               <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
-                                @csrf
+                                  @csrf
                                   <div class="row mt-3">
                                       <div class="col-md-12">
                                           <select class="form-select" aria-label="Default select example" name="product">
@@ -371,14 +371,12 @@
                                   </div>
                                   <div class="row mt-3 ">
                                       <div class="col-md-12" style="background-color: #F6F6F6;">
-                                          <div class="row mt-3 d-flex align-items-center">
-                                              <div class="col-md-6">
-                                                  <i class="bi bi-plus-circle" style="font-size:70px; margin-left:100px"></i>
-                                              </div>
-                                              <div class="col-md-6">
-                                                  <h3>파일 첨부</h3>
-                                              </div>
+                                          <div class="d-flex justify-content-center align-items-center">
+                                              <i class="bi bi-plus-circle " style="font-size:50px;"></i>
+
+                                              <h5 class="pl-2">파일 첨부</h5>
                                           </div>
+
                                           <p class="text-center">
                                               최대 3개까지 첨부 가능 (jpg, png , jpeg)</p>
                                           <div>
@@ -386,7 +384,9 @@
                                           </div>
                                       </div>
                                   </div>
-                                  <div class="row" style="background-color: #EDEDED;width:106%;height:50px"></div>
+                                  <div class="row">
+                                      <div class="col-md-12" style="background-color: #EDEDED;height:50px"></div>
+                                  </div>
                                   <p> ※ 이용정책에 맞지 않는 리뷰를 작성하시면 예고 없이 삭제될 수 있습니다.</p>
                           </div>
                           <div style="margin:0px auto;" class="mb-3">
