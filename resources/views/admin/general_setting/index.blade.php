@@ -106,7 +106,7 @@
                                 <div class="form-group row">
                                     <div class="col-12 col-lg-6 mb-2">
                                         <label for="ig_username">Instagram Username</label>
-                                        <input type="text" name="ig_username" id="ig_username" value="{{ $general_setting->where('key' , 'ig_username')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Username">
+                                        <input type="text" name="ig_username" id="ig_username" value="{{ $general_setting->where('key' , 'ig_username')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Username" autocomplete="off">
                                         @error('ig_username')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -114,7 +114,7 @@
 
                                     <div class="col-12 col-lg-6 mb-2">
                                         <label for="ig_password">Instagram Password</label>
-                                        <input type="password" name="ig_password" id="ig_password" value="{{ $general_setting->where('key' , 'ig_password')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Password">
+                                        <input type="password" name="ig_password" id="ig_password" value="{{ $general_setting->where('key' , 'ig_password')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Password" autocomplete="off">
                                         @error('ig_password')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
