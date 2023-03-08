@@ -6,6 +6,9 @@ use App\Models\Service;
 use App\Models\SubCategory;
 use App\Models\Package;
 use App\Models\User;
+use App\Models\Review;
+use App\Models\Feedback;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
@@ -18,29 +21,36 @@ use Phpfastcache\Helper\Psr16Adapter;
 class FrontController extends Controller
 {
     public function index(){
-        return view('front.index');
+        $blog = Blog::all();
+        return view('front.index' , compact('blog'));
     }
 
     public function service($slug)
     {
         $services = Service::with('categories.subcategories')->where('status', 1)->get();
           $buttonpackage = Service::with('categories.subcategories')->where('status', 1)->where('slug' , $slug)->first();
+          $services_title =  $buttonpackage->categories->first()->subcategories->first();
         $service = Service::where('slug',$slug)->first();
         $categories = $service->categories;
-        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories'));
+         $sub_category = SubCategory::all();
+        return view('front.service',compact('services', 'buttonpackage' , 'service' , 'categories' , 'services_title' , 'sub_category'));
     }
     
 
     public function subcategory_packages($subcategoryslug){
-        $services = Service::with('categories.subcategories')->where('status', 1)->get();
+         $services = Service::with('categories.subcategories')->where('status', 1)->get();
         $buttonpackage = SubCategory::with('packages')->where('status', 1)->where('slug' , $subcategoryslug)->first();
         $subcategories = SubCategory::where('category_id' , $buttonpackage->category_id)->get();
-        return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories'));
+        $subcategory_title = Subcategory::where('slug' , $subcategoryslug)->first();
+        return view('front.subcategory_packages',compact('services' , 'subcategoryslug','subcategories' , 'subcategory_title'));
     }
 
     public function reviews()
     {
-        return view('front.reviews');
+        $review  = Review::first();
+        $feedback = Feedback::orderBy('id' ,'desc')->where('status' , 1)->get();
+        $sub_category = SubCategory::all();
+        return view('front.reviews' , compact('review' , 'feedback' , 'sub_category'));
     }
 
     public function cmd($cmd){
@@ -162,7 +172,11 @@ class FrontController extends Controller
         $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
         return view('front.payment',compact('package'));
     }
-    //  
+    public function order1(){
+        $package_id=session()->get('PACKAGE_ID');
+        $package = Package::with('sub_category.category.service')->where('id',$package_id)->first();
+        return view('front.payment',compact('package'));
+    }  
 
     public function test_insta(Request $request){
          $username = $request->u;
@@ -207,4 +221,11 @@ class FrontController extends Controller
     public function usersignup(){
         return view('front.usersignup');
     }
+
+    public function get_subcategory_title($id){
+        $append_subcategory = SubCategory::where('id',$id)->first();
+        return $append_subcategory;
+    }
+
+
 }

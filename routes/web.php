@@ -11,7 +11,12 @@ use App\Http\Controllers\Admin\AdminDashboard;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ResetController as AdminPasswordResetController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\GeneralSettingController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\AuthController as UserAuthController;
+use App\Http\Controllers\FeedbackController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -43,12 +48,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Sub Category
     Route::resource('subcategory' , SubCategoryController::class);
     Route::any('subcategory/{id}/{status}' , [SubCategoryController::class , 'status'])->name('subcategory.status');
+
     // Services 
     Route::resource('services' , ServiceController::class);
     Route::any('services/{id}/{status}' , [ServiceController::class , 'status'])->name('services.status');
     // Packages 
     Route::resource('package' , PackageController::class );
     Route::any('package/{id}/{status}' , [PackageController::class , 'status'])->name('package.status');
+    // Review
+    Route::resource('review' , ReviewController::class);
+    // General Settings
+    Route::resource('general' , GeneralSettingController::class);
+    Route::get('general/release/{key}' , [GeneralSettingController::class , 'release'])->name('general.release');
+       // Blog
+    Route::resource('blog' , BlogController::class);
+    Route::any('blog/{id}/{status}' , [BlogController::class , 'status'])->name('blog.status');
+
+
     // Profile
     Route::get('/profile/edit', [AdminProfileController::class, 'index'])->name('profile.edit');
     Route::post('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
@@ -74,7 +90,7 @@ Route::get('/user/register', [FrontController::class, 'user_signup'])->name('fro
 Route::get('/user/login', [FrontController::class, 'user_login'])->name('front.user.login');
 Route::name('front.')->group(function () {
     Route::get('/', [FrontController::class, 'index'])->name('index');
-    Route::get('/instagram/callback', [FrontController::class, 'callback']);
+    Route::get('/instagram/callback', [FrontController::class, 'callback'])->name('instagram.callback');
     Route::get('/pay' , [FrontController::class , 'pay'])->name('pay');
     Route::get('/payment' , [FrontController::class , 'payment'])->name('payment');
     Route::get('/post' , [FrontController::class , 'post'])->name('post');
@@ -88,9 +104,9 @@ Route::name('front.')->group(function () {
     Route::get('/reviews', [FrontController::class, 'reviews'])->name('reviews');
     Route::get('/faq' , [FrontController::class , 'faq'])->name('faq');
     Route::post('/order' , [FrontController::class , 'order'])->name('order');
-    // Route::get('/order1' , [FrontController::class , 'order1'])->name('order1');
+    Route::get('/order1' , [FrontController::class , 'order1'])->name('order1');
     Route::get('/membership' , [FrontController::class , 'membership'])->name('membership');
-    Route::get('/sub-category/{subcategoryslug}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
+    Route::get('/sub-category/{subcategoryslug?}' , [FrontController::class , 'subcategory_packages'])->name('subcategory_packages');
     Route::post('registeration' , [UserController::class , 'register'])->name('register');
     Route::post('/user_registeration' , [UserController::class , 'userregisteration'])->name('userregisteration');
     Route::post('register/user' , [UserController::class , 'user_register'])->name('user.registration');
@@ -98,6 +114,8 @@ Route::name('front.')->group(function () {
     Route::post('login/user' , [UserController::class , 'loginUser'])->name('user.login.store');
     Route::post('packages' , [FrontController::class , 'get_packages'])->name('get_packages');
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
+    Route::resource('feedback' , FeedbackController::class);
+    Route::any('feedback/{id}/{status}' , [FeedbackController::class , 'status'])->name('feedback.status');
 });
 
 // User Auth Routes
@@ -110,3 +128,5 @@ Route::prefix('/auth')->group(function() {
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
 });
 
+Route::get('admin/delete/packages/{id}' , [SubcategoryController::class , 'package_delete'])->name('package_delete');
+Route::get('front/get/subcategory/title/{id}' , [FrontController::class , 'get_subcategory_title'])->name('get_subcategory_title');

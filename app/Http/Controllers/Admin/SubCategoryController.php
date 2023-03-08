@@ -47,17 +47,24 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        for($i=0; $i<sizeof($request->original_price); $i++){
+            if($request->original_price[$i] < $request->sale_price[$i]){
+                return redirect()->back()->with('error1' , 'Sale Price must be less than  price');
+            }
+        }
         $request->validate([
             'category_id' => 'required',
             'title' => 'required',
             'image' => 'image',
             'color' => 'required',
+            'description' => 'required',
         ]);
         $title = strtolower($request->title);
         $model = new SubCategory();
         $model->category_id = $request->category_id;
         $model->title = $request->title;
         $model->color = $request->color;
+        $model->description = $request->description;
 
 
         if($request->hasFile('image')){
@@ -70,8 +77,14 @@ class SubCategoryController extends Controller
             $subcategory_id = $model->id;
             if($request->has('qty')){
                 foreach($request->qty as $key => $q){
-                    
-                    
+                    $request->validate([
+                        'original_price' => 'nullable|gte:sale_price',
+                        'sale_price' => 'required_with:original_price',
+                    ], [
+                        'original_price.gte' => 'Sale price must be greater than or equal to the original price',
+                        'sale_price.required_with' => 'The original price field is required when the sale price field is present',
+                    ]);
+                  
                     $package = new Package();
                     $package->title  = $request->ptitle[$key];
                     $package->category_id  = $category_id;
@@ -127,17 +140,26 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $request->validate([
+        for($i=0; $i<sizeof($request->original_price); $i++){
+            if($request->original_price[$i] < $request->sale_price[$i]){
+                return redirect()->back()->with('error1' , 'Sale Price must be less than  price');
+            }
+        }
+        
+        
+        $request->validate([
         'sub_category' => 'required',
         'title' => 'required',
         'image' => 'image',
         'color' => 'required',
+        'description' => 'required',
        ]);
        $title = strtolower($request->title);
        $model = SubCategory::findorFail($id);
        $model->category_id = $request->sub_category;
        $model->title = $request->title;
        $model->color = $request->color;
+       $model->description = $request->description;
        
        if($request->has('image')){
         if(isset($model->image)){
@@ -157,6 +179,14 @@ class SubCategoryController extends Controller
         $subcategory_id = $model->id;
         if($request->has('qty')){
             foreach($request->qty as $key => $q){
+                
+                $request->validate([
+                    'sale_price' => 'required_with:original_price',
+                    'original_price' => 'nullable|gte:sale_price',
+                ], [
+                    'original_price.gte' => 'Sale price must be greater than or equal to the original price',
+                    'sale_price.required_with' => 'The original price field is required when the sale price field is present',
+                ]);
 
                 $package = Package::find($request->pid[$key] ?? 0);
                 $package = $package ?? new Package();
@@ -171,12 +201,12 @@ class SubCategoryController extends Controller
             }
         }
 
-
         return redirect()->route('admin.subcategory.index')->with('success' , 'Sub Category Updated Successfully');
        }else{
         return redirect()->route('admin.subcategory.index')->with('error' ,'Failed to Update Sub Category !');
        }
-    }
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -210,6 +240,11 @@ class SubCategoryController extends Controller
         }else{
             return redirect()->route('admin.category.index')->with('error' , 'Failed to Change Status !');
         }
+    }
+
+    public function package_delete($id){
+        $package = Package::findorFail($id);
+        return $package->destroy($id);
     }
 
 }

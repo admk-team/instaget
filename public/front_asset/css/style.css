@@ -20,8 +20,8 @@
 }
 
 @font-face {
-    font-family: "SCDREAM";
-    src: url('front_asset/fonts/SCDream4.otf') format("opentype");
+    font-family: SCDREAM4;
+    src: url(front_asset/fonts/SCDream4.otf) format("opentype");
     font-style: normal;
     font-weight: 400;
 }
@@ -55,10 +55,17 @@
 }
 
 @font-face {
-    font-family: "SCDREAM9";
-    src: url('front_asset/fonts/SCDream8.otf') format("opentype");
+    font-family: SCDREAM9;
+    src: url(front_asset/fonts/SCDream8.otf) format("opentype");
     font-style: normal;
     font-weight: 900;
+}
+* {
+    font-family: SCDREAM4 ,  Arial, Helvetica, sans-serif !important;
+}
+
+body {
+    overflow-x: hidden !important;
 }
 
 /* @font-face {
@@ -66,9 +73,7 @@
     src: url(../fonts/SCDream3.otf);
 }
 
-* {
-    font-family: "SCDREAM" Arial, Helvetica, sans-serif !important;
-}
+
 
 :root {
     --orange: #ff5a09;
@@ -207,6 +212,9 @@ body {
     /* background:linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
     /* background: linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3)); */
 
+    /* body{
+        overflow-x: hidden !important;
+    } */
 .carousel-caption {
     top: 230px;
     z-index: 1;
@@ -219,7 +227,7 @@ body {
 }
 
 .slider-caption {
-    font-size: 25px;
+    font-size: 21px;
 }
 
 .text-on-img {
@@ -352,16 +360,74 @@ body {
     width: 50%;
     margin: auto;
 }
+@media (max-width:380px){
+    .slider-caption span{
+        font-size:13px;
+    }
+    .slider-caption{
+        font-size: 15px;
+    }
+    .carousel-caption h3{
+        font-size: 22px!important;
+    }
+    .overlay{
+        position: relative;
+        display: inline-block;
+    }
+    .overlay_image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+      }
+      .insta_mobile_btn{
+        background-color: #fff;
+        border: none;
+        border-radius: 35px;
+        color: #000000;
+        padding: 21px;
+      }
+ 
+}
 
 @media (max-width: 480px) {
-    .carousel-inner .carousel-item {
+    /* .carousel-inner .carousel-item {
         height: 400px;
+    } */
+    .overlay{
+        position: relative;
+        display: inline-block;
     }
-
+    .overlay_image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+      }
+      .insta_mobile_btn{
+        background-color: #fff;
+        border: none;
+        border-radius: 35px;
+        color: #000000;
+        padding: 21px;
+      }
+    .carousel-caption h3{
+        font-size: 28px;
+    }
     .carousel-caption {
         top: 76px;
     }
-
+    .slider-section::after{
+        content: '';
+        display: block;
+        background-color: hsla(0, 0%, 0%, 0.6)!important;
+    }
     .carousel-caption .d-flex {
         display: grid;
     }
@@ -1310,7 +1376,9 @@ border: 1px solid rgba(0,0,0,.5); */
     width: calc(100% / 5);
 }
 .mobile-services-nav .services .service .mobile-social-btn{
-    width: 51px;
+    /* width: 51px; */
+    width: 65px;
+    height: 62px;
 }
 .mobile-services-nav .accordion-item {
     margin-bottom: 8px;
@@ -1539,7 +1607,7 @@ li {
 }
 
 .section-about .title {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
 }
@@ -1593,11 +1661,12 @@ li {
 }
 
 .section-about .main-img {
-    width: auto;
+    width: 100%;
     height: 575px;
     position: absolute;
     bottom: 0;
     z-index: 1;
+    object-fit: scale-down;
 }
 
 .section-about .img1 {
@@ -2285,6 +2354,7 @@ span {
         font-size: 18px;
         line-height: 1.91;
     }
+ 
 }
 
 .svg_qouted {
@@ -2932,7 +3002,7 @@ span {
 }
 
 .box .box-description {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
     max-width: 199px;
 }
@@ -3895,4 +3965,98 @@ img {
     .service-faq-title{
         font-size: 26px;
     }
+    .row .model-box33{
+        width: 108%;
+    }
+}
+
+/* Review sectin css */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer;
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important;
+}
+
+.rating>input:checked~label:before {
+    opacity: 1;
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4;
+}
+
+
+@media only screen and (max-width:470px){
+    .testimonial{
+        height: auto!important;
+    }
+    .blog_11:not(:first-child){
+        display:none !important;
+        }
+}
+
+@media (max-width:375px){
+    .section-about .row{
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y:visible;
+        padding-top: 8px;
+    }
+
+     .section-about .main-img{
+    max-width: 390px !important;
+    padding-top: 260px;
+}
+  
+.image-backgroud {
+    max-height: 324px !important;
+}
+
+.box4{
+    margin-left: 40px;
+    max-width: 143px;
+    max-height: 15vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box4 .text{
+    margin-bottom: 51px;
+}
+.model-body form .model-box33{
+    width: 108%!important;
+}
+.blog_11:not(:first-child){
+    display:none !important;
+    }
+}
+
+
+img.selected{
+    border: 4px groove #64d5ff9c !important;
+    padding: 1px !important;
 }
