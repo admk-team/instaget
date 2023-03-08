@@ -12,7 +12,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="page-header-breadcrumb">
                         <ul class="breadcrumb-title">
                             <li class="breadcrumb-item">
@@ -22,7 +22,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="page-body">
@@ -73,10 +73,10 @@
                                     </div>
                                 </div>
                             </form>
-
+                            <br>
                             <hr>
                             <br>
-
+                           
                             <!-- 2nd form -->
                             <form method="POST" action="{{ route('admin.general.store') }}">
                                 @csrf
@@ -91,9 +91,44 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                </div>
                                     
-                                </form>
+                            </form>
                             <!-- // 2nd form -->
+
+                            <br>
+                            <hr>
+                            <br>
+
+                            <!-- 3rd form -->
+                            <form method="POST" action="{{ route('admin.general.store') }}">
+                                @csrf
+                                <div class="form-group row">
+                                    <div class="col-12 col-lg-6 mb-2">
+                                        <label for="ig_username">Instagram Username</label>
+                                        <input type="text" name="ig_username" id="ig_username" value="{{ $general_setting->where('key' , 'ig_username')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Username">
+                                        @error('ig_username')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-12 col-lg-6 mb-2">
+                                        <label for="ig_password">Instagram Password</label>
+                                        <input type="password" name="ig_password" id="ig_password" value="{{ $general_setting->where('key' , 'ig_password')->first()->value ?? ''}}" class="form-control" placeholder="Instagram Password">
+                                        @error('ig_password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </div>
+                                 
+                                </div>
+                            </form>
+                            <!-- // 3rd form -->
                         </div>
                     </div>
                 </div>

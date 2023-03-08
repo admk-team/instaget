@@ -68,8 +68,29 @@ class GeneralSettingController extends Controller
             $model->value = $request->ig_access_token;
             $model->save();
         }
+
+        //for username and password
+        if($request->has(['ig_username' , 'ig_password'])){
+            $request->validate([
+                'ig_username' => 'required',
+                'ig_password' => 'required'
+               ]);
+
+                $generalSetting =  GeneralSetting::where('key','ig_username')->first();
+                $generalSetting = $generalSetting ?? new GeneralSetting();
+                $generalSetting->key ='ig_username' ;
+                $generalSetting->value = $request->ig_username;
+                $generalSetting->save();
+
+               $generalSetting2 =  GeneralSetting::where('key','ig_password')->first();
+               $generalSetting2 = $generalSetting2 ?? new GeneralSetting();
+               $generalSetting2->key ='ig_password' ;
+               $generalSetting2->value = $request->ig_password;
+               $generalSetting2->save();
+        
+        }
        
-        return redirect()->route('admin.general.index')->with('success', 'Your general setting has been saved.');
+        return redirect()->route('admin.general.index')->with('success', 'Settings has been saved.');
     }
 
     /**
