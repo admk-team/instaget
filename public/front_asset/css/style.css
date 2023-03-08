@@ -4054,3 +4054,9 @@ img {
     display:none !important;
     }
 }
+
+
+img.selected{
+    border: 4px groove #64d5ff9c !important;
+    padding: 1px !important;
+}
