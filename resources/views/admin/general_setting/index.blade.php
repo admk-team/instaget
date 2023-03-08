@@ -101,7 +101,7 @@
                             <br>
 
                             <!-- 3rd form -->
-                            <form method="POST" action="{{ route('admin.general.store') }}">
+                            <form method="POST" action="{{ route('admin.general.store') }}" autocomplete="off">
                                 @csrf
                                 <div class="form-group row">
                                     <div class="col-12 col-lg-6 mb-2">
