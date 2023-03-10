@@ -16,7 +16,7 @@
             <span class="input-group-text" id="basic-addon1">
               <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
             </span>
-            <input type="email" name="email" class="form-control border-left-0" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $request->email ?? '' }}">
+            <input type="email" name="email" class="form-control border-left-0" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $email ?? old('email') ?? '' }}">
           </div>
           @error('email')
           <span class="text-danger">{{$message }}</span>
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="guest-login mt-4">
-      <a href="{{ route('front.instagram.guestpost') }}" class="btn guest_btn w-100">비회원 구매하기</a>
+      <a href="{{ route('front.instagram.guestpost', isset($email) ? ['email'=> $email] : []) }}" class="btn guest_btn w-100">비회원 구매하기</a>
     </div>
   </div>
 </div>

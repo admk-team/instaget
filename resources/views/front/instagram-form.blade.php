@@ -5,9 +5,6 @@
       <div class="col-12 col-md-7">
         <div class="card" style="border: 0;border-radius: 20px;">
           <div class="card-body">
-            @if (session()->has('error'))
-                {{ session()->get('error') }}
-            @endif
             <h4>주문&결제</h4>
             <hr>
             <form action="{{ route('front.instagram.fetchpost') }}" method="POST" class="pt-2 pb-2">

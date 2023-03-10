@@ -64,6 +64,10 @@
     font-family: SCDREAM4 ,  Arial, Helvetica, sans-serif !important;
 }
 
+body {
+    overflow-x: hidden !important;
+}
+
 /* @font-face {
     font-family: SCDREAM9;
     src: url(../fonts/SCDream3.otf);
@@ -4049,4 +4053,10 @@ img {
 .blog_11:not(:first-child){
     display:none !important;
     }
+}
+
+
+img.selected{
+    border: 4px groove #64d5ff9c !important;
+    padding: 1px !important;
 }
