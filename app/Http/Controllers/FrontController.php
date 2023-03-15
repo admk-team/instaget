@@ -22,15 +22,15 @@ use Phpfastcache\Helper\Psr16Adapter;
 class FrontController extends Controller
 {
     //Attibutes from configuration
-    protected $ig_username = '';
-    protected $ig_password = '';
+    protected $ig_username;
+    protected $ig_password;
     
     public function __construct()
     {
         try {
             $gs = GeneralSetting::all();
-            $this->ig_username = $gs->where('key', 'ig_username')->first()->value ?? 'instaget2gust';
-            $this->ig_password = $gs->where('key', 'ig_password')->first()->value ?? 'instaget2@gustr.coM';
+            $this->ig_username = $gs->where('key', 'ig_username')->first()->value ?? 'applay24.contact@gmail.com';
+            $this->ig_password = $gs->where('key', 'ig_password')->first()->value ?? 'dkwkdkwk220!';
         }catch(\Exception $e){
             //
         }
@@ -126,9 +126,11 @@ class FrontController extends Controller
                     $username = $request->instagram_username;
                     $old_data=session()->get($username);
                     if (!$old_data) {
-                        $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
-                        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
-                        $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+                        // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+                        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
+                            'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
+                        ]), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
+                        $instagram->login(false, true); // will use cached session if you want to force login $instagram->login(true)
                         $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
         
                         $medias = $instagram->getMedias($username);
@@ -149,16 +151,14 @@ class FrontController extends Controller
     public function guest_post(){
         try {
             $username = session()->get('INSTAGRAM_USERNAME');
-            $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
-            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
-            $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+            // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
+                'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
+            ]), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
+            $instagram->login(false, true); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
             $medias = $instagram->getMedias($username);
-            if($medias){
-                return $medias;
-            }else{
-                return $medias;
-            }
+          
             return view('front.post', compact('medias'));
         } catch (\Exception $th) {
             
@@ -193,7 +193,7 @@ class FrontController extends Controller
     }  
 
     public function test_insta(Request $request){
-         $username = $request->u;
+         $u = $request->u;
 
         $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
                 
@@ -211,12 +211,14 @@ class FrontController extends Controller
         // $instagram->setCustomCookies($newCookie);
         
         //return $medias = $instagram->getAccountInfo($username);
-        $username = $request->username ?? 'instaget2gust';
-        $password = $request->password ?? 'instaget2@gustr.coM';
-        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
-        $instagram->login(true); // will use cached session if you want to force login $instagram->login(true)
-        $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
-        $medias = $instagram->getMedias($username);
+        $username = $request->username ?? 'applay24.contact@gmail.com';
+        $password = $request->password ?? 'dkwkdkwk220!';
+        $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
+            'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
+        ]), $username, $password, new Psr16Adapter('Files'));
+        $instagram->login(true, true); // will use cached session if you want to force login $instagram->login(true)
+        $instagram->saveSession(54564556);  //DO NOT forget this in order to save the session, otherwise have no sense
+        $medias = $instagram->getMedias($u);
         return view('front.post',compact('medias'));
 
     }
