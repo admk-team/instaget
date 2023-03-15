@@ -123,6 +123,13 @@ class FrontController extends Controller
         if($user){
             if(auth()->user()){
                 try {
+                    $newCookie = [
+                        "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
+                        "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
+                        "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
+                        "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
+                        "ds_user_id"    =>	"58291820147",
+                    ];
                     $username = $request->instagram_username;
                     $old_data=session()->get($username);
                     if (!$old_data) {
@@ -130,6 +137,8 @@ class FrontController extends Controller
                         $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
                             'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
                         ]), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
+                        $instagram->setCustomCookies($newCookie);
+                        $instagram->setUserAgent('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36');
                         $instagram->login(false, true); // will use cached session if you want to force login $instagram->login(true)
                         $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
         
@@ -150,11 +159,21 @@ class FrontController extends Controller
     }
     public function guest_post(){
         try {
+            $newCookie = [
+                "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
+                "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
+                "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
+                "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
+                "ds_user_id"    =>	"58291820147",
+            ];
+    
             $username = session()->get('INSTAGRAM_USERNAME');
             // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
             $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
                 'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
             ]), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
+            $instagram->setCustomCookies($newCookie);
+            $instagram->setUserAgent('User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36');
             $instagram->login(false, true); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
             $medias = $instagram->getMedias($username);
