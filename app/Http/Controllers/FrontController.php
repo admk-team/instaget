@@ -149,8 +149,12 @@ class FrontController extends Controller
     public function guest_post(){
         try {
             $username = session()->get('INSTAGRAM_USERNAME');
-            $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
-            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $this->ig_username, $this->ig_password, new Psr16Adapter('Files'));
+            // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+            $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(
+                [
+                    'proxy' =>'139.162.243.254:30194'
+                ]
+            ), "applay24.contact@gmail.com", "dkwkdkwk220!", new Psr16Adapter('Files'));
             $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
             $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
             $medias = $instagram->getMedias($username);
