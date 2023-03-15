@@ -216,8 +216,8 @@ class FrontController extends Controller
         $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
             'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
         ]), $username, $password, new Psr16Adapter('Files'));
-        $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
-        $instagram->saveSession(54564556);  //DO NOT forget this in order to save the session, otherwise have no sense
+        //$instagram->login(); // will use cached session if you want to force login $instagram->login(true)
+        //$instagram->saveSession(54564556);  //DO NOT forget this in order to save the session, otherwise have no sense
         $medias = $instagram->getMedias($u);
         return view('front.post',compact('medias'));
 
