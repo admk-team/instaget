@@ -167,7 +167,7 @@
     </section>
 
     <!-- START: Blog Section -->
-    <div class="section section-blog py-4 mb-5 mt-5">
+    <div class="section section-blog py-4 mb-5 mt-5 d-none d-md-block">
      <div class="container">
       <div class="text-center mb-5">
           {{-- <span class="label-new">BLOG & NEWS</span> --}}
@@ -209,4 +209,30 @@
      </div>
     </div>
     <!-- End: Blog Section -->
+
+
+
+        <!-- START: Blog Section for mobile device -->
+        <div class="section section-blog py-4 mb-5 mt-5 d-block d-md-none">
+            <div class="container">
+             <div class="text-center mb-5">
+                 {{-- <span class="label-new">BLOG & NEWS</span> --}}
+                 <h1 class="section-title">SNS마케팅 비법 & 최신로직 </h1>
+                 <p class="section-description">최신 인스타그램, 유튜브, N사, 앱 마케팅 로직을 인스타몽에서 확인하세요.<br> 전문 마케터가 SNS마케팅 방법에 관한 블로그를 공유해드립니다. </p>
+               </div>
+               <div class="row">
+                 <div class="col-12 col-md-6 col-lg-4 mb-5">
+                   <div class="blog-post">
+                     <div class="thumbnail">
+                       <img src="https://www.wordpress.codeinsolution.com/savvy/wp-content/uploads/sites/7/2022/08/surfing-social-media-for-marketing-analysis.jpg" alt="">
+                     </div>
+                     <h1 class="post-title">Five SEO Content Types To Grow Your Business Through 2020</h1>
+                     <p class="post-description">Five SEO Content Types To Grow Your Business Through 2020 John Doe January 6, 2023 Lorem ipsum dolor sit amet,....</p>
+                     <a href="javascript:void(0)" class="read-more">더 알아보기 <span class="bi bi-arrow-right-short"></span></a>
+                   </div>
+                 </div>
+               </div>
+            </div>
+           </div>
+           <!-- End: Blog Section for mobile device  -->
 @endsection

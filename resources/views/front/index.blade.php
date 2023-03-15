@@ -17,7 +17,7 @@
           <div class="carousel-item active">
             <div class="overlay">
               <img src="{{ asset('front_asset/images/home-bg-placeholder.png')}}" id="home-bg-placeholder" class="img-fluid" alt="">
-              <video class="fullscreen d-none d-md-block" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop>
+              <video class="fullscreen d-none d-md-block" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop style="width: -webkit-fill-available!important;">
               </video>
             </div>
             <div class="carousel-caption trickcenter">
@@ -213,51 +213,51 @@
     {{-- for mobiel device --}}
     <div id="carouselExampleIndicators" class="carousel slide d-md-none d-block" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5" style="background-color: #d98100"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4" style="height:192px;">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/instagram.png') }}"  alt="">
             <h5 class="dark-section-card-title">인스타그램 마케팅</h5>
             <p class="dark-section-card-text-1">인스타그램 팔로워, 좋아요 늘리기 서비스 뿐만아니라 댓글, 조회수, 노출도달 트래픽 관리를 쉽게 해보세요. </p>
           </div>
         </div>
         <div class="carousel-item">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/youtube.png') }}"  alt="">
             <h5 class="dark-section-card-title">유튜브 마케팅</h5>
             <p class="dark-section-card-text-1">유튜브 수익창출 채널로 키우는 핵심인 유튜브 조회수, 구독자 늘리기 서비스를 제공합니다.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/naver.png') }}"  alt="">
             <h5 class="dark-section-card-title">N쇼핑,N플레이스 마케팅</h5>
             <p class="dark-section-card-text-1">N사 쇼핑 및 플레이스 리얼클릭 트래픽을 통해 단기간 순위상승이 가능합니다.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/talk.png') }}" alt="">
             <h5 class="dark-section-card-title">K사 마케팅</h5>
             <p class="dark-section-card-text-1">K사 채널친구 늘리기 마케팅은 실제 한국인 유저들로 안전하게 집행됩니다. </p>
           </div>
         </div>
         <div class="carousel-item">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/android.png') }}"  alt="">
             <h5 class="dark-section-card-title">구글플레이 앱마케팅</h5>
             <p class="dark-section-card-text-1">구글 앱 설치, 키워드 설치 및 앱리뷰를 다년간 진행해 온 노하우로 안전한 앱마케팅을 제공합니다.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4">
+          <div class="dark-section-card col-lg-3 col-md-5 bg-light text-dark  mb-4 p-2">
             <img class="mb-3 social-media-icon" src="{{ asset('front_asset/images/icons/google-play.png') }}"  alt="">
             <h5 class="dark-section-card-title">앱스토어 앱마케팅</h5>
             <p class="dark-section-card-text-1">IOS 앱 설치, 키워드 설치 서비스는  앱 순위상승 효과를 기대할 수 있습니다.  </p>
@@ -289,14 +289,14 @@
 
     {{-- for mobile device --}}
 
-    <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-ride="carousel">
+    <div id="carouselExampleIndicators1" class="carousel slide d-md-none" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="1" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="2" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="3" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="4" style="background-color: #d98100"></li>
+        <li data-target="#carouselExampleIndicators1" data-slide-to="5" style="background-color: #d98100"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
