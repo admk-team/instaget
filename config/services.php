@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('GOOGLE_CLIENT_REDIRECT'),
+        'redirect' => url('/auth/google/callback'),
     ],
     'naver' => [
         'client_id' => env('NAVAR_CLIENT_ID'),
