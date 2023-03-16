@@ -290,9 +290,4 @@ class FetchController extends Controller
 
 	}
 
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 666acf0c92424b27084e02f4b38eca218788684f
 }
