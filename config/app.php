@@ -181,7 +181,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        // \SocialiteProviders\Manager\ServiceProvider::class, // add
+         \SocialiteProviders\Manager\ServiceProvider::class, // add
+        
 
         /*
          * Package Service Providers...
@@ -196,7 +197,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        // Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 

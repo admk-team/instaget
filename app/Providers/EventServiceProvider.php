@@ -19,8 +19,8 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            // add your listeners (aka providers) here
-            'SocialiteProviders\\Naver\\NaverExtendSocialite@handle',
+            // ... other providers
+            \SocialiteProviders\Naver\NaverExtendSocialite::class.'@handle',
         ],
     ];
 

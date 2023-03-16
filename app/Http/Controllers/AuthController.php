@@ -78,7 +78,7 @@ class AuthController extends Controller
     {
         return Socialite::driver('naver')->redirect();
     }
-    public function handleProviderCallbackNaver()
+    public function handleProviderCallbackNaver($provider)
         {
             $user = Socialite::driver('naver')->user();
 
