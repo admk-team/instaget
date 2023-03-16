@@ -214,6 +214,31 @@ class FrontController extends Controller
     public function test_insta(Request $request){
          $u = $request->u;
 
+
+        $cookie = 'mid=ZBLgYwALAAH90tGthtN0IuReBR1z; ig_did=C5B9B5A8-7479-452F-B09A-8B742415CDFB; ig_nrcb=1; datr=YeASZKDp-ZfRCya7qNGBwWxq';              // <!-- required!! please get your cookie from your browser console (6)
+        $userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36';     // <!-- required!! please get your user-agent from your browser console (7)
+        $xIgAppId = '936619743392459'; 
+                              // <!-- required!! please get your x-ig-app-id from your browser console (8)
+         $fetch = FetchController::fetch([
+
+            "header" =>                                   
+                'cookie: ' . $cookie . "\r\n" .
+                'user-agent: ' . $userAgent . "\r\n" .
+                'x-ig-app-id: ' . $xIgAppId . "\r\n" .
+                '',
+        
+            "maxImages" => 4,							// <!-- optional, 12 is the max number
+            "file" => public_path('/storage/ig/'.$u.'-cache.json'),			// <!-- optional, instagram-cache.json is by default
+            "time" => 3600,								// <!-- optional, reload contents after 3600 seconds by default
+            "pretty" => true,							// <!-- optional, prettyfy json true/false
+        
+            "id" => $u,					// <!-- id is required
+        
+        ]);
+
+            return redirect('/storage/ig/'.$u.'-cache.json');
+
+
         // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
                 
         // // new flow
