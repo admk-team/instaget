@@ -111,8 +111,9 @@
                             </button>
                         </div>
                         <div class="form-outline form-white mb-4 ">
-                            <button type="submit"
-                                class="form-control form-control-lg loginform google rounded-border bg-google border-0">
+                            <a href="{{ route('google.login.redirect') }}" class="text-decoration-none text-white">
+                                <button type="submit"
+                                class="form-control form-control-lg loginform google rounded-border bg-google border-0 google_login">
                                 <div class="google_search">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="fcxgslfzvt" x="0px"
@@ -132,6 +133,7 @@
 
                                 </div>
                             </button>
+                            </a>
                         </div>
                         <div class="d-flex justify-content-between responsive">
                             <p class="new_to_insta">인스타그램을 처음 접하다 ?</p>
