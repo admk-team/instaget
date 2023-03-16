@@ -48,8 +48,9 @@
                             </div>
                         </form>
                         <div class="form-outline form-white mb-4 ">
+                            <a href="{{ route('naver.login') }}" class="text-decoration-none text-white">
                             <button type="submit"
-                                class="form-control form-control-lg  loginform rounded-border bg-naver border-0">
+                                class="form-control form-control-lg  loginform rounded-border naver bg-naver border-0">
                                 <div class="naver">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="paeqmul3mu" x="0px"
@@ -75,6 +76,7 @@
                                     <span>네이버 간편가입</span>
                                 </div>
                             </button>
+                        </a>
                         </div>
                         <div class="form-outline form-white mb-4 ">
                             <button type="submit"
@@ -151,13 +153,13 @@
 </div>
 
 
-    {{-- <script>
+    <script>
 
         $('.kakoa').on("click", (event) => {
             window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=971ab799aa742e1f80c80c23e9c672ab&redirect_uri=http://127.0.0.1:8000/auth/kako&response_type=code";
         });
 
-    </script> --}}
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -181,6 +183,23 @@
       })
 </script>
 
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//dhdbstjr98.github.io/naver-id-login/naver-id-login.js"></script>
+<script>
+  // jQuery의 $.on 사용시 override된 addEventListener 동작x
+  window.naverIdLogin.addEventListener("load", function() {
+    this.init("<clientId>", (res) => {
+      if(res.error) {
+        alert(res.error_description);
+        return;
+      }
+
+      console.log(res.access_token);
+    });
+   
+    $("#naver-id-login").click(this.trigger);
+  });
+</script>
 
 {{-- <script>
     function addChannel() {

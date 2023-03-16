@@ -17,7 +17,8 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
         "phpfastcache/phpfastcache": "^9.1",
-        "raiym/instagram-php-scraper": "^0.12.9"
+        "raiym/instagram-php-scraper": "^0.12.9",
+        "socialiteproviders/naver": "^4.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

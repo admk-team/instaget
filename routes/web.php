@@ -126,6 +126,8 @@ Route::prefix('/auth')->group(function() {
     // User Kakao Auth Routes
     Route::get('/kako', [UserAuthController::class, 'kakao'])->name('kakao');
     Route::get('/kako/redirect', [UserAuthController::class, 'kakao_red'])->name('kakao');
+    Route::get('/naver', [UserAuthController::class , 'redirectToProviderNaver'])->name('naver.login');
+    Route::get('naver/callback', [UserAuthController::class , 'handleProviderCallbackNaver']);
 });
 
 Route::get('admin/delete/packages/{id}' , [SubcategoryController::class , 'package_delete'])->name('package_delete');

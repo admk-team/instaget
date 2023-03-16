@@ -71,4 +71,39 @@ class AuthController extends Controller
         auth()->login($user);
         return redirect('/');
     }
+
+
+    // Naver Integration 
+    public function redirectToProviderNaver()
+    {
+        return Socialite::driver('naver')->redirect();
+    }
+    public function handleProviderCallbackNaver()
+        {
+            $user = Socialite::driver('naver')->user();
+
+            $chk_email = User::where('email', $user->email)->first();
+            if($chk_email){
+                User::where('email', $user->email)->update(array('naver_id'=> $user->id));
+                auth()->login($chk_email);
+                return redirect('/home');
+            }
+
+            $finduser = User::where('naver_id', $user->id)->first();
+
+            if($finduser){
+                auth()->login($finduser);
+                return redirect('/home');
+            }else{
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'naver_id'=> $user->id,
+                    'password'=> bcrypt('123456789')
+                ]);
+
+                auth()->login($newUser);
+                return redirect('/home');
+            }
+        }
 }
