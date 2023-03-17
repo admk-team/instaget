@@ -38,7 +38,7 @@ return [
     'naver' => [
         'client_id' => env('NAVAR_CLIENT_ID'),
         'client_secret' => env('NAVAR_CLIENT_SECRET'),
-        'redirect' => '/auth/naver/callback',
+        'redirect' => '/auth/naver/callback',  
     ],
 
 ];

@@ -81,29 +81,18 @@ class AuthController extends Controller
     public function handleProviderCallbackNaver()
         {
             $user = Socialite::driver('naver')->user();
-
-            $chk_email = User::where('email', $user->email)->first();
-            if($chk_email){
-                User::where('email', $user->email)->update(array('naver_id'=> $user->id));
-                auth()->login($chk_email);
-                return redirect('/home');
-            }
-
-            $finduser = User::where('naver_id', $user->id)->first();
-
-            if($finduser){
-                auth()->login($finduser);
-                return redirect('/home');
-            }else{
-                $newUser = User::create([
+            $naveruser = User::where('email' , $user->email)->where('provider', 'naver')->first();
+            if(!$naveruser){
+                $naveruser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'naver_id'=> $user->id,
-                    'password'=> bcrypt('123456789')
+                    'password' => '',
+                    'provider' => 'naver',
+                    'avatar' => $user->avatar,
                 ]);
-
-                auth()->login($newUser);
-                return redirect('/home');
             }
+    
+            auth()->login($naveruser);
+            return redirect('/');
         }
 }
