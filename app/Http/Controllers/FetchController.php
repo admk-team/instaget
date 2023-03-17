@@ -29,7 +29,7 @@ class FetchController extends Controller
 			'http' => array(
 				'method' => "GET",
 				'header' => $header,
-                'proxy'  => 'http://adhelp2022:cTD8KQnQmw@94.124.161.171:50100',
+                'proxy'  => '94.124.161.171:50100',
                 'request_fulluri' => true,
 			)
 		);
@@ -289,5 +289,6 @@ class FetchController extends Controller
 		return file_get_contents($file);
 
 	}
+
 
 }

@@ -20,7 +20,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             // add your listeners (aka providers) here
-            'SocialiteProviders\\Naver\\NaverExtendSocialite@handle',
+            \SocialiteProviders\Naver\NaverExtendSocialite::class.'@handle',
         ],
     ];
 
