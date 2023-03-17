@@ -92,7 +92,7 @@ class AuthController extends Controller
             //     ]);
             // }
     
-            auth()->login($user->email);
+            auth()->login(1);
             return redirect('/');
         }
 }
