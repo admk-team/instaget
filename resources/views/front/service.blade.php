@@ -326,7 +326,13 @@
           <div class="d-flex service-lower-lower-section">
               <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
                   <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
+                  @if(auth()->check())
                   <button class="service-lower-button" data-toggle="modal" data-target="#exampleModal1" type="button">후기작성</button>
+                  @else
+                  <a href="{{ route('front.login') }}">
+                  <button class="service-lower-button"  type="button">후기작성</button>
+                </a>
+                  @endif
               </div>
               {{-- Review Model start herer --}}
               <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -372,8 +378,10 @@
                                   <div class="row mt-3 ">
                                       <div class="col-md-12" style="background-color: #F6F6F6;">
                                           <div class="d-flex justify-content-center align-items-center">
-                                              <i class="bi bi-plus-circle " style="font-size:50px;"></i>
-
+                                            <label>
+                                                <i class="bi bi-plus-circle " style="font-size:50px;"></i>
+                                                <input type="file" style="opacity:-100" name="image" class="d-none">
+                                               </label>
                                               <h5 class="pl-2">파일 첨부</h5>
                                           </div>
 
@@ -391,7 +399,9 @@
                           </div>
                           <div style="margin:0px auto;" class="mb-3">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal"> 닫다 </button>
+                             
                               <button type="submit" class="btn text-white" style="background-color:#e75e3e">입력완료</button>
+                             
                           </div>
                           </form>
 

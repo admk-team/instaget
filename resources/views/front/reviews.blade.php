@@ -93,7 +93,13 @@
             </div>
             <div>
               <button href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal1" type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
+                @if(auth()->check())
                 <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span>
+                @else
+                <a href="{{ route('front.login') }}">
+                  <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span>
+              </a>
+                @endif
               </button>
             </div>
              {{-- Review Model start herer --}}
@@ -140,8 +146,10 @@
                               <div class="row mt-3 ">
                                   <div class="col-md-12" style="background-color: #F6F6F6;">
                                       <div class="d-flex justify-content-center align-items-center">
-                                          <i class="bi bi-plus-circle " style="font-size:50px;"></i>
-
+                                        <label>
+                                         <i class="bi bi-plus-circle " style="font-size:50px;"></i>
+                                         <input type="file" style="opacity:-100" name="image" class="d-none">
+                                        </label>
                                           <h5 class="pl-2">파일 첨부</h5>
                                       </div>
 
