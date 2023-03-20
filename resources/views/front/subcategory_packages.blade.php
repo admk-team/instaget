@@ -362,6 +362,8 @@
  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
+          @csrf
           <div class="modal-header" style="background-color:#e75e3e">
               <h5 class="modal-title text-white" id="exampleModalLabel"> 리뷰를 작성</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -369,8 +371,7 @@
               </button>
           </div>
           <div class="model-body container">
-              <form method="POST" action="{{ route('front.feedback.store') }}" enctype="multipart/form-data">
-                  @csrf
+                  
                   <div class="row mt-3">
                       <div class="col-md-12">
                           <select class="form-select" aria-label="Default select example" name="product">
@@ -402,16 +403,15 @@
                   <div class="row mt-3 ">
                       <div class="col-md-12" style="background-color: #F6F6F6;">
                           <div class="d-flex justify-content-center align-items-center">
+                            <label>
                               <i class="bi bi-plus-circle " style="font-size:50px;"></i>
-
+                              <input type="file" style="opacity:-100" name="image" class="d-none">
+                            </label>
                               <h5 class="pl-2">파일 첨부</h5>
                           </div>
 
                           <p class="text-center">
                               최대 3개까지 첨부 가능 (jpg, png , jpeg)</p>
-                          <div>
-                              <input type="file" style="opacity:-100" name="image">
-                          </div>
                       </div>
                   </div>
                  <div class="row">
@@ -419,7 +419,7 @@
                  </div>
                   <p> ※ 이용정책에 맞지 않는 리뷰를 작성하시면 예고 없이 삭제될 수 있습니다.</p>
           </div>
-          <div style="margin:0px auto;" class="mb-3">
+          <div  class="mb-3 d-flex justify-content-center" style="gap:10px;margin:0px auto;">
               <button type="button" class="btn btn-secondary" data-dismiss="modal"> 닫다 </button>
               <button type="submit" class="btn text-white" style="background-color:#e75e3e">입력완료</button>
           </div>

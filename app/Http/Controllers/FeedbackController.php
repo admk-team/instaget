@@ -37,12 +37,12 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
+     
         $request->validate([
             'product' => 'required',
             'rating' => 'required',
             'subject' => 'required',
             'description' => 'required',
-            'image' => 'required'
         ]);
 
         $user_id = auth()->user()->id;
