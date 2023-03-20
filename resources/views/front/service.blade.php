@@ -369,8 +369,14 @@
         <div class="d-flex service-lower-lower-section">
             <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
                 <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
+                @if(auth()->check())
                 <button class="service-lower-button" data-toggle="modal" data-target="#exampleModal1"
                     type="button">후기작성</button>
+                    @else
+                    <a href="{{ route('front.login') }}"><button class="service-lower-button" 
+                        type="button">후기작성</button></a>
+                        @endif
+
             </div>
             {{-- Review Model start herer --}}
             <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

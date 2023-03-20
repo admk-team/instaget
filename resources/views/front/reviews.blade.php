@@ -92,14 +92,15 @@
               <p>{{ $review->description ?? '' }}</p>
             </div>
             <div>
+              @if(auth()->check())
               <button href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal1" type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
                 @if(auth()->check())
                 <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span>
                 @else
-                <a href="{{ route('front.login') }}">
-                  <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span>
-              </a>
-                @endif
+                <button href="javascript:void(0)"  type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
+               <a href="{{ route('front.login') }}">
+                <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span></a>
+@endif
               </button>
             </div>
              {{-- Review Model start herer --}}
