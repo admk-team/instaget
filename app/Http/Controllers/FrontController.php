@@ -123,14 +123,17 @@ class FrontController extends Controller
         if($user){
             if(auth()->user()){
                 try {
-                    $newCookie = [
-                        "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
-                        "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
-                        "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
-                        "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
-                        "ds_user_id"    =>	"58291820147",
-                    ];
+                    // $newCookie = [
+                    //     "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
+                    //     "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
+                    //     "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
+                    //     "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
+                    //     "ds_user_id"    =>	"58291820147",
+                    // ];
                     $username = $request->instagram_username;
+                    
+                    return $this->test_insta($username);
+                    
                     $old_data=session()->get($username);
                     if (!$old_data) {
                         // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
@@ -159,15 +162,19 @@ class FrontController extends Controller
     }
     public function guest_post(){
         try {
-            $newCookie = [
-                "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
-                "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
-                "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
-                "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
-                "ds_user_id"    =>	"58291820147",
-            ];
+            
+
+            
+            // $newCookie = [
+            //     "ig_did"        =>	"2177FD05-7AF7-47BC-B00D-B963E0C90774",
+            //     "mid"           =>	"ZBHCMQALAAFNxaNp5Yxzy2oc0MFt",
+            //     "sessionid"     =>	"58291820147%3Aj6wxJ0tCXJytbH%3A6%3AAYdtCrBRQyh6tmRiGIb8T4ci7g6BlxgP-F6bJ2Xomw",
+            //     "csrftoken"     =>	"2QaqvQ7FThamrtTuc2HzBsYfem9DcQkR",
+            //     "ds_user_id"    =>	"58291820147",
+            // ];
     
             $username = session()->get('INSTAGRAM_USERNAME');
+             return $this->test_insta( $username);
             // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
             $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client([
                 'proxy' => 'adhelp2022:cTD8KQnQmw@94.124.161.171:50100'
@@ -211,11 +218,9 @@ class FrontController extends Controller
         return view('front.payment',compact('package'));
     }  
 
-    public function test_insta(Request $request){
-         $u = $request->u;
+    public function test_insta($u = 'taste'){
 
-
-        $cookie = 'mid=ZBLgYwALAAH90tGthtN0IuReBR1z; ig_did=C5B9B5A8-7479-452F-B09A-8B742415CDFB; ig_nrcb=1; datr=YeASZKDp-ZfRCya7qNGBwWxq';              // <!-- required!! please get your cookie from your browser console (6)
+        $cookie = 'mid=ZBHCMQALAAFNxaNp5Yxzy2oc0MFt; ig_did=2177FD05-7AF7-47BC-B00D-B963E0C90774; datr=MMIRZGaIOVoEY8VokhuKgkgn; ds_user_id=58291820147; csrftoken=nFRFxlutWsDNivP4bLREyePurfZ6BdHK; sessionid=58291820147%3ARRpRIXORt9EQOs%3A1%3AAYdGX-7Tq5A8TXOK-zFp34InX6bkjPchCK9Eilvvyw; rur="NCG\05458291820147\0541710580968:01f7b4de995eff857f4b65b2761e111426104b3aafd0729908b2697ead1601e7dbb2d2b0"';              // <!-- required!! please get your cookie from your browser console (6)
         $userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36';     // <!-- required!! please get your user-agent from your browser console (7)
         $xIgAppId = '936619743392459'; 
                               // <!-- required!! please get your x-ig-app-id from your browser console (8)
@@ -227,7 +232,7 @@ class FrontController extends Controller
                 'x-ig-app-id: ' . $xIgAppId . "\r\n" .
                 '',
         
-            "maxImages" => 4,							// <!-- optional, 12 is the max number
+            "maxImages" => 10,							// <!-- optional, 12 is the max number
             "file" => public_path('/storage/ig/'.$u.'-cache.json'),			// <!-- optional, instagram-cache.json is by default
             "time" => 3600,								// <!-- optional, reload contents after 3600 seconds by default
             "pretty" => true,							// <!-- optional, prettyfy json true/false
@@ -236,8 +241,8 @@ class FrontController extends Controller
         
         ]);
 
-            return redirect('/storage/ig/'.$u.'-cache.json');
-
+            //return redirect('/storage/ig/'.$u.'-cache.json');
+            return view('front.post1', ['username' => $u]);
 
         // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
                 
