@@ -94,14 +94,12 @@
             <div>
               @if(auth()->check())
               <button href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal1" type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
-                @if(auth()->check())
-                <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span>
+                <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span></button>
                 @else
-                <button href="javascript:void(0)"  type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
                <a href="{{ route('front.login') }}">
-                <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span></a>
+                <button href="javascript:void(0)"  type="button" style="background-color: #e75e3e; border:none; " class="btn-cta d-flex justify-content-center align-items-end  text-black">
+                  <img src="{{ asset('front_asset/images/icons/pen-paper.svg') }}" alt=""> <span class="text-white">리뷰를 작성</span></button></a>
 @endif
-              </button>
             </div>
              {{-- Review Model start herer --}}
              <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
