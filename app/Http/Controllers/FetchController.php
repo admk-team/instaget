@@ -29,8 +29,8 @@ class FetchController extends Controller
 			'http' => array(
 				'method' => "GET",
 				'header' => $header,
-                'proxy'  => '94.124.161.171:50100',
-                'request_fulluri' => true,
+                //'proxy'  => '94.124.161.171:50100',
+                //'request_fulluri' => true,
 			)
 		);
 		
