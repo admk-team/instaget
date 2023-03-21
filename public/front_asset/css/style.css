@@ -3188,10 +3188,10 @@ span {
     }
     
     .dark-inner h1{
-        font-size: 22px;
+        font-size: 20px;
     }
     .box-container .box-container-title{
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 @media(max-width:320px){
@@ -3202,7 +3202,7 @@ span {
         font-size: 26px;
     }
     .service-lower-title{
-        font-size: 22px;
+        font-size: 20px;
     }
     .service-lower-button {
         width: 207px;
