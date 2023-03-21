@@ -2295,6 +2295,12 @@ span {
         margin-bottom: 20px;
         background-color: #1b2430;
     }
+    .dark-inner h1{
+        font-size: 22px;
+    }
+    .box-container .box-container-title{
+        
+    }
 }
 
 @media (max-width: 768px) {
@@ -3180,6 +3186,13 @@ span {
     .tabs-button{
         height: 80px !important;
     }
+    
+    .dark-inner h1{
+        font-size: 22px;
+    }
+    .box-container .box-container-title{
+        font-size: 22px;
+    }
 }
 @media(max-width:320px){
     .service-faq-question-title {
@@ -3195,6 +3208,13 @@ span {
         width: 207px;
         font-size: 30px;
         height: 71px;
+    }
+    
+    .dark-inner h1{
+        font-size: 22px;
+    }
+    .box-container .box-container-title{
+        font-size: 22px;
     }
     .service-upper-button{
         padding-bottom: 65px !important;
