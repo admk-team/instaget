@@ -3162,6 +3162,15 @@ span {
     /* margin-left: 6px; */
 }
 @media(max-width:480px){
+    .service-faq-question-title {
+        font-size: 20px;
+    }
+    .service-faq-title{
+        font-size: 26px;
+    }
+    .service-lower-title{
+        font-size: 30px;
+    }
     .service-upper-button{
         padding-bottom: 59px !important;
     }
@@ -3173,6 +3182,20 @@ span {
     }
 }
 @media(max-width:320px){
+    .service-faq-question-title {
+        font-size: 16px;
+    }
+    .service-faq-title{
+        font-size: 26px;
+    }
+    .service-lower-title{
+        font-size: 22px;
+    }
+    .service-lower-button {
+        width: 207px;
+        font-size: 30px;
+        height: 71px;
+    }
     .service-upper-button{
         padding-bottom: 65px !important;
     }
@@ -3455,6 +3478,7 @@ span {
     padding: .8rem 2rem;
     color: white;
     font-size: 1.2rem;
+    height: 56px;
 }
 
 .mobile-checkout-main .mobile .shop-btn,    
@@ -3468,7 +3492,8 @@ span {
 /* order page  */
  
 .heading {
-    font-size: 2.2rem !important;
+    /* font-size: 2.2rem !important; */
+    font-size: 24px !important;
     font-weight: 800;
     margin-bottom: 1.2rem !important;
     text-align: center;

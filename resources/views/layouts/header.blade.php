@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-md-block">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-block">
     <div class="container">
       <a class="navbar-brand" href="{{ route('front.index') }}">
         <span>Intagram likes</span>
@@ -35,11 +35,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('front.login') }}">로그인</a>
             </li>
-            @else{
+            @else
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('front.login') }}">로그 아웃</a>
               </li>
-            }
           @endif
         </ul>
       </div>
