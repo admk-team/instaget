@@ -43,7 +43,7 @@
                                             @foreach ($category->subcategories as $subcategory)
                                             <li style="border-left: 3px solid {{ $subcategory->color }};"><a
                                                     href="{{ route('front.subcategory_packages' , $subcategory->slug) }}"
-                                                    class="text-decoration-none">{{ $subcategory->title }}</a>
+                                                    class="text-decoration-none text-dark">{{ $subcategory->title }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -158,7 +158,7 @@
                             <div data-package-id="{{ $pakage1->id }}"
                                 class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box"
                                 data-original="{{ floor($pakage1->original_price) }}"
-                                data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
+                                data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}" data-title="{{ $pakage1->title ?? '' }}">
                                 <h4 class="fw-bolder">
                                     {{-- @if($pakage1->sale_price)
                                     {{ floor($pakage1->sale_price) }}
@@ -220,7 +220,7 @@
                                 <div class="row px-4 mb-2">
                                     <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                                     <div class="col-auto col-9">
-                                        <select class="form-control w-100">
+                                        <select class="form-control w-100 package_title_response">
                                             <option value="">후속 조치</option>
                                             <option value="">좋아요/보기</option>
                                             <option value="">일일 후속 조치</option>
@@ -231,9 +231,13 @@
                                     <label for="inputPassword" class="col-3 col-form-label"></label>
                                     <div class="col-auto col-9">
                                         <select class="form-control w-100">
-                                            <option value="">팔로워 50명 추가</option>
-                                            <option value="">팔로워 250명 확보</option>
-                                            <option value="">팔로워 500명 확보</option>
+                                            <option value="50">수량 50명 증가</option>
+                                            <option value="100">수량 100명 증가</option>
+                                            <option value="300">수량 300명 증가</option>
+                                            <option value="500">수량 500명 증가</option>
+                                            <option value="1000">수량 1000명 증가</option>
+                                            <option value="3000">수량 3000명 증가</option>
+                                            <option value="10000">수량 10000명 증가</option>
                                         </select>
                                     </div>
                                 </div>
@@ -567,6 +571,7 @@
           let original_price = $(this).data('original')
           let sale_price = $(this).data('sale')
           let id = $(this).data('id');
+          let title = $(this).data('title');
           if (sale_price != '') {
               $('.first-box-sale-price').html('')
               $('.first-box-sale-price').append(sale_price)
@@ -579,6 +584,9 @@
           }
           $(".pakage_id").val('');
           $(".pakage_id").val($("input.pakage_id").val() + id);
+          
+          $(".package_title_response").html('');
+          $(".package_title_response").append('<option>'+title+'</option>');
 
           $('.first-box-purchase-btn').click(function() {
               $('.first-box-form').submit();

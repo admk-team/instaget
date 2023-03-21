@@ -34,7 +34,7 @@
                     <ul class="instagram-likes-ul">
                       @foreach ($category->subcategories as $subcategory)
                       <li style="border-left: 3px solid {{ $subcategory->color }};">
-                        <a href="{{ route('front.subcategory_packages' , $subcategory->slug) }}" class="text-decoration-none">{{ $subcategory->title }}</a>
+                        <a href="{{ route('front.subcategory_packages' , $subcategory->slug) }}" class="text-decoration-none text-dark">{{ $subcategory->title }}</a>
                     </li>
                       @endforeach
                     </ul>
@@ -210,10 +210,14 @@
                       <label for="inputPassword" class="col-3 col-form-label"></label>
                       <div class="col-auto col-9">
                         <select class="form-control w-100">
-                          <option value="">팔로워 50명 추가</option>
-                          <option value="">팔로워 250명 확보</option>
-                          <option value="">팔로워 500명 확보</option>
-                        </select>
+                          <option value="50">수량 50명 증가</option>
+                          <option value="100">수량 100명 증가</option>
+                          <option value="300">수량 300명 증가</option>
+                          <option value="500">수량 500명 증가</option>
+                          <option value="1000">수량 1000명 증가</option>
+                          <option value="3000">수량 3000명 증가</option>
+                          <option value="10000">수량 10000명 증가</option>
+                      </select>
                       </div>
                     </div>
                   </div>

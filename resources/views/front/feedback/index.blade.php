@@ -39,7 +39,7 @@
                     @foreach ($feedbacks as $list)
                     <tr>
                       <td>{{ $loop->iteration }}</td>
-                      <td>{{ auth()->user()->name }}</td>
+                      <td>{{ auth()->user()->name ?? '' }}</td>
                       <td>{{ $list->product_type ?? '' }}</td>
                       <td>
                       @for($i=1; $i<=$list->rating; $i++)
