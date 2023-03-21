@@ -77,5 +77,24 @@
         $(".set_user_ids").val('');
         $(".set_user_ids").val($("input.set_user_ids").val() + id);
     }
+    function select_img(e){
+        if(e.classList.contains('selected')){
+            $('img').toggleClass('selected');
+        }
+
+        let user_id=e.dataset.id
+        e.classList.remove('selected');
+        count--;
+        let img=$('<img src="" class="card-img"/>');
+        img.attr('src',e.src);
+        let img_container=$('<div class="col-4 col-md-3 col-lg-2"><div class="child_img"></div><p class="counttxt">'+count+'</p></div>');
+        img_container.find('div.child_img').append(img);
+        $('#append_img').append(img_container);
+        $('.total-select').html('')
+        $('.total-select').append(count)
+        id.push(user_id);
+        $(".set_user_ids").val('');
+        $(".set_user_ids").val($("input.set_user_ids").val() + id);
+    }
 </script>
 @endsection

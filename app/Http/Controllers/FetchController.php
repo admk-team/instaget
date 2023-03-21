@@ -237,6 +237,22 @@ class FetchController extends Controller
 				
 					$items = $json['data']['user']['edge_owner_to_timeline_media']['edges'];
 					
+					// store user data in json file 
+					try {
+							$temp_user = $json['data']['user']['profile_pic_url'];
+							$file_user = public_path('/storage/iguser/'.$instagramId.'_user.jpg');
+							$temp_data = file_get_contents($temp_user);
+
+							file_put_contents($file_user  , $temp_data);
+							
+							// $fp_user = fopen($file_user, 'w');
+							// fwrite($fp_user, $temp_data);
+							// fclose($fp_user);
+
+					} catch (\Throwable $th) {
+						//throw $th;
+					}
+
 					if(
 						$items &&
 						count($items)

@@ -5,7 +5,6 @@
 <div class="container-fluid m-0 p-0">
 <br>
 <br>
-    {{ $errors }}
     <div class="container py-1  d-block d-sm-none p-2 mt-4">
         <!-- New Mobile Menu -->
         <div class="mobile-services-nav justify-content-center text-center">
