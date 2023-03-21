@@ -35,11 +35,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('front.login') }}">로그인</a>
             </li>
-            @else{
+            @else
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('front.login') }}">로그 아웃</a>
               </li>
-            }
           @endif
         </ul>
       </div>
