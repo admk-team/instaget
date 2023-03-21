@@ -44,8 +44,8 @@
       </div>
     </div>
   </nav>
-  <div class="w-100 d-md-none d-block" style="background-color:#2B2C34; height:100px;">
-  </div>
+  {{-- <div class="w-100 d-md-none d-block" style="background-color:#2B2C34; height:100px;">
+  </div> --}}
 
 </header>
 <div class="form-back-drop"></div>
