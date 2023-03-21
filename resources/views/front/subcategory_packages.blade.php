@@ -18,7 +18,7 @@
               {{ $service->title ?? '' }}
             </div> -->
           </div>
-          <div class="content">s
+          <div class="content">
             <div class="accordion">
               @foreach ($service->categories as $category)
               <div class="accordion-item">
@@ -438,32 +438,46 @@
       <div class="service-lower-text">
         <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
-            <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
           </div>
-          <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-            of followers to like my picture for such a cheap price?</p>
-        </div>
-        <div class="lower-review mt-5">
+          <p class="lower-text-description mt-4">좋아요가 이렇게 빨리 달릴 줄 몰랐고 완벽하게 되는거 같아요 다음에 또 이용할게요</p>
+      </div>
+      <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
-            <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
           </div>
-          <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-            of followers to like my picture for such a cheap price?</p>
-        </div>
-        <div class="lower-review mt-5">
+          <p class="lower-text-description mt-4">인스타그램 게시물 사진마다 좋아요 수량 분할이 되어 다른 곳보다 쓰기 편해요.</p>
+      </div>
+      <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
-            <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
           </div>
-          <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-            of followers to like my picture for such a cheap price?</p>
-        </div>
-        <div class="lower-review mt-5">
+          <p class="lower-text-description mt-4">노출 도달 덕분인지 조회수가 계속 늘어나네요 추천합니다 가성비 아주 좋습니다!</p>
+      </div>
+      <div class="lower-review mt-5">
           <div class="d-flex align-items-center bi">
-            <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
           </div>
-          <p class="lower-text-description mt-4">How did you make verified users with hundreds of thousands
-            of followers to like my picture for such a cheap price?</p>
-        </div>
+          <p class="lower-text-description mt-4">한국인 팔로워 몇번이나 구입하고 있습니다. 조만간 팔로워 1만명 구입예정입니다. 잘 부탁드려요.</p>
+      </div>
+      <div class="lower-review mt-5">
+          <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+          </div>
+          <p class="lower-text-description mt-4">한국인좋아요 배송이 아주 빠르고 좋습니다 금방 채워져요. 가성비템이에요 추천드려요~! </p>
+      </div>
+      <div class="lower-review mt-5">
+          <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+          </div>
+          <p class="lower-text-description mt-4">구글플레이 앱설치 한번 이용하고 나서 너무 마음에 들어 자주 이용하고 있습니다. </p>
+      </div>
+      <div class="lower-review mt-5">
+          <div class="d-flex align-items-center bi">
+              <img src="{{ asset('front_asset/images/test-icons.png') }}" alt="">
+          </div>
+          <p class="lower-text-description mt-4">유튜브 조회수 주문하고 엄청 빠르게 늘어났어요. 속도는 인스타몽이 최고인것 같습니다. </p>
+      </div>
       </div>
     </div>
   </div>
