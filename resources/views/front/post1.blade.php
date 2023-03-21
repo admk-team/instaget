@@ -25,7 +25,7 @@
                         
                         <!-- loop start -->
                                 <div class="col-6 col-md-3 col-lg-3 p-2 ig-image d-none">
-                                    <img crossorigin="instagram.fisb9-1.fna.fbcdn.net" class="card-img border-1" src="data:image/jpg;base64," height="120" alt="" onclick="select_img(this)" data-id="">
+                                    <img crossorigin="instagram.fisb9-1.fna.fbcdn.net" class="card-img border-1" src="data:image/jpg;base64,"  alt="" onclick="select_img(this)" data-id="">
                                 </div>
                         <!-- loop end -->
                         
@@ -58,10 +58,11 @@
     var count=0;
     var id=[];
     function select_img(e){
+        
         if(e.classList.contains('selected')){
             return 0;
         }
-
+      
         let user_id=e.dataset.id
         e.classList.add('selected');
         count++;
@@ -103,4 +104,5 @@
         $('#img-select').append(elc);
     }
 </script>
+
 @endsection

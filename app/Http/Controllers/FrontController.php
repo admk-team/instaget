@@ -232,7 +232,7 @@ class FrontController extends Controller
                 'x-ig-app-id: ' . $xIgAppId . "\r\n" .
                 '',
         
-            "maxImages" => 10,							// <!-- optional, 12 is the max number
+            // "maxImages" => 10,							// <!-- optional, 12 is the max number
             "file" => public_path('/storage/ig/'.$u.'-cache.json'),			// <!-- optional, instagram-cache.json is by default
             "time" => 3600,								// <!-- optional, reload contents after 3600 seconds by default
             "pretty" => true,							// <!-- optional, prettyfy json true/false
@@ -242,7 +242,9 @@ class FrontController extends Controller
         ]);
 
             //return redirect('/storage/ig/'.$u.'-cache.json');
+            
             return view('front.post1', ['username' => $u]);
+            
 
         // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
                 
