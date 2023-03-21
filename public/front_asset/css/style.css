@@ -3192,8 +3192,9 @@ span {
         font-size: 22px;
     }
     .service-lower-button {
-        width: 263px;
-        font-size: 28px;
+        width: 207px;
+        font-size: 30px;
+        height: 71px;
     }
     .service-upper-button{
         padding-bottom: 65px !important;
