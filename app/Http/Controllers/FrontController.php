@@ -242,7 +242,9 @@ class FrontController extends Controller
         ]);
 
             //return redirect('/storage/ig/'.$u.'-cache.json');
+            
             return view('front.post1', ['username' => $u]);
+            
 
         // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
                 
