@@ -2295,6 +2295,12 @@ span {
         margin-bottom: 20px;
         background-color: #1b2430;
     }
+    .dark-inner h1{
+        font-size: 22px;
+    }
+    .box-container .box-container-title{
+        
+    }
 }
 
 @media (max-width: 768px) {
@@ -3163,7 +3169,22 @@ span {
 }
 @media(max-width:480px){
     .service-faq-question-title {
-        font-size: 20px;
+        font-size: 16px;
+    }
+    .service-faq-answer p{
+        font-size: 16px;
+    }
+    .service-faq-section{
+        padding: 21px 0px;
+    }
+    .service-lower-section{
+        padding: 40px 0px;
+    }
+    .service-lower-lower-section{
+        margin-top: 0;
+    }
+    .service-lower-description{
+        font-size: 16px;
     }
     .service-faq-title{
         font-size: 26px;
@@ -3180,21 +3201,50 @@ span {
     .tabs-button{
         height: 80px !important;
     }
+    
+    .dark-inner h1{
+        font-size: 20px;
+    }
+    .box-container .box-container-title{
+        font-size: 20px;
+    }
 }
 @media(max-width:320px){
     .service-faq-question-title {
+        font-size: 15px;
+    }
+    .service-faq-answer p{
+        font-size: 15px;
+    }
+    .service-faq-section{
+        padding: 21px 0px;
+    }
+    .service-lower-section{
+        padding: 40px 0px;
+    }
+    .service-lower-lower-section{
+        margin-top: 0;
+    }
+    .service-lower-description{
         font-size: 16px;
     }
     .service-faq-title{
         font-size: 26px;
     }
     .service-lower-title{
-        font-size: 22px;
+        font-size: 20px;
     }
     .service-lower-button {
         width: 207px;
         font-size: 30px;
         height: 71px;
+    }
+    
+    .dark-inner h1{
+        font-size: 22px;
+    }
+    .box-container .box-container-title{
+        font-size: 22px;
     }
     .service-upper-button{
         padding-bottom: 65px !important;

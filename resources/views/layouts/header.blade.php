@@ -18,7 +18,7 @@
             <?php
             $sercivce = DB::table('services')->first();
                ?>
-            <a class="nav-link dropdown-toggle" onclick="window.location.href='{{ route('front.service',$sercivce->slug) }}'" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" onclick="" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               서비스
             </a>
