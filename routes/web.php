@@ -116,6 +116,8 @@ Route::name('front.')->group(function () {
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
     Route::resource('feedback' , FeedbackController::class);
     Route::any('feedback/{id}/{status}' , [FeedbackController::class , 'status'])->name('feedback.status');
+    
+    Route::get('/get/sub-categories-packages/{id}',[FrontController::class,'get_category_packages']);
 });
 
 // User Auth Routes

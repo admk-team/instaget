@@ -191,7 +191,7 @@
                   <button class="shop-btn">장바구니</button>
                 </div>
                 {{-- for mobile start --}}
-                <div class="container d-md-none mobile-checkout-main">
+                <div class="d-md-none mobile-checkout-main">
                   <div class="row justify-content-center close-down-btn">
                     <i class="bi bi-chevron-down"></i>
                   </div>
@@ -199,36 +199,32 @@
                     <div class="row px-4 mb-2">
                       <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                       <div class="col-auto col-9">
-                        <select class="form-control w-100">
-                          <option value="">후속 조치</option>
-                          <option value="">좋아요/보기</option>
-                          <option value="">일일 후속 조치</option>
+                        <select class="form-control w-100 package_title_response">
+                          @foreach ($subcategories as $sub_cat)
+                            <option value="{{ $sub_cat->id ?? '' }}">{{ $sub_cat->title ?? '' }}</option>
+                          @endforeach
                         </select>
                       </div>
                     </div>
                     <div class="row px-4">
                       <label for="inputPassword" class="col-3 col-form-label"></label>
                       <div class="col-auto col-9">
-                        <select class="form-control w-100">
-                          <option value="50">수량 50명 증가</option>
-                          <option value="100">수량 100명 증가</option>
-                          <option value="300">수량 300명 증가</option>
-                          <option value="500">수량 500명 증가</option>
-                          <option value="1000">수량 1000명 증가</option>
-                          <option value="3000">수량 3000명 증가</option>
-                          <option value="10000">수량 10000명 증가</option>
+                        <select class="form-control w-100 sub_categories_pkgs">
+                          @foreach ($packages1 as $pkg)
+                            <option value="50">수량 {{ $pkg->qty }}명 증가</option>
+                          @endforeach
                       </select>
                       </div>
                     </div>
                   </div>
                   <div class="bar d-flex justify-content-between align-items-center mb-2">
-                    <div>합집합</div>
+                    <div>합계</div>
                     <div class="p-4 justify-content-center d-flex">
                       @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
                       <h4 class="sale-price first-box-sale-price">
                         {{ floor($firstpackage->sale_price) ?? '' }}
                       </h4>
-                      <span  class="pt-2" style="font-size: 22px;font-weight: 800">₩</span>
+                      <span  class="pt-2" style="font-size: 22px;font-weight: 800">원</span>
                       @else
                         @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
                           <h4 class="sale-price first-box-sale-price">
@@ -288,7 +284,7 @@
 
   <div class="service-faq-section">
     <h2 class="service-faq-title text-center">이용자 자주묻는 질문?</h2>
-    <div class="service-faq-container container d-flex mt-5 justify-content-between">
+    <div class="service-faq-container container d-flex mt-3 justify-content-between">
       <div class="service-faq-box">
         <div class="service-faq-question d-flex justify-content-between align-items-center">
           <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
@@ -320,7 +316,7 @@
         </div>
       </div>
     </div>
-    <div class="service-faq-container container d-flex mt-5 justify-content-between">
+    <div class="service-faq-container container d-flex mt-3 justify-content-between">
       <div class="service-faq-box">
         <div class="service-faq-question d-flex justify-content-between align-items-center">
           <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
@@ -492,6 +488,8 @@
   $(document).on("click", (event) => {
     if(event.target.closest('.package-box')){
       element = event.target.closest('.package-box');
+      $('.package-box').not(element).removeClass('active');
+      $(element).addClass('active');
     }
     
     if(element){
@@ -579,6 +577,23 @@
       </div>`)
     }
       })
+  })
+</script>
+<script>
+  $('.package_title_response').change(function(){
+      let options='';
+      let id = $(this).val();
+      $.ajax({
+          type: "get",
+          url: "/get/sub-categories-packages/"+id,
+          success: function (response) {
+              $('.sub_categories_pkgs').html('');
+              $.each(response, function(index,value){
+                  options +='<option value="'+value.id+'">량 '+value.qty+'명 증가</option>';
+              })
+              $('.sub_categories_pkgs').append(options)
+          }
+      });
   })
 </script>
 
