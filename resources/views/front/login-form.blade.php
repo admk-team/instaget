@@ -5,9 +5,9 @@
     <div class="login-card card">
       <div class="card-body">
         <h2 class="text-center mb-3">로그인</h2>
-        <div class="justify-content-center d-flex gap-5">
+        <div class="login-form__text__formobile_device">
           <a href="{{ route('front.user.register') }}" class="text-dark text-decoration-none">아직 회원이 아닌가요?</a>
-          <a href="javascript:void(0)" class="text-oraing text-decoration-none membership_btn">회원가입 바로가기</a>
+          <a href="{{ route('front.usersignup') }}" class="text-oraing text-decoration-none membership_btn">회원가입 바로가기</a>
         </div>
         <hr>
         <form method="POST" action="{{ route('front.user.login.store') }}" class="mt-5">
@@ -16,7 +16,7 @@
             <span class="input-group-text" id="basic-addon1">
               <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
             </span>
-            <input type="email" name="email" class="form-control border-left-0" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $email ?? old('email') ?? '' }}">
+            <input type="email" name="email" class="form-control border-left-0 login-form__input" placeholder="이메일 " aria-label="email" aria-describedby="basic-addon1" value="{{ $email ?? old('email') ?? '' }}">
           </div>
           @error('email')
           <span class="text-danger">{{$message }}</span>
@@ -25,13 +25,13 @@
             <span class="input-group-text" id="basic-addon1">
               <img src="{{ asset('front_asset/images/icons/lock.svg') }}" alt="">
             </span>
-            <input type="password" name="password" class="form-control border-left-0" placeholder="비밀번호" aria-label="Password" aria-describedby="basic-addon1">
+            <input type="password" name="password" class="form-control border-left-0 login-form__input" placeholder="비밀번호" aria-label="Password" aria-describedby="basic-addon1">
           </div>
           @error('password')
           <p class="text-danger">{{$message }}</p>
           @enderror
           <div class="button-group">
-            <button type="submit" class="btn btn-block text-white login">비회원 구매하기</button>
+            <button type="submit" class="btn btn-block text-white login">로그인하기</button>
           </div>
         </form>
       </div>

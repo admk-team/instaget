@@ -29,7 +29,7 @@
                             <div class="form-outline form-white mb-3">
                                 <input type="email" id="emial" name="email"
                                     class="form-control form-control-lg loginform  rounded-border"
-                                    placeholder="여기로 이메일 보내기" />
+                                    placeholder="이메일" />
                                 @error('email')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -37,7 +37,7 @@
                             <div class="form-outline form-white mb-4">
                                 <input type="password" id="password" name="password"
                                     class="form-control  form-control-lg loginform  rounded-border"
-                                    placeholder="이메일 비밀번호" />
+                                    placeholder="비밀번호" />
                                 @error('password')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -138,12 +138,12 @@
                             </a>
                         </div>
                         <div class="d-flex justify-content-between responsive">
-                            <p class="new_to_insta">인스타그램을 처음 접하다 ?</p>
-                            <a href="{{ route('front.usersignup') }}"><span class="signup">가입하기 ?</span></a>
+                            <p class="new_to_insta">인스타몽 처음 사용하시나요?</p>
+                            <a href="{{ route('front.usersignup') }}"><span class="signup">회원가입</span></a>
                         </div>
                         <div class="d-flex justify-content-between responsive">
-                            <p class="new_to_insta">계정을 잊어버리세요 ?</p>
-                            <a href="#"><span class="signup">비밀번호 초기화 ?</span></a>
+                            <p class="new_to_insta"> 계정이 기억나지 않으신가요?</p>
+                            <a href="#"><span class="signup">비밀번호 재설정</span></a>
                         </div>
                     </div>
                 </div>
