@@ -12,13 +12,13 @@
       <div class="collapse navbar-collapse" id="navbaruserprofile">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('front.user_info') }}">구매한 상품이 없습니다</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('front.user_info') }}">서비스 진행 중</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ route('front.purchase_history') }}">주문 내역</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">회원정보 관리</a>
+            <a class="nav-link" aria-current="page" href="{{ route('front.member_info') }}">회원정보 관리</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ route('front.logout') }}">로그 아웃</a>

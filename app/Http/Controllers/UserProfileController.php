@@ -23,4 +23,7 @@ class UserProfileController extends Controller
     public function purchasehistory(){
         return view('front.userprofile.order-history');
     }
+    public function memberinfo(){
+        return view('front.userprofile.member_info_management');
+    }
 }

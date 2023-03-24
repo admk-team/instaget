@@ -3,7 +3,7 @@
 <style>
 
 .order-search {
-    background-color: #f1efff;
+    background-color: #d98100;
     padding: 27px;
     margin-bottom: 54px;
 }
@@ -15,11 +15,11 @@
     color: #2B2C34;
     margin: 0 auto;
 }
-.order-search-btn-group a{
-    background-color: #fff;
+ a{
+    /* background-color: #fff; */
     padding: 10px;
 }
-table {
+/* table {
     width: 100%;
     border-top: 2px solid #2B2C34;
     border-collapse: collapse;
@@ -29,12 +29,12 @@ table {
 }
 tbody{
     border-top: 1px solid #2B2C34;
-}
+} */
 </style>
 @include('layouts.userheader')
 <main class="main" style="margin-top:160px">
-   <h1 class="text-center">구매 내역</h1>
-   <div class="order-search">
+   <h1 class="text-center userinfo__heading">구매 내역</h1>
+   <div class="order-search d-flex justify-content-end">
     <div class="order-search-btn-group d-flex justify-content-end">
         <a id="payments-simplefilter-0"  href="#!">오늘</a>
         <a id="payments-simplefilter-1" href="#!">1 일주</a>

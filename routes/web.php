@@ -121,6 +121,7 @@ Route::name('front.')->group(function () {
         //Logout 
     Route::get('/logout' , [UserProfileController::class , 'Logout'])->name('logout');
     Route::get('purchase_history'  ,[UserProfileController::class ,'purchasehistory'])->name('purchase_history');
+    Route::get('member_info'  ,[UserProfileController::class ,'memberinfo'])->name('member_info');
     
     Route::get('/get/sub-categories-packages/{id}',[FrontController::class,'get_category_packages']);
 });

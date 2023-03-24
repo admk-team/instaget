@@ -133,14 +133,9 @@
                     $packages1 = DB::table('packages')->where('sub_category_id' , $subcategory->id)->get()
                   @endphp
                   @foreach ($packages1 as $pakage1)
-                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}">
+                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}" data-scp="scp{{ $subcategory->id}}">
                       <h4 class="fw-bolder">
-                        {{-- @if($pakage1->sale_price)
-                        {{ floor($pakage1->sale_price) }}
-                        @else
-                        {{ floor($pakage1->original_price) }}
-                        @endif
-                        원 --}}
+                
                         {{ $pakage1->qty }}
                       </h4>
                       <span>
@@ -209,9 +204,9 @@
                     <div class="row px-4">
                       <label for="inputPassword" class="col-3 col-form-label"></label>
                       <div class="col-auto col-9">
-                        <select class="form-control w-100 sub_categories_pkgs">
+                        <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
                           @foreach ($packages1 as $pkg)
-                            <option value="50">수량 {{ $pkg->qty }}명 증가</option>
+                            <option value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
                           @endforeach
                       </select>
                       </div>
@@ -285,70 +280,59 @@
   <div class="service-faq-section">
     <h2 class="service-faq-title text-center">이용자 자주묻는 질문?</h2>
     <div class="service-faq-container container d-flex mt-3 justify-content-between">
-      <div class="service-faq-box">
-        <div class="service-faq-question d-flex justify-content-between align-items-center">
-          <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
-          <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+        <div class="service-faq-box">
+            <div class="service-faq-question d-flex justify-content-between align-items-center">
+                <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+                    <img src="{{ asset('front_asset/images/message.png') }}" alt="">
+                    작업 시 계정은 안전한가요?
+                </h4>
+                <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+            </div>
+            <div class="service-faq-answer bg-white px-4">
+                <p>인스타그램뿐만 아니라 유튜브,네이버,앱마케팅 등 인스타몽이 제공하는 모든 서비스는 철저한 안전검증을 기반으로 단 한건도 문제가 생긴 적은 없습니다</p>
+            </div>
         </div>
-        <div class="service-faq-answer bg-white px-4">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-            fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-            fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-            pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-            blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-            assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-            molestias ad! Ullam, voluptates!</p>
+        <div class="service-faq-box">
+            <div class="service-faq-question d-flex justify-content-between align-items-center">
+                <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+
+                    <img src="{{ asset('front_asset/images/message.png') }}" alt="">서비스 진행은 언제 시작 되나요?
+                </h4>
+                <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+            </div>
+            <div class="service-faq-answer bg-white px-4">
+                <p>결제 완료 후 1분내로 시스템에 자동 접수 됩니다. 완료 시점은 상품에 따라 상이하오니 원하는 상품의 상세페이지를 확인하시기 바랍니다. </p>
+            </div>
         </div>
-      </div>
-      <div class="service-faq-box">
-        <div class="service-faq-question d-flex justify-content-between align-items-center">
-          <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
-          <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
-        </div>
-        <div class="service-faq-answer bg-white px-4">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-            fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-            fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-            pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-            blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-            assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-            molestias ad! Ullam, voluptates!</p>
-        </div>
-      </div>
     </div>
     <div class="service-faq-container container d-flex mt-3 justify-content-between">
-      <div class="service-faq-box">
-        <div class="service-faq-question d-flex justify-content-between align-items-center">
-          <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
-          <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+        <div class="service-faq-box">
+            <div class="service-faq-question d-flex justify-content-between align-items-center">
+                <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+
+                    <img src="{{ asset('front_asset/images/message.png') }}" alt=""> 교환이나 환불 규정은 어떻게 되나요?
+                </h4>
+                <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+            </div>
+            <div class="service-faq-answer bg-white px-4">
+                <p>서비스가 진행 된 경우 교환 및 환불이 불가합니다. 아이디 또는 링크 삽입 착오로 인한 환불은 불가하니 서비스 시작전 다시 한번 확인부탁드립니다. 주의 사항을 참고하지 않아
+                    발생되는 피해는 책임지지 않습니다.</p>
+            </div>
         </div>
-        <div class="service-faq-answer bg-white px-4">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-            fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-            fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-            pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-            blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-            assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-            molestias ad! Ullam, voluptates!</p>
+        <div class="service-faq-box">
+            <div class="service-faq-question d-flex justify-content-between align-items-center">
+                <h4 class="service-faq-question-title mb-0 px-4 fa-regular">
+
+                    <img src="{{ asset('front_asset/images/message.png') }}" alt="">고객센터 운영시간은 어떻게 되나요?
+                </h4>
+                <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
+            </div>
+            <div class="service-faq-answer bg-white px-4">
+                <p>월 ~ 금(9:30 - 18:30) / 점심시간(12:00 - 13:00) 모든 문의는 최대한 빨리 답변드릴 수 있도록 노력하겠습니다. </p>
+            </div>
         </div>
-      </div>
-      <div class="service-faq-box">
-        <div class="service-faq-question d-flex justify-content-between align-items-center">
-          <h4 class="service-faq-question-title mb-0 px-4 fa-regular">실제 유저로 작업이 되나요?</h4>
-          <h4 class="service-faq-question-icon mb-0"><i class="bi bi-plus"></i></h4>
-        </div>
-        <div class="service-faq-answer bg-white px-4">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error suscipit delectus consequuntur asperiores
-            fugit unde dolore corporis possimus tempore! Tempore temporibus atque facilis ex at, neque nemo, aperiam
-            fuga magni exercitationem voluptates placeat dolore amet perspiciatis ratione, harum quisquam totam natus
-            pariatur. Animi consequatur fugiat nulla. Sit, exercitationem accusamus. Debitis quibusdam quod enim
-            blanditiis impedit esse id voluptate provident fugiat quisquam obcaecati molestiae quidem, qui at
-            assumumque asperiores ex quisquam tenetur minus dignissimos? Fugiat quod quibusdam, incidunt quas at
-            molestias ad! Ullam, voluptates!</p>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
   <div class="service-lower-section container d-flex flex-column justify-content-center align-items-center">
     <h2 class="service-lower-title text-center">서비스를 구매하셨나요?</h2>
@@ -494,6 +478,7 @@
     
     if(element){
       $("#first_pkg").val($(element).data("package-id"));
+      $("#"+$(element).data("scp")).val($(element).data("id")).change();
     }
   });
 
@@ -589,7 +574,7 @@
           success: function (response) {
               $('.sub_categories_pkgs').html('');
               $.each(response, function(index,value){
-                  options +='<option value="'+value.id+'">량 '+value.qty+'명 증가</option>';
+                  options +='<option value="'+value.id+'">량 '+value.qty+' 증가</option>';
               })
               $('.sub_categories_pkgs').append(options)
           }

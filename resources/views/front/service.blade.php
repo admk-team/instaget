@@ -158,10 +158,9 @@
                             $packages1 = DB::table('packages')->where('sub_category_id' , $subcategory->id)->get()
                             @endphp
                             @foreach ($packages1 as $pakage1)
-                            <div data-package-id="{{ $pakage1->id }}"
-                                class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box"
+                            <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box"
                                 data-original="{{ floor($pakage1->original_price) }}"
-                                data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}" data-title="{{ $pakage1->title ?? '' }}">
+                                data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}" data-title="{{ $pakage1->title ?? '' }}" data-scp="scp{{ $subcategory->id }}">
                                 <h4 class="fw-bolder">
                                     {{-- @if($pakage1->sale_price)
                                     {{ floor($pakage1->sale_price) }}
@@ -223,7 +222,7 @@
                                 <div class="row px-4 mb-2">
                                     <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                                     <div class="col-auto col-9">
-                                        <select class="form-control w-100 package_title_response">
+                                        <select class="form-control w-100 package_title_response" >
                                             @foreach ($sub_category as $sub_cat)
                                                 <option value="{{ $sub_cat->id ?? '' }}">{{ $sub_cat->title ?? '' }}</option>
                                             @endforeach
@@ -233,9 +232,9 @@
                                 <div class="row px-4">
                                     <label for="inputPassword" class="col-3 col-form-label"></label>
                                     <div class="col-auto col-9">
-                                        <select class="form-control w-100 sub_categories_pkgs">
+                                        <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
                                             @foreach ($packages1 as $pkg)
-                                                <option value="50">수량 {{ $pkg->qty }}명 증가</option>
+                                                <option id="packagesid" value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -515,13 +514,17 @@
 <!-- custom JS code after importing jquery and owl -->
 <script>
     $(document).on("click", (event) => {
+
           if (event.target.closest('.package-box')) {
-              element = event.target.closest('.package-box');
-              $('.package-box').not(element).removeClass('active');
-              $(element).addClass('active');
+              pb_element = event.target.closest('.package-box');
+              $('.package-box').not(pb_element).removeClass('active');
+              $(pb_element).addClass('active');
+              
           }
-          if (element) {
-              $("#first_pkg").val($(element).data("package-id"));
+          if (pb_element) {
+              $("#first_pkg").val($(pb_element).data("package-id"));
+              $("#"+$(pb_element).data("scp")).val($(pb_element).data("id")).change();
+
           }
       });
 
@@ -566,6 +569,7 @@
 
 </script>
 <script>
+    var eel = '';
     $('.first-box').click(function() {
           let original_price = $(this).data('original')
           let sale_price = $(this).data('sale')
@@ -590,7 +594,9 @@
           $('.first-box-purchase-btn').click(function() {
               $('.first-box-form').submit();
           })
+
       })
+      
 
 </script>
 <script>
@@ -603,7 +609,7 @@
             success: function (response) {
                 $('.sub_categories_pkgs').html('');
                 $.each(response, function(index,value){
-                    options +='<option value="'+value.id+'">량 '+value.qty+'명 증가</option>';
+                    options +='<option value="'+value.id+'">량 '+value.qty+' 증가</option>';
                 })
                 $('.sub_categories_pkgs').append(options)
             }
