@@ -2,8 +2,8 @@
   @section('container')
   <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-7">
-        <div class="card" style="border: 0;border-radius: 20px;">
+      <div class="col-12 col-md-7 ">
+        <div class="card instagram-form" style="border: 0;border-radius: 20px;">
           <div class="card-body">
             <h4>주문&결제</h4>
             <hr>
@@ -23,14 +23,21 @@
                 <input type="email" name="email" class="instagram_user_field" placeholder="구매하기" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <hr>
-              <div class="m-3 auto_upsell">
-                <h4>주의사항</h4>
-                <p>작업도중 아이디를 바꾸시거나, 비공개 계정으로 전환하실 시 서비스는 중단됩니다.
+              <div class="m-3 auto_upsell d-none d-md-block">
+                <h5 class="auto_upsell__heading">주의사항</h5>
+                <p class="auto_upsell__text">작업도중 아이디를 바꾸시거나, 비공개 계정으로 전환하실 시 서비스는 중단됩니다.
                   주문량에 따라 완료까지 소요시간은 상이할 수 있습니다.  
                   위와 같은 경우, 서비스 환불 및 교환, 재작업은 불가합니다.</p>
               </div>
+              {{-- for mobile devices --}}
+              <div class=" auto_upsell d-block d-md-none mb-3">
+                <h5 class="auto_upsell__heading">주의사항</h5>
+                <p class="auto_upsell__text">작업도중 아이디를 바꾸시거나, 비공개 계정으로 전환하실 시 서비스는 중단됩니다.
+                  주문량에 </p>
+              </div>
+
               <div class="d-block continue-btn">
-                <button class="w-100" type="submit">계속하다</button>
+                <button class="w-100" type="submit">구매하기</button>
               </div>
             </form>
           </div>

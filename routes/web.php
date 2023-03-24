@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\AuthController as UserAuthController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\UserProfileController ;
 
 
 
@@ -116,6 +117,10 @@ Route::name('front.')->group(function () {
     Route::post('placeorder',[FrontController::class,'place_order'])->name('place.order');
     Route::resource('feedback' , FeedbackController::class);
     Route::any('feedback/{id}/{status}' , [FeedbackController::class , 'status'])->name('feedback.status');
+    Route::get('/user_info' , [UserProfileController::class , 'userinfo'])->name('user_info');
+        //Logout 
+    Route::get('/logout' , [UserProfileController::class , 'Logout'])->name('logout');
+    Route::get('purchase_history'  ,[UserProfileController::class ,'purchasehistory'])->name('purchase_history');
     
     Route::get('/get/sub-categories-packages/{id}',[FrontController::class,'get_category_packages']);
 });

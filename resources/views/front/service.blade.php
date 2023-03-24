@@ -30,12 +30,14 @@
                             @foreach ($service->categories as $category)
                             <div class="accordion-item">
                                 <div class="accordion-header" id="heading{{ $category->id }}">
+                                   
                                     <button class="accordion-button shadow-none collapsed"
                                         style="background-color: {{ $category->color }};color:white" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}"
                                         aria-expanded="false" aria-controls="collapse{{ $category->id }}">
                                         {{ $category->title ?? '' }}
                                     </button>
+                                 
                                 </div>
                                 <div id="collapse{{ $category->id }}" class="accordion-collapse collapse"
                                     aria-labelledby="heading{{ $category->id }}" data-bs-parent="#accordionExample">
