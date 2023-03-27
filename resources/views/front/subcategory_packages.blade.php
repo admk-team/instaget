@@ -206,7 +206,13 @@
                       <div class="col-auto col-9">
                         <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
                           @foreach ($packages1 as $pkg)
-                            <option value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
+                          <?php
+                          $qqty='개';
+                          if($pkg->id==7 || $pkg->id==18 || $pkg->id==19){
+      $qqty='명';
+  }
+                           ?>
+                            <option value="{{ $pkg->id }}">{{ $qqty }} {{ $pkg->qty }}명 증가</option>
                           @endforeach
                       </select>
                       </div>
