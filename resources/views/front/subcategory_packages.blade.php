@@ -195,9 +195,9 @@
                       <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                       <div class="col-auto col-9">
                         <select class="form-control w-100 package_title_response">
-                          @foreach ($subcategories as $sub_cat)
+                          {{-- @foreach ($subcategories as $sub_cat)
                             <option value="{{ $sub_cat->id ?? '' }}">{{ $sub_cat->title ?? '' }}</option>
-                          @endforeach
+                          @endforeach --}}<option value="">{{ $subcategory->title  }}</option>
                         </select>
                       </div>
                     </div>

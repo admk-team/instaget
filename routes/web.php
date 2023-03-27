@@ -126,6 +126,13 @@ Route::name('front.')->group(function () {
     Route::get('/get/sub-categories-packages/{id}',[FrontController::class,'get_category_packages']);
 });
 
+// user Reset Password 
+Route::get('/password/reset', [UserController::class, 'forgotpassword'])->name('password.reset.page');
+Route::post('/password/reset/email', [UserController::class, 'email'])->name('password.reset.email');
+Route::get('/reset/password/{token}', [UserController::class, 'reset_page'])->name('password.reset');
+Route::post('/reset/change/password', [UserController::class, 'change_password'])->name('reset.change.password');
+
+
 // User Auth Routes
 Route::prefix('/auth')->group(function() {
     // User Google Auth Routes

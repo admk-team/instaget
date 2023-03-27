@@ -143,7 +143,7 @@
                         </div>
                         <div class="d-flex justify-content-between responsive">
                             <p class="new_to_insta"> 계정이 기억나지 않으신가요?</p>
-                            <a href="#"><span class="signup">비밀번호 재설정</span></a>
+                            <a href="{{ route('password.reset.page') }}"><span class="signup">비밀번호 재설정</span></a>
                         </div>
                     </div>
                 </div>

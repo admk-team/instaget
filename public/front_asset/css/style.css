@@ -3235,9 +3235,9 @@ span {
         font-size: 20px;
     }
     .service-lower-button {
-        width: 207px;
-        font-size: 30px;
-        height: 71px;
+        width: 166px;
+        font-size: 28px;
+        height: 60px;
     }
     
     .dark-inner h1{
@@ -4259,4 +4259,55 @@ img.selected{
     font-size: 18.0px;
     border: none;
 }
+
+.user_reset_password__text{
+    font-size: 50px;
+    font-weight: bold;
+}
+.user_reset_password__text::after{
+    content: '';
+    background: url('../images/Logintext.png') no-repeat center;
+    background-size: 391px 230px;
+    position: absolute;
+    top: -474px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index:-1 ;
+    opacity: 0.7;
+}
+@media(max-width:375px){
+    .user_reset_password__text{
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .user_reset_password__text::after{
+        content: '';
+        background: url('../images/Logintext.png') no-repeat center;
+        background-size: 291px 180px;
+        position: absolute;
+        top: -399px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index:-1 ;
+        opacity: 0.7;
+    }
+  }
+
+  @media(max-width:375px){
+    .service-lower-button{
+        width: 166px;
+        font-size: 28px;
+        height: 60px;
+    }
+  }
+  @media(max-width:425px){
+    .service-lower-button{
+        width: 166px;
+        font-size: 28px;
+        height: 60px;
+    }
+  }
+
  

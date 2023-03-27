@@ -223,9 +223,10 @@
                                     <label for="inputPassword" class="col-3 col-form-label">옵션</label>
                                     <div class="col-auto col-9">
                                         <select class="form-control w-100 package_title_response" >
-                                            @foreach ($sub_category as $sub_cat)
+                                            {{-- @foreach ($sub_category as $sub_cat)
                                                 <option value="{{ $sub_cat->id ?? '' }}">{{ $sub_cat->title ?? '' }}</option>
-                                            @endforeach
+                                            @endforeach --}}
+                                            <option value="">{{ $subcategory->title  }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -366,7 +367,8 @@
 
     <div class="service-lower-section container d-flex flex-column justify-content-center align-items-center">
         <h2 class="service-lower-title text-center">서비스를 구매하셨나요?</h2>
-        <span class="service-lower-description text-center mt-3">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
+        <span class="service-lower-description text-center mt-3 d-none d-md-block">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
+        <span class="service-lower-description text-center mt-3 d-block d-md-none" style="font-size:12px;">서비스 후기를 남겨주시면 회원님께 소정의 적립금을 지급해 드립니다.</span>
         <div class="d-flex service-lower-lower-section">
             <div class="service-lower-icon d-flex flex-column justify-content-center align-items-center">
                 <img src="{{ asset('front_asset/images/service-thumb-icon.png') }}" class="service-icon-4" alt="">
@@ -603,13 +605,17 @@
     $('.package_title_response').change(function(){
         let options='';
         let id = $(this).val();
+        let qqty='개'
         $.ajax({
             type: "get",
             url: "/get/sub-categories-packages/"+id,
             success: function (response) {
                 $('.sub_categories_pkgs').html('');
                 $.each(response, function(index,value){
-                    options +='<option value="'+value.id+'">량 '+value.qty+' 증가</option>';
+                    if(value.id==7 || value.id==18 || value.id==19){
+                        qqty='명'
+                    }
+                    options +='<option value="'+value.id+'">'+qqty+' '+value.qty+' 증가</option>';
                 })
                 $('.sub_categories_pkgs').append(options)
             }

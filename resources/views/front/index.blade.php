@@ -20,13 +20,27 @@
               <video class="fullscreen d-none d-md-block" onload="videoReady()" id="home-video" src="{{ asset('front_asset/images/home-bg.mp4')}}" playsinline autoplay muted loop style="width: -webkit-fill-available!important;">
               </video>
             </div>
-            <div class="carousel-caption trickcenter">
+            {{-- <div class="carousel-caption trickcenter">
               <h3><span class="text-on-img">팔로워, 좋아요 늘리기 </span>  <br>
                 24시간 자동솔루션</h3>
               <div>
                 <p class="slider-caption">
                   SNS 실제한국인 팔로워, 좋아요, 순위 트래픽 <br> 간편주문으로 마케팅효과 톡톡히 보세요.
                 </p>
+              </div>
+              <div class="d-flex justify-content-center mt-5">
+                <button class="insta-btn">인스타몽이란?</button>
+                <button class="service-btn">서비스</button>
+              </div>
+            </div> --}}
+            <div class="carousel-caption trickcenter">
+              <h1><span class="text-on-img">팔로워, 좋아요</span>늘리기</h1>
+              <h3>#실시간주문처리</h3>
+              <div>
+                <p class="slider-caption">
+                  <span>인스타,유튜브,플레이스 등 SNS계</span><br>
+                  정관리는 인스타몽이 전문입니다
+                 </p>
               </div>
               <div class="d-flex justify-content-center mt-5">
                 <button class="insta-btn">인스타몽이란?</button>
@@ -44,16 +58,16 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="overlay">
-              <img class=" w-100" src="{{ asset('front_asset/images/background.jpg')}}" alt="">
+              <img class=" w-100 img-fluid" src="{{ asset('front_asset/images/image_2023_03_27T09_30_07_439Z.png')}}" alt="">
              <div class="overlay_image"></div>
             </div>
              <div class="carousel-caption trickcenter">
-              <h3><span class="text-on-img">팔로워, 좋아요</span>늘리기
-               <br>24시간 자동솔루션</h3>
+              <h1><span class="text-on-img">팔로워, 좋아요</span>늘리기</h1>
+               <h3>#실시간주문처리</h3>
               <div>
                 <p class="slider-caption">
-                 <span>MZ세대 SNS계정관리는</span><br>
-                  인스타몽으로 쉽게 해결하세요
+                 <span>인스타,유튜브,플레이스 등 SNS계</span><br>
+                 정관리는 인스타몽이 전문입니다
                 </p>
               </div>
               <div class="d-flex justify-content-center mt-5">
@@ -114,7 +128,7 @@
           </div>
           <!-- Text Area -->
           <div class="col-12 col-lg-6 text-area">
-            <h1 class="title d-none d-md-block">SNS계정 셀프관리 시작해보세요.</h1>
+            <h2 class="title d-none d-md-block">SNS계정 셀프관리 시작해보세요.</h2>
             <p class="description d-none d-md-block">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
             <h3 class="list-title">인스타몽만의 차별화</h3>
             <div class="d-flex gap-4 flex-wrap">
@@ -154,7 +168,7 @@
                   <span>자체개발 SNS솔루션</span>
                 </li>
               </ul>
-              <h1 class="title d-block d-md-none" style="font-size:1.2rem">SNS계정 셀프관리 시작해보세요.</h1>
+              <h2 class="title d-block d-md-none" style="font-size:1.2rem">SNS계정 셀프관리 시작해보세요.</h2>
             <p class="description d-block d-md-none" style="font-size:0.9rem">인스타 팔로워 늘리기 , 인스타 좋아요 늘리기 대표 업체. 인스타그램 마케팅외에도 유튜브,N사 쇼핑,N사 플레이스,구글플레이/ios 앱 마케팅 서비스를 전문으로 하고 있습니다.</p>
             </div>
             <button class="btn image-text-section-btn text-light mt-3 position-static shadow-none" data-aos="fade-left" data-aos-once="true" data-aos-duration="1200">주문하기</button>
@@ -339,7 +353,7 @@
         <div class="row">
           <div class="col-12 col-lg-6">
             <span class="label-new" data-aos="slide-up" data-aos-once="true" data-aos-duration="1200">Clients Review</span>
-            <h1 class="section-title">이용자 후기</h1>
+            <h2 class="section-title">이용자 후기</h2>
           </div>
           <div class="col-12 col-lg-6">
             {{-- <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut id eu elit augue felis. Penatibus in erat sed id massa, feugiat. Quam nulla</p> --}}
@@ -516,7 +530,7 @@
      <div class="container">
       <div class="text-center mb-5">
           {{-- <span class="label-new">BLOG & NEWS</span> --}}
-          <h1 class="section-title">SNS마케팅 비법 & 최신로직 </h1>
+          <h2 class="section-title">SNS마케팅 비법 & 최신로직 </h2>
           <p class="section-description">최신 인스타그램, 유튜브, N사, 앱 마케팅 로직을 인스타몽에서 확인하세요.<br> 전문 마케터가 SNS마케팅 방법에 관한 블로그를 공유해드립니다. </p>
         </div>
         <div class="row">

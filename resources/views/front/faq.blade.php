@@ -171,7 +171,7 @@
      <div class="container">
       <div class="text-center mb-5">
           {{-- <span class="label-new">BLOG & NEWS</span> --}}
-          <h1 class="section-title">SNS마케팅 비법 & 최신로직 </h1>
+          <h2 class="section-title">SNS마케팅 비법 & 최신로직 </h2>
           <p class="section-description">최신 인스타그램, 유튜브, N사, 앱 마케팅 로직을 인스타몽에서 확인하세요.<br> 전문 마케터가 SNS마케팅 방법에 관한 블로그를 공유해드립니다. </p>
         </div>
         <div class="row">
