@@ -3208,6 +3208,12 @@ span {
     .box-container .box-container-title{
         font-size: 20px;
     }
+    .service-lower-button {
+        margin-top: 26px;
+        width: 207px;
+        font-size: 30px;
+        height: 71px;
+    }
 }
 @media(max-width:320px){
     .service-faq-question-title {
