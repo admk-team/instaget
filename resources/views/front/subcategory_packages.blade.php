@@ -18,12 +18,6 @@
               {{ $service->title ?? '' }}
             </div> -->
           </div>
-          <?php
-            $qqty='개';
-            if($service->categories->id==7 || $service->categories->id==18 || $service->categories->id==19){
-             $qqty='명';
-            }
-          ?>
           <div class="content">
             <div class="accordion">
               @foreach ($service->categories as $category)
@@ -212,8 +206,7 @@
                       <div class="col-auto col-9">
                         <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
                           @foreach ($packages1 as $pkg)
-                          
-                            <option value="{{ $pkg->id }}">{{ $qqty }} {{ $pkg->qty }}명 증가</option>
+                            <option value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
                           @endforeach
                       </select>
                       </div>
