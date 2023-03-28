@@ -540,7 +540,7 @@
               <div class="thumbnail">
                 <img src="{{ asset('storage/'.$Blog->image) }}" alt="">
               </div>
-              <h1 class="post-title">{{ $Blog->title ?? '' }}</h1>
+              <h2 class="post-title">{{ $Blog->title ?? '' }}</h2>
               <p class="post-description">{{$Blog->description ?? ''}}</p>
               <a href="javascript:void(0)" class="read-more">더 알아보기  <span class="bi bi-arrow-right-short"></span></a>
             </div>
