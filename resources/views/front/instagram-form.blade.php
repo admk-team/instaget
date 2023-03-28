@@ -14,13 +14,13 @@
                 <span class="input-group-text" id="basic-addon1" style="border: 0;position: absolute;top:10px ">
                   <img src="{{ asset('front_asset/images/icons/instagram.svg') }}" alt="">
                 </span>
-                <input type="text" name="instagram_username" class="instagram_user_field" placeholder="이메일" aria-label="Username" aria-describedby="basic-addon1" required>
+                <input type="text" name="instagram_username" class="instagram_user_field" placeholder="인스타그램 계정" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon1" style="border: 0;position: absolute;top:10px ">
                   <img src="{{ asset('front_asset/images/icons/email.svg') }}" alt="">
                 </span>
-                <input type="email" name="email" class="instagram_user_field" placeholder="구매하기" aria-label="Username" aria-describedby="basic-addon1" required>
+                <input type="email" name="email" class="instagram_user_field" placeholder="이메일" aria-label="Username" aria-describedby="basic-addon1" required>
               </div>
               <hr>
                 {{-- 
