@@ -234,8 +234,16 @@
                                     <label for="inputPassword" class="col-3 col-form-label"></label>
                                     <div class="col-auto col-9">
                                         <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
+                                            @php 
+                                            $qqty='개';
+                                            @endphp
                                             @foreach ($packages1 as $pkg)
-                                                <option id="packagesid" value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
+                                            @if($pkg->id==7 || $pkg->id==18 || $pkg->id==19)
+                                                @php 
+                                                  $qqty='명';
+                                                @endphp
+                                            @endif
+                                                <option id="packagesid" value="{{ $pkg->id }}">수량 {{ $pkg->qty }}{{ $qqty }} 증가</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -612,6 +620,7 @@
             success: function (response) {
                 $('.sub_categories_pkgs').html('');
                 $.each(response, function(index,value){
+                    console.log(value.id)
                     if(value.id==7 || value.id==18 || value.id==19){
                         qqty='명'
                     }

@@ -158,7 +158,7 @@ class FrontController extends Controller
                     return redirect()->back()->with('error',$th->getMessage());
                 }
             }
-            return redirect()->route('front.signup');
+            return redirect()->route('front.user.login');
             return view('front.login-form', ['email' => $request->email ?? '']);
         }else{
             return view('front.signup', ['email' => $request->email ?? '']);

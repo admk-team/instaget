@@ -574,6 +574,7 @@
           success: function (response) {
               $('.sub_categories_pkgs').html('');
               $.each(response, function(index,value){
+                console.log(value.id);
                   options +='<option value="'+value.id+'">량 '+value.qty+' 증가</option>';
               })
               $('.sub_categories_pkgs').append(options)
@@ -581,5 +582,4 @@
       });
   })
 </script>
-
 @endsection
