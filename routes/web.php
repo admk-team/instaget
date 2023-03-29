@@ -124,6 +124,9 @@ Route::name('front.')->group(function () {
     Route::get('member_info'  ,[UserProfileController::class ,'memberinfo'])->name('member_info');
     
     Route::get('/get/sub-categories-packages/{id}',[FrontController::class,'get_category_packages']);
+
+    // for add to cart
+    Route::get('/add_to_cart' , [FrontController::class,'cart'])->name('add_to_cart');
 });
 
 // user Reset Password 

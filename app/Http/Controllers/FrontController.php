@@ -158,10 +158,11 @@ class FrontController extends Controller
                     return redirect()->back()->with('error',$th->getMessage());
                 }
             }
-            return redirect()->route('front.user.login');
+            // return redirect()->route('front.user.login');
             return view('front.login-form', ['email' => $request->email ?? '']);
         }else{
-            return view('front.signup', ['email' => $request->email ?? '']);
+            return redirect()->route('front.user.register');
+            // return view('front.signup', ['email' => $request->email ?? '']);
         }
     }
     public function guest_post(){
@@ -296,6 +297,10 @@ class FrontController extends Controller
     public function get_subcategory_title($id){
         $append_subcategory = SubCategory::where('id',$id)->first();
         return $append_subcategory;
+    }
+
+    public function cart(){
+        return view('front.cart');
     }
 
 

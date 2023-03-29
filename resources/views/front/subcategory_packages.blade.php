@@ -133,7 +133,18 @@
                     $packages1 = DB::table('packages')->where('sub_category_id' , $subcategory->id)->get()
                   @endphp
                   @foreach ($packages1 as $pakage1)
-                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ floor($pakage1->original_price) }}" data-sale="{{ floor($pakage1->sale_price) }}" data-id="{{ $pakage1->id }}" data-scp="scp{{ $subcategory->id}}">
+                  <?php
+                  if(strlen($pakage1->sale_price)>2 && strlen($pakage1->original_price)>2){
+                     
+                          $sale_price = substr($pakage1->sale_price, 0, 2) . ',' . substr($pakage1->sale_price, 2);
+                          $original_price = substr($pakage1->original_price, 0, 2) . ',' . substr($pakage1->original_price, 2);
+             }
+                     else{
+                         $sale_price = $pakage1->sale_price;
+                         $original_price = $pakage1->original_price;
+             }
+                  ?>
+                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ $original_price }}" data-sale="{{ $sale_price }}" data-id="{{ $pakage1->id }}" data-scp="scp{{ $subcategory->id}}">
                       <h4 class="fw-bolder">
                 
                         {{ $pakage1->qty }}
@@ -149,33 +160,35 @@
                   @endforeach
                 </div>
                 @php
-                  $firstpackage = DB::table('packages')->where('sub_category_id' , $subcategory->id)->first();
+                $firstpackage = DB::table('packages')->where('sub_category_id' , $subcategory->id)->first();
                 @endphp
-                {{-- <div class="p-4 justify-content-center d-flex">
-                  @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '')
-                  <h4 class="sale-price first-box-sale-price">{{ floor($firstpackage->sale_price) ?? floor($firstpackage->original_price) ?? '' }}  </h4><span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
-                  
-                  <del class="orignal-price first-box-orignal-price"> {{ floor($firstpackage->original_price) ?? '' }}  </del><del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
-                  @endif
-                </div> --}}
-                <div class="p-4 justify-content-center d-flex">
-                  @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
-                  <h4 class="sale-price first-box-sale-price">
-                    {{ floor($firstpackage->sale_price) ?? '' }}
-                  </h4>
-                  <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
-                  <del class="orignal-price first-box-orignal-price"> 
-                    {{ floor($firstpackage->original_price) ?? '' }}
-                  </del>
-                  <del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
-                  @else
+                <div class="p-4 justify-content-center d-flex packages_prices">
+                    @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' &&
+                    $firstpackage->sale_price != null)
+                    <h4 class="sale-price first-box-sale-price">
+                        @if(strlen($firstpackage->sale_price)>2 && strlen($firstpackage->original_price)>2)
+                        <?php
+                             $sale_price = substr($firstpackage->sale_price, 0, 2) . ',' . substr($firstpackage->sale_price, 2);
+                             $original_price = substr($firstpackage->original_price, 0, 2) . ',' . substr($firstpackage->original_price, 2);
+                         ?>
+                        {{ $sale_price ?? '' }}
+                        @else
+                        {{ $firstpackage->sale_price ?? '' }}
+                        @endif
+                    </h4>
+                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    <del class="orignal-price first-box-orignal-price">
+                        {{ $original_price ?? '' }}
+                    </del>
+                    <del class="pt-2" style="font-size: 20px;font-weight: 600;color: lightgray"> 원</del>
+                    @else
                     @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
-                      <h4 class="sale-price first-box-sale-price">
+                    <h4 class="sale-price first-box-sale-price">
                         {{ floor($firstpackage->original_price) ?? '' }}
-                      </h4>
-                      <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                    </h4>
+                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
                     @endif
-                  @endif
+                    @endif
                 </div>
                 <div class="p-3 justify-content-center d-none d-md-block">
                   <form action="{{ route('front.instagram.getpost') }}" id="orderForm" method="POST" class="first-box-form">
@@ -214,7 +227,7 @@
                   </div>
                   <div class="bar d-flex justify-content-between align-items-center mb-2">
                     <div>합계</div>
-                    <div class="p-4 justify-content-center d-flex">
+                    <div class="p-4 justify-content-center d-flex packages_prices">
                       @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
                       <h4 class="sale-price first-box-sale-price">
                         {{ floor($firstpackage->sale_price) ?? '' }}
@@ -526,15 +539,17 @@
     let original_price=$(this).data('original')
     let sale_price=$(this).data('sale')
     let id=$(this).data('id');
-    if(sale_price!=''){
-      $('.first-box-sale-price').html('')
-      $('.first-box-sale-price').append(sale_price)
-      $('.first-box-orignal-price').html('')
-      $('.first-box-orignal-price').append(original_price)
-    }else{
-      $('.first-box-orignal-price').html('')
-      $('.first-box-sale-price').html('')
-      $('.first-box-sale-price').append(original_price)
+    let closeset_div = $(this).parent().next('.packages_prices').find('.first-box-sale-price')
+    let original_closeset_price = $(this).parent().next('.packages_prices').find('.first-box-orignal-price')
+    if (sale_price != '') {
+        closeset_div.html('')
+        closeset_div.append(sale_price)
+        original_closeset_price.html('')
+        original_closeset_price.append(original_price)
+    } else {
+        original_closeset_price.html('')
+        closeset_div.html('')
+        closeset_div.append(original_price)
     }
     $(".pakage_id").val('');
     $(".pakage_id").val($("input.pakage_id").val() + id);

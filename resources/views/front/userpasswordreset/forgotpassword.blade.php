@@ -10,16 +10,7 @@
                     <div style="margin-bottom:200px;">
                         <h1 class="text-center user_reset_password__text">비밀번호 재설정</h1>
                     </div>
-                    @if(session()->has('error'))
-                    <div class="alert alert-danger alert-dismissible fade show">
-                        {{ session()->get('error') }}
-                    </div>
-                    @endif
-                    @if(session()->has('alert'))
-                    <div class="alert alert-success alert-dismissible fade show">
-                        {{ session()->get('alert') }}
-                    </div>
-                    @endif
+                  
                     <div class="mb-md-5 mt-md-4 pb-5">
                         <form method="POST" action="{{ route('password.reset.email') }}">
                             @csrf
