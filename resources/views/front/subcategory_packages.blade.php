@@ -196,7 +196,9 @@
                     <input type="hidden" name="pakage_id" class="pakage_id" id="first_pkg">
                   </form>
                   <button class="purchase-btn first-box-purchase-btn" form="orderForm">구매하기</button>
-                  <button class="shop-btn">장바구니</button>
+                  <a href="{{ route('front.add_to_cart') }}">
+                    <button class="shop-btn">장바구니</button>
+                  </a>
                 </div>
                 {{-- for mobile start --}}
                 <div class="d-md-none mobile-checkout-main">
