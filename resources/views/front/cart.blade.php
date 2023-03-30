@@ -143,7 +143,7 @@
 
     <div class="row add_to_cart_border_bottom__1 p-2">
         <div class="col-md-1">
-            <input class="form-check-input" type="checkbox" name="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" name="checkbox"  value="" id="flexCheckDefault">
         </div>
         <div class="col-md-3">
             <h6 class=" d-flex gap-2"><img src="{{ asset('front_asset/images/insta-before-click.png') }}" width="56px;" height="56px;">
@@ -160,8 +160,8 @@
             <h6 class=""> ￦7,500</h6>
         </div>
         <div class="col-md-2">
-            <h6 class=""> <a href="javascript:void(0)"><img src="{{ asset('front_asset/images/arrow-left-black.png') }}"></a>
-                3개
+            <h6 id="number" ><a href="javascript:void(0)"><img src="{{ asset('front_asset/images/arrow-left-black.png') }}"></a>
+               <span class="change_number"> 3개</span>
                 <a href="javascript:updateBasket(56, 1)"><img src="{{ asset('front_asset/images/arrow-right-black.png') }}"></a></h6>
         </div>
         <div class="col-md-2">
@@ -210,6 +210,14 @@
 
 
 </main>
+<script language="JavaScript">
+            function toggle(source) {
+                checkboxes = document.getElementsByName('checkbox');
+                for(var i=0, n=checkboxes.length; i<n; i++) {
+                    checkboxes[i].checked = source.checked;
+                }
+            }
+    </script>
 
 <script>
 function toggle(source) {
