@@ -247,7 +247,9 @@
                     <a href="{{ route('front.instagram.getpost') }}">
                     <button class="purchase-btn">구매하기</button>
                   </a>
+                  <a href="{{ route('front.add_to_cart') }}">
                     <button class="shop-btn">장바구니</button>
+                  </a>
                   </div>
                 </div>
                 {{-- for mobile end --}}
