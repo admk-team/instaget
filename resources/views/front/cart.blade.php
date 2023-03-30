@@ -19,67 +19,66 @@
     a {
         padding: 10px;
     }
+    
+.process {
+    text-align: center;
+    margin-bottom: 31.5px;
+}
 
-    .process {
-        text-align: center;
-        margin-bottom: 31.5px;
+.process-cart {
+    color: #e75e3e;
+    font-size: 22.5px;
+}
+
+.process-order {
+    color: #ABABAD;
+    font-size: 21.6px;
+}
+
+.process-complete {
+    color: #ABABAD;
+    font-size: 21.6px;
+}
+
+.add_to_cart_border_bottom {
+    border-top: 2px solid;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.add_to_cart_border_bottom__1 {
+    border-bottom: 1px solid lightgray;
+}
+
+@media(min-width: 768px) {
+    .add_to__cart__mobile_device{
+        display:none;
     }
-
-    .process-cart {
-        color: #e75e3e;
-        font-size: 22.5px;
+    .add_to_cart_btn__row__1{
+        display: none;
     }
+}
 
-    .process-order {
-        color: #ABABAD;
-        font-size: 21.6px;
-    }
+@media(max-width: 767px) {
 
-    .process-complete {
-        color: #ABABAD;
-        font-size: 21.6px;
-    }
-
+    .add_to_cart_border_bottom__1,
     .add_to_cart_border_bottom {
-        border-top: 2px solid;
-        border-bottom: 1px solid lightgray;
-
+        display: none
     }
 
-    .add_to_cart_border_bottom__1 {
-        border-bottom: 1px solid lightgray;
+    .add_to__cart__mobile_device {
+        display: flex;
     }
 
-    @media(min-width: 768px) {
-        .add_to__cart__mobile_device{
-            display:none;
-        }
-        .add_to_cart_btn__row__1{
-            display: none;
-        }
+    .add_to_cart_btn__row__1 , 
+    .add_to_cart_btn__row{
+        display: none;
+    }
+    .add_to_cart_btn__row__1{
+        display: flex;
     }
 
-    @media(max-width: 767px) {
- 
-        .add_to_cart_border_bottom__1,
-        .add_to_cart_border_bottom {
-            display: none
-        }
-
-        .add_to__cart__mobile_device {
-            display: flex;
-        }
-  
-        .add_to_cart_btn__row__1 , 
-        .add_to_cart_btn__row{
-            display: none;
-        }
-        .add_to_cart_btn__row__1{
-            display: flex;
-        }
- 
-
-    }
+}
 
 </style>
 <main class="main container" style="margin-top:160px">
@@ -93,7 +92,7 @@
 
     <div class="row add_to_cart_border_bottom p-2">
         <div class="col-md-1">
-            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input " type="checkbox" onClick="toggle(this)" value="" id="flexCheckDefault">
         </div>
         <div class="col-md-3">
             <h6 class="">상품명</h6>
@@ -120,7 +119,7 @@
     <div class="container">
     <div class="row add_to__cart__mobile_device justify-content-between">
         <div class="col-sm-1 col-1 align-items-center">
-            <input class="form-check" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check" type="checkbox" name="checkbox" value="" id="flexCheckDefault">
         </div>
         <div class="col-sm-8 col-8 d-flex justify-content-between">
             <h6 class="d-flex mx-1" style="gap:13px;">
@@ -144,7 +143,7 @@
 
     <div class="row add_to_cart_border_bottom__1 p-2">
         <div class="col-md-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" name="checkbox" value="" id="flexCheckDefault">
         </div>
         <div class="col-md-3">
             <h6 class=" d-flex gap-2"><img src="{{ asset('front_asset/images/insta-before-click.png') }}" width="56px;" height="56px;">
@@ -213,6 +212,11 @@
 </main>
 
 <script>
-
+function toggle(source) {
+  checkboxes = document.getElementsByName('checkbox');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
 </script>
 @endsection
