@@ -133,6 +133,7 @@
                             $packages1 = DB::table('packages')->where('sub_category_id' , $subcategory->id)->get()
                             @endphp
                             @foreach ($packages1 as $pakage1)
+                            
                             <?php
                              if(strlen($pakage1->sale_price)>2 && strlen($pakage1->original_price)>2){
                                 
@@ -144,7 +145,7 @@
                                     $original_price = $pakage1->original_price;
                         }
                              ?>
-                            <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ $original_price }}" data-sale="{{ $sale_price}}" data-id="{{ $pakage1->id }}" data-title="{{ $pakage1->title ?? '' }}" data-scp="scp{{ $subcategory->id }}">
+                            <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ $original_price }}" data-sale="{{ $sale_price}}" data-id="{{ $pakage1->id }}" data-title="{{ $pakage1->title ?? '' }}" data-scp="scp{{ $subcategory->id }}" data-qty="{{ $pakage1->qty }}">
                                 <h4 class="fw-bolder">
                                     {{ $pakage1->qty }}
                                 </h4>
@@ -222,8 +223,16 @@
                                 <div class="row px-4">
                                     <label for="inputPassword" class="col-3 col-form-label"></label>
                                     <div class="col-auto col-9">
-                                        <select class="form-control w-100 sub_categories_pkgs" id="scp{{ $subcategory->id }}">
+                                        @php $qqty='개';
+                                         @endphp
+                                        @if($firstpackage->id==7 || $firstpackage->id===18 || $firstpackage->id==19)
                                             @php
+                                            $qqty='명';
+                                            @endphp
+                                            @endif
+                                        <select class="form-control w-100 sub_categories_pkgs" data-value1="수량" data-value2="{{ $qqty }} 증가">
+                                            {{-- id="scp{{ $subcategory->id }}" --}}
+                                            {{-- @php
                                             $qqty='개';
                                             @endphp
                                             @foreach ($packages1 as $pkg)
@@ -233,7 +242,9 @@
                                             @endphp
                                             @endif
                                             <option id="packagesid" value="{{ $pkg->id }}">수량 {{ $pkg->qty }}{{ $qqty }} 증가</option>
-                                            @endforeach
+                                            @endforeach --}}
+                                            <option class="packagec_title_closest_div" value="">수량{{ $firstpackage->qty }}{{ $qqty }} 증가</option>
+                                        
                                         </select>
                                     </div>
                                 </div>
@@ -242,21 +253,22 @@
                                 <div>합계</div>
                                 <div class="p-4 justify-content-center d-flex packages_prices">
                                     @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' &&
-                                    $firstpackage->sale_price != null)
-                                    <h4 class="sale-price first-box-sale-price">
-                                        {{ floor($firstpackage->sale_price) ?? '' }}
-                                    </h4>
-                                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span>
+                                        $firstpackage->sale_price != null)
+                                        <h4 class="sale-price first-box-sale-price">
+                                            {{ floor($firstpackage->original_price) ?? '' }}
+                                        </h4>
+                                        <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span>
                                     @else
-                                    @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
-                                    <h4 class="sale-price first-box-sale-price">
-                                        {{ floor($firstpackage->original_price) ?? '' }}
-                                    </h4>
-                                    <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
-                                    @endif
-                                    @endif
+                                        @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
+                                        <h4 class="sale-price first-box-sale-price">
+                                            {{ floor($firstpackage->original_price) ?? '' }}
+                                        </h4>
+                                        <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
+                                        @endif
+                                  @endif
                                 </div>
                             </div>
+
                             <div class="py-3 d-flex align-items-center justify-content-center mobile gap-2 flex-wrap">
                                 <a href="{{ route('front.instagram.getpost') }}">
                                     <button class="purchase-btn">구매하기</button>
@@ -566,6 +578,7 @@
         let sale_price = $(this).data('sale')
         let id = $(this).data('id');
         let title = $(this).data('title');
+        let qty = $(this).data('qty');
         let closeset_div = $(this).parent().next('.packages_prices').find('.first-box-sale-price')
         let original_closeset_price = $(this).parent().next('.packages_prices').find('.first-box-orignal-price')
         if (sale_price != '') {
@@ -578,6 +591,10 @@
             closeset_div.html('')
             closeset_div.append(original_price)
         }
+        let price_options1=$('.sub_categories_pkgs').data('value1');
+        let price_options2=$('.sub_categories_pkgs').data('value2');
+        $('.sub_categories_pkgs').html('')
+        $('.sub_categories_pkgs').append('<option value="'+qty+'" selected>'+price_options1+' '+qty+' '+price_options2+'</option>') 
         $(".pakage_id").val('');
         $(".pakage_id").val($("input.pakage_id").val() + id);
 
@@ -605,10 +622,7 @@
             , success: function(response) {
                 $('.sub_categories_pkgs').html('');
                 $.each(response, function(index, value) {
-                    console.log(value.id);
-                    if (value.id == 7 || value.id == 18 || value.id == 19) {
-                        qqty = '명'
-                    }
+                    
                     options += '<option value="' + value.id + '">' + qqty + ' ' + value.qty + ' 증가</option>';
                 })
                 $('.sub_categories_pkgs').append(options)
