@@ -144,7 +144,7 @@
                          $original_price = $pakage1->original_price;
              }
                   ?>
-                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ $original_price }}" data-sale="{{ $sale_price }}" data-qty = "{{ $pakage1->qty }}" data-id="{{ $pakage1->id }}" data-scp="scp{{ $subcategory->id}}">
+                    <div data-package-id="{{ $pakage1->id }}" class="package-box bg_orange @if ($loop->iteration==1)active @endif text-center first-box" data-original="{{ $original_price }}" data-sale="{{ $sale_price }}" data-qty = "{{ $pakage1->qty }}" data-id="{{ $pakage1->id }}" data-scp="scp{{ $subcategory->id}}" data-sub-title ={{ $pakage1->sub_title }}>
                       <h4 class="fw-bolder">
                 
                         {{ $pakage1->qty }}
@@ -219,17 +219,11 @@
                     <div class="row px-4">
                       <label for="inputPassword" class="col-3 col-form-label"></label>
                       <div class="col-auto col-9">
-                        <?php $qqty='개'; ?>
-                        @if($firstpackage->id==7 || $firstpackage->id===18 || $firstpackage->id==19)
-                            @php
-                            $qqty='명';
-                            @endphp
-                            @endif
-                        <select class="form-control w-100 sub_categories_pkgs" data-value1="수량" data-value2="{{ $qqty }} 증가">
+                        <select class="form-control w-100 sub_categories_pkgs" data-value1="수량" data-value2="증가">
                           {{-- @foreach ($packages1 as $pkg)
                             <option value="{{ $pkg->id }}">수량 {{ $pkg->qty }}명 증가</option>
                           @endforeach --}}
-                          <option class="packagec_title_closest_div" value="">수량  {{ $firstpackage->qty }} {{ $qqty }} 증가</option>
+                          <option class="packagec_title_closest_div" value="">수량  {{ $firstpackage->qty }} 증가</option>
                       </select>
                       </div>
                     </div>
@@ -238,13 +232,21 @@
                     <div>합계</div>
                     <div class="p-4 justify-content-center d-flex packages_prices">
                       @if (isset($firstpackage->sale_price) && $firstpackage->sale_price != '' && $firstpackage->sale_price != null)
-                      <h4 class="sale-price first-box-sale-price">
-                        {{ floor($firstpackage->sale_price) ?? '' }}
-                      </h4>
+                      <h4 class="sale-price first-box-sale-price1">
+                        @if(strlen($firstpackage->sale_price)>2 && strlen($firstpackage->original_price)>2)
+                        <?php
+                             $sale_price = substr($firstpackage->sale_price, 0, 2) . ',' . substr($firstpackage->sale_price, 2);
+                             $original_price = substr($firstpackage->original_price, 0, 2) . ',' . substr($firstpackage->original_price, 2);
+                         ?>
+                        {{ $sale_price ?? '' }}
+                        @else
+                        {{ $firstpackage->sale_price ?? '' }}
+                        @endif
+                    </h4>
                       <span  class="pt-2" style="font-size: 22px;font-weight: 800">원</span>
                       @else
                         @if (isset($firstpackage) && $firstpackage!='' && $firstpackage1=null)
-                          <h4 class="sale-price first-box-sale-price">
+                          <h4 class="sale-price first-box-sale-price1">
                             {{ floor($firstpackage->original_price) ?? '' }}
                           </h4>
                           <span class="pt-2" style="font-size: 22px;font-weight: 800">원</span> &nbsp;
@@ -551,22 +553,27 @@
     let sale_price=$(this).data('sale')
     let id=$(this).data('id');
     let qty = $(this).data('qty');
+    let sub_title = $(this).data('sub-title');
     let closeset_div = $(this).parent().next('.packages_prices').find('.first-box-sale-price')
     let original_closeset_price = $(this).parent().next('.packages_prices').find('.first-box-orignal-price')
     if (sale_price != '') {
         closeset_div.html('')
         closeset_div.append(sale_price)
+        $('.first-box-sale-price1').html('')
+        $('.first-box-sale-price1').append(sale_price)
         original_closeset_price.html('')
         original_closeset_price.append(original_price)
     } else {
         original_closeset_price.html('')
         closeset_div.html('')
         closeset_div.append(original_price)
+        $('. first-box-sale-price1').html('')
+        $('. first-box-sale-price').append(original_price)
     }
     let price_options1=$('.sub_categories_pkgs').data('value1');
         let price_options2=$('.sub_categories_pkgs').data('value2');
         $('.sub_categories_pkgs').html('')
-        $('.sub_categories_pkgs').append('<option value="'+qty+'" selected>'+price_options1+' '+qty+' '+price_options2+'</option>') 
+        $('.sub_categories_pkgs').append('<option value="'+qty+'" selected>'+price_options1+' '+qty+' '+sub_title+'  '+price_options2+'</option>') 
     $(".pakage_id").val('');
     $(".pakage_id").val($("input.pakage_id").val() + id);
 

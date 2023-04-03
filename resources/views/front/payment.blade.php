@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 @section('container')
+<script type="text/javascript" src="https://testpay.kcp.co.kr/plugin/payplus_web.jsp"></script>
+
 <div class="container">
     <div class="row justify-content-center ms-auto mt-5 mb-5">
         <div class="col-lg-7">
@@ -78,6 +80,14 @@
                             <input type="radio" name="deposit_without_bankbook" id="deposit_without_bankbook" class="form-radio deposit_without_bankbook" style="height: 20px;width: 20px">
                             <label for="">무통장입금</label>
                         </div>
+                        <div class="col-6">
+                            <input type="radio" name="deposit_without_bankbook" id="deposit_without_bankbook" class="form-radio deposit_without_bankbook" style="height: 20px;width: 20px">
+                            <label for="">가상계좌</label>
+                        </div>
+                        <div class="col-6">
+                            <input type="radio" name="deposit_without_bankbook" id="deposit_without_bankbook" class="form-radio deposit_without_bankbook" style="height: 20px;width: 20px">
+                            <label for="">이동통신사 결제</label>
+                        </div>
                     </div>
                     <div class="row mt-3 justify-content-center">
                         <div class="col-8 mb-3">
@@ -89,9 +99,17 @@
                             <input type="text" name="" id="" class="form-control" placeholder="사용자 이름 쓰기">
                         </div>
                     </div>
+                    <form name="order_info">
+                        <input type="hidden" name="ordr_idxx" value="{{ $package->id }}"/>
+                        <input type="hidden" name="good_name" value="{{ $package->sub_category->category->service->title }}"/>
+                        <input type="hidden" name="good_mny" value="{{ $package->qty }}"/>
+                        <input type="hidden" name="pay_method" value="100000000000"/> <!-- Payment Method(Credit Card) -->
+                        <input type="hidden" name="site_cd" value="T0000"/>
+                        <input type="hidden" name="site_key" value="3grptw1.zW0GSo4PQdaGvsF__"/>
+                    </form>
                     <div class="row mt-5">
                         <div class="paymentbtn justify-content-center m-auto">
-                            <button type="submit" class="btn btn-block text-white ">결제하기</button>
+                            <button type="button" class="btn btn-block text-white" onclick="jsf__pay(document.order_info)">결제하기</button>
                         </div>
                     </div>
                 </div>
@@ -99,6 +117,20 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+   /* Execute Standard Web */
+   function jsf__pay(form )
+   {
+      try
+      {
+         KCP_Pay_Execute( form );
+      }
+      catch (e)
+      {
+         
+      }
+   }
+</script>
 <script>
     $('.check_points').click(function(){
         var original_points = $('.original_points').data('points');
@@ -124,4 +156,6 @@
         
     })
 </script>
+
 @endsection
+    

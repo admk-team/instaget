@@ -92,6 +92,7 @@ class SubCategoryController extends Controller
                     $package->original_price = $request->original_price[$key];
                     $package->sale_price = $request->sale_price[$key];
                     $package->qty = $q;
+                    $package->sub_title = $request->sub_title[$key];
                     $package->slug = $request->ptitle[$key];
                     $package->save();
                 }
@@ -145,8 +146,6 @@ class SubCategoryController extends Controller
                 return redirect()->back()->with('error1' , 'Sale Price must be less than  price');
             }
         }
-        
-        
         $request->validate([
         'sub_category' => 'required',
         'title' => 'required',
@@ -196,6 +195,7 @@ class SubCategoryController extends Controller
                 $package->original_price = $request->original_price[$key];
                 $package->sale_price = $request->sale_price[$key];
                 $package->qty = $q;
+                $package->sub_title = $request->sub_title[$key];
                 $package->slug = $request->ptitle[$key];
                 $package->save();
             }

@@ -99,10 +99,13 @@
                                                     <input type="text" class="form-control" name="ptitle[]" value="{{ old('ptitle.'.$i) ?? $package->title }}" placeholder="Title">
                                                    
                                                 </div>
-                                                <div class="col-2 pl-1 pr-1">
+                                                <div class="col-1 pl-1 pr-1">
                                                     <label for="Qty">Quantity</label>
                                                     <input type="text" class="form-control" name="qty[]" value="{{ old('qty.'.$i) ?? $package->qty  }}" placeholder="Quantity">
-                                                   
+                                                </div>
+                                                <div class="col-3 pl-1 pr-1">
+                                                    <label for="sub_title">Sub Title</label>
+                                                    <input type="text" class="form-control" name="sub_title[]" value="{{ old('sub_title'.$i) ?? $package->sub_title }}" placeholder="Sub Title">
                                                 </div>
                                                 <div class="col-2 pl-1 pr-1">
                                                     <label for="Original Price">Price</label>
@@ -116,7 +119,7 @@
                                             </div>
                                                 
                                     
-                                                <div class=" col-2 pl-1 pr-1 d-flex align-items-center
+                                                <div class=" col-1 pl-1 pr-1 d-flex align-items-center
                                                 justify-content-center">
                                             <button type="button" class="btn btn-danger deleteQty" onclick="deleteQty(event)" data-url="{{ url('admin/delete/packages/'.$package->id ?? '') }}">X</button>
                             
@@ -214,9 +217,12 @@
                               '<div class="col-3 pl-1 pr-1">' +
                                 '<input type="text" class="form-control"  placeholder="Title" name="ptitle[]">' +
                               '</div>' +
-                              '<div class="col-2 pl-1 pr-1">' +
+                              '<div class="col-1 pl-1 pr-1">' +
                                 '<input type="text" class="form-control" placeholder="Quantity" name="qty[]">' +
                               '</div>' +
+                              '<div class="col-3 pl-1 pr-1">'+
+                                '<input type="text" class="form-control" name="sub_title[]" placeholder="Sub title">'
+                                '</div>'+
                               '<div class="col-2 pl-1 pr-1">' +
                                 '<input type="text" class="form-control" placeholder="Sale Price" name="original_price[]">' +
                               '</div>' +

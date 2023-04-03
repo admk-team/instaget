@@ -94,9 +94,13 @@
                                                         <label for="Title">Title</label>
                                                         <input type="text" class="form-control" name="ptitle[]" value="{{ old('ptitle.'.$i) }}" placeholder="Title">
                                                     </div>
-                                                    <div class="col-2 pl-1 pr-1">
+                                                    <div class="col-1 pl-1 pr-1">
                                                         <label for="Qty">Quantity</label>
                                                         <input type="text" class="form-control" name="qty[]" value="{{ old('qty.'.$i) }}" placeholder="Quantity">
+                                                    </div>
+                                                    <div class="col-3 pl-1 pr-1">
+                                                        <label for="sub_title">Sub Title</label>
+                                                        <input type="text" class="form-control" name="sub_title[]" value="{{ old('sub_title.'.$i) }}" placeholder="Sub Title">
                                                     </div>
                                                     <div class="col-2 pl-1 pr-1">
                                                         <label for="Original Price">  Price</label>
@@ -114,7 +118,7 @@
                                                         <span class="text-danger">{{ $message }}</span>
                                                         @enderror
                                                     </div>
-                                                    <div class=" col-2 pl-1 pr-1 d-flex align-items-center
+                                                    <div class=" col-1 pl-1 pr-1 d-flex align-items-center
                                                             justify-content-center">
                                                         <button type="button" class="btn btn-danger" onclick="deleteQty(event)">X</button>
                                                     </div>
@@ -156,8 +160,11 @@
             '<div class="col-3 pl-1 pr-1">' +
             '<input type="text" class="form-control" name="ptitle[]"" placeholder="Title">' +
             '</div>' +
-            '<div class="col-2 pl-1 pr-1">' +
+            '<div class="col-1 pl-1 pr-1">' +
             '<input type="text" class="form-control" name="qty[]"" placeholder="Quantity">' +
+            '</div>' +
+            '<div class="col-3 pl-1 pr-1">' +
+            '<input type="text" class="form-control" name="sub_title[]"" placeholder="Sub Title">' +
             '</div>' +
             '<div class="col-2 pl-1 pr-1">' +
             '<input type="text" class="form-control" name="original_price[]"" placeholder="Price" >' +
